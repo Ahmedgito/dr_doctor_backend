@@ -24,3 +24,269 @@ Total skipped: 0
 Total scraped: 0
 Total inserted: 0
 Total skipped: 0
+2025-12-03 02:38:12 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='oladoc', headless=True, limit=None)
+2025-12-03 02:38:12 | INFO     | scrapers.database.mongo_client:__init__:28 - Connecting to MongoDB at mongodb://localhost:27017/
+2025-12-03 02:38:42 | ERROR    | scrapers.database.mongo_client:__init__:35 - Failed to connect to MongoDB: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 692f5c44e3867f9c0ac1beeb, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+Traceback (most recent call last):
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\run_scraper.py", line 92, in <module>
+    main()
+    └ <function main at 0x0000012752C8BBE0>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\run_scraper.py", line 69, in main
+    mongo = MongoClientManager()
+            └ <class 'scrapers.database.mongo_client.MongoClientManager'>
+
+> File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\scrapers\database\mongo_client.py", line 33, in __init__
+    self._ensure_indexes()
+    │    └ <function MongoClientManager._ensure_indexes at 0x0000012751B9C430>
+    └ <scrapers.database.mongo_client.MongoClientManager object at 0x00000127527918D0>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\scrapers\database\mongo_client.py", line 42, in _ensure_indexes
+    self.collection.create_index("profile_url", unique=True)
+    │    │          └ <function Collection.create_index at 0x0000012751B38AF0>
+    │    └ Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'dr_doctor'), '...
+    └ <scrapers.database.mongo_client.MongoClientManager object at 0x00000127527918D0>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\collection.py", line 2387, in create_index
+    return (self._create_indexes([index], session, **cmd_options))[0]
+            │    │                │       │          └ {}
+            │    │                │       └ None
+            │    │                └ IndexModel({'profile_url': 1}, unique=True, name='profile_url_1')
+            │    └ <function Collection._create_indexes at 0x0000012751B38A60>
+            └ Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'dr_doctor'), '...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\_csot.py", line 125, in csot_wrapper
+    return func(self, *args, **kwargs)
+           │    │      │       └ {}
+           │    │      └ ([IndexModel({'profile_url': 1}, unique=True, name='profile_url_1')], None)
+           │    └ Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'dr_doctor'), '...
+           └ <function Collection._create_indexes at 0x0000012751B389D0>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\collection.py", line 2240, in _create_indexes
+    with self._conn_for_writes(session, operation=_Op.CREATE_INDEXES) as conn:
+         │    │                │                  │   └ <_Op.CREATE_INDEXES: 'createIndexes'>
+         │    │                │                  └ <enum '_Op'>
+         │    │                └ None
+         │    └ <function Collection._conn_for_writes at 0x0000012751B2B910>
+         └ Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'dr_doctor'), '...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\collection.py", line 578, in _conn_for_writes
+    return self._database.client._conn_for_writes(session, operation)
+           │    │         │                       │        └ <_Op.CREATE_INDEXES: 'createIndexes'>
+           │    │         │                       └ None
+           │    │         └ <property object at 0x0000012751B47E20>
+           │    └ Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'dr_doctor')
+           └ Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'dr_doctor'), '...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\mongo_client.py", line 1850, in _conn_for_writes
+    server = self._select_server(writable_server_selector, session, operation)
+             │    │              │                         │        └ <_Op.CREATE_INDEXES: 'createIndexes'>
+             │    │              │                         └ None
+             │    │              └ <function writable_server_selector at 0x00000127519057E0>
+             │    └ <function MongoClient._select_server at 0x0000012751B96830>
+             └ MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True)
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\mongo_client.py", line 1833, in _select_server
+    server = topology.select_server(
+             │        └ <function Topology.select_server at 0x0000012751B8B5B0>
+             └ <Topology <TopologyDescription id: 692f5c44e3867f9c0ac1beeb, topology_type: Unknown, servers: [<ServerDescription ('localhost...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\topology.py", line 409, in select_server
+    server = self._select_server(
+             │    └ <function Topology._select_server at 0x0000012751B8B520>
+             └ <Topology <TopologyDescription id: 692f5c44e3867f9c0ac1beeb, topology_type: Unknown, servers: [<ServerDescription ('localhost...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\topology.py", line 387, in _select_server
+    servers = self.select_servers(
+              │    └ <function Topology.select_servers at 0x0000012751B8B400>
+              └ <Topology <TopologyDescription id: 692f5c44e3867f9c0ac1beeb, topology_type: Unknown, servers: [<ServerDescription ('localhost...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\topology.py", line 294, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          │    └ <function Topology._select_servers_loop at 0x0000012751B8B490>
+                          └ <Topology <TopologyDescription id: 692f5c44e3867f9c0ac1beeb, topology_type: Unknown, servers: [<ServerDescription ('localhost...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\topology.py", line 344, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+          └ <class 'pymongo.errors.ServerSelectionTimeoutError'>
+
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 692f5c44e3867f9c0ac1beeb, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-12-03 02:38:43 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='marham', headless=True, limit=None)
+2025-12-03 02:38:43 | INFO     | scrapers.database.mongo_client:__init__:28 - Connecting to MongoDB at mongodb://localhost:27017/
+2025-12-03 02:39:47 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='oladoc', headless=True, limit=None)
+2025-12-03 02:39:47 | INFO     | scrapers.database.mongo_client:__init__:28 - Connecting to MongoDB at mongodb://localhost:27017/
+2025-12-03 02:40:17 | ERROR    | scrapers.database.mongo_client:__init__:35 - Failed to connect to MongoDB: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 692f5ca35d23d07375324383, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+Traceback (most recent call last):
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\run_scraper.py", line 92, in <module>
+    main()
+    └ <function main at 0x000001C9BDDBBF40>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\run_scraper.py", line 69, in main
+    mongo = MongoClientManager()
+            └ <class 'scrapers.database.mongo_client.MongoClientManager'>
+
+> File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\scrapers\database\mongo_client.py", line 33, in __init__
+    self._ensure_indexes()
+    │    └ <function MongoClientManager._ensure_indexes at 0x000001C9BCCCC430>
+    └ <scrapers.database.mongo_client.MongoClientManager object at 0x000001C9BA0D7BE0>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\scrapers\database\mongo_client.py", line 42, in _ensure_indexes
+    self.collection.create_index("profile_url", unique=True)
+    │    │          └ <function Collection.create_index at 0x000001C9BCC68AF0>
+    │    └ Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'dr_doctor'), '...
+    └ <scrapers.database.mongo_client.MongoClientManager object at 0x000001C9BA0D7BE0>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\collection.py", line 2387, in create_index
+    return (self._create_indexes([index], session, **cmd_options))[0]
+            │    │                │       │          └ {}
+            │    │                │       └ None
+            │    │                └ IndexModel({'profile_url': 1}, unique=True, name='profile_url_1')
+            │    └ <function Collection._create_indexes at 0x000001C9BCC68A60>
+            └ Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'dr_doctor'), '...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\_csot.py", line 125, in csot_wrapper
+    return func(self, *args, **kwargs)
+           │    │      │       └ {}
+           │    │      └ ([IndexModel({'profile_url': 1}, unique=True, name='profile_url_1')], None)
+           │    └ Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'dr_doctor'), '...
+           └ <function Collection._create_indexes at 0x000001C9BCC689D0>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\collection.py", line 2240, in _create_indexes
+    with self._conn_for_writes(session, operation=_Op.CREATE_INDEXES) as conn:
+         │    │                │                  │   └ <_Op.CREATE_INDEXES: 'createIndexes'>
+         │    │                │                  └ <enum '_Op'>
+         │    │                └ None
+         │    └ <function Collection._conn_for_writes at 0x000001C9BCC5B910>
+         └ Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'dr_doctor'), '...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\collection.py", line 578, in _conn_for_writes
+    return self._database.client._conn_for_writes(session, operation)
+           │    │         │                       │        └ <_Op.CREATE_INDEXES: 'createIndexes'>
+           │    │         │                       └ None
+           │    │         └ <property object at 0x000001C9BCC77E20>
+           │    └ Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'dr_doctor')
+           └ Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'dr_doctor'), '...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\mongo_client.py", line 1850, in _conn_for_writes
+    server = self._select_server(writable_server_selector, session, operation)
+             │    │              │                         │        └ <_Op.CREATE_INDEXES: 'createIndexes'>
+             │    │              │                         └ None
+             │    │              └ <function writable_server_selector at 0x000001C9BCA2D7E0>
+             │    └ <function MongoClient._select_server at 0x000001C9BCCC6830>
+             └ MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True)
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\mongo_client.py", line 1833, in _select_server
+    server = topology.select_server(
+             │        └ <function Topology.select_server at 0x000001C9BCCBB5B0>
+             └ <Topology <TopologyDescription id: 692f5ca35d23d07375324383, topology_type: Unknown, servers: [<ServerDescription ('localhost...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\topology.py", line 409, in select_server
+    server = self._select_server(
+             │    └ <function Topology._select_server at 0x000001C9BCCBB520>
+             └ <Topology <TopologyDescription id: 692f5ca35d23d07375324383, topology_type: Unknown, servers: [<ServerDescription ('localhost...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\topology.py", line 387, in _select_server
+    servers = self.select_servers(
+              │    └ <function Topology.select_servers at 0x000001C9BCCBB400>
+              └ <Topology <TopologyDescription id: 692f5ca35d23d07375324383, topology_type: Unknown, servers: [<ServerDescription ('localhost...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\topology.py", line 294, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          │    └ <function Topology._select_servers_loop at 0x000001C9BCCBB490>
+                          └ <Topology <TopologyDescription id: 692f5ca35d23d07375324383, topology_type: Unknown, servers: [<ServerDescription ('localhost...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\topology.py", line 344, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+          └ <class 'pymongo.errors.ServerSelectionTimeoutError'>
+
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 692f5ca35d23d07375324383, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-12-03 02:40:18 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='marham', headless=True, limit=None)
+2025-12-03 02:40:18 | INFO     | scrapers.database.mongo_client:__init__:28 - Connecting to MongoDB at mongodb://localhost:27017/
+2025-12-03 02:40:49 | ERROR    | scrapers.database.mongo_client:__init__:35 - Failed to connect to MongoDB: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 692f5cc22d3b042045c4b2df, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+Traceback (most recent call last):
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\run_scraper.py", line 92, in <module>
+    main()
+    └ <function main at 0x000001ED1D6FBF40>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\run_scraper.py", line 69, in main
+    mongo = MongoClientManager()
+            └ <class 'scrapers.database.mongo_client.MongoClientManager'>
+
+> File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\scrapers\database\mongo_client.py", line 33, in __init__
+    self._ensure_indexes()
+    │    └ <function MongoClientManager._ensure_indexes at 0x000001ED1C60C430>
+    └ <scrapers.database.mongo_client.MongoClientManager object at 0x000001ED19A57BE0>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\scrapers\database\mongo_client.py", line 42, in _ensure_indexes
+    self.collection.create_index("profile_url", unique=True)
+    │    │          └ <function Collection.create_index at 0x000001ED1C5A8AF0>
+    │    └ Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'dr_doctor'), '...
+    └ <scrapers.database.mongo_client.MongoClientManager object at 0x000001ED19A57BE0>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\collection.py", line 2387, in create_index
+    return (self._create_indexes([index], session, **cmd_options))[0]
+            │    │                │       │          └ {}
+            │    │                │       └ None
+            │    │                └ IndexModel({'profile_url': 1}, unique=True, name='profile_url_1')
+            │    └ <function Collection._create_indexes at 0x000001ED1C5A8A60>
+            └ Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'dr_doctor'), '...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\_csot.py", line 125, in csot_wrapper
+    return func(self, *args, **kwargs)
+           │    │      │       └ {}
+           │    │      └ ([IndexModel({'profile_url': 1}, unique=True, name='profile_url_1')], None)
+           │    └ Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'dr_doctor'), '...
+           └ <function Collection._create_indexes at 0x000001ED1C5A89D0>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\collection.py", line 2240, in _create_indexes
+    with self._conn_for_writes(session, operation=_Op.CREATE_INDEXES) as conn:
+         │    │                │                  │   └ <_Op.CREATE_INDEXES: 'createIndexes'>
+         │    │                │                  └ <enum '_Op'>
+         │    │                └ None
+         │    └ <function Collection._conn_for_writes at 0x000001ED1C59B910>
+         └ Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'dr_doctor'), '...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\collection.py", line 578, in _conn_for_writes
+    return self._database.client._conn_for_writes(session, operation)
+           │    │         │                       │        └ <_Op.CREATE_INDEXES: 'createIndexes'>
+           │    │         │                       └ None
+           │    │         └ <property object at 0x000001ED1C5B7DD0>
+           │    └ Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'dr_doctor')
+           └ Collection(Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True), 'dr_doctor'), '...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\mongo_client.py", line 1850, in _conn_for_writes
+    server = self._select_server(writable_server_selector, session, operation)
+             │    │              │                         │        └ <_Op.CREATE_INDEXES: 'createIndexes'>
+             │    │              │                         └ None
+             │    │              └ <function writable_server_selector at 0x000001ED1C36D7E0>
+             │    └ <function MongoClient._select_server at 0x000001ED1C606830>
+             └ MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=False, connect=True)
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\mongo_client.py", line 1833, in _select_server
+    server = topology.select_server(
+             │        └ <function Topology.select_server at 0x000001ED1C5FB5B0>
+             └ <Topology <TopologyDescription id: 692f5cc22d3b042045c4b2df, topology_type: Unknown, servers: [<ServerDescription ('localhost...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\topology.py", line 409, in select_server
+    server = self._select_server(
+             │    └ <function Topology._select_server at 0x000001ED1C5FB520>
+             └ <Topology <TopologyDescription id: 692f5cc22d3b042045c4b2df, topology_type: Unknown, servers: [<ServerDescription ('localhost...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\topology.py", line 387, in _select_server
+    servers = self.select_servers(
+              │    └ <function Topology.select_servers at 0x000001ED1C5FB400>
+              └ <Topology <TopologyDescription id: 692f5cc22d3b042045c4b2df, topology_type: Unknown, servers: [<ServerDescription ('localhost...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\topology.py", line 294, in select_servers
+    server_descriptions = self._select_servers_loop(
+                          │    └ <function Topology._select_servers_loop at 0x000001ED1C5FB490>
+                          └ <Topology <TopologyDescription id: 692f5cc22d3b042045c4b2df, topology_type: Unknown, servers: [<ServerDescription ('localhost...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\pymongo\synchronous\topology.py", line 344, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+          └ <class 'pymongo.errors.ServerSelectionTimeoutError'>
+
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 692f5cc22d3b042045c4b2df, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
