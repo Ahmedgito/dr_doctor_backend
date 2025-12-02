@@ -1,0 +1,7 @@
+playwright
+beautifulsoup4
+pydantic
+pymongo
+python-dotenv
+loguru
+pandas

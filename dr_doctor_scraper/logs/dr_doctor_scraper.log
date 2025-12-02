@@ -1,0 +1,26 @@
+2025-12-02 04:56:37 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='oladoc', headless=True, limit=20)
+2025-12-02 04:56:37 | INFO     | scrapers.database.mongo_client:__init__:28 - Connecting to MongoDB at mongodb://localhost:27017/
+2025-12-02 04:56:37 | INFO     | __main__:run_for_site:45 - Running Oladoc scraper
+2025-12-02 04:56:39 | INFO     | scrapers.base_scraper:__enter__:44 - Playwright browser started (headless=True)
+2025-12-02 04:56:39 | INFO     | scrapers.oladoc_scraper:scrape:108 - Starting Oladoc scraping from https://www.oladoc.com/doctors
+2025-12-02 04:56:39 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.oladoc.com/doctors
+2025-12-02 04:56:45 | INFO     | scrapers.oladoc_scraper:_extract_profile_links:53 - Found 0 Oladoc profile links on listing page
+2025-12-02 04:56:45 | INFO     | scrapers.oladoc_scraper:scrape:146 - Oladoc scraping finished. total=0, inserted=0, skipped=0
+2025-12-02 04:56:45 | INFO     | __main__:run_for_site:55 - Stats for oladoc: total=0, inserted=0, skipped=0
+2025-12-02 04:56:45 | INFO     | __main__:main:81 - === Scraping finished ===
+Total scraped: 0
+Total inserted: 0
+Total skipped: 0
+2025-12-02 04:57:41 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='oladoc', headless=True, limit=20)
+2025-12-02 04:57:41 | INFO     | scrapers.database.mongo_client:__init__:28 - Connecting to MongoDB at mongodb://localhost:27017/
+2025-12-02 04:57:41 | INFO     | __main__:run_for_site:45 - Running Oladoc scraper
+2025-12-02 04:57:41 | INFO     | scrapers.base_scraper:__enter__:44 - Playwright browser started (headless=True)
+2025-12-02 04:57:41 | INFO     | scrapers.oladoc_scraper:scrape:108 - Starting Oladoc scraping from https://www.oladoc.com/doctors
+2025-12-02 04:57:41 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.oladoc.com/doctors
+2025-12-02 04:57:44 | INFO     | scrapers.oladoc_scraper:_extract_profile_links:53 - Found 0 Oladoc profile links on listing page
+2025-12-02 04:57:44 | INFO     | scrapers.oladoc_scraper:scrape:146 - Oladoc scraping finished. total=0, inserted=0, skipped=0
+2025-12-02 04:57:44 | INFO     | __main__:run_for_site:55 - Stats for oladoc: total=0, inserted=0, skipped=0
+2025-12-02 04:57:44 | INFO     | __main__:main:81 - === Scraping finished ===
+Total scraped: 0
+Total inserted: 0
+Total skipped: 0
