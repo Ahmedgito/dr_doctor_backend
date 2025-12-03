@@ -10,7 +10,7 @@ class DoctorModel(BaseModel):
     name: str
     specialty: List[str]
     fees: Optional[int]
-    city: str
+    city: Optional[ str ]
     area: Optional[str]
     hospital: Optional[str]
     address: Optional[str]
