@@ -290,3 +290,334 @@ Traceback (most recent call last):
           └ <class 'pymongo.errors.ServerSelectionTimeoutError'>
 
 pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 692f5cc22d3b042045c4b2df, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [WinError 10061] No connection could be made because the target machine actively refused it (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-12-03 15:14:08 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='oladoc', headless=True, limit=None)
+2025-12-03 15:14:08 | INFO     | scrapers.database.mongo_client:__init__:28 - Connecting to MongoDB at mongodb://localhost:27017/
+2025-12-03 15:14:08 | INFO     | __main__:run_for_site:45 - Running Oladoc scraper
+2025-12-03 15:14:19 | INFO     | scrapers.base_scraper:__enter__:44 - Playwright browser started (headless=True)
+2025-12-03 15:14:19 | INFO     | scrapers.oladoc_scraper:scrape:108 - Starting Oladoc scraping from https://www.oladoc.com/doctors
+2025-12-03 15:14:19 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.oladoc.com/doctors
+2025-12-03 15:14:24 | INFO     | scrapers.oladoc_scraper:_extract_profile_links:53 - Found 0 Oladoc profile links on listing page
+2025-12-03 15:14:24 | INFO     | scrapers.oladoc_scraper:scrape:146 - Oladoc scraping finished. total=0, inserted=0, skipped=0
+2025-12-03 15:14:24 | INFO     | __main__:run_for_site:55 - Stats for oladoc: total=0, inserted=0, skipped=0
+2025-12-03 15:14:24 | INFO     | __main__:main:81 - === Scraping finished ===
+Total scraped: 0
+Total inserted: 0
+Total skipped: 0
+2025-12-03 15:14:25 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='marham', headless=True, limit=None)
+2025-12-03 15:14:25 | INFO     | scrapers.database.mongo_client:__init__:28 - Connecting to MongoDB at mongodb://localhost:27017/
+2025-12-03 15:14:25 | INFO     | __main__:run_for_site:49 - Running Marham scraper
+2025-12-03 15:14:26 | INFO     | scrapers.base_scraper:__enter__:44 - Playwright browser started (headless=True)
+2025-12-03 15:14:26 | INFO     | scrapers.marham_scraper:scrape:108 - Starting Marham scraping from https://www.marham.pk/doctors
+2025-12-03 15:14:26 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors
+2025-12-03 15:14:30 | INFO     | scrapers.marham_scraper:_extract_profile_links:53 - Found 151 Marham profile links on listing page
+2025-12-03 15:14:30 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 1 of 151: https://www.marham.pk/doctors/dermatologist
+2025-12-03 15:14:30 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/dermatologist
+2025-12-03 15:14:32 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 1,191 Best Dermatologists In Pakistan | Top Skin Specialists (id=69300d888ab037d8a39390c1)
+2025-12-03 15:14:32 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 2 of 151: https://www.marham.pk/doctors/gynecologist
+2025-12-03 15:14:32 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/gynecologist
+2025-12-03 15:14:35 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 3,044 Best Gynecologists In Pakistan (id=69300d8b8ab037d8a39390c2)
+2025-12-03 15:14:35 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 3 of 151: https://www.marham.pk/doctors/psychiatrist
+2025-12-03 15:14:35 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/psychiatrist
+2025-12-03 15:14:39 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 548 Best Psychiatrists In Pakistan (id=69300d8f8ab037d8a39390c3)
+2025-12-03 15:14:39 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 4 of 151: https://www.marham.pk/doctors/psychologist
+2025-12-03 15:14:39 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/psychologist
+2025-12-03 15:14:40 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 1,173 Best Psychologists In Pakistan (id=69300d908ab037d8a39390c4)
+2025-12-03 15:14:40 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 5 of 151: https://www.marham.pk/doctors/urologist
+2025-12-03 15:14:40 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/urologist
+2025-12-03 15:14:44 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 628 Best Urologists In Pakistan | Top Bladder Specialists (id=69300d948ab037d8a39390c5)
+2025-12-03 15:14:44 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 6 of 151: https://www.marham.pk/doctors/general-physician
+2025-12-03 15:14:44 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/general-physician
+2025-12-03 15:14:48 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 2,416 Best General Physicians In Pakistan (id=69300d988ab037d8a39390c6)
+2025-12-03 15:14:48 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 7 of 151: https://www.marham.pk/doctors/gastroenterologist
+2025-12-03 15:14:48 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/gastroenterologist
+2025-12-03 15:14:53 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 587 Best Gastroenterologists In Pakistan (id=69300d9d8ab037d8a39390c7)
+2025-12-03 15:14:53 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 8 of 151: https://www.marham.pk/doctors/pediatrician
+2025-12-03 15:14:53 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/pediatrician
+2025-12-03 15:14:57 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: Best Pediatricians In Pakistan (id=69300da18ab037d8a39390c8)
+2025-12-03 15:14:57 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 9 of 151: https://www.marham.pk/doctors/general-practitioner
+2025-12-03 15:14:57 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/general-practitioner
+2025-12-03 15:15:00 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 632 Best General Practitioners In Pakistan (id=69300da48ab037d8a39390c9)
+2025-12-03 15:15:00 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 10 of 151: https://www.marham.pk/doctors/nutritionist
+2025-12-03 15:15:00 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/nutritionist
+2025-12-03 15:15:04 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 638 Best Nutritionist (Dietitian) In Pakistan (id=69300da88ab037d8a39390ca)
+2025-12-03 15:15:04 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 11 of 151: https://www.marham.pk/doctors/orthopedic-surgeon
+2025-12-03 15:15:04 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/orthopedic-surgeon
+2025-12-03 15:15:08 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 1,177 Best Orthopedic Surgeons In Pakistan | Bone Doctors (id=69300dac8ab037d8a39390cb)
+2025-12-03 15:15:08 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 12 of 151: https://www.marham.pk/doctors/dentist
+2025-12-03 15:15:08 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/dentist
+2025-12-03 15:15:12 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 3,264 Best Dentists In Pakistan (id=69300db08ab037d8a39390cc)
+2025-12-03 15:15:12 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 13 of 151: https://www.marham.pk/doctors/general-surgeon
+2025-12-03 15:15:12 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/general-surgeon
+2025-12-03 15:15:19 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 1,837 Best General Surgeons In Pakistan (id=69300db78ab037d8a39390cd)
+2025-12-03 15:15:19 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 14 of 151: https://www.marham.pk/doctors/neuro-physician
+2025-12-03 15:15:19 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/neuro-physician
+2025-12-03 15:15:23 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 370 Best Neurologists In Pakistan | Top Neuro Physicians (id=69300dbb8ab037d8a39390ce)
+2025-12-03 15:15:23 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 15 of 151: https://www.marham.pk/doctors/physiotherapist
+2025-12-03 15:15:23 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/physiotherapist
+2025-12-03 15:15:27 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 1,975 Best Physiotherapists In Pakistan | Physical Therapy (id=69300dbf8ab037d8a39390cf)
+2025-12-03 15:15:27 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 16 of 151: https://www.marham.pk/doctors/cardiologist
+2025-12-03 15:15:27 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/cardiologist
+2025-12-03 15:15:32 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: Best Cardiologist/Heart Specialist In Pakistan (id=69300dc48ab037d8a39390d0)
+2025-12-03 15:15:32 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 17 of 151: https://www.marham.pk/doctors/pulmonologist
+2025-12-03 15:15:32 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/pulmonologist
+2025-12-03 15:15:35 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 482 Best Pulmonologists In Pakistan (id=69300dc78ab037d8a39390d1)
+2025-12-03 15:15:35 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 18 of 151: https://www.marham.pk/doctors/neuro-surgeon
+2025-12-03 15:15:35 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/neuro-surgeon
+2025-12-03 15:15:41 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 422 Best Neurosurgeons In Pakistan | Top Brain Surgeons (id=69300dcd8ab037d8a39390d2)
+2025-12-03 15:15:41 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 19 of 151: https://www.marham.pk/doctors/internal-medicine
+2025-12-03 15:15:41 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/internal-medicine
+2025-12-03 15:15:44 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 1,113 Best Internal Medicine Specialists Pakistan (id=69300dd08ab037d8a39390d3)
+2025-12-03 15:15:44 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 20 of 151: https://www.marham.pk/doctors/nephrologist
+2025-12-03 15:15:44 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/nephrologist
+2025-12-03 15:15:49 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 333 Best Nephrologists In Pakistan (id=69300dd58ab037d8a39390d4)
+2025-12-03 15:15:49 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 21 of 151: https://www.marham.pk/doctors/ent-specialist
+2025-12-03 15:15:49 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/ent-specialist
+2025-12-03 15:15:54 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 584 Best ENT Specialists In Pakistan (id=69300dda8ab037d8a39390d5)
+2025-12-03 15:15:54 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 22 of 151: https://www.marham.pk/doctors/eye-specialist
+2025-12-03 15:15:54 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/eye-specialist
+2025-12-03 15:15:58 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 700 Best Eye Specialists In Pakistan | Top Opthalmologists (id=69300dde8ab037d8a39390d6)
+2025-12-03 15:15:58 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 23 of 151: https://www.marham.pk/doctors/eye-surgeon
+2025-12-03 15:15:58 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/eye-surgeon
+2025-12-03 15:16:03 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 512 Best Eye Surgeons In Pakistan (id=69300de38ab037d8a39390d7)
+2025-12-03 15:16:03 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 24 of 151: https://www.marham.pk/doctors/ent-surgeon
+2025-12-03 15:16:03 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/ent-surgeon
+2025-12-03 15:16:06 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 421 Best Ent Surgeons In Pakistan (id=69300de68ab037d8a39390d8)
+2025-12-03 15:16:06 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 25 of 151: https://www.marham.pk/doctors/endocrinologist
+2025-12-03 15:16:06 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/endocrinologist
+2025-12-03 15:16:12 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 223 Best Endocrinologists In Pakistan | Top Hormone Specialists (id=69300dec8ab037d8a39390d9)
+2025-12-03 15:16:12 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 26 of 151: https://www.marham.pk/doctors/plastic-surgeon
+2025-12-03 15:16:12 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/plastic-surgeon
+2025-12-03 15:16:17 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 297 Best Plastic Surgeons In Pakistan (id=69300df18ab037d8a39390da)
+2025-12-03 15:16:17 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 27 of 151: https://www.marham.pk/doctors/oncologist
+2025-12-03 15:16:17 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/oncologist
+2025-12-03 15:16:21 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 226 Best Oncologists In Pakistan (id=69300df58ab037d8a39390db)
+2025-12-03 15:16:21 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 28 of 151: https://www.marham.pk/doctors/homeopath
+2025-12-03 15:16:21 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/homeopath
+2025-12-03 15:16:26 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: Best Homeopaths In Pakistan | Marham (id=69300dfa8ab037d8a39390dc)
+2025-12-03 15:16:26 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 29 of 151: https://www.marham.pk/doctors/sexologist
+2025-12-03 15:16:26 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/sexologist
+2025-12-03 15:16:30 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 187 Best Sexologists In Pakistan (id=69300dfe8ab037d8a39390dd)
+2025-12-03 15:16:30 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 30 of 151: https://www.marham.pk/doctors/rheumatologist
+2025-12-03 15:16:30 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/rheumatologist
+2025-12-03 15:16:35 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 101 Best Rheumatologists In Pakistan (id=69300e038ab037d8a39390de)
+2025-12-03 15:16:35 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 31 of 151: https://www.marham.pk/doctors/pediatric-surgeon
+2025-12-03 15:16:35 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/pediatric-surgeon
+2025-12-03 15:16:40 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 221 Best Pediatric Surgeons In Pakistan (id=69300e088ab037d8a39390df)
+2025-12-03 15:16:40 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 32 of 151: https://www.marham.pk/doctors/radiologist
+2025-12-03 15:16:40 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/radiologist
+2025-12-03 15:16:44 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 493 Best Radiologists In Pakistan (id=69300e0c8ab037d8a39390e0)
+2025-12-03 15:16:44 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 33 of 151: https://www.marham.pk/doctors/medical-specialist
+2025-12-03 15:16:44 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/medical-specialist
+2025-12-03 15:16:48 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 500 Best Medical Specialists In Pakistan (id=69300e108ab037d8a39390e1)
+2025-12-03 15:16:48 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 34 of 151: https://www.marham.pk/doctors/speech-therapist
+2025-12-03 15:16:48 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/speech-therapist
+2025-12-03 15:16:53 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 226 Best Speech Therapists In Pakistan (id=69300e158ab037d8a39390e2)
+2025-12-03 15:16:53 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 35 of 151: https://www.marham.pk/doctors/hematologist
+2025-12-03 15:16:53 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/hematologist
+2025-12-03 15:16:57 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 108 Best Hematologists In Pakistan (id=69300e198ab037d8a39390e3)
+2025-12-03 15:16:57 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 36 of 151: https://www.marham.pk/doctors/vascular-surgeon
+2025-12-03 15:16:57 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/vascular-surgeon
+2025-12-03 15:17:02 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 35 Best Vascular Surgeons In Pakistan (id=69300e1e8ab037d8a39390e4)
+2025-12-03 15:17:02 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 37 of 151: https://www.marham.pk/doctors/diabetologist
+2025-12-03 15:17:02 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/diabetologist
+2025-12-03 15:17:05 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 438 Best Diabetologists In Pakistan (id=69300e218ab037d8a39390e5)
+2025-12-03 15:17:05 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 38 of 151: https://www.marham.pk/doctors/cardiac-surgeon
+2025-12-03 15:17:05 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/cardiac-surgeon
+2025-12-03 15:17:11 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 166 Best Cardiac Surgeons In Pakistan (id=69300e278ab037d8a39390e6)
+2025-12-03 15:17:11 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 39 of 151: https://www.marham.pk/doctors/laproscopic-surgeon
+2025-12-03 15:17:11 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/laproscopic-surgeon
+2025-12-03 15:17:14 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 536 Best Laparoscopic Surgeons In Pakistan (id=69300e2a8ab037d8a39390e7)
+2025-12-03 15:17:14 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 40 of 151: https://www.marham.pk/doctors/maxillofacial-surgeon
+2025-12-03 15:17:14 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/maxillofacial-surgeon
+2025-12-03 15:17:19 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 208 Best Oral And Maxillofacial Surgeons In Pakistan (id=69300e2f8ab037d8a39390e8)
+2025-12-03 15:17:19 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 41 of 151: https://www.marham.pk/doctors/counselor
+2025-12-03 15:17:19 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/counselor
+2025-12-03 15:17:23 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 108 Best Counselors In Pakistan (id=69300e338ab037d8a39390e9)
+2025-12-03 15:17:23 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 42 of 151: https://www.marham.pk/doctors/clinical-psychologist
+2025-12-03 15:17:23 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/clinical-psychologist
+2025-12-03 15:17:29 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 158 Best Clinical Psychologists In Pakistan (id=69300e398ab037d8a39390ea)
+2025-12-03 15:17:29 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 43 of 151: https://www.marham.pk/doctors/family-medicine
+2025-12-03 15:17:29 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/family-medicine
+2025-12-03 15:17:35 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 881 Best Family Medicines In Pakistan (id=69300e3f8ab037d8a39390eb)
+2025-12-03 15:17:35 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 44 of 151: https://www.marham.pk/doctors/interventional-cardiologist
+2025-12-03 15:17:35 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/interventional-cardiologist
+2025-12-03 15:17:41 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 91 Best Interventional Cardiologists In Pakistan (id=69300e458ab037d8a39390ec)
+2025-12-03 15:17:41 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 45 of 151: https://www.marham.pk/doctors/chiropractor
+2025-12-03 15:17:41 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/chiropractor
+2025-12-03 15:17:45 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: Best Chiropractors In Pakistan (id=69300e498ab037d8a39390ed)
+2025-12-03 15:17:46 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 46 of 151: https://www.marham.pk/doctors/clinical-nutritionist
+2025-12-03 15:17:46 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/clinical-nutritionist
+2025-12-03 15:17:52 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: Best Clinical Nutritionists| Pakistan (id=69300e508ab037d8a39390ee)
+2025-12-03 15:17:52 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 47 of 151: https://www.marham.pk/doctors/hepatologist
+2025-12-03 15:17:52 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/hepatologist
+2025-12-03 15:17:56 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 117 Best Hepatologists In Pakistan (id=69300e548ab037d8a39390ef)
+2025-12-03 15:17:56 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 48 of 151: https://www.marham.pk/doctors/audiologist
+2025-12-03 15:17:56 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/audiologist
+2025-12-03 15:18:02 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: Best Audiologists In Pakistan (id=69300e5a8ab037d8a39390f0)
+2025-12-03 15:18:02 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 49 of 151: https://www.marham.pk/doctors/liver-specialist
+2025-12-03 15:18:02 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/liver-specialist
+2025-12-03 15:18:05 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 23 Best Liver Specialists In Pakistan (id=69300e5d8ab037d8a39390f1)
+2025-12-03 15:18:05 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 50 of 151: https://www.marham.pk/doctors/cosmetic-surgeon
+2025-12-03 15:18:05 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/cosmetic-surgeon
+2025-12-03 15:18:11 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 147 Best Cosmetic Surgeons In Pakistan (id=69300e638ab037d8a39390f2)
+2025-12-03 15:18:11 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 51 of 151: https://www.marham.pk/doctors/pain-specialist
+2025-12-03 15:18:11 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/pain-specialist
+2025-12-03 15:18:15 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 120 Best Pain Specialists In Pakistan (id=69300e678ab037d8a39390f3)
+2025-12-03 15:18:15 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 52 of 151: https://www.marham.pk/doctors/sonologist
+2025-12-03 15:18:15 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/sonologist
+2025-12-03 15:18:21 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 354 Best Sonologists In Pakistan (id=69300e6d8ab037d8a39390f4)
+2025-12-03 15:18:21 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 53 of 151: https://www.marham.pk/doctors/pediatric-gastroenterologist
+2025-12-03 15:18:21 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/pediatric-gastroenterologist
+2025-12-03 15:18:26 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 15 Best Pediatric Gastroenterologists In Pakistan (id=69300e728ab037d8a39390f5)
+2025-12-03 15:18:26 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 54 of 151: https://www.marham.pk/doctors/infectious-diseases
+2025-12-03 15:18:26 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/infectious-diseases
+2025-12-03 15:18:31 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 56 Best Infectious Diseases Doctors In Pakistan | (id=69300e778ab037d8a39390f6)
+2025-12-03 15:18:31 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 55 of 151: https://www.marham.pk/doctors/pediatric-cardiologist
+2025-12-03 15:18:31 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/pediatric-cardiologist
+2025-12-03 15:18:35 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 29 Best Pediatric Cardiologists In Pakistan (id=69300e7b8ab037d8a39390f7)
+2025-12-03 15:18:35 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 56 of 151: https://www.marham.pk/doctors/neuro-psychiatrist
+2025-12-03 15:18:35 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/neuro-psychiatrist
+2025-12-03 15:18:40 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 11 Best Neuro Psychiatrists In Pakistan (id=69300e808ab037d8a39390f8)
+2025-12-03 15:18:40 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 57 of 151: https://www.marham.pk/doctors/andrologist
+2025-12-03 15:18:40 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/andrologist
+2025-12-03 15:18:45 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 133 Best Andrologists In Pakistan (id=69300e858ab037d8a39390f9)
+2025-12-03 15:18:45 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 58 of 151: https://www.marham.pk/doctors/hijama-specialist
+2025-12-03 15:18:45 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/hijama-specialist
+2025-12-03 15:18:49 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 39 Best Hijama Specialists In Pakistan (id=69300e898ab037d8a39390fa)
+2025-12-03 15:18:49 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 59 of 151: https://www.marham.pk/doctors/spinal-surgeon
+2025-12-03 15:18:49 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/spinal-surgeon
+2025-12-03 15:18:54 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 59 Best Spinal Surgeons In Pakistan (id=69300e8e8ab037d8a39390fb)
+2025-12-03 15:18:54 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 60 of 151: https://www.marham.pk/doctors/pediatric-neuro-physician
+2025-12-03 15:18:54 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/pediatric-neuro-physician
+2025-12-03 15:18:58 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 16 Best Pediatric Neuro Physicians In Pakistan (id=69300e928ab037d8a39390fc)
+2025-12-03 15:18:58 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 61 of 151: https://www.marham.pk/doctors/endourologist
+2025-12-03 15:18:58 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/endourologist
+2025-12-03 15:19:03 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 18 Best Endourologists In Pakistan (id=69300e978ab037d8a39390fd)
+2025-12-03 15:19:03 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 62 of 151: https://www.marham.pk/doctors/breast-surgeon
+2025-12-03 15:19:03 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/breast-surgeon
+2025-12-03 15:19:08 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 78 Best Breast Surgeons In Pakistan (id=69300e9c8ab037d8a39390fe)
+2025-12-03 15:19:08 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 63 of 151: https://www.marham.pk/doctors/bariatric-surgeon
+2025-12-03 15:19:08 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/bariatric-surgeon
+2025-12-03 15:19:13 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 42 Best Bariatric / Weight Loss Surgeons In Pakistan (id=69300ea18ab037d8a39390ff)
+2025-12-03 15:19:13 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 64 of 151: https://www.marham.pk/doctors/orthodontist
+2025-12-03 15:19:13 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/orthodontist
+2025-12-03 15:19:19 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 134 Best Orthodontists In Pakistan (id=69300ea78ab037d8a3939100)
+2025-12-03 15:19:19 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 65 of 151: https://www.marham.pk/doctors/optometrist
+2025-12-03 15:19:19 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/optometrist
+2025-12-03 15:19:25 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 55 Best Optometrists In Pakistan (id=69300ead8ab037d8a3939101)
+2025-12-03 15:19:25 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 66 of 151: https://www.marham.pk/doctors/immunologist
+2025-12-03 15:19:25 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/immunologist
+2025-12-03 15:19:30 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 6 Best Immunologists In Pakistan (id=69300eb28ab037d8a3939102)
+2025-12-03 15:19:30 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 67 of 151: https://www.marham.pk/doctors/pathologist
+2025-12-03 15:19:30 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/pathologist
+2025-12-03 15:19:36 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 72 Best Pathologists In Pakistan (id=69300eb88ab037d8a3939103)
+2025-12-03 15:19:36 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 68 of 151: https://www.marham.pk/doctors/aesthetic-physician
+2025-12-03 15:19:36 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/aesthetic-physician
+2025-12-03 15:19:40 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 141 Best Aesthetic Physicians In Pakistan (id=69300ebc8ab037d8a3939104)
+2025-12-03 15:19:40 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 69 of 151: https://www.marham.pk/doctors/chest-respiratory-specialist
+2025-12-03 15:19:40 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/chest-respiratory-specialist
+2025-12-03 15:19:46 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: Best Chest Respiratory Specialists In Pakistan (id=69300ec28ab037d8a3939105)
+2025-12-03 15:19:46 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 70 of 151: https://www.marham.pk/doctors/allergy-specialist
+2025-12-03 15:19:46 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/allergy-specialist
+2025-12-03 15:19:51 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 8 Best Allergy Specialists In Pakistan (id=69300ec78ab037d8a3939106)
+2025-12-03 15:19:51 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 71 of 151: https://www.marham.pk/doctors/pediatric-nephrologist
+2025-12-03 15:19:51 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/pediatric-nephrologist
+2025-12-03 15:19:57 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 21 Best Pediatric Nephrologists In Pakistan (id=69300ecd8ab037d8a3939107)
+2025-12-03 15:19:57 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 72 of 151: https://www.marham.pk/doctors/clinical-dietician
+2025-12-03 15:19:57 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/clinical-dietician
+2025-12-03 15:20:03 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 54 Best Clinical Dieticians | Pakistan (id=69300ed38ab037d8a3939108)
+2025-12-03 15:20:03 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 73 of 151: https://www.marham.pk/doctors/cancer-surgeon
+2025-12-03 15:20:03 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/cancer-surgeon
+2025-12-03 15:20:08 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: Best Cancer Surgeons In Pakistan (id=69300ed88ab037d8a3939109)
+2025-12-03 15:20:08 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 74 of 151: https://www.marham.pk/doctors/maternal-fetal-medicine-specialist
+2025-12-03 15:20:08 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/maternal-fetal-medicine-specialist
+2025-12-03 15:20:12 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 7 Best Maternal Fetal Medicine Specialists In Pakistan (id=69300edc8ab037d8a393910a)
+2025-12-03 15:20:12 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 75 of 151: https://www.marham.pk/doctors/child-psychologist
+2025-12-03 15:20:12 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/child-psychologist
+2025-12-03 15:20:17 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 14 Best Child Psychologists In Pakistan (id=69300ee18ab037d8a393910b)
+2025-12-03 15:20:17 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 76 of 151: https://www.marham.pk/doctors/occupational-therapist
+2025-12-03 15:20:17 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/occupational-therapist
+2025-12-03 15:20:20 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 15 Best Occupational Therapists In Pakistan (id=69300ee48ab037d8a393910c)
+2025-12-03 15:20:20 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 77 of 151: https://www.marham.pk/doctors/herbalist
+2025-12-03 15:20:20 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/herbalist
+2025-12-03 15:20:25 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 11 Best Herbalists In Pakistan (id=69300ee88ab037d8a393910d)
+2025-12-03 15:20:25 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 78 of 151: https://www.marham.pk/doctors/acupuncture
+2025-12-03 15:20:25 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/acupuncture
+2025-12-03 15:20:30 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: Best Acupuncturist In Pakistan (id=69300eee8ab037d8a393910e)
+2025-12-03 15:20:30 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 79 of 151: https://www.marham.pk/doctors/anesthetist
+2025-12-03 15:20:30 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/anesthetist
+2025-12-03 15:20:36 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 48 Best Anesthetists In Pakistan (id=69300ef48ab037d8a393910f)
+2025-12-03 15:20:36 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 80 of 151: https://www.marham.pk/doctors/liver-transplant-surgeon
+2025-12-03 15:20:36 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/liver-transplant-surgeon
+2025-12-03 15:20:38 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 13 Best Liver Transplant Surgeons In Pakistan (id=69300ef68ab037d8a3939110)
+2025-12-03 15:20:38 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 81 of 151: https://www.marham.pk/doctors/fitness-trainer
+2025-12-03 15:20:38 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/fitness-trainer
+2025-12-03 15:20:43 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: Best Fitness Trainers| Pakistan (id=69300efb8ab037d8a3939111)
+2025-12-03 15:20:43 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 82 of 151: https://www.marham.pk/doctors/neonatologist
+2025-12-03 15:20:43 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/neonatologist
+2025-12-03 15:20:47 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 146 Best Neonatologists In Pakistan (id=69300eff8ab037d8a3939112)
+2025-12-03 15:20:47 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 83 of 151: https://www.marham.pk/doctors/pediatric-cardiac-surgeon
+2025-12-03 15:20:47 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/pediatric-cardiac-surgeon
+2025-12-03 15:20:52 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 8 Best Pediatric Cardiac Surgeons In Pakistan (id=69300f048ab037d8a3939113)
+2025-12-03 15:20:52 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 84 of 151: https://www.marham.pk/doctors/nutritional-psychologist
+2025-12-03 15:20:52 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/nutritional-psychologist
+2025-12-03 15:20:56 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 98 Best Nutritional Psychologists In Pakistan (id=69300f088ab037d8a3939114)
+2025-12-03 15:20:56 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 85 of 151: https://www.marham.pk/doctors/interventional-radiologist
+2025-12-03 15:20:56 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/interventional-radiologist
+2025-12-03 15:21:01 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 7 Best Interventional Radiologists In Pakistan (id=69300f0d8ab037d8a3939115)
+2025-12-03 15:21:01 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 86 of 151: https://www.marham.pk/doctors/rehabilitation-medicine
+2025-12-03 15:21:01 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/rehabilitation-medicine
+2025-12-03 15:21:07 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 46 Best Rehabilitation Medicine Specialist In Pakistan (id=69300f138ab037d8a3939116)
+2025-12-03 15:21:07 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 87 of 151: https://www.marham.pk/doctors/orthotist-prosthetist
+2025-12-03 15:21:07 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/orthotist-prosthetist
+2025-12-03 15:21:14 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 21 Best Orthotist And Prosthetists In Pakistan (id=69300f1a8ab037d8a3939117)
+2025-12-03 15:21:14 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 88 of 151: https://www.marham.pk/doctors/chest-surgeon
+2025-12-03 15:21:14 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/chest-surgeon
+2025-12-03 15:21:19 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: Best Chest Surgeons In Pakistan (id=69300f1f8ab037d8a3939118)
+2025-12-03 15:21:19 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 89 of 151: https://www.marham.pk/doctors/pediatric-endocrinologist
+2025-12-03 15:21:19 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/pediatric-endocrinologist
+2025-12-03 15:21:25 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 6 Best Pediatric Endocrinologists In Pakistan (id=69300f258ab037d8a3939119)
+2025-12-03 15:21:25 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 90 of 151: https://www.marham.pk/doctors/alternative-medicine-practitioner
+2025-12-03 15:21:25 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/alternative-medicine-practitioner
+2025-12-03 15:21:29 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 220 Best Alternative Medicine Practitioners In Pakistan (id=69300f298ab037d8a393911a)
+2025-12-03 15:21:29 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 91 of 151: https://www.marham.pk/doctors/pediatric-oncologist-hematologist
+2025-12-03 15:21:29 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/pediatric-oncologist-hematologist
+2025-12-03 15:21:33 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 16 Best Pediatric Oncologist And Hematologists In Pakistan (id=69300f2d8ab037d8a393911b)
+2025-12-03 15:21:33 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 92 of 151: https://www.marham.pk/doctors/pediatric-orthopedic-surgeon
+2025-12-03 15:21:33 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/pediatric-orthopedic-surgeon
+2025-12-03 15:21:39 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 24 Best Pediatric Orthopedic Surgeons In Pakistan (id=69300f338ab037d8a393911c)
+2025-12-03 15:21:39 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 93 of 151: https://www.marham.pk/doctors/radiation-oncologist
+2025-12-03 15:21:39 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/radiation-oncologist
+2025-12-03 15:21:44 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 15 Best Radiation Oncologists In Pakistan (id=69300f388ab037d8a393911d)
+2025-12-03 15:21:44 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 94 of 151: https://www.marham.pk/doctors/geneticist
+2025-12-03 15:21:44 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/geneticist
+2025-12-03 15:21:49 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: Best Geneticists In Pakistan (id=69300f3d8ab037d8a393911e)
+2025-12-03 15:21:49 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 95 of 151: https://www.marham.pk/doctors/pharmacist
+2025-12-03 15:21:49 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/pharmacist
+2025-12-03 15:21:54 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 3 Best Pharmacists In Pakistan (id=69300f428ab037d8a393911f)
+2025-12-03 15:21:54 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 96 of 151: https://www.marham.pk/doctors/cosmetologist
+2025-12-03 15:21:54 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/cosmetologist
+2025-12-03 15:21:58 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 297 Best Cosmetologists In Pakistan (id=69300f468ab037d8a3939120)
+2025-12-03 15:21:58 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 97 of 151: https://www.marham.pk/doctors/thoracic-surgeon
+2025-12-03 15:21:58 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/thoracic-surgeon
+2025-12-03 15:22:01 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 31 Best Thoracic Surgeons In Pakistan | 2025 (id=69300f498ab037d8a3939121)
+2025-12-03 15:22:01 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 98 of 151: https://www.marham.pk/doctors/hair-transplant-surgeon
+2025-12-03 15:22:01 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/hair-transplant-surgeon
+2025-12-03 15:22:06 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 26 Best Hair Transplant Surgeons In Pakistan (id=69300f4e8ab037d8a3939122)
+2025-12-03 15:22:06 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 99 of 151: https://www.marham.pk/doctors/pediatric-urologist
+2025-12-03 15:22:06 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/pediatric-urologist
+2025-12-03 15:22:11 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 18 Best Pediatric Urologists In Pakistan (id=69300f538ab037d8a3939123)
+2025-12-03 15:22:11 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 100 of 151: https://www.marham.pk/doctors/burns-specialist
+2025-12-03 15:22:11 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/burns-specialist
+2025-12-03 15:22:16 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 20 Best Burns Specialists In Pakistan (id=69300f588ab037d8a3939124)
+2025-12-03 15:22:16 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 101 of 151: https://www.marham.pk/doctors/haemoncologist
+2025-12-03 15:22:16 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/haemoncologist
+2025-12-03 15:22:21 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: Best Haemoncologists In Pakistan (id=69300f5d8ab037d8a3939125)
+2025-12-03 15:22:21 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 102 of 151: https://www.marham.pk/doctors/naturopathic-doctor
+2025-12-03 15:22:21 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/naturopathic-doctor
+2025-12-03 15:22:24 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 5 Best Naturopathic Doctors In Pakistan (id=69300f608ab037d8a3939126)
+2025-12-03 15:22:24 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 103 of 151: https://www.marham.pk/doctors/cosmetic-dentist
+2025-12-03 15:22:24 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/cosmetic-dentist
+2025-12-03 15:22:28 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 111 Best Cosmetic Dentists In Pakistan (id=69300f648ab037d8a3939127)
+2025-12-03 15:22:28 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 104 of 151: https://www.marham.pk/doctors/obstetrician
+2025-12-03 15:22:28 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/obstetrician
