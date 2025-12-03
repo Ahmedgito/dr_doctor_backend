@@ -184,11 +184,20 @@ class MarhamScraper(BaseScraper):
             for h in hospitals:
                 if not h.get("name"):
                     continue
-                # insert hospital if missing
-                if not self.mongo_client.hospital_exists(h.get("name"), h.get("address")):
-                    hid = self.mongo_client.insert_hospital(HospitalModel(**h).dict())
-                    if hid:
-                        stats["hospitals"] += 1
+                # insert hospital if missing. Support older/newer MongoClientManager APIs.
+                try:
+                    if hasattr(self.mongo_client, "hospital_exists"):
+                        exists = self.mongo_client.hospital_exists(h.get("name"), h.get("address"))
+                    else:
+                        exists = self.mongo_client.hospitals.find_one({"name": h.get("name"), "address": h.get("address")}) is not None
+
+                    if not exists:
+                        hid = self.mongo_client.insert_hospital(HospitalModel(**h).dict())
+                        if hid:
+                            stats["hospitals"] += 1
+                except Exception:  # noqa: BLE001
+                    # If anything goes wrong checking/inserting hospitals, continue gracefully
+                    logger.warning("Could not verify/insert hospital: {}", h.get("name"))
                 if h.get("url"):
                     hospital_urls.append(h.get("url"))
 

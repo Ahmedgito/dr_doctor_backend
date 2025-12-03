@@ -1,101 +1,51 @@
-from __future__ import annotations
-
 import os
-from datetime import datetime
-from typing import Any, Dict, Optional
-
+from typing import Optional, Dict
+from pymongo import MongoClient, ASCENDING
 from dotenv import load_dotenv
-from loguru import logger
-from pymongo import MongoClient, errors
-
 
 load_dotenv()
 
-
 class MongoClientManager:
-    """MongoDB client wrapper for doctor documents."""
+    def __init__(self) -> None:
+        mongo_uri = os.getenv("MONGO_URI")
+        if not mongo_uri:
+            raise ValueError("MONGO_URI missing in .env")
+        
+        self.client = MongoClient(mongo_uri)
+        self.db = self.client["dr_doctor"]
 
-    def __init__(
-        self,
-        uri_env: str = "MONGO_URI",
-        db_name: str = "dr_doctor",
-        collection_name: str = "doctors",
-    ) -> None:
-        uri = os.getenv(uri_env)
-        if not uri:
-            raise RuntimeError(f"Environment variable {uri_env} is not set.")
+        self.doctors = self.db["doctors"]
+        self.hospitals = self.db["hospitals"]
 
-        logger.info("Connecting to MongoDB at {}", uri)
+        self.doctors.create_index([("profile_url", ASCENDING)], unique=True)
+        self.hospitals.create_index([("name", ASCENDING), ("address", ASCENDING)], unique=True)
+
+    # ------------ Doctors -----------------
+    def doctor_exists(self, url: str) -> bool:
+        return self.doctors.find_one({"profile_url": url}) is not None
+
+    def insert_doctor(self, doc: Dict) -> Optional[str]:
         try:
-            self.client = MongoClient(uri)
-            self.db = self.client[db_name]
-            self.collection = self.db[collection_name]
-            self._ensure_indexes()
-        except errors.PyMongoError as exc:  # noqa: BLE001
-            logger.exception("Failed to connect to MongoDB: {}", exc)
-            raise
-
-    def _ensure_indexes(self) -> None:
-        """Create indexes for faster lookups and uniqueness."""
-
-        logger.debug("Ensuring MongoDB indexes on 'profile_url' and 'platform'")
-        self.collection.create_index("profile_url", unique=True)
-        self.collection.create_index("platform")
-
-    # --- helper methods -----------------------------------------------------------
-
-    def doctor_exists(self, profile_url: str) -> bool:
-        return self.collection.count_documents({"profile_url": profile_url}, limit=1) > 0
-
-    def insert_doctor(self, doc: Dict[str, Any]) -> Optional[str]:
-        """Insert a new doctor document.
-
-        Returns inserted_id as string or None if duplicate / failure.
-        """
-
-        if "scraped_at" not in doc:
-            doc["scraped_at"] = datetime.utcnow()
-
-        try:
-            result = self.collection.insert_one(doc)
-            logger.info("Inserted doctor: {} (id={})", doc.get("name"), result.inserted_id)
+            result = self.doctors.insert_one(doc)
             return str(result.inserted_id)
-        except errors.DuplicateKeyError:
-            logger.info("Duplicate doctor skipped (profile_url={})", doc.get("profile_url"))
-            return None
-        except errors.PyMongoError as exc:  # noqa: BLE001
-            logger.exception("Failed to insert doctor {}: {}", doc.get("name"), exc)
+        except Exception:
             return None
 
-    def update_doctor(self, doc: Dict[str, Any]) -> bool:
-        """Upsert doctor document by profile_url."""
+    # ------------ Hospitals -----------------
+    def hospital_exists(self, name: str, address: str) -> bool:
+        return self.hospitals.find_one({"name": name, "address": address}) is not None
 
-        if "profile_url" not in doc:
-            raise ValueError("Doctor document must include 'profile_url' for update.")
-
-        if "scraped_at" not in doc:
-            doc["scraped_at"] = datetime.utcnow()
-
+    def insert_hospital(self, doc: Dict) -> Optional[str]:
         try:
-            result = self.collection.update_one(
-                {"profile_url": doc["profile_url"]},
-                {"$set": doc},
-                upsert=True,
-            )
-            logger.info(
-                "Upserted doctor: {} (matched={}, modified={}, upserted_id={})",
-                doc.get("name"),
-                result.matched_count,
-                result.modified_count,
-                result.upserted_id,
-            )
-            return True
-        except errors.PyMongoError as exc:  # noqa: BLE001
-            logger.exception("Failed to update doctor {}: {}", doc.get("name"), exc)
-            return False
+            result = self.hospitals.insert_one(doc)
+            return str(result.inserted_id)
+        except Exception:
+            return None
 
     def close(self) -> None:
+        """Close the underlying MongoDB client connection."""
         try:
-            self.client.close()
-        except Exception as exc:  # noqa: BLE001
-            logger.warning("Error while closing Mongo client: {}", exc)
+            if hasattr(self, "client") and self.client:
+                self.client.close()
+        except Exception:
+            pass
