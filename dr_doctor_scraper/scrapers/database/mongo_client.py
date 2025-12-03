@@ -49,3 +49,25 @@ class MongoClientManager:
                 self.client.close()
         except Exception:
             pass
+
+    def update_hospital(self, url: Optional[str], doc: Dict) -> bool:
+        """Update hospital document by `url` if present, otherwise try name+address.
+
+        Performs an upsert so minimal entries inserted earlier will be enriched.
+        Returns True on success, False otherwise.
+        """
+        try:
+            if url:
+                result = self.hospitals.update_one({"url": url}, {"$set": doc}, upsert=True)
+                return bool(result.raw_result.get("ok", 0))
+
+            # Fallback: try match by name + address
+            name = doc.get("name")
+            address = doc.get("address")
+            if name and address:
+                result = self.hospitals.update_one({"name": name, "address": address}, {"$set": doc}, upsert=True)
+                return bool(result.raw_result.get("ok", 0))
+
+            return False
+        except Exception:
+            return False

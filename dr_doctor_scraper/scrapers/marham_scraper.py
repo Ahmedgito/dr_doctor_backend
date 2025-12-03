@@ -71,6 +71,25 @@ class MarhamScraper(BaseScraper):
 
         return hospitals
 
+    def _parse_full_hospital(self, html: str, url: str) -> dict:
+        """Parse hospital page to extract enriched hospital information."""
+        soup = BeautifulSoup(html, "html.parser")
+        name = clean_text(self._first(soup.select_one(".hospital-title, h1, .hosp_name")))
+        address = clean_text(self._first(soup.select_one(".address, .hospital-address, p.text-sm")))
+        city = clean_text(self._first(soup.select_one(".city"))) or "Karachi"
+        area = clean_text(self._first(soup.select_one(".area")))
+        timing = clean_text(self._first(soup.select_one(".timing, .hospital-timing")))
+
+        return {
+            "name": name,
+            "address": address,
+            "city": city,
+            "area": area,
+            "platform": self.PLATFORM,
+            "url": url,
+            "timing": timing,
+        }
+
     # ------------------ Doctor extraction per hospital ------------------
     def _collect_doctor_cards_from_hospital(self, hospital_url: str) -> List[BeautifulSoup]:
         """Load the hospital page and attempt to collect all doctor cards.
@@ -164,7 +183,8 @@ class MarhamScraper(BaseScraper):
         hospital_urls: List[str] = []
         stats = {"total": 0, "inserted": 0, "skipped": 0, "hospitals": 0}
 
-        # Paginate hospitals listing
+
+        # ---------------- Phase 1: Collect minimal hospital entries (name + url)
         page = 1
         while True:
             url = f"{self.hospitals_listing_url}{page}"
@@ -184,20 +204,23 @@ class MarhamScraper(BaseScraper):
             for h in hospitals:
                 if not h.get("name"):
                     continue
-                # insert hospital if missing. Support older/newer MongoClientManager APIs.
+
+                # Insert a minimal hospital record (name + url). We'll enrich it later.
                 try:
+                    exists = False
                     if hasattr(self.mongo_client, "hospital_exists"):
                         exists = self.mongo_client.hospital_exists(h.get("name"), h.get("address"))
                     else:
                         exists = self.mongo_client.hospitals.find_one({"name": h.get("name"), "address": h.get("address")}) is not None
 
                     if not exists:
-                        hid = self.mongo_client.insert_hospital(HospitalModel(**h).dict())
-                        if hid:
-                            stats["hospitals"] += 1
+                        # minimal doc
+                        minimal = {"name": h.get("name"), "platform": self.PLATFORM, "url": h.get("url")}
+                        self.mongo_client.insert_hospital(HospitalModel(**minimal).dict())
+                        stats["hospitals"] += 1
                 except Exception:  # noqa: BLE001
-                    # If anything goes wrong checking/inserting hospitals, continue gracefully
-                    logger.warning("Could not verify/insert hospital: {}", h.get("name"))
+                    logger.warning("Could not insert minimal hospital: {}", h.get("name"))
+
                 if h.get("url"):
                     hospital_urls.append(h.get("url"))
 
@@ -212,26 +235,49 @@ class MarhamScraper(BaseScraper):
 
         logger.info("Collected {} hospital URLs to process", len(hospital_urls))
 
-        # For each hospital, collect doctor cards and save doctors
+
+        # ---------------- Phase 2: Enrich hospitals then collect & save doctors
         for hosp_url in hospital_urls:
-            cards = self._collect_doctor_cards_from_hospital(hosp_url)
-            for card in cards:
-                stats["total"] += 1
-                doctor = self._parse_doctor_card(card, hosp_url)
-                if not doctor:
-                    stats["skipped"] += 1
-                    continue
+            try:
+                # Load hospital page and enrich hospital doc
+                self.load_page(hosp_url)
+                self.wait_for("body")
+                hosp_html = self.get_html()
+                enriched = self._parse_full_hospital(hosp_html, hosp_url)
 
-                if self.mongo_client.doctor_exists(doctor.profile_url):
-                    stats["skipped"] += 1
-                    continue
-
+                updated = False
                 try:
-                    self.mongo_client.insert_doctor(doctor.dict())
-                    stats["inserted"] += 1
-                except Exception as exc:  # noqa: BLE001
-                    logger.exception("Failed to insert doctor {}: {}", doctor.profile_url, exc)
-                    stats["skipped"] += 1
+                    if hasattr(self.mongo_client, "update_hospital"):
+                        updated = self.mongo_client.update_hospital(hosp_url, enriched)
+                    else:
+                        # fallback: insert as a new doc if update not available
+                        self.mongo_client.insert_hospital(HospitalModel(**enriched).dict())
+                        updated = True
+                except Exception:
+                    logger.warning("Failed to update/insert enriched hospital for {}", hosp_url)
+
+                # Collect doctor cards and save doctors
+                cards = self._collect_doctor_cards_from_hospital(hosp_url)
+                for card in cards:
+                    stats["total"] += 1
+                    doctor = self._parse_doctor_card(card, hosp_url)
+                    if not doctor:
+                        stats["skipped"] += 1
+                        continue
+
+                    if self.mongo_client.doctor_exists(doctor.profile_url):
+                        stats["skipped"] += 1
+                        continue
+
+                    try:
+                        self.mongo_client.insert_doctor(doctor.dict())
+                        stats["inserted"] += 1
+                    except Exception as exc:  # noqa: BLE001
+                        logger.exception("Failed to insert doctor {}: {}", doctor.profile_url, exc)
+                        stats["skipped"] += 1
+
+            except Exception as exc:  # noqa: BLE001
+                logger.warning("Failed processing hospital {}: {}", hosp_url, exc)
 
             # polite pause between hospitals
             time.sleep(1)
