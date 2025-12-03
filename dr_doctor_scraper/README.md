@@ -50,8 +50,16 @@ dr_doctor_scraper/
 cd dr_doctor_scraper
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\\Scripts\\activate
-```
 
+```
+if is gives an eror that u cant run scrips in power schell then run this comnad first 
+```bash
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+then run 
+```bash
+.venv\Scripts\Activate.ps1
+```
 ### 3.2. Install dependencies
 
 ```bash
