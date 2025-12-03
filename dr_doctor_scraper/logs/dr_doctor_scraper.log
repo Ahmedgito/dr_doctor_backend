@@ -800,3 +800,833 @@ Call log:
 Total scraped: 103
 Total inserted: 95
 Total skipped: 8
+2025-12-04 02:43:56 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='marham', headless=True, limit=5)
+2025-12-04 02:43:56 | INFO     | __main__:run_for_site:49 - Running Marham scraper
+2025-12-04 02:43:57 | INFO     | scrapers.base_scraper:__enter__:44 - Playwright browser started (headless=True)
+2025-12-04 02:43:57 | INFO     | scrapers.marham_scraper:scrape:181 - Starting Marham hospital-first scraping from https://www.marham.pk/hospitals/karachi?page=
+2025-12-04 02:43:57 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi?page=1
+2025-12-04 02:44:00 | INFO     | scrapers.marham_scraper:scrape:236 - Collected 5 hospital URLs to process
+2025-12-04 02:44:00 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines
+2025-12-04 02:44:02 | WARNING  | scrapers.marham_scraper:scrape:280 - Failed processing hospital https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines: 'MarhamScraper' object has no attribute '_first'
+2025-12-04 02:44:03 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar
+2025-12-04 02:44:06 | WARNING  | scrapers.marham_scraper:scrape:280 - Failed processing hospital https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar: 'MarhamScraper' object has no attribute '_first'
+2025-12-04 02:44:07 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal
+2025-12-04 02:44:08 | WARNING  | scrapers.marham_scraper:scrape:280 - Failed processing hospital https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal: 'MarhamScraper' object has no attribute '_first'
+2025-12-04 02:44:09 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar
+2025-12-04 02:44:11 | WARNING  | scrapers.marham_scraper:scrape:280 - Failed processing hospital https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar: 'MarhamScraper' object has no attribute '_first'
+2025-12-04 02:44:12 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton
+2025-12-04 02:44:13 | WARNING  | scrapers.marham_scraper:scrape:280 - Failed processing hospital https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton: 'MarhamScraper' object has no attribute '_first'
+2025-12-04 02:44:14 | INFO     | scrapers.marham_scraper:scrape:285 - Marham scraping finished: {'total': 0, 'inserted': 0, 'skipped': 0, 'hospitals': 0}
+2025-12-04 02:44:14 | INFO     | __main__:run_for_site:55 - Stats for marham: total=0, inserted=0, skipped=0
+2025-12-04 02:44:14 | INFO     | __main__:main:81 - === Scraping finished ===
+Total scraped: 0
+Total inserted: 0
+Total skipped: 0
+2025-12-04 02:51:41 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='marham', headless=True, limit=5)
+2025-12-04 02:51:41 | INFO     | __main__:run_for_site:49 - Running Marham scraper
+2025-12-04 02:51:42 | INFO     | scrapers.base_scraper:__enter__:44 - Playwright browser started (headless=True)
+2025-12-04 02:51:42 | INFO     | scrapers.marham_scraper:scrape:181 - Starting Marham hospital-first scraping from https://www.marham.pk/hospitals/karachi?page=
+2025-12-04 02:51:42 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi?page=1
+2025-12-04 02:51:48 | WARNING  | scrapers.marham_scraper:scrape:222 - Could not insert minimal hospital: Hashmanis Hospital - M A Jinnah Road, Karachi
+2025-12-04 02:51:48 | WARNING  | scrapers.marham_scraper:scrape:222 - Could not insert minimal hospital: Qureshi Ent Medical Centre, Karachi
+2025-12-04 02:51:48 | WARNING  | scrapers.marham_scraper:scrape:222 - Could not insert minimal hospital: Karachi Medical Complex Consultants Clinic, Karachi
+2025-12-04 02:51:48 | WARNING  | scrapers.marham_scraper:scrape:222 - Could not insert minimal hospital: Taj Medical Complex Hospital Room 14, Karachi, Karachi
+2025-12-04 02:51:48 | WARNING  | scrapers.marham_scraper:scrape:222 - Could not insert minimal hospital: Metropolis Health Clinics, Karachi
+2025-12-04 02:51:48 | INFO     | scrapers.marham_scraper:scrape:236 - Collected 5 hospital URLs to process
+2025-12-04 02:51:48 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines
+2025-12-04 02:51:50 | WARNING  | scrapers.marham_scraper:scrape:280 - Failed processing hospital https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines: 'MarhamScraper' object has no attribute '_first'
+2025-12-04 02:51:51 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar
+2025-12-04 02:51:53 | WARNING  | scrapers.marham_scraper:scrape:280 - Failed processing hospital https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar: 'MarhamScraper' object has no attribute '_first'
+2025-12-04 02:51:54 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal
+2025-12-04 02:51:56 | WARNING  | scrapers.marham_scraper:scrape:280 - Failed processing hospital https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal: 'MarhamScraper' object has no attribute '_first'
+2025-12-04 02:51:57 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar
+2025-12-04 02:51:58 | WARNING  | scrapers.marham_scraper:scrape:280 - Failed processing hospital https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar: 'MarhamScraper' object has no attribute '_first'
+2025-12-04 02:51:59 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton
+2025-12-04 02:52:01 | WARNING  | scrapers.marham_scraper:scrape:280 - Failed processing hospital https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton: 'MarhamScraper' object has no attribute '_first'
+2025-12-04 02:52:02 | INFO     | scrapers.marham_scraper:scrape:285 - Marham scraping finished: {'total': 0, 'inserted': 0, 'skipped': 0, 'hospitals': 0}
+2025-12-04 02:52:02 | INFO     | __main__:run_for_site:55 - Stats for marham: total=0, inserted=0, skipped=0
+2025-12-04 02:52:02 | INFO     | __main__:main:81 - === Scraping finished ===
+Total scraped: 0
+Total inserted: 0
+Total skipped: 0
+2025-12-04 02:52:31 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='marham', headless=True, limit=5)
+2025-12-04 02:52:31 | INFO     | __main__:run_for_site:49 - Running Marham scraper
+2025-12-04 02:52:31 | INFO     | scrapers.base_scraper:__enter__:44 - Playwright browser started (headless=True)
+2025-12-04 02:52:31 | INFO     | scrapers.marham_scraper:scrape:181 - Starting Marham hospital-first scraping from https://www.marham.pk/hospitals/karachi?page=
+2025-12-04 02:52:31 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi?page=1
+2025-12-04 02:52:34 | WARNING  | scrapers.marham_scraper:scrape:222 - Could not insert minimal hospital: Hashmanis Hospital - M A Jinnah Road, Karachi
+2025-12-04 02:52:34 | WARNING  | scrapers.marham_scraper:scrape:222 - Could not insert minimal hospital: Qureshi Ent Medical Centre, Karachi
+2025-12-04 02:52:34 | WARNING  | scrapers.marham_scraper:scrape:222 - Could not insert minimal hospital: Karachi Medical Complex Consultants Clinic, Karachi
+2025-12-04 02:52:34 | WARNING  | scrapers.marham_scraper:scrape:222 - Could not insert minimal hospital: Taj Medical Complex Hospital Room 14, Karachi, Karachi
+2025-12-04 02:52:34 | WARNING  | scrapers.marham_scraper:scrape:222 - Could not insert minimal hospital: Metropolis Health Clinics, Karachi
+2025-12-04 02:52:34 | INFO     | scrapers.marham_scraper:scrape:236 - Collected 5 hospital URLs to process
+2025-12-04 02:52:34 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines
+2025-12-04 02:52:37 | WARNING  | scrapers.marham_scraper:scrape:280 - Failed processing hospital https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines: 'MarhamScraper' object has no attribute '_first'
+2025-12-04 02:52:38 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar
+2025-12-04 02:52:39 | WARNING  | scrapers.marham_scraper:scrape:280 - Failed processing hospital https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar: 'MarhamScraper' object has no attribute '_first'
+2025-12-04 02:52:40 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal
+2025-12-04 02:52:44 | WARNING  | scrapers.marham_scraper:scrape:280 - Failed processing hospital https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal: 'MarhamScraper' object has no attribute '_first'
+2025-12-04 02:52:45 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar
+2025-12-04 02:52:47 | WARNING  | scrapers.marham_scraper:scrape:280 - Failed processing hospital https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar: 'MarhamScraper' object has no attribute '_first'
+2025-12-04 02:52:48 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton
+2025-12-04 02:52:50 | WARNING  | scrapers.marham_scraper:scrape:280 - Failed processing hospital https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton: 'MarhamScraper' object has no attribute '_first'
+2025-12-04 02:52:51 | INFO     | scrapers.marham_scraper:scrape:285 - Marham scraping finished: {'total': 0, 'inserted': 0, 'skipped': 0, 'hospitals': 0}
+2025-12-04 02:52:51 | INFO     | __main__:run_for_site:55 - Stats for marham: total=0, inserted=0, skipped=0
+2025-12-04 02:52:51 | INFO     | __main__:main:81 - === Scraping finished ===
+Total scraped: 0
+Total inserted: 0
+Total skipped: 0
+2025-12-04 02:57:05 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='marham', headless=True, limit=5)
+2025-12-04 02:57:05 | INFO     | __main__:run_for_site:49 - Running Marham scraper
+2025-12-04 02:57:06 | INFO     | scrapers.base_scraper:__enter__:44 - Playwright browser started (headless=True)
+2025-12-04 02:57:06 | INFO     | scrapers.marham_scraper:scrape:185 - Starting Marham hospital-first scraping from https://www.marham.pk/hospitals/karachi?page=
+2025-12-04 02:57:06 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi?page=1
+2025-12-04 02:57:12 | INFO     | scrapers.marham_scraper:scrape:248 - Collected 5 hospital URLs to process
+2025-12-04 02:57:12 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines
+2025-12-04 02:57:23 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines
+2025-12-04 02:57:25 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines — clicking until exhausted
+2025-12-04 02:57:42 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    28 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+
+2025-12-04 02:57:43 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar
+2025-12-04 02:57:44 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar
+2025-12-04 02:57:45 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar — clicking until exhausted
+2025-12-04 02:58:01 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 02:58:02 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal
+2025-12-04 02:58:04 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal
+2025-12-04 02:58:04 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal — clicking until exhausted
+2025-12-04 02:58:23 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    28 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 02:58:24 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar
+2025-12-04 02:58:25 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar
+2025-12-04 02:58:26 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar — clicking until exhausted
+2025-12-04 02:58:42 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 02:58:43 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton
+2025-12-04 02:58:45 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton
+2025-12-04 02:58:46 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton — clicking until exhausted
+2025-12-04 02:59:03 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 02:59:04 | INFO     | scrapers.marham_scraper:scrape:297 - Marham scraping finished: {'total': 103, 'inserted': 95, 'skipped': 8, 'hospitals': 5}
+2025-12-04 02:59:04 | INFO     | __main__:run_for_site:55 - Stats for marham: total=103, inserted=95, skipped=8
+2025-12-04 02:59:04 | INFO     | __main__:main:81 - === Scraping finished ===
+Total scraped: 103
+Total inserted: 95
+Total skipped: 8
+2025-12-04 03:01:45 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='marham', headless=True, limit=100)
+2025-12-04 03:01:45 | INFO     | __main__:run_for_site:49 - Running Marham scraper
+2025-12-04 03:01:45 | INFO     | scrapers.base_scraper:__enter__:44 - Playwright browser started (headless=True)
+2025-12-04 03:01:45 | INFO     | scrapers.marham_scraper:scrape:185 - Starting Marham hospital-first scraping from https://www.marham.pk/hospitals/karachi?page=
+2025-12-04 03:01:45 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi?page=1
+2025-12-04 03:01:49 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi?page=2
+2025-12-04 03:01:52 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi?page=3
+2025-12-04 03:01:58 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi?page=4
+2025-12-04 03:02:02 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi?page=5
+2025-12-04 03:02:07 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi?page=6
+2025-12-04 03:02:17 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi?page=7
+2025-12-04 03:02:23 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi?page=8
+2025-12-04 03:02:29 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi?page=9
+2025-12-04 03:02:35 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi?page=10
+2025-12-04 03:02:42 | INFO     | scrapers.marham_scraper:
+scrape:248 - Collected 100 hospital URLs to process
+2025-12-04 03:02:42 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines
+2025-12-04 03:02:45 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines
+2025-12-04 03:02:46 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines — clicking until exhausted
+2025-12-04 03:03:04 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:03:05 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar
+2025-12-04 03:03:11 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar
+2025-12-04 03:03:14 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar — clicking until exhausted
+2025-12-04 03:03:30 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:03:31 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal
+2025-12-04 03:03:34 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal
+2025-12-04 03:03:36 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal — clicking until exhausted
+2025-12-04 03:03:54 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" disabled="disabled" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:03:55 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar
+2025-12-04 03:04:08 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar
+2025-12-04 03:04:11 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar — clicking until exhausted
+2025-12-04 03:04:27 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" disabled="disabled" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    7 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 500ms
+    21 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:04:28 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton
+2025-12-04 03:04:43 | WARNING  | scrapers.base_scraper:_retry:69 - Timeout during action 'load_page: https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton", waiting until "networkidle"
+
+2025-12-04 03:04:48 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton
+2025-12-04 03:04:51 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton — clicking until exhausted
+2025-12-04 03:05:16 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" disabled="disabled" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    25 × waiting for element to be visible, enabled and stable
+       - element is not enabled
+     - retrying click action
+       - waiting 500ms
+    3 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 500ms
+
+2025-12-04 03:05:17 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/lyfe-healthcare-hospital/adamjee-nagar-society-block-a
+2025-12-04 03:05:32 | WARNING  | scrapers.base_scraper:_retry:69 - Timeout during action 'load_page: https://www.marham.pk/hospitals/karachi/lyfe-healthcare-hospital/adamjee-nagar-society-block-a' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/hospitals/karachi/lyfe-healthcare-hospital/adamjee-nagar-society-block-a", waiting until "networkidle"
+
+2025-12-04 03:05:46 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/lyfe-healthcare-hospital/adamjee-nagar-society-block-a
+2025-12-04 03:05:48 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/lyfe-healthcare-hospital/adamjee-nagar-society-block-a — clicking until exhausted
+2025-12-04 03:06:04 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/lyfe-healthcare-hospital/adamjee-nagar-society-block-a: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" disabled="disabled" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    - waiting for element to be visible, enabled and stable
+    - element is not enabled
+  27 × retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is not visible
+  - retrying click action
+    - waiting 500ms
+
+2025-12-04 03:06:05 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad
+2025-12-04 03:06:17 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad
+2025-12-04 03:06:20 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad — clicking until exhausted
+2025-12-04 03:06:37 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" disabled="disabled" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    6 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 500ms
+    22 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:06:38 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi
+2025-12-04 03:06:47 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi
+2025-12-04 03:06:50 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi — clicking until exhausted
+2025-12-04 03:07:11 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" disabled="disabled" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    - waiting for element to be visible, enabled and stable
+    - element is not enabled
+  2 × retrying click action
+      - waiting 100ms
+      - waiting for element to be visible, enabled and stable
+      - element is not visible
+  28 × retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is not visible
+  - retrying click action
+    - waiting 500ms
+
+2025-12-04 03:07:12 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/taj-specialist-clinic/ma-jinnah-road
+2025-12-04 03:07:27 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/taj-specialist-clinic/ma-jinnah-road
+2025-12-04 03:07:29 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/taj-specialist-clinic/ma-jinnah-road — clicking until exhausted
+2025-12-04 03:07:45 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/taj-specialist-clinic/ma-jinnah-road: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" disabled="disabled" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    - waiting for element to be visible, enabled and stable
+    - element is not stable
+  - retrying click action
+    - waiting for element to be visible, enabled and stable
+    - element is not visible
+  - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:07:46 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal
+2025-12-04 03:07:52 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal
+2025-12-04 03:07:53 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal — clicking until exhausted
+2025-12-04 03:08:11 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:08:12 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad
+2025-12-04 03:08:13 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad
+2025-12-04 03:08:14 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad — clicking until exhausted
+2025-12-04 03:08:32 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:08:33 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi
+2025-12-04 03:08:34 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi
+2025-12-04 03:08:35 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi — clicking until exhausted
+2025-12-04 03:08:55 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:08:56 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/taj-specialist-clinic/ma-jinnah-road
+2025-12-04 03:08:57 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/taj-specialist-clinic/ma-jinnah-road
+2025-12-04 03:08:58 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/taj-specialist-clinic/ma-jinnah-road — clicking until exhausted
+2025-12-04 03:09:14 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/taj-specialist-clinic/ma-jinnah-road: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:09:15 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal
+2025-12-04 03:09:17 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal
+2025-12-04 03:09:18 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal — clicking until exhausted
+2025-12-04 03:09:35 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:09:36 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/naheed-medical-center/gulshan-e-iqbal
+2025-12-04 03:09:40 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/naheed-medical-center/gulshan-e-iqbal
+2025-12-04 03:09:41 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/naheed-medical-center/gulshan-e-iqbal — clicking until exhausted
+2025-12-04 03:09:57 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/naheed-medical-center/gulshan-e-iqbal: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:09:58 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal
+2025-12-04 03:10:03 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal
+2025-12-04 03:10:04 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal — clicking until exhausted
+2025-12-04 03:10:21 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:10:22 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/karachi-medicos-radiology-center/dha-phase-6
+2025-12-04 03:10:25 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/karachi-medicos-radiology-center/dha-phase-6
+2025-12-04 03:10:26 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/karachi-medicos-radiology-center/dha-phase-6 — clicking until exhausted
+2025-12-04 03:10:43 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/karachi-medicos-radiology-center/dha-phase-6: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    28 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:10:44 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs
+2025-12-04 03:10:50 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs
+2025-12-04 03:10:51 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs — clicking until exhausted
+2025-12-04 03:11:10 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    28 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:11:11 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/nk-consultant-clinic/federal-b
+2025-12-04 03:11:15 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/nk-consultant-clinic/federal-b
+2025-12-04 03:11:16 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/nk-consultant-clinic/federal-b — clicking until exhausted
+2025-12-04 03:11:32 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/nk-consultant-clinic/federal-b: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    28 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:11:33 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/transformation-wellness-clinic/gulshan-e-iqbal
+2025-12-04 03:11:37 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/transformation-wellness-clinic/gulshan-e-iqbal
+2025-12-04 03:11:39 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/transformation-wellness-clinic/gulshan-e-iqbal — clicking until exhausted
+2025-12-04 03:11:56 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/transformation-wellness-clinic/gulshan-e-iqbal: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    28 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:11:57 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/karachi-medicos-radiology-center/dha-phase-6
+2025-12-04 03:11:58 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/karachi-medicos-radiology-center/dha-phase-6
+2025-12-04 03:11:59 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/karachi-medicos-radiology-center/dha-phase-6 — clicking until exhausted
+2025-12-04 03:12:16 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/karachi-medicos-radiology-center/dha-phase-6: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    28 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:12:17 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs
+2025-12-04 03:12:18 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs
+2025-12-04 03:12:20 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs — clicking until exhausted
+2025-12-04 03:12:37 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    28 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:12:39 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/nk-consultant-clinic/federal-b
+2025-12-04 03:12:40 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/nk-consultant-clinic/federal-b
+2025-12-04 03:12:41 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/nk-consultant-clinic/federal-b — clicking until exhausted
+2025-12-04 03:12:58 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/nk-consultant-clinic/federal-b: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:12:59 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/transformation-wellness-clinic/gulshan-e-iqbal
+2025-12-04 03:13:00 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/transformation-wellness-clinic/gulshan-e-iqbal
+2025-12-04 03:13:01 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/transformation-wellness-clinic/gulshan-e-iqbal — clicking until exhausted
+2025-12-04 03:13:17 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/transformation-wellness-clinic/gulshan-e-iqbal: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:13:18 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/memon-medical-institute-hospital-outreach-center/federal-b
+2025-12-04 03:13:27 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/memon-medical-institute-hospital-outreach-center/federal-b
+2025-12-04 03:13:28 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/memon-medical-institute-hospital-outreach-center/federal-b — clicking until exhausted
+2025-12-04 03:13:44 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/memon-medical-institute-hospital-outreach-center/federal-b: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:13:45 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/rida-medical-center/gulshan-e-iqbal
+2025-12-04 03:13:49 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/rida-medical-center/gulshan-e-iqbal
+2025-12-04 03:13:50 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/rida-medical-center/gulshan-e-iqbal — clicking until exhausted
+2025-12-04 03:14:06 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/rida-medical-center/gulshan-e-iqbal: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    28 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:14:07 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/skintech-solutions/muhammad-ali-society
+2025-12-04 03:14:12 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/skintech-solutions/muhammad-ali-society
+2025-12-04 03:14:13 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/skintech-solutions/muhammad-ali-society — clicking until exhausted
+2025-12-04 03:14:29 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/skintech-solutions/muhammad-ali-society: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    28 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:14:30 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/the-health-clinic-dha/dha-city-karachi
+2025-12-04 03:14:34 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/the-health-clinic-dha/dha-city-karachi
+2025-12-04 03:14:35 | INFO     | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:117 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/the-health-clinic-dha/dha-city-karachi — clicking until exhausted
+2025-12-04 03:14:52 | WARNING  | scrapers.marham_scraper:_collect_doctor_cards_from_hospital:129 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/the-health-clinic-dha/dha-city-karachi: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-04 03:14:53 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/aafiyah-family-health-clinics/clifton

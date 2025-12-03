@@ -90,6 +90,10 @@ class MarhamScraper(BaseScraper):
             "timing": timing,
         }
 
+    @staticmethod
+    def _first(el):
+        return el.get_text(strip=True) if el else None
+
     # ------------------ Doctor extraction per hospital ------------------
     def _collect_doctor_cards_from_hospital(self, hospital_url: str) -> List[BeautifulSoup]:
         """Load the hospital page and attempt to collect all doctor cards.
@@ -214,10 +218,18 @@ class MarhamScraper(BaseScraper):
                         exists = self.mongo_client.hospitals.find_one({"name": h.get("name"), "address": h.get("address")}) is not None
 
                     if not exists:
-                        # minimal doc
+                        # minimal doc: use update_hospital (upsert) when available to avoid unique index errors
                         minimal = {"name": h.get("name"), "platform": self.PLATFORM, "url": h.get("url")}
-                        self.mongo_client.insert_hospital(HospitalModel(**minimal).dict())
-                        stats["hospitals"] += 1
+                        if hasattr(self.mongo_client, "update_hospital"):
+                            ok = self.mongo_client.update_hospital(h.get("url"), minimal)
+                            if ok:
+                                stats["hospitals"] += 1
+                        else:
+                            try:
+                                self.mongo_client.insert_hospital(HospitalModel(**minimal).dict())
+                                stats["hospitals"] += 1
+                            except Exception as exc:
+                                logger.debug("Insert minimal hospital exception: {}", exc)
                 except Exception:  # noqa: BLE001
                     logger.warning("Could not insert minimal hospital: {}", h.get("name"))
 
