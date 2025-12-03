@@ -621,3 +621,70 @@ Total skipped: 0
 2025-12-03 15:22:28 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 111 Best Cosmetic Dentists In Pakistan (id=69300f648ab037d8a3939127)
 2025-12-03 15:22:28 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 104 of 151: https://www.marham.pk/doctors/obstetrician
 2025-12-03 15:22:28 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/obstetrician
+2025-12-04 00:12:16 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='marham', headless=True, limit=None)
+2025-12-04 00:12:16 | INFO     | scrapers.database.mongo_client:__init__:28 - Connecting to MongoDB at mongodb://localhost:27017/
+2025-12-04 00:12:16 | INFO     | __main__:run_for_site:49 - Running Marham scraper
+2025-12-04 00:12:24 | INFO     | scrapers.base_scraper:__enter__:44 - Playwright browser started (headless=True)
+2025-12-04 00:12:24 | INFO     | scrapers.marham_scraper:scrape:108 - Starting Marham scraping from https://www.marham.pk/doctors
+2025-12-04 00:12:24 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors
+2025-12-04 00:12:39 | WARNING  | scrapers.base_scraper:_retry:69 - Timeout during action 'load_page: https://www.marham.pk/doctors' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors", waiting until "networkidle"
+
+2025-12-04 00:12:56 | WARNING  | scrapers.base_scraper:_retry:69 - Timeout during action 'load_page: https://www.marham.pk/doctors' (attempt 2/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors", waiting until "networkidle"
+
+2025-12-04 00:13:13 | WARNING  | scrapers.base_scraper:_retry:69 - Timeout during action 'load_page: https://www.marham.pk/doctors' (attempt 3/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors", waiting until "networkidle"
+
+2025-12-04 00:14:30 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='marham', headless=True, limit=None)
+2025-12-04 00:14:30 | INFO     | scrapers.database.mongo_client:__init__:28 - Connecting to MongoDB at mongodb://localhost:27017/
+2025-12-04 00:14:30 | INFO     | __main__:run_for_site:49 - Running Marham scraper
+2025-12-04 00:14:31 | INFO     | scrapers.base_scraper:__enter__:44 - Playwright browser started (headless=True)
+2025-12-04 00:14:31 | INFO     | scrapers.marham_scraper:scrape:108 - Starting Marham scraping from https://www.marham.pk/doctors
+2025-12-04 00:14:31 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors
+2025-12-04 00:14:46 | WARNING  | scrapers.base_scraper:_retry:69 - Timeout during action 'load_page: https://www.marham.pk/doctors' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors", waiting until "networkidle"
+
+2025-12-04 00:14:51 | INFO     | scrapers.marham_scraper:_extract_profile_links:53 - Found 151 Marham profile links on listing page
+2025-12-04 00:14:51 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 1 of 151: https://www.marham.pk/doctors/dermatologist
+2025-12-04 00:14:51 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/dermatologist
+2025-12-04 00:15:06 | WARNING  | scrapers.base_scraper:_retry:69 - Timeout during action 'load_page: https://www.marham.pk/doctors/dermatologist' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/dermatologist", waiting until "networkidle"
+
+2025-12-04 00:15:10 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 1,192 Best Dermatologists In Pakistan | Top Skin Specialists (id=69308c3e5396b0affaa4018c)
+2025-12-04 00:15:10 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 2 of 151: https://www.marham.pk/doctors/gynecologist
+2025-12-04 00:15:10 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/gynecologist
+2025-12-04 00:15:25 | WARNING  | scrapers.base_scraper:_retry:69 - Timeout during action 'load_page: https://www.marham.pk/doctors/gynecologist' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/gynecologist", waiting until "networkidle"
+
+2025-12-04 00:15:31 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 3,044 Best Gynecologists In Pakistan (id=69308c535396b0affaa4018d)
+2025-12-04 00:15:31 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 3 of 151: https://www.marham.pk/doctors/psychiatrist
+2025-12-04 00:15:31 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/psychiatrist
+2025-12-04 00:15:46 | WARNING  | scrapers.base_scraper:_retry:69 - Timeout during action 'load_page: https://www.marham.pk/doctors/psychiatrist' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/psychiatrist", waiting until "networkidle"
+
+2025-12-04 00:15:50 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 548 Best Psychiatrists In Pakistan (id=69308c665396b0affaa4018e)
+2025-12-04 00:15:50 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 4 of 151: https://www.marham.pk/doctors/psychologist
+2025-12-04 00:15:50 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/psychologist
+2025-12-04 00:15:58 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 1,173 Best Psychologists In Pakistan (id=69308c6e5396b0affaa4018f)
+2025-12-04 00:15:58 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 5 of 151: https://www.marham.pk/doctors/urologist
+2025-12-04 00:15:58 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/urologist
+2025-12-04 00:16:03 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 628 Best Urologists In Pakistan | Top Bladder Specialists (id=69308c735396b0affaa40190)
+2025-12-04 00:16:03 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 6 of 151: https://www.marham.pk/doctors/general-physician
+2025-12-04 00:16:03 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/general-physician
+2025-12-04 00:16:11 | INFO     | scrapers.database.mongo_client:insert_doctor:61 - Inserted doctor: 2,416 Best General Physicians In Pakistan (id=69308c7b5396b0affaa40191)
+2025-12-04 00:16:11 | INFO     | scrapers.marham_scraper:scrape:128 - Scraping Marham profile 7 of 151: https://www.marham.pk/doctors/gastroenterologist
+2025-12-04 00:16:11 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/gastroenterologist
+2025-12-04 02:32:59 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='marham', headless=True, limit=5)
+2025-12-04 02:32:59 | INFO     | scrapers.database.mongo_client:__init__:28 - Connecting to MongoDB at mongodb://localhost:27017/
+2025-12-04 02:32:59 | INFO     | __main__:run_for_site:49 - Running Marham scraper
+2025-12-04 02:33:00 | INFO     | scrapers.base_scraper:__enter__:44 - Playwright browser started (headless=True)
+2025-12-04 02:33:00 | INFO     | scrapers.marham_scraper:scrape:162 - Starting Marham hospital-first scraping from https://www.marham.pk/hospitals/karachi?page=
+2025-12-04 02:33:00 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi?page=1
