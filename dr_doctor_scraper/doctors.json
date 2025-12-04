@@ -1,0 +1,4722 @@
+[
+  {
+    "_id": "6930b256fa8a4a28b0bba407",
+    "name": "Dr. Feroze Ahmed Mahar",
+    "specialty": [
+      "Urologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": "20 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.519000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba408",
+    "name": "Prof. Dr. Nasreen Siddiqui",
+    "specialty": [
+      "Plastic Surgeon, General Surgeon, Cosmetic Surgeon, Plastic Surgeon, Burns Specialist, Reconstructive Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": "31 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/plastic-surgeon/prof-dr-nasreen-siddiqui",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.522000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba409",
+    "name": "Dr. Azeem Rajput",
+    "specialty": [
+      "Endocrinologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": "3 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/endocrinologist/dr-azeem-rajput",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.526000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba40a",
+    "name": "Dr. Azhar Mashood",
+    "specialty": [
+      "Speech Therapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": "88%",
+    "profile_url": "https://www.marham.pk/doctors/karachi/speech-therapist/dr-azhar-mashood",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.531000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba40b",
+    "name": "Dr. Haji Saleem",
+    "specialty": [
+      "Pediatrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": "97%",
+    "profile_url": "https://www.marham.pk/doctors/karachi/pediatrician/dr-haji-saleem",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.538000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba40c",
+    "name": "Dr. M Abbas Memon",
+    "specialty": [
+      "Pediatrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": "83%",
+    "profile_url": "https://www.marham.pk/doctors/karachi/pediatrician/dr-m-abbas-memon",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.545000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba40d",
+    "name": "Dr. Tanweer Ahmed",
+    "specialty": [
+      "Neuro Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": "8 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-tanweer-ahmed",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.552000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba40e",
+    "name": "Prof. Dr. S M Abbas",
+    "specialty": [
+      "General Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": "40 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/prof-dr-s-m-abbas",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.560000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba40f",
+    "name": "Dr. Muhammad Afzal",
+    "specialty": [
+      "General Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-muhammad-afzal",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.565000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba410",
+    "name": "Dr. Zaid Dossani",
+    "specialty": [
+      "General Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": "5 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-zaid-dossani",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.569000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba411",
+    "name": "Dr. Raja Guru Dat",
+    "specialty": [
+      "Internal Medicine Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": "12 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/internal-medicine/dr-raja-guru-dat",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.573000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba412",
+    "name": "Dr. Muhammad Javed",
+    "specialty": [
+      "Endocrinologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": "5 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/endocrinologist/dr-muhammad-javed",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.576000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba413",
+    "name": "Dr. Lal Chand",
+    "specialty": [
+      "Cardiologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": "8 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/cardiologist/dr-lal-chand",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.578000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba414",
+    "name": "Dr. Riaz Ahmed Shahid",
+    "specialty": [
+      "Ent Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/ent-surgeon/dr-riaz-ahmed-shahid",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.581000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba415",
+    "name": "Dr. Jan Muhammad",
+    "specialty": [
+      "General Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": "100%",
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-jan-muhammad",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.587000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba416",
+    "name": "Dr. Rehana Sheikh",
+    "specialty": [
+      "Gynecologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": "28 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-rehana-sheikh",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.590000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba417",
+    "name": "Dr. Wajid Ali Sheikh",
+    "specialty": [
+      "General Physician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-physician/dr-wajid-ali-sheikh",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.594000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba418",
+    "name": "Dr. Ahsan Mobin",
+    "specialty": [
+      "Family Medicine"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/family-medicine/dr-ahsan-mobin",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.597000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba419",
+    "name": "Dr. Zahid Memon",
+    "specialty": [
+      "General Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-zahid-memon",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.602000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba41a",
+    "name": "Dr. Mr Umair",
+    "specialty": [
+      "Physiotherapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": "100%",
+    "profile_url": "https://www.marham.pk/doctors/karachi/physiotherapist/dr-mr-umair",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.606000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba41b",
+    "name": "Dr. Samra Rizwan",
+    "specialty": [
+      "Gynecologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": "3 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-samra-rizwan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.609000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba41c",
+    "name": "Dr. Farzeen Sharufuddin",
+    "specialty": [
+      "Pediatric Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/pediatric-surgeon/dr-farzeen-sharufuddin",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.612000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba41d",
+    "name": "Dr. Inam Haider",
+    "specialty": [
+      "Family Medicine"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/family-medicine/dr-inam-haider",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.616000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba41e",
+    "name": "Dr. Abdul Waheed",
+    "specialty": [
+      "Ent Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": "91%",
+    "profile_url": "https://www.marham.pk/doctors/karachi/ent-specialist/dr-abdul-waheed",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.620000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba41f",
+    "name": "Prof. Dr. Khalida Soomro",
+    "specialty": [
+      "Cardiologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": "39 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/cardiologist/prof-dr-khalida-soomro",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.624000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba420",
+    "name": "Dr. Wajeeha Elahi",
+    "specialty": [
+      "Nephrologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": "3 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/nephrologist/dr-wajeeha-elahi",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.626000"
+  },
+  {
+    "_id": "6930b256fa8a4a28b0bba421",
+    "name": "Dr. Harnam Hotchandani",
+    "specialty": [
+      "Pediatrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "address": null,
+    "rating": null,
+    "experience": "15 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/pediatrician/dr-harnam-hotchandani",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:57:42.629000"
+  },
+  {
+    "_id": "6930b269fa8a4a28b0bba422",
+    "name": "Ms Naveera Fatima",
+    "specialty": [
+      "Speech Therapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar",
+    "address": null,
+    "rating": null,
+    "experience": "6 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/speech-therapist/ms-naveera-fatima",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:01.793000"
+  },
+  {
+    "_id": "6930b269fa8a4a28b0bba423",
+    "name": "Dr. Sidra Saleem",
+    "specialty": [
+      "Pediatrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar",
+    "address": null,
+    "rating": null,
+    "experience": "7 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/pediatrician/dr-sidra-saleem",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:01.797000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba424",
+    "name": "Dr. Iqbal Nabi Soomro",
+    "specialty": [
+      "Dermatologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "35 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-iqbal-nabi-soomro",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.586000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba425",
+    "name": "Dr. Sana Adeel",
+    "specialty": [
+      "Dermatologist, Aesthetic Physician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "10 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-sana-adeel",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.590000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba426",
+    "name": "Dr. Najeeb Abdul Razzak",
+    "specialty": [
+      "Ent Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "100%",
+    "profile_url": "https://www.marham.pk/doctors/karachi/ent-specialist/dr-najeeb-abdul-razzak",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.593000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba427",
+    "name": "Dr. Nilofur Alvi",
+    "specialty": [
+      "Gynecologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "26 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-nilofur-alvi",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.597000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba428",
+    "name": "Dr. Sidra Tariq",
+    "specialty": [
+      "Dermatologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "10 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-sidra-tariq",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.602000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba429",
+    "name": "Dr. Taj Muhammad Shiekh",
+    "specialty": [
+      "Ent Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "34 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/ent-specialist/dr-taj-muhammad-shiekh",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.604000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba42a",
+    "name": "Dr. Misbah Bashir",
+    "specialty": [
+      "Dermatologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "5 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-misbah-bashir",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.608000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba42b",
+    "name": "Dr. Shaista Naz",
+    "specialty": [
+      "Speech Therapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "14 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/speech-therapist/dr-shaista-naz",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.611000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba42c",
+    "name": "Dr. Almas Qazi",
+    "specialty": [
+      "General Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "30 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-almas-qazi",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.614000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba42d",
+    "name": "Dr. Madiha Farrukh",
+    "specialty": [
+      "Family Medicine"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/family-medicine/dr-madiha-farrukh",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.618000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba42e",
+    "name": "Dr. Ahmed Ali",
+    "specialty": [
+      "Orthopedic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "36 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-ahmed-ali",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.623000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba42f",
+    "name": "Dr. Capt. Muhammad Yaseen Usman",
+    "specialty": [
+      "Family Medicine, Diabetologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "35 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/family-medicine/dr-capt-muhammad-yaseen-usman",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.626000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba430",
+    "name": "Dr. Uzair Ahmed Siddiqui",
+    "specialty": [
+      "Neuro Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-uzair-ahmed-siddiqui",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.629000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba431",
+    "name": "Dr. Saleem Ahmed Rajput",
+    "specialty": [
+      "Cardiologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/cardiologist/dr-saleem-ahmed-rajput",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.631000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba432",
+    "name": "Dr. Ayesha Mustafa",
+    "specialty": [
+      "Dermatologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "12 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-ayesha-mustafa",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.633000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba433",
+    "name": "Dr. Syed Ameer Uddin Dewan",
+    "specialty": [
+      "Diabetologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/diabetologist/dr-syed-ameer-uddin-dewan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.636000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba434",
+    "name": "Dr. Nida Khan",
+    "specialty": [
+      "General Physician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "5 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-physician/dr-nida-khan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.638000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba435",
+    "name": "Dr. Shireen Arif",
+    "specialty": [
+      "Cardiologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/cardiologist/dr-shireen-arif",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.639000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba436",
+    "name": "Tayyaba Ghousia",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/tayyaba-ghousia",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.641000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba437",
+    "name": "Dr. Amber Naz",
+    "specialty": [
+      "Physiotherapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/physiotherapist/dr-amber-naz",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.643000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba438",
+    "name": "Dr. Marina Sheikh Pt",
+    "specialty": [
+      "Physiotherapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/physiotherapist/dr-marina-sheikh-pt",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.644000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba439",
+    "name": "Dr. Hafsa Sohail",
+    "specialty": [
+      "Pediatrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/pediatrician/dr-hafsa-sohail",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.646000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba43a",
+    "name": "Dr. Naveed Sarfaraz Arab",
+    "specialty": [
+      "Orthopedic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-naveed-sarfaraz-arab",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.647000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba43b",
+    "name": "Dr. Muzaffar Ali",
+    "specialty": [
+      "General Physician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "100%",
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-physician/dr-muzaffar-ali",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.649000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba43c",
+    "name": "Dr. Mehak Bano",
+    "specialty": [
+      "Physiotherapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/physiotherapist/dr-mehak-bano",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.651000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba43d",
+    "name": "Dr. Abdullah Yahya",
+    "specialty": [
+      "Dermatologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "12 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-abdullah-yahya",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.653000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba43e",
+    "name": "Dr. Sabiha Shujaat",
+    "specialty": [
+      "Sonologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/sonologist/dr-sabiha-shujaat",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.655000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba43f",
+    "name": "Dr. Abdus Sami",
+    "specialty": [
+      "Physiotherapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/physiotherapist/dr-abdus-sami",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.656000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba440",
+    "name": "Dr. Sumaira Nasim",
+    "specialty": [
+      "Cardiologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/cardiologist/dr-sumaira-nasim",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.658000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba441",
+    "name": "Dr. M Amjad",
+    "specialty": [
+      "Diabetologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/diabetologist/dr-m-amjad",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.661000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba442",
+    "name": "Dr. Nida Mughal",
+    "specialty": [],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/physiotherapist/dr-nida-mughal",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.664000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba443",
+    "name": "Prof. Dr. Mr Abdul Rasheed",
+    "specialty": [
+      "Cardiologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/cardiologist/prof-dr-mr-abdul-rasheed",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.667000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba444",
+    "name": "Dr. Syed Faisal Masood",
+    "specialty": [
+      "Nutritionist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "22 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/nutritionist/dr-syed-faisal-masood",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.670000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba445",
+    "name": "Dr. Yousuf Hasnain",
+    "specialty": [
+      "Sexologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "21 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/sexologist/dr-yousuf-hasnain",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.673000"
+  },
+  {
+    "_id": "6930b27ffa8a4a28b0bba446",
+    "name": "Dr. Mohammad Afzal Ahmad",
+    "specialty": [
+      "General Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-mohammad-afzal-ahmad",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:23.675000"
+  },
+  {
+    "_id": "6930b292fa8a4a28b0bba447",
+    "name": "Dr. Inder Kumar Chughwani",
+    "specialty": [
+      "Neuro Psychiatrist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar",
+    "address": null,
+    "rating": null,
+    "experience": "30 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/neuro-psychiatrist/dr-inder-kumar-chughwani",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:42.939000"
+  },
+  {
+    "_id": "6930b292fa8a4a28b0bba448",
+    "name": "Dr. Muhammad Wasim Lodhi",
+    "specialty": [
+      "Internal Medicine Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar",
+    "address": null,
+    "rating": null,
+    "experience": "20 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/internal-medicine/dr-muhammad-wasim-lodhi",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:42.946000"
+  },
+  {
+    "_id": "6930b292fa8a4a28b0bba449",
+    "name": "Dr. Zulfiqar Ali Khuwaja",
+    "specialty": [
+      "Dermatologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar",
+    "address": null,
+    "rating": null,
+    "experience": "30 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-zulfiqar-ali-khuwaja",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:42.953000"
+  },
+  {
+    "_id": "6930b292fa8a4a28b0bba44a",
+    "name": "Dr. Nanwani Naresh",
+    "specialty": [
+      "Internal Medicine Specialist, Gastroenterologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar",
+    "address": null,
+    "rating": null,
+    "experience": "25 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/internal-medicine/dr-nanwani-naresh",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:42.965000"
+  },
+  {
+    "_id": "6930b292fa8a4a28b0bba44b",
+    "name": "Asst. Prof. Dr. Ali Raza",
+    "specialty": [
+      "Orthopedic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar",
+    "address": null,
+    "rating": null,
+    "experience": "30 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/orthopedic-surgeon/asst-prof-dr-ali-raza",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:58:42.973000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba44c",
+    "name": "Dr. Sonia Poshni Sheikh",
+    "specialty": [
+      "Gynecologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": "35 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-sonia-poshni-sheikh",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.361000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba44d",
+    "name": "Dr. Naureen Kazim",
+    "specialty": [
+      "General Physician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": "19 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/internal-medicine/dr-naureen-kazim",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.367000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba44e",
+    "name": "Dr. Muhammad Shoaib Nasir Ali Khan",
+    "specialty": [
+      "Radiologist, Sonologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": "9 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/interventional-radiologist/dr-muhammad-shoaib-nasir-ali-khan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.374000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba44f",
+    "name": "Dr. Zainab Chandio",
+    "specialty": [
+      "Dentist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/dentist/dr-zainab-chandio",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.384000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba450",
+    "name": "Dr. Nida Shoaib",
+    "specialty": [
+      "General Physician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-physician/dr-nida-shoaib",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.391000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba451",
+    "name": "Dr. Amema Hassan",
+    "specialty": [
+      "General Surgeon, Laparoscopic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-amema-hassan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.399000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba452",
+    "name": "Dr. Muhammad Mudassir Thahim",
+    "specialty": [
+      "Cardiologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/cardiologist/dr-muhammad-mudassir-thahim",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.406000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba453",
+    "name": "Prof. Dr. Saera Suhail Kidwai",
+    "specialty": [
+      "Internal Medicine Specialist, General Physician, Rheumatologist, Diabetologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": "28 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/internal-medicine/prof-dr-saera-suhail-kidwai",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.410000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba454",
+    "name": "Dr. Ahmed Bin Khalid Khan",
+    "specialty": [
+      "Dentist, Cosmetic Dentist, Periodontist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/dentist/dr-ahmed-bin-khalid-khan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.415000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba455",
+    "name": "Dr. Zeeshan Ali Arbab",
+    "specialty": [
+      "Orthopedic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-zeeshan-ali-arbab",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.419000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba456",
+    "name": "Dr. Dost Muhammad",
+    "specialty": [
+      "Psychiatrist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychiatrist/dr-dost-muhammad",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.423000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba457",
+    "name": "Ms. Sadia Shafaq",
+    "specialty": [
+      "Physiotherapist, Rehabilitation Medicine"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/physiotherapist/ms-sadia-shafaq",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.427000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba458",
+    "name": "Dr. Murtaza Azad",
+    "specialty": [
+      "Urologist, Pediatric Urologist, Sexologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-murtaza-azad",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.430000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba459",
+    "name": "Dr. Sonia Poshni",
+    "specialty": [
+      "Gynecologist, Fertility Consultant, Obstetrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-sonia-poshni",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.435000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba45a",
+    "name": "Dr. Naureen Kazim",
+    "specialty": [
+      "Family Medicine, Asthma Specialist, Hypertension Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/family-medicine/dr-naureen-kazim",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.439000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba45b",
+    "name": "Dr. M. Shoaib Nasir",
+    "specialty": [
+      "Radiologist, Interventional Radiologist, Sonologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/radiologist/dr-m-shoaib-nasir",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.442000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba45c",
+    "name": "Dr. Sarosh Kamal",
+    "specialty": [
+      "General Physician, Primary Care Physician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-physician/dr-sarosh-kamal",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.445000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba45d",
+    "name": "Dr. Huma Imran Ahmed",
+    "specialty": [
+      "Gynecologist, Fertility Consultant, Obstetrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-huma-imran-ahmed",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.451000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba45e",
+    "name": "Prof. S. Nosheen Zehra",
+    "specialty": [
+      "Internal Medicine Specialist, Medical Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/internal-medicine/prof-s-nosheen-zehra",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.458000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba45f",
+    "name": "Dr. Noor A. Shaikh",
+    "specialty": [
+      "Ent Specialist, Thyroid Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": "34 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/ent-specialist/dr-noor-a-shaikh",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.464000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba460",
+    "name": "Dr. S Masood Ul Hasan",
+    "specialty": [
+      "Restorative Dentist, Dentist, Endodontist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/restorative-dentist/dr-s-masood-ul-hasan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.469000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba461",
+    "name": "Dr. Syed Azfer Husain",
+    "specialty": [
+      "Pulmonologist / Lung Specialist, Family Medicine, Thoracic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/pulmonologist/dr-syed-azfer-husain",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.473000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba462",
+    "name": "Dr. Saba Tabassum",
+    "specialty": [
+      "Dentist, Oral and Maxillofacial Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/dentist/dr-saba-tabassum",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.478000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba463",
+    "name": "Dr. Naveed Ahmed Shaikh",
+    "specialty": [
+      "Cardiologist, General Physician, Internal Medicine Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/cardiologist/dr-naveed-ahmed-shaikh",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.484000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba464",
+    "name": "Dr. Fouzia Rasool Memon",
+    "specialty": [
+      "Gynecologist, Fertility Consultant, Obstetrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-fouzia-rasool-memon",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.490000"
+  },
+  {
+    "_id": "6930b2a7fa8a4a28b0bba465",
+    "name": "Dr. Asma Ansari",
+    "specialty": [
+      "Dermatologist, Cosmetologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-asma-ansari",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 21:59:03.494000"
+  },
+  {
+    "_id": "6930b44cc38ecb697ef12a3a",
+    "name": "Dr. Azaan Abdullah",
+    "specialty": [
+      "Psychiatrist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/lyfe-healthcare-hospital/adamjee-nagar-society-block-a",
+    "address": null,
+    "rating": null,
+    "experience": "10 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychiatrist/dr-azaan-abdullah",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:04.612000"
+  },
+  {
+    "_id": "6930b44cc38ecb697ef12a3b",
+    "name": "Dr. Iqbal Khemane",
+    "specialty": [
+      "Psychiatrist, Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/lyfe-healthcare-hospital/adamjee-nagar-society-block-a",
+    "address": null,
+    "rating": null,
+    "experience": "25 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychiatrist/dr-iqbal-khemane",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:04.617000"
+  },
+  {
+    "_id": "6930b44cc38ecb697ef12a3c",
+    "name": "Prof. Dr. Muhammad Adnan Kanpurwala",
+    "specialty": [
+      "Endocrinologist, Diabetologist, Family Medicine"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/lyfe-healthcare-hospital/adamjee-nagar-society-block-a",
+    "address": null,
+    "rating": null,
+    "experience": "10 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/endocrinologist/prof-dr-muhammad-adnan-kanpurwala",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:04.625000"
+  },
+  {
+    "_id": "6930b44cc38ecb697ef12a3d",
+    "name": "Dr. Nazia Shakeel",
+    "specialty": [
+      "Dermatologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/lyfe-healthcare-hospital/adamjee-nagar-society-block-a",
+    "address": null,
+    "rating": null,
+    "experience": "8 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-nazia-shakeel",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:04.630000"
+  },
+  {
+    "_id": "6930b44cc38ecb697ef12a3e",
+    "name": "Dr. Zeehan Naeem",
+    "specialty": [
+      "Orthopedic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/lyfe-healthcare-hospital/adamjee-nagar-society-block-a",
+    "address": null,
+    "rating": null,
+    "experience": "15 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-zeehan-naeem",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:04.635000"
+  },
+  {
+    "_id": "6930b44cc38ecb697ef12a3f",
+    "name": "Prof. Dr. Fareya Usmani",
+    "specialty": [
+      "General Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/lyfe-healthcare-hospital/adamjee-nagar-society-block-a",
+    "address": null,
+    "rating": null,
+    "experience": "28 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/prof-dr-fareya-usmani",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:04.640000"
+  },
+  {
+    "_id": "6930b46dc38ecb697ef12a40",
+    "name": "Dr. Muhammad Paras Naseem",
+    "specialty": [
+      "Ent Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": "13 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/ent-specialist/dr-muhammad-paras-naseem",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:37.812000"
+  },
+  {
+    "_id": "6930b46dc38ecb697ef12a41",
+    "name": "Dr. Mohsin",
+    "specialty": [
+      "Internal Medicine Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": "12 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/internal-medicine/dr-mohsin",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:37.817000"
+  },
+  {
+    "_id": "6930b46dc38ecb697ef12a42",
+    "name": "Asst. Prof. Dr. Rafey Ahmad Jameel",
+    "specialty": [
+      "Dentist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": "19 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/dentist/asst-prof-dr-rafey-ahmad-jameel",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:37.819000"
+  },
+  {
+    "_id": "6930b46dc38ecb697ef12a43",
+    "name": "Dr. Momina Farhan Pt",
+    "specialty": [
+      "Physiotherapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": "3 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/physiotherapist/dr-momina-farhan-pt",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:37.823000"
+  },
+  {
+    "_id": "6930b46dc38ecb697ef12a44",
+    "name": "Dr. Saima Javed Rajput",
+    "specialty": [
+      "Physiotherapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/physiotherapist/dr-saima-javed-rajput",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:37.828000"
+  },
+  {
+    "_id": "6930b46dc38ecb697ef12a45",
+    "name": "Dr. Zahid Kareem",
+    "specialty": [
+      "Alternative Medicine Practitioner"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/alternative-medicine-practitioner/dr-zahid-kareem",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:37.833000"
+  },
+  {
+    "_id": "6930b46dc38ecb697ef12a46",
+    "name": "Ms. Areeba Rizwan",
+    "specialty": [
+      "Nutritionist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/nutritionist/ms-areeba-rizwan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:37.837000"
+  },
+  {
+    "_id": "6930b46dc38ecb697ef12a47",
+    "name": "Dr. Ehsanullah Chowdri",
+    "specialty": [
+      "Cardiologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/cardiologist/dr-ehsanullah-chowdri",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:37.840000"
+  },
+  {
+    "_id": "6930b46dc38ecb697ef12a48",
+    "name": "Dr. Tahira Meer",
+    "specialty": [
+      "Dermatologist, Cosmetologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-tahira-meer",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:37.844000"
+  },
+  {
+    "_id": "6930b46dc38ecb697ef12a49",
+    "name": "Dr. Qamar Jehan",
+    "specialty": [
+      "Pediatrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/pediatrician/dr-qamar-jehan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:37.846000"
+  },
+  {
+    "_id": "6930b46dc38ecb697ef12a4a",
+    "name": "Dr. Mir M. Soomro",
+    "specialty": [
+      "Pulmonologist / Lung Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/pulmonologist/dr-mir-m-soomro",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:37.848000"
+  },
+  {
+    "_id": "6930b46dc38ecb697ef12a4b",
+    "name": "Dr. Nasreen Yousaf",
+    "specialty": [
+      "Gynecologist, Obstetrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-nasreen-yousaf",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:37.851000"
+  },
+  {
+    "_id": "6930b46dc38ecb697ef12a4c",
+    "name": "Dr. Pershotam Chillani",
+    "specialty": [
+      "Physiotherapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/physiotherapist/dr-pershotam-chillani",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:37.853000"
+  },
+  {
+    "_id": "6930b46dc38ecb697ef12a4d",
+    "name": "Dr. Shabnam Shamim Asim",
+    "specialty": [
+      "Gynecologist, Obstetrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-shabnam-shamim-asim",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:37.855000"
+  },
+  {
+    "_id": "6930b46dc38ecb697ef12a4e",
+    "name": "Dr. Sadia Zafar Alvi",
+    "specialty": [
+      "Dermatologist, Cosmetologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-sadia-zafar-alvi",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:37.858000"
+  },
+  {
+    "_id": "6930b46dc38ecb697ef12a4f",
+    "name": "Dr. Rafey Ahmad Jameel",
+    "specialty": [
+      "Dentist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/dentist/dr-rafey-ahmad-jameel",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:37.860000"
+  },
+  {
+    "_id": "6930b46dc38ecb697ef12a50",
+    "name": "Dr. Imran Mehmood",
+    "specialty": [
+      "Internal Medicine Specialist, Family Medicine, Medical Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/internal-medicine/dr-imran-mehmood",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:37.861000"
+  },
+  {
+    "_id": "6930b46dc38ecb697ef12a51",
+    "name": "Dr. Muhammad Kamil",
+    "specialty": [
+      "Internal Medicine Specialist, Diabetologist, Family Medicine"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/internal-medicine/dr-muhammad-kamil",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:37.865000"
+  },
+  {
+    "_id": "6930b46dc38ecb697ef12a52",
+    "name": "Dr. Sadia Alvi",
+    "specialty": [
+      "Dermatologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-sadia-alvi",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:37.867000"
+  },
+  {
+    "_id": "6930b46dc38ecb697ef12a53",
+    "name": "Dr. Ayesha Zia",
+    "specialty": [
+      "Gastroenterologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/gastroenterologist/dr-ayesha-zia",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:06:37.870000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a54",
+    "name": "Asst. Prof. Dr. Adil Hassan",
+    "specialty": [
+      "Gastroenterologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "8 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/gastroenterologist/asst-prof-dr-adil-hassan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.698000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a55",
+    "name": "Assoc. Prof. Dr. Irfan Ahmed Shaikh",
+    "specialty": [
+      "Ent Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "15 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/ent-specialist/assoc-prof-dr-irfan-ahmed-shaikh",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.702000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a56",
+    "name": "Dr. Mumtaz Ali",
+    "specialty": [
+      "Cardiologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "7 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/cardiologist/dr-mumtaz-ali",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.706000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a57",
+    "name": "Prof. Dr. Sohail A Malik Qureshi",
+    "specialty": [
+      "Ent Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "37 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/ent-surgeon/prof-dr-sohail-a-malik-qureshi",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.713000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a58",
+    "name": "Dr. Santosh Kumar",
+    "specialty": [
+      "Neurologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "19 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/neuro-physician/dr-santosh-kumar",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.719000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a59",
+    "name": "Dr. Shehla Ahmed",
+    "specialty": [
+      "Dermatologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "9 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-shehla-ahmed",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.724000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a5a",
+    "name": "Dr. Samina Ayaz",
+    "specialty": [
+      "Gynecologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "10 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-samina-ayaz",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.727000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a5b",
+    "name": "Assoc. Prof. Dr. Tanveer Ahmed",
+    "specialty": [
+      "General Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "20 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/assoc-prof-dr-tanveer-ahmed",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.730000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a5c",
+    "name": "Dr. Zahoor Hussain",
+    "specialty": [
+      "Pulmonologist / Lung Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "7 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/pulmonologist/dr-zahoor-hussain",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.734000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a5d",
+    "name": "Dr. Hammad Hanif",
+    "specialty": [
+      "General Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "25 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-hammad-hanif",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.737000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a5e",
+    "name": "Dr. Balram Das",
+    "specialty": [
+      "Pediatrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "19 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/pediatrician/dr-balram-das",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.738000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a5f",
+    "name": "Dr. Lajpat Rai",
+    "specialty": [
+      "General Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-lajpat-rai",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.741000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a60",
+    "name": "Dr. Sajjad Ali",
+    "specialty": [
+      "Orthopedic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "9 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-sajjad-ali",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.744000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a61",
+    "name": "Asst. Prof. Dr. Farooque Ahmed",
+    "specialty": [
+      "Urologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "7 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/urologist/asst-prof-dr-farooque-ahmed",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.748000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a62",
+    "name": "Dr. Ghulam Shabir",
+    "specialty": [
+      "Plastic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "12 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/plastic-surgeon/dr-ghulam-shabir",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.750000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a63",
+    "name": "Dr. Abdul Majid",
+    "specialty": [
+      "Internal Medicine Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "100%",
+    "profile_url": "https://www.marham.pk/doctors/karachi/internal-medicine/dr-abdul-majid",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.753000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a64",
+    "name": "Dr. Shazia Aftab",
+    "specialty": [
+      "Gynecologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "22 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-shazia-aftab",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.755000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a65",
+    "name": "Dr. Saba Khan",
+    "specialty": [
+      "Gynecologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "12 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-saba-khan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.757000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a66",
+    "name": "Asst. Prof. Dr. Khalil Ur Rehman",
+    "specialty": [
+      "General Physician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "24 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-physician/asst-prof-dr-khalil-ur-rehman",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.760000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a67",
+    "name": "Prof. Dr. Asha Mahesh",
+    "specialty": [
+      "Gynecologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "18 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/prof-dr-asha-mahesh",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.762000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a68",
+    "name": "Ehtesham Ullah Khan",
+    "specialty": [
+      "Physiotherapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/physiotherapist/ehtesham-ullah-khan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.765000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a69",
+    "name": "Ms. Nida Khurram",
+    "specialty": [
+      "Occupational Therapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/occupational-therapist/ms-nida-khurram",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.767000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a6a",
+    "name": "Dr. Jennifer Benita",
+    "specialty": [
+      "Gynecologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "28 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-jennifer-benita",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.769000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a6b",
+    "name": "Prof. Dr. Hassan Dost Afridi",
+    "specialty": [
+      "Orthopedic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "27 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/orthopedic-surgeon/prof-dr-hassan-dost-afridi",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.772000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a6c",
+    "name": "Dr. Santosh Kumar Pamnani",
+    "specialty": [
+      "Neurologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/neuro-physician/dr-santosh-kumar-pamnani",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.774000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a6d",
+    "name": "Dr. Sumera Nawaz",
+    "specialty": [
+      "Internal Medicine Specialist, Family Medicine, Medical Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/internal-medicine/dr-sumera-nawaz",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.776000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a6e",
+    "name": "Dr. Atif Iqbal Khan",
+    "specialty": [
+      "Cardiologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/cardiologist/dr-atif-iqbal-khan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.778000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a6f",
+    "name": "Dr. Ghulam Shabbir",
+    "specialty": [
+      "Plastic Surgeon, Cosmetic Surgeon, Hand Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/plastic-surgeon/dr-ghulam-shabbir",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.780000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a70",
+    "name": "Dr. Farooq Ahmed",
+    "specialty": [
+      "Urologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-farooq-ahmed",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.782000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a71",
+    "name": "Dr. Khalid Hussain Soomro",
+    "specialty": [
+      "Cardiologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/cardiologist/dr-khalid-hussain-soomro",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.784000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a72",
+    "name": "Prof. Dr. M. Iqbal Afridi",
+    "specialty": [
+      "Psychiatrist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychiatrist/prof-dr-m-iqbal-afridi",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.786000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a73",
+    "name": "Prof. Dr. Almas Uddin Qazi",
+    "specialty": [
+      "General Surgeon, Laparoscopic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/prof-dr-almas-uddin-qazi",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.788000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a74",
+    "name": "Dr. Razia Nasir",
+    "specialty": [
+      "Gynecologist, Obstetrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-razia-nasir",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.790000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a75",
+    "name": "Dr. Khalil Ur Rehman",
+    "specialty": [
+      "Internal Medicine Specialist, Hypertension Specialist, Medical Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/internal-medicine/dr-khalil-ur-rehman",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.792000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a76",
+    "name": "Assoc. Prof. Dr. Tanveer Ahmad",
+    "specialty": [
+      "Thoracic Surgeon, General Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/thoracic-surgeon/assoc-prof-dr-tanveer-ahmad",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.794000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a77",
+    "name": "Prof. Dr. Sohail Abdul Malik",
+    "specialty": [
+      "Ent Specialist, ENT Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/ent-specialist/prof-dr-sohail-abdul-malik",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.798000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a78",
+    "name": "Dr. M Ayub Baloch",
+    "specialty": [
+      "Psychiatrist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychiatrist/dr-m-ayub-baloch",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.800000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a79",
+    "name": "Dr. Saeed Ahmed Shaikh",
+    "specialty": [
+      "Orthopedic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-saeed-ahmed-shaikh",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.802000"
+  },
+  {
+    "_id": "6930b48fc38ecb697ef12a7a",
+    "name": "Dr. Khuda Bux",
+    "specialty": [
+      "Urologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-khuda-bux",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:11.804000"
+  },
+  {
+    "_id": "6930b4b1c38ecb697ef12a7b",
+    "name": "Dr. Atta Ullah Mahar",
+    "specialty": [
+      "General Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/taj-specialist-clinic/ma-jinnah-road",
+    "address": null,
+    "rating": null,
+    "experience": "3 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-atta-ullah-mahar",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:45.305000"
+  },
+  {
+    "_id": "6930b4b1c38ecb697ef12a7c",
+    "name": "Dr. Farhan Haleem",
+    "specialty": [
+      "Gastroenterologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/taj-specialist-clinic/ma-jinnah-road",
+    "address": null,
+    "rating": null,
+    "experience": "2 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/gastroenterologist/dr-farhan-haleem",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:45.310000"
+  },
+  {
+    "_id": "6930b4b1c38ecb697ef12a7d",
+    "name": "Dr. Danish Shakeel",
+    "specialty": [
+      "Hematologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/taj-specialist-clinic/ma-jinnah-road",
+    "address": null,
+    "rating": null,
+    "experience": "7 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/hematologist/dr-danish-shakeel",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:45.313000"
+  },
+  {
+    "_id": "6930b4b1c38ecb697ef12a7e",
+    "name": "Dr. Ataullah Mahar",
+    "specialty": [
+      "General Surgeon, Laparoscopic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/taj-specialist-clinic/ma-jinnah-road",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-ataullah-mahar",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:45.316000"
+  },
+  {
+    "_id": "6930b4b1c38ecb697ef12a7f",
+    "name": "Dr. Mujeeb Rehman",
+    "specialty": [
+      "Pediatrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/taj-specialist-clinic/ma-jinnah-road",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/pediatrician/dr-mujeeb-rehman",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:07:45.321000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a80",
+    "name": "Asst. Prof. Dr. Muhammad Hanif",
+    "specialty": [
+      "Pediatrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": "20 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/pediatrician/asst-prof-dr-muhammad-hanif",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.231000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a81",
+    "name": "Dr. Agha Jan Muhammad",
+    "specialty": [
+      "General Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": "34 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-agha-jan-muhammad",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.235000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a82",
+    "name": "Asst. Prof. Dr. Jagdesh Kumar",
+    "specialty": [
+      "Pulmonologist / Lung Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": "10 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/pulmonologist/asst-prof-dr-jagdesh-kumar",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.239000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a83",
+    "name": "Assoc. Prof. Dr. Saif Ullah Shaikh",
+    "specialty": [
+      "Diabetologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": "24 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/diabetologist/assoc-prof-dr-saif-ullah-shaikh",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.242000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a84",
+    "name": "Dr. Faizan Khalid",
+    "specialty": [
+      "Regenerative Medicine Specialist, General Physician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": "9 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/regenerative-medicine-specialist/dr-faizan-khalid",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.246000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a85",
+    "name": "Dr. Jameel Somroo",
+    "specialty": [
+      "Family Medicine"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/family-medicine/dr-jameel-somroo",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.250000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a86",
+    "name": "Dr. Naimat Ullah",
+    "specialty": [
+      "Diabetologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": "100%",
+    "profile_url": "https://www.marham.pk/doctors/karachi/diabetologist/dr-naimat-ullah",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.254000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a87",
+    "name": "Dr. Aysha Sultan",
+    "specialty": [
+      "Pediatrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/pediatrician/dr-aysha-sultan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.259000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a88",
+    "name": "Dr. Ghulam Raza",
+    "specialty": [
+      "Pediatrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": "36 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/pediatrician/dr-ghulam-raza",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.264000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a89",
+    "name": "Dr. Sharif Jan",
+    "specialty": [
+      "Neuro Psychiatrist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": "16 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/neuro-psychiatrist/dr-sharif-jan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.268000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a8a",
+    "name": "Dr. Rizwan",
+    "specialty": [
+      "Plastic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/plastic-surgeon/dr-rizwan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.275000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a8b",
+    "name": "Dr. Paras Nadeem",
+    "specialty": [
+      "Gynecologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-paras-nadeem",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.281000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a8c",
+    "name": "Prof. Dr. Ehmar Al Ibran",
+    "specialty": [
+      "Plastic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/plastic-surgeon/prof-dr-ehmar-al-ibran",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.283000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a8d",
+    "name": "Dr. Hina Mustafa",
+    "specialty": [
+      "Chest Respiratory Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": "7 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/chest-respiratory-specialist/dr-hina-mustafa",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.289000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a8e",
+    "name": "Asst. Prof. Dr. Aziz Rehman",
+    "specialty": [
+      "Medical Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": "22 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/medical-specialist/asst-prof-dr-aziz-rehman",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.293000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a8f",
+    "name": "Dr. Abida Bibi",
+    "specialty": [
+      "Gynecologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-abida-bibi",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.298000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a90",
+    "name": "Dr. Muhammad Aadil Pt",
+    "specialty": [
+      "Physiotherapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/physiotherapist/dr-muhammad-aadil-pt",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.302000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a91",
+    "name": "Dr. Vijay Bhojwani",
+    "specialty": [
+      "Internal Medicine Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": "14 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/internal-medicine/dr-vijay-bhojwani",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.307000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a92",
+    "name": "Dr. Poonam Kumari",
+    "specialty": [
+      "Gynecologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": "15 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-poonam-kumari",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.310000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a93",
+    "name": "Dr. Komal Bashir Pt",
+    "specialty": [
+      "Physiotherapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/physiotherapist/dr-komal-bashir-pt",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.315000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a94",
+    "name": "Dr. Muhammad Aadil",
+    "specialty": [
+      "Physiotherapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": "3 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/physiotherapist/dr-muhammad-aadil",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.319000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a95",
+    "name": "Dr. Shaheen Ismail",
+    "specialty": [
+      "Gynecologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-shaheen-ismail",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.324000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a96",
+    "name": "Dr. Akhtar Ali",
+    "specialty": [
+      "Urologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": "10 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-akhtar-ali",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.328000"
+  },
+  {
+    "_id": "6930b4cbc38ecb697ef12a97",
+    "name": "Asst. Prof. Dr. Gulafshan Razi",
+    "specialty": [
+      "Pulmonologist / Lung Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "address": null,
+    "rating": null,
+    "experience": "100%",
+    "profile_url": "https://www.marham.pk/doctors/karachi/pulmonologist/asst-prof-dr-gulafshan-razi",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:11.332000"
+  },
+  {
+    "_id": "6930b4e0c38ecb697ef12a98",
+    "name": "Dr. Sana Ansar",
+    "specialty": [
+      "Internal Medicine Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/internal-medicine/dr-sana-ansar",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:32.216000"
+  },
+  {
+    "_id": "6930b4e0c38ecb697ef12a99",
+    "name": "Ms. Asma Mashkoor",
+    "specialty": [
+      "Speech Therapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/speech-therapist/ms-asma-mashkoor",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:32.218000"
+  },
+  {
+    "_id": "6930b4e0c38ecb697ef12a9a",
+    "name": "Dr. Syed Azhar Ali",
+    "specialty": [
+      "Psychiatrist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychiatrist/dr-syed-azhar-ali",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:32.221000"
+  },
+  {
+    "_id": "6930b4e0c38ecb697ef12a9b",
+    "name": "Dr. Mahwish Iqbal",
+    "specialty": [
+      "Nutritional Psychologist, Fertility Consultant, Gynecologist, Obstetrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/nutritional-psychologist/dr-mahwish-iqbal",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:32.223000"
+  },
+  {
+    "_id": "6930b4e0c38ecb697ef12a9c",
+    "name": "Dr. M. Asad Siddiqui",
+    "specialty": [
+      "Pediatrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/pediatrician/dr-m-asad-siddiqui",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:32.225000"
+  },
+  {
+    "_id": "6930b4e0c38ecb697ef12a9d",
+    "name": "Dr. Mohsin Ali Usmani",
+    "specialty": [
+      "Medical Specialist, General Physician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/medical-specialist/dr-mohsin-ali-usmani",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:32.228000"
+  },
+  {
+    "_id": "6930b4e0c38ecb697ef12a9e",
+    "name": "Dr. Syed Moid Shibly",
+    "specialty": [
+      "Pediatrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/pediatrician/dr-syed-moid-shibly",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:32.230000"
+  },
+  {
+    "_id": "6930b4e0c38ecb697ef12a9f",
+    "name": "Dr. Shah Maqbool",
+    "specialty": [
+      "Dentist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/dentist/dr-shah-maqbool",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:32.232000"
+  },
+  {
+    "_id": "6930b4e0c38ecb697ef12aa0",
+    "name": "Dr. Momina Farhan",
+    "specialty": [
+      "Physiotherapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/physiotherapist/dr-momina-farhan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:32.235000"
+  },
+  {
+    "_id": "6930b4e0c38ecb697ef12aa1",
+    "name": "Dr. Nida Yasmin",
+    "specialty": [
+      "Pediatrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/pediatrician/dr-nida-yasmin",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:32.237000"
+  },
+  {
+    "_id": "6930b4f7c38ecb697ef12aa2",
+    "name": "Dr. Habiba Sharaf Ali",
+    "specialty": [
+      "Gynecologist, Obstetrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-habiba-sharaf-ali",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:55.443000"
+  },
+  {
+    "_id": "6930b4f7c38ecb697ef12aa3",
+    "name": "Dr. Maha Dev",
+    "specialty": [
+      "Pediatrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/pediatrician/dr-maha-dev",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:55.445000"
+  },
+  {
+    "_id": "6930b4f7c38ecb697ef12aa4",
+    "name": "Dr. Abdul Hameed Shaikh",
+    "specialty": [
+      "Ent Specialist, Ent Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/ent-specialist/dr-abdul-hameed-shaikh",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:08:55.447000"
+  },
+  {
+    "_id": "6930b535c38ecb697ef12aa5",
+    "name": "Asst. Prof. Dr. Azeem Hussain Soomro",
+    "specialty": [
+      "Dentist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/naheed-medical-center/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "16 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/dentist/asst-prof-dr-azeem-hussain-soomro",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:09:57.959000"
+  },
+  {
+    "_id": "6930b535c38ecb697ef12aa6",
+    "name": "Dr. Fizza Khalid",
+    "specialty": [
+      "Dentist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/naheed-medical-center/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "10 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/dentist/dr-fizza-khalid",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:09:57.964000"
+  },
+  {
+    "_id": "6930b54dc38ecb697ef12aa7",
+    "name": "Dr. Rabia Farooqui",
+    "specialty": [
+      "Gynecologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "19 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-rabia-farooqui",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:21.082000"
+  },
+  {
+    "_id": "6930b54dc38ecb697ef12aa8",
+    "name": "Dr. Ifrah Uroos",
+    "specialty": [
+      "Cardiologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/cardiologist/dr-ifrah-uroos",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:21.089000"
+  },
+  {
+    "_id": "6930b54dc38ecb697ef12aa9",
+    "name": "Dr. Syed Farhan Ahmed",
+    "specialty": [
+      "Urologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-syed-farhan-ahmed",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:21.096000"
+  },
+  {
+    "_id": "6930b54dc38ecb697ef12aaa",
+    "name": "Dr. Faiqa Hassan",
+    "specialty": [
+      "Pediatrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "6 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/pediatrician/dr-faiqa-hassan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:21.105000"
+  },
+  {
+    "_id": "6930b54dc38ecb697ef12aab",
+    "name": "Dr. Adiba Zeeshan",
+    "specialty": [
+      "General Practitioner"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-practitioner/dr-adiba-zeeshan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:21.115000"
+  },
+  {
+    "_id": "6930b54dc38ecb697ef12aac",
+    "name": "Dr. Mariam Zaighum",
+    "specialty": [
+      "Orthopedic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-mariam-zaighum",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:21.123000"
+  },
+  {
+    "_id": "6930b54dc38ecb697ef12aad",
+    "name": "Dr. Maryam Javed",
+    "specialty": [
+      "Neurologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/neuro-physician/dr-maryam-javed",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:21.129000"
+  },
+  {
+    "_id": "6930b54dc38ecb697ef12aae",
+    "name": "Dr. Waqas Ahmed",
+    "specialty": [
+      "Urologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-waqas-ahmed",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:21.137000"
+  },
+  {
+    "_id": "6930b54dc38ecb697ef12aaf",
+    "name": "Dr. Rubab Nafees",
+    "specialty": [
+      "General Surgeon, Laparoscopic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-rubab-nafees",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:21.144000"
+  },
+  {
+    "_id": "6930b54dc38ecb697ef12ab0",
+    "name": "Dr. Asma Muhammad Ali",
+    "specialty": [
+      "Plastic Surgeon, Reconstructive Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/plastic-surgeon/dr-asma-muhammad-ali",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:21.147000"
+  },
+  {
+    "_id": "6930b54dc38ecb697ef12ab1",
+    "name": "Dr. Shah Rukh Khalil",
+    "specialty": [
+      "General Surgeon, Laparoscopic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-shah-rukh-khalil",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:21.152000"
+  },
+  {
+    "_id": "6930b54dc38ecb697ef12ab2",
+    "name": "Dr. Azadi Saleh",
+    "specialty": [
+      "Dermatologist, Cosmetologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-azadi-saleh",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:21.157000"
+  },
+  {
+    "_id": "6930b54dc38ecb697ef12ab3",
+    "name": "Dr. Fahad Hanif Khan",
+    "specialty": [
+      "Plastic Surgeon, Cosmetic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/plastic-surgeon/dr-fahad-hanif-khan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:21.162000"
+  },
+  {
+    "_id": "6930b54dc38ecb697ef12ab4",
+    "name": "Dr. Urooj Naz",
+    "specialty": [
+      "Pediatrician, Neonatologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/pediatrician/dr-urooj-naz",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:21.166000"
+  },
+  {
+    "_id": "6930b54dc38ecb697ef12ab5",
+    "name": "Dr. Anum Latif",
+    "specialty": [
+      "Internal Medicine Specialist, General Physician, Medical Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/internal-medicine/dr-anum-latif",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:21.170000"
+  },
+  {
+    "_id": "6930b54dc38ecb697ef12ab6",
+    "name": "Dr. Nida Saleem",
+    "specialty": [
+      "General Surgeon, Laparoscopic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-nida-saleem",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:21.174000"
+  },
+  {
+    "_id": "6930b54dc38ecb697ef12ab7",
+    "name": "Dr. Irfan Ahsan",
+    "specialty": [
+      "Internal Medicine Specialist, Pulmonologist / Lung Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/internal-medicine/dr-irfan-ahsan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:21.178000"
+  },
+  {
+    "_id": "6930b563c38ecb697ef12ab8",
+    "name": "Dr. Fida Hussain",
+    "specialty": [
+      "Dermatologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medicos-radiology-center/dha-phase-6",
+    "address": null,
+    "rating": null,
+    "experience": "12 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-fida-hussain",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:43.055000"
+  },
+  {
+    "_id": "6930b563c38ecb697ef12ab9",
+    "name": "Dr. Rabia Shams",
+    "specialty": [
+      "General Physician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medicos-radiology-center/dha-phase-6",
+    "address": null,
+    "rating": null,
+    "experience": "38 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-physician/dr-rabia-shams",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:43.063000"
+  },
+  {
+    "_id": "6930b563c38ecb697ef12aba",
+    "name": "Dr. Shohab Hyder Shaikh",
+    "specialty": [
+      "Orthopedic Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medicos-radiology-center/dha-phase-6",
+    "address": null,
+    "rating": null,
+    "experience": "15 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-shohab-hyder-shaikh",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:43.071000"
+  },
+  {
+    "_id": "6930b563c38ecb697ef12abb",
+    "name": "Dr. Shams Qazi",
+    "specialty": [
+      "General Practitioner"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medicos-radiology-center/dha-phase-6",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-practitioner/dr-shams-qazi",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:43.082000"
+  },
+  {
+    "_id": "6930b563c38ecb697ef12abc",
+    "name": "Dr. Sadiqa Haider",
+    "specialty": [
+      "General Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/karachi-medicos-radiology-center/dha-phase-6",
+    "address": null,
+    "rating": null,
+    "experience": "12 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-sadiqa-haider",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:10:43.089000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12abd",
+    "name": "Ms. Adeeba Inam",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": "5 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/ms-adeeba-inam",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.040000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12abe",
+    "name": "Ms.Ayesha Abdul Ahad",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": "3 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/msayesha-abdul-ahad",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.049000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12abf",
+    "name": "Eisha Usmani",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": "6 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/eisha-usmani",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.057000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12ac0",
+    "name": "Mr. Fawad Shah",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": "10 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/mr-fawad-shah",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.063000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12ac1",
+    "name": "Ms. Zainab Barry",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": "8 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/ms-zainab-barry",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.069000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12ac2",
+    "name": "Anum Siddiqui",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": "2 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/anum-siddiqui",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.081000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12ac3",
+    "name": "Ms Murk Qazi",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": "4 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/ms-murk-qazi",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.089000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12ac4",
+    "name": "Ms. Nayab Dehraj",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": "4 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/ms-nayab-dehraj",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.094000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12ac5",
+    "name": "Ms. Fatima Khizer",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": "2 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/ms-fatima-khizer",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.101000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12ac6",
+    "name": "Ms. Tooba Arshad",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": "2 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/ms-tooba-arshad",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.106000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12ac7",
+    "name": "Ms. Zainab Ali",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/ms-zainab-ali",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.114000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12ac8",
+    "name": "Ms. Huma Humair",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/ms-huma-humair",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.119000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12ac9",
+    "name": "Ms. Maha Mohsin",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": "3.5 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/ms-maha-mohsin",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.124000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12aca",
+    "name": "Kainat Amin",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": "3 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/kainat-amin",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.130000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12acb",
+    "name": "Areeja Shahid",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": "3 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/areeja-shahid",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.137000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12acc",
+    "name": "Ms. Mariam Motiwala",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/ms-mariam-motiwala",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.142000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12acd",
+    "name": "Ms. Fizza Merchant",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/ms-fizza-merchant",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.148000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12ace",
+    "name": "Mr. Anab Ahmed",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/mr-anab-ahmed",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.156000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12acf",
+    "name": "Ms. Aasiyah Sharif",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/ms-aasiyah-sharif",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.170000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12ad0",
+    "name": "Ms. Arubah Malik",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/ms-arubah-malik",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.176000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12ad1",
+    "name": "Ms. Azka Hasan",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/ms-azka-hasan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.182000"
+  },
+  {
+    "_id": "6930b57ec38ecb697ef12ad2",
+    "name": "Tooba Khalid",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "address": null,
+    "rating": null,
+    "experience": "5 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/tooba-khalid",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:10.189000"
+  },
+  {
+    "_id": "6930b594c38ecb697ef12ad3",
+    "name": "Dr. Irsa Islam",
+    "specialty": [
+      "Pediatrician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/nk-consultant-clinic/federal-b",
+    "address": null,
+    "rating": null,
+    "experience": "7 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/pediatrician/dr-irsa-islam",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:32.722000"
+  },
+  {
+    "_id": "6930b594c38ecb697ef12ad4",
+    "name": "Dr. Iffat Rizwana",
+    "specialty": [
+      "Gynecologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/nk-consultant-clinic/federal-b",
+    "address": null,
+    "rating": null,
+    "experience": "40 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-iffat-rizwana",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:32.730000"
+  },
+  {
+    "_id": "6930b594c38ecb697ef12ad5",
+    "name": "Dr. Abdul Rehman",
+    "specialty": [
+      "Dentist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/nk-consultant-clinic/federal-b",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/dentist/dr-abdul-rehman",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:32.738000"
+  },
+  {
+    "_id": "6930b594c38ecb697ef12ad6",
+    "name": "Dr. Saba Butt",
+    "specialty": [
+      "Physiotherapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/nk-consultant-clinic/federal-b",
+    "address": null,
+    "rating": null,
+    "experience": "2 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/physiotherapist/dr-saba-butt",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:32.744000"
+  },
+  {
+    "_id": "6930b594c38ecb697ef12ad7",
+    "name": "Dr. Faryal",
+    "specialty": [],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/nk-consultant-clinic/federal-b",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/physiotherapist/dr-faryal",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:32.759000"
+  },
+  {
+    "_id": "6930b594c38ecb697ef12ad8",
+    "name": "Ms. Saba Butt",
+    "specialty": [
+      "Physiotherapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/nk-consultant-clinic/federal-b",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/physiotherapist/ms-saba-butt",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:32.767000"
+  },
+  {
+    "_id": "6930b594c38ecb697ef12ad9",
+    "name": "Dr. Bilal Kamil",
+    "specialty": [
+      "Cardiologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/nk-consultant-clinic/federal-b",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/cardiologist/dr-bilal-kamil",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:32.774000"
+  },
+  {
+    "_id": "6930b5acc38ecb697ef12ada",
+    "name": "Ms. Sumbul Mujeeb",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/transformation-wellness-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "13 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/ms-sumbul-mujeeb",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:56.041000"
+  },
+  {
+    "_id": "6930b5acc38ecb697ef12adb",
+    "name": "Ms. Nighat Altaf",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/transformation-wellness-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "4 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/ms-nighat-altaf",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:56.047000"
+  },
+  {
+    "_id": "6930b5acc38ecb697ef12adc",
+    "name": "Dr. Muhammad Imran Yousuf",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/transformation-wellness-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "21 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/dr-muhammad-imran-yousuf",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:56.054000"
+  },
+  {
+    "_id": "6930b5acc38ecb697ef12add",
+    "name": "Dr. Sumbul Mujeeb",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/transformation-wellness-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/dr-sumbul-mujeeb",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:56.060000"
+  },
+  {
+    "_id": "6930b5acc38ecb697ef12ade",
+    "name": "Ms. Rubina Hafeez",
+    "specialty": [
+      "Psychologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/transformation-wellness-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/ms-rubina-hafeez",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:56.067000"
+  },
+  {
+    "_id": "6930b5acc38ecb697ef12adf",
+    "name": "Dr. Imran Y. Muhammad",
+    "specialty": [
+      "Psychologist, Hypertension Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/transformation-wellness-clinic/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/psychologist/dr-imran-y-muhammad",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:11:56.077000"
+  },
+  {
+    "_id": "6930b618c38ecb697ef12ae0",
+    "name": "Dr. Shaikh Sajjad",
+    "specialty": [
+      "Ent Specialist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/memon-medical-institute-hospital-outreach-center/federal-b",
+    "address": null,
+    "rating": null,
+    "experience": "16 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/ent-specialist/dr-shaikh-sajjad",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:13:44.444000"
+  },
+  {
+    "_id": "6930b618c38ecb697ef12ae1",
+    "name": "Dr. Mahmood Khurasany",
+    "specialty": [
+      "Dermatologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/memon-medical-institute-hospital-outreach-center/federal-b",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-mahmood-khurasany",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:13:44.448000"
+  },
+  {
+    "_id": "6930b618c38ecb697ef12ae2",
+    "name": "Dr. Muhammad Arshad",
+    "specialty": [
+      "Diabetologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/memon-medical-institute-hospital-outreach-center/federal-b",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/diabetologist/dr-muhammad-arshad",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:13:44.453000"
+  },
+  {
+    "_id": "6930b618c38ecb697ef12ae3",
+    "name": "Dr. Ghullam Muhammad",
+    "specialty": [],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/memon-medical-institute-hospital-outreach-center/federal-b",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-physician/dr-ghullam-muhammad",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:13:44.457000"
+  },
+  {
+    "_id": "6930b618c38ecb697ef12ae4",
+    "name": "Dr. Harmain Mithani",
+    "specialty": [
+      "Dentist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/memon-medical-institute-hospital-outreach-center/federal-b",
+    "address": null,
+    "rating": null,
+    "experience": "8 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/dentist/dr-harmain-mithani",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:13:44.461000"
+  },
+  {
+    "_id": "6930b618c38ecb697ef12ae5",
+    "name": "Dr. Shahzaib Ashfaq",
+    "specialty": [
+      "Dentist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/memon-medical-institute-hospital-outreach-center/federal-b",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/dentist/dr-shahzaib-ashfaq",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:13:44.465000"
+  },
+  {
+    "_id": "6930b618c38ecb697ef12ae6",
+    "name": "Dr. Laraib Shah Nawaz",
+    "specialty": [
+      "Dentist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/memon-medical-institute-hospital-outreach-center/federal-b",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/dentist/dr-laraib-shah-nawaz",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:13:44.468000"
+  },
+  {
+    "_id": "6930b618c38ecb697ef12ae7",
+    "name": "Dr. Fazal Ur Rehman",
+    "specialty": [
+      "General Physician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/memon-medical-institute-hospital-outreach-center/federal-b",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-physician/dr-fazal-ur-rehman",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:13:44.473000"
+  },
+  {
+    "_id": "6930b618c38ecb697ef12ae8",
+    "name": "Dr. Faisal",
+    "specialty": [
+      "Gastroenterologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/memon-medical-institute-hospital-outreach-center/federal-b",
+    "address": null,
+    "rating": null,
+    "experience": "16 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/gastroenterologist/dr-faisal",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:13:44.478000"
+  },
+  {
+    "_id": "6930b62ec38ecb697ef12ae9",
+    "name": "Dr. Anum Shakeel",
+    "specialty": [
+      "Physiotherapist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/rida-medical-center/gulshan-e-iqbal",
+    "address": null,
+    "rating": null,
+    "experience": "4 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/physiotherapist/dr-anum-shakeel",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:14:06.462000"
+  },
+  {
+    "_id": "6930b645c38ecb697ef12aea",
+    "name": "Dr. Faryal Shareef",
+    "specialty": [
+      "Dermatologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/skintech-solutions/muhammad-ali-society",
+    "address": null,
+    "rating": null,
+    "experience": "8 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-faryal-shareef",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:14:29.926000"
+  },
+  {
+    "_id": "6930b645c38ecb697ef12aeb",
+    "name": "Dr. Anam Islam",
+    "specialty": [
+      "General Practitioner, Aesthetic Physician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/skintech-solutions/muhammad-ali-society",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-practitioner/dr-anam-islam",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:14:29.932000"
+  },
+  {
+    "_id": "6930b645c38ecb697ef12aec",
+    "name": "Dr. Ali Sufyan",
+    "specialty": [
+      "General Practitioner"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/skintech-solutions/muhammad-ali-society",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-practitioner/dr-ali-sufyan",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:14:29.937000"
+  },
+  {
+    "_id": "6930b645c38ecb697ef12aed",
+    "name": "Dr. Suneel Kumar",
+    "specialty": [
+      "Plastic Surgeon, Cosmetic Surgeon, Hand Surgeon"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/skintech-solutions/muhammad-ali-society",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/plastic-surgeon/dr-suneel-kumar",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:14:29.942000"
+  },
+  {
+    "_id": "6930b645c38ecb697ef12aee",
+    "name": "Dr. Mehreen Ghafoor",
+    "specialty": [
+      "Dermatologist, Cosmetologist"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/skintech-solutions/muhammad-ali-society",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-mehreen-ghafoor",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:14:29.948000"
+  },
+  {
+    "_id": "6930b65cc38ecb697ef12aef",
+    "name": "Dr. Zahid Hussain",
+    "specialty": [
+      "General Physician"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/the-health-clinic-dha/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": "20 Yrs",
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-physician/dr-zahid-hussain",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:14:52.218000"
+  },
+  {
+    "_id": "6930b65cc38ecb697ef12af0",
+    "name": "Dr. Ambereen Ansari",
+    "specialty": [
+      "General Practitioner"
+    ],
+    "fees": null,
+    "city": "Karachi",
+    "area": null,
+    "hospital": "https://www.marham.pk/hospitals/karachi/the-health-clinic-dha/dha-city-karachi",
+    "address": null,
+    "rating": null,
+    "experience": null,
+    "profile_url": "https://www.marham.pk/doctors/karachi/general-practitioner/dr-ambereen-ansari",
+    "platform": "marham",
+    "scraped_at": "2025-12-03 22:14:52.230000"
+  }
+]

@@ -1,5 +1,15 @@
 from __future__ import annotations
 
+# Allow running the script directly (python scrapers/tools/import_db.py ...)
+# by ensuring the package root is on sys.path. This makes `import scrapers...`
+# work even when executing the file path instead of using `-m`.
+import sys
+import pathlib
+
+root = pathlib.Path(__file__).resolve().parents[2]
+if str(root) not in sys.path:
+    sys.path.insert(0, str(root))
+
 import argparse
 import csv
 import json

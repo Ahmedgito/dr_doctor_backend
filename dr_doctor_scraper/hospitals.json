@@ -1,0 +1,470 @@
+[
+  {
+    "_id": "6930b2389c75f684c3f6ee20",
+    "url": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
+    "name": "Hashmanis Hospital - M A Jinnah Road, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b2389c75f684c3f6ee21",
+    "url": "https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar",
+    "name": "Qureshi Ent Medical Centre, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b2389c75f684c3f6ee22",
+    "url": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
+    "name": "Karachi Medical Complex Consultants Clinic, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b2389c75f684c3f6ee23",
+    "url": "https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar",
+    "name": "Taj Medical Complex Hospital Room 14, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b2389c75f684c3f6ee24",
+    "url": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
+    "name": "Metropolis Health Clinics, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b34d9c75f684c3f6ee25",
+    "url": "https://www.marham.pk/hospitals/karachi/lyfe-healthcare-hospital/adamjee-nagar-society-block-a",
+    "name": "Lyfe Healthcare Hospital, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b34d9c75f684c3f6ee26",
+    "url": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
+    "name": "Mumtaz Hospital, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b34d9c75f684c3f6ee27",
+    "url": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
+    "name": "Pak International Hospital, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b34d9c75f684c3f6ee28",
+    "url": "https://www.marham.pk/hospitals/karachi/taj-specialist-clinic/ma-jinnah-road",
+    "name": "Taj Specialist Clinic, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b34d9c75f684c3f6ee29",
+    "url": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
+    "name": "K-Health Care Hospital, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b3509c75f684c3f6ee2a",
+    "url": "https://www.marham.pk/hospitals/karachi/naheed-medical-center/gulshan-e-iqbal",
+    "name": "Naheed Medical Center, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b3509c75f684c3f6ee2b",
+    "url": "https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal",
+    "name": "Al Fatima Hospital, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b3509c75f684c3f6ee2c",
+    "url": "https://www.marham.pk/hospitals/karachi/karachi-medicos-radiology-center/dha-phase-6",
+    "name": "Karachi Medicos & Radiology Center, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b3509c75f684c3f6ee2d",
+    "url": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
+    "name": "House of Pebbles, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b3509c75f684c3f6ee2e",
+    "url": "https://www.marham.pk/hospitals/karachi/nk-consultant-clinic/federal-b",
+    "name": "NK Consultant Clinic, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b3509c75f684c3f6ee2f",
+    "url": "https://www.marham.pk/hospitals/karachi/transformation-wellness-clinic/gulshan-e-iqbal",
+    "name": "Transformation Wellness Clinic, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b3559c75f684c3f6ee30",
+    "url": "https://www.marham.pk/hospitals/karachi/memon-medical-institute-hospital-outreach-center/federal-b",
+    "name": "Memon Medical Institute Hospital Outreach Center, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b3559c75f684c3f6ee31",
+    "url": "https://www.marham.pk/hospitals/karachi/rida-medical-center/gulshan-e-iqbal",
+    "name": "Rida Medical Center, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b3559c75f684c3f6ee32",
+    "url": "https://www.marham.pk/hospitals/karachi/skintech-solutions/muhammad-ali-society",
+    "name": "Skintech Solutions, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b3559c75f684c3f6ee33",
+    "url": "https://www.marham.pk/hospitals/karachi/the-health-clinic-dha/dha-city-karachi",
+    "name": "The Health Clinic DHA, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b3559c75f684c3f6ee34",
+    "url": "https://www.marham.pk/hospitals/karachi/aafiyah-family-health-clinics/clifton",
+    "name": "Aafiyah Family Health Clinics, Karachi",
+    "platform": "marham",
+    "address": null,
+    "area": null,
+    "city": "Karachi",
+    "timing": null
+  },
+  {
+    "_id": "6930b3559c75f684c3f6ee35",
+    "url": "https://www.marham.pk/hospitals/karachi/iqra-labs-and-diagnostic-centre/north-nazimabad",
+    "name": "Iqra Labs and Diagnostic Centre, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b35a9c75f684c3f6ee36",
+    "url": "https://www.marham.pk/hospitals/karachi/rajput-health-care-center/dha-phase-1",
+    "name": "Rajput Health Care Center, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b35a9c75f684c3f6ee37",
+    "url": "https://www.marham.pk/hospitals/karachi/the-wellness-hospital/dha",
+    "name": "The Wellness Hospital, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b35a9c75f684c3f6ee38",
+    "url": "https://www.marham.pk/hospitals/karachi/am-family-clinic-pharmacy/block-7-gulistan-e-johar",
+    "name": "A.M Family Clinic & Pharmacy, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b35a9c75f684c3f6ee39",
+    "url": "https://www.marham.pk/hospitals/karachi/advance-medical-center/dha-phase-6",
+    "name": "Advance Medical Center, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b35a9c75f684c3f6ee3a",
+    "url": "https://www.marham.pk/hospitals/karachi/johar-medical-clinic/gulistan-e-johar",
+    "name": "Johar Medical Clinic, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b35a9c75f684c3f6ee3b",
+    "url": "https://www.marham.pk/hospitals/karachi/lifecare-consultant-clinics-hospitals/dha-phase-1",
+    "name": "Lifecare Consultant Clinics & Hospitals, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b35e9c75f684c3f6ee3c",
+    "url": "https://www.marham.pk/hospitals/karachi/m-farooq-clinical-pharmacy/dha-phase-ii",
+    "name": "M Farooq Clinical Pharmacy, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b35e9c75f684c3f6ee3d",
+    "url": "https://www.marham.pk/hospitals/karachi/hilal-e-ahmar-house-hospital/clifton",
+    "name": "Hilal-E-Ahmar House Hospital, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b35e9c75f684c3f6ee3e",
+    "url": "https://www.marham.pk/hospitals/karachi/imam-clinic/north-nazimabad",
+    "name": "Imam Clinic, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b35e9c75f684c3f6ee3f",
+    "url": "https://www.marham.pk/hospitals/karachi/taj-medical-complex/saddar",
+    "name": "Taj Medical Complex, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b35e9c75f684c3f6ee40",
+    "url": "https://www.marham.pk/hospitals/karachi/hillpark-general-hospital/bahadarabad",
+    "name": "Hillpark General Hospital, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b35e9c75f684c3f6ee41",
+    "url": "https://www.marham.pk/hospitals/karachi/medicare-cardiac-general-hospital/bahadarabad",
+    "name": "Medicare Cardiac & General Hospital, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b3699c75f684c3f6ee42",
+    "url": "https://www.marham.pk/hospitals/karachi/gmt-diagnostic-centre/saddar",
+    "name": "GMT Diagnostic Centre, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b3699c75f684c3f6ee43",
+    "url": "https://www.marham.pk/hospitals/karachi/lifeline-hospital/north-nazimabad",
+    "name": "Lifeline Hospital, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b3699c75f684c3f6ee44",
+    "url": "https://www.marham.pk/hospitals/karachi/mamji-hospital/fb-area",
+    "name": "Mamji Hospital, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b3699c75f684c3f6ee45",
+    "url": "https://www.marham.pk/hospitals/karachi/medicare-clinic-cardiac-and-general-hospital/bahadarabad",
+    "name": "Medicare Clinic Cardiac And General Hospital, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b3699c75f684c3f6ee46",
+    "url": "https://www.marham.pk/hospitals/karachi/atia-general-hospital/malir",
+    "name": "Atia General Hospital, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b3699c75f684c3f6ee47",
+    "url": "https://www.marham.pk/hospitals/karachi/dr-aisha-health-vision-hospital/bahadarabad",
+    "name": "Dr Aisha Health Vision Hospital, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b36f9c75f684c3f6ee48",
+    "url": "https://www.marham.pk/hospitals/karachi/south-city-hospital/clifton",
+    "name": "South City Hospital, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b36f9c75f684c3f6ee49",
+    "url": "https://www.marham.pk/hospitals/karachi/anklesaria-hospital/preedy-quarters-karachi",
+    "name": "Anklesaria Hospital, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b36f9c75f684c3f6ee4a",
+    "url": "https://www.marham.pk/hospitals/karachi/skin-laser-cosmetology-center/saddar",
+    "name": "Skin Laser & Cosmetology Center, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b36f9c75f684c3f6ee4b",
+    "url": "https://www.marham.pk/hospitals/karachi/national-medical-center/dha-city-karachi",
+    "name": "National Medical Center, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b36f9c75f684c3f6ee4c",
+    "url": "https://www.marham.pk/hospitals/karachi/health-icon-medical-diagnostic-centre/gulshan-e-iqbal",
+    "name": "Health Icon Medical & Diagnostic Centre, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b36f9c75f684c3f6ee4d",
+    "url": "https://www.marham.pk/hospitals/karachi/darul-sehat-hospital/gulistan-e-jauhar-block-4a",
+    "name": "Darul Sehat Hospital, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b3749c75f684c3f6ee4e",
+    "url": "https://www.marham.pk/hospitals/karachi/al-taj-diagnostic-consultant-clinics/saddar",
+    "name": "Al Taj diagnostic & Consultant Clinics, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b3749c75f684c3f6ee4f",
+    "url": "https://www.marham.pk/hospitals/karachi/hamdard-university-hospital/saddar",
+    "name": "Hamdard University Hospital, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b3749c75f684c3f6ee50",
+    "url": "https://www.marham.pk/hospitals/karachi/ssj-skin-clinic/north-nazimabad",
+    "name": "SSJ Skin Clinic, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b3749c75f684c3f6ee51",
+    "url": "https://www.marham.pk/hospitals/karachi/doctors-plaza-the-plaza-hospital/do-talwar",
+    "name": "Doctors Plaza, The Plaza Hospital, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b3749c75f684c3f6ee52",
+    "url": "https://www.marham.pk/hospitals/karachi/saifee-hospital/north-nazimabad",
+    "name": "Saifee Hospital, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b3749c75f684c3f6ee53",
+    "url": "https://www.marham.pk/hospitals/karachi/neuro-care-clinic/pechs",
+    "name": "Neuro Care Clinic, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b37b9c75f684c3f6ee54",
+    "url": "https://www.marham.pk/hospitals/karachi/zubaida-medical-centre/dharoji",
+    "name": "Zubaida Medical Centre, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b37b9c75f684c3f6ee55",
+    "url": "https://www.marham.pk/hospitals/karachi/hira-medical-center/fb-area",
+    "name": "Hira Medical Center, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b37b9c75f684c3f6ee56",
+    "url": "https://www.marham.pk/hospitals/karachi/omi-hospital-saddar/depot-lines-saddar",
+    "name": "Omi Hospital - Saddar, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b37b9c75f684c3f6ee57",
+    "url": "https://www.marham.pk/hospitals/karachi/khizar-specialist-clinic-hospital/shah-faisal-town",
+    "name": "Khizar Specialist Clinic & Hospital, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b37b9c75f684c3f6ee58",
+    "url": "https://www.marham.pk/hospitals/karachi/patel-hospital/gulshan-e-iqbal",
+    "name": "Patel Hospital, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b37b9c75f684c3f6ee59",
+    "url": "https://www.marham.pk/hospitals/karachi/psycho-social-centre/clifton",
+    "name": "Psycho Social Centre, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b3829c75f684c3f6ee5a",
+    "url": "https://www.marham.pk/hospitals/karachi/the-kidney-centre/cantt",
+    "name": "The Kidney Centre, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b3829c75f684c3f6ee5b",
+    "url": "https://www.marham.pk/hospitals/karachi/we-care-clinic/dha-phase-5",
+    "name": "We Care Clinic, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b3829c75f684c3f6ee5c",
+    "url": "https://www.marham.pk/hospitals/karachi/m-rab-medical-center/gulshan-e-iqbal",
+    "name": "M Rab Medical Center, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b3829c75f684c3f6ee5d",
+    "url": "https://www.marham.pk/hospitals/karachi/jk-health-link/clifton",
+    "name": "JK Health Link, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b3829c75f684c3f6ee5e",
+    "url": "https://www.marham.pk/hospitals/karachi/ziauddin-hospital/north-nazimabad",
+    "name": "Ziauddin Hospital, Karachi",
+    "platform": "marham"
+  },
+  {
+    "_id": "6930b3829c75f684c3f6ee5f",
+    "url": "https://www.marham.pk/hospitals/karachi/child-care-clinic/near-yadgar-fish",
+    "name": "Child Care Clinic, Karachi",
+    "platform": "marham"
+  }
+]
