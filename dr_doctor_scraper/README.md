@@ -50,6 +50,48 @@ dr_doctor_scraper/
 cd dr_doctor_scraper
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\\Scripts\\activate
+```
+
+## 11. Import / Export Database
+
+Two small CLI helpers are included under `scrapers/tools/` to help export and
+import collections for sharing/syncing databases.
+
+- Export a collection to JSON-lines (default):
+
+```powershell
+python scrapers/tools/export_db.py --collection doctors --out doctors.jsonl
+```
+
+- Export to a pretty JSON array:
+
+```powershell
+python scrapers/tools/export_db.py --collection hospitals --out hospitals.json --format json --pretty
+```
+
+- Export to CSV:
+
+```powershell
+python scrapers/tools/export_db.py --collection doctors --out doctors.csv --format csv
+```
+
+- Import a JSON-lines file (upserts doctors by `profile_url`):
+
+```powershell
+python scrapers/tools/import_db.py --collection doctors --in doctors.jsonl --format jsonl
+```
+
+- Import a CSV file:
+
+```powershell
+python scrapers/tools/import_db.py --collection hospitals --in hospitals.csv --format csv
+```
+
+Notes:
+- The import scripts will upsert by `profile_url` for `doctors` and by `url` for `hospitals` when possible.
+- Files are expected to be either newline-delimited JSON objects (`.jsonl`), a JSON array (`.json`), or CSV.
+- These tools use the project's `.env` `MONGO_URI` value via `MongoClientManager`.
+
 
 ```
 if is gives an eror that u cant run scrips in power schell then run this comnad first 
