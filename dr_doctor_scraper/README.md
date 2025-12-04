@@ -101,6 +101,12 @@ $env:MONGO_URI = 'mongodb://localhost:27017/'
 `scrapers/`
 - `base_scraper.py` — Playwright wrapper and helpers
 - `marham_scraper.py`, `oladoc_scraper.py` — site-specific scrapers
+- `marham/` — Modular Marham scraper components:
+  - `parsers/` — Hospital and doctor HTML parsing
+  - `enrichers/` — Profile enrichment logic
+  - `collectors/` — Doctor card collection with Load More handling
+  - `mergers/` — Data merging and deduplication
+  - `handlers/` — Hospital practice relationship management
 - `database/mongo_client.py` — MongoDB wrapper (insert, upsert, indexes)
 - `models/` — `DoctorModel`, `HospitalModel` (Pydantic)
 - `tools/` — `export_db.py`, `import_db.py`
