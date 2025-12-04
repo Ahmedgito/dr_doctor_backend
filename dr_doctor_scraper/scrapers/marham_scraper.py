@@ -229,9 +229,9 @@ class MarhamScraper(BaseScraper):
                                 self.mongo_client.insert_hospital(HospitalModel(**minimal).dict())
                                 stats["hospitals"] += 1
                             except Exception as exc:
-                                logger.debug("Insert minimal hospital exception: {}", exc)
-                except Exception:  # noqa: BLE001
-                    logger.warning("Could not insert minimal hospital: {}", h.get("name"))
+                                logger.debug("Insert minimal hospital exception for {}: {}", h.get("name"), exc)
+                except Exception as exc:  # noqa: BLE001
+                    logger.warning("Could not insert minimal hospital {}: {}", h.get("name"), exc)
 
                 if h.get("url"):
                     hospital_urls.append(h.get("url"))

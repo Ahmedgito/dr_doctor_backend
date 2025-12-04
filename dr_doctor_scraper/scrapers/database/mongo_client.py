@@ -9,9 +9,28 @@ class MongoClientManager:
     def __init__(self) -> None:
         mongo_uri = os.getenv("MONGO_URI")
         if not mongo_uri:
-            raise ValueError("MONGO_URI missing in .env")
+            raise ValueError(
+                "MONGO_URI missing in .env file. "
+                "Please set MONGO_URI in your .env file (e.g., MONGO_URI=mongodb://localhost:27017/). "
+                "Make sure MongoDB is running before starting the scraper."
+            )
         
-        self.client = MongoClient(mongo_uri)
+        try:
+            self.client = MongoClient(mongo_uri, serverSelectionTimeoutMS=5000)
+            # Test connection
+            self.client.admin.command("ping")
+        except Exception as e:
+            error_msg = (
+                f"Failed to connect to MongoDB at {mongo_uri}\n"
+                f"Error: {str(e)}\n\n"
+                "Troubleshooting:\n"
+                "1. Make sure MongoDB is running (check with: mongosh or mongo)\n"
+                "2. Verify MONGO_URI in .env file is correct\n"
+                "3. Check if MongoDB is listening on the expected port\n"
+                "4. For local MongoDB: Start it with 'mongod' or check Windows Services"
+            )
+            raise ConnectionError(error_msg) from e
+        
         self.db = self.client["dr_doctor"]
 
         self.doctors = self.db["doctors"]

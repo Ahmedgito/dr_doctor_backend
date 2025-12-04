@@ -1630,3 +1630,634 @@ Call log:
        - waiting 500ms
 
 2025-12-04 03:14:53 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/aafiyah-family-health-clinics/clifton
+2025-12-05 00:29:13 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='marham', headless=True, limit=5)
+2025-12-05 00:29:13 | INFO     | __main__:run_for_site:49 - Running Marham scraper
+2025-12-05 00:29:15 | INFO     | scrapers.base_scraper:__enter__:44 - Playwright browser started (headless=True)
+2025-12-05 00:29:15 | INFO     | scrapers.marham_scraper:scrape:182 - Starting Marham hospital-first scraping from https://www.marham.pk/hospitals/karachi?page=
+2025-12-05 00:29:15 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi?page=1
+2025-12-05 00:29:21 | INFO     | scrapers.marham_scraper:scrape:249 - Collected 5 hospital URLs to process
+2025-12-05 00:29:21 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines
+2025-12-05 00:29:23 | INFO     | scrapers.marham_scraper:scrape:270 - Hospital data changed for https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines: updating
+2025-12-05 00:29:23 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines
+2025-12-05 00:29:24 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:42 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines — clicking until exhausted
+2025-12-05 00:29:24 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:47 - Load More button clicked, waiting for content to load...
+2025-12-05 00:29:30 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (5/30s)
+2025-12-05 00:29:35 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (10/30s)
+2025-12-05 00:29:40 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (15/30s)
+2025-12-05 00:29:45 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (20/30s)
+2025-12-05 00:29:50 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (25/30s)
+2025-12-05 00:29:55 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (30/30s)
+2025-12-05 00:29:57 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:97 - Load More click #1: 21 total cards collected
+2025-12-05 00:29:57 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:47 - Load More button clicked, waiting for content to load...
+2025-12-05 00:30:03 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (5/30s)
+2025-12-05 00:30:08 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (10/30s)
+2025-12-05 00:30:13 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (15/30s)
+2025-12-05 00:30:18 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (20/30s)
+2025-12-05 00:30:23 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (25/30s)
+2025-12-05 00:30:28 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (30/30s)
+2025-12-05 00:30:30 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:97 - Load More click #2: 28 total cards collected
+2025-12-05 00:30:45 | WARNING  | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:99 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-05 00:30:45 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar
+2025-12-05 00:30:47 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/plastic-surgeon/prof-dr-nasreen-siddiqui
+2025-12-05 00:30:51 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:30:51 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/endocrinologist/dr-azeem-rajput
+2025-12-05 00:30:54 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:30:54 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/speech-therapist/dr-azhar-mashood
+2025-12-05 00:30:57 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:30:57 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-haji-saleem
+2025-12-05 00:31:00 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:31:00 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-m-abbas-memon
+2025-12-05 00:31:02 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:31:02 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-tanweer-ahmed
+2025-12-05 00:31:05 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:31:05 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:31:05 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/prof-dr-s-m-abbas
+2025-12-05 00:31:09 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:31:09 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-muhammad-afzal
+2025-12-05 00:31:12 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:31:12 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-zaid-dossani
+2025-12-05 00:31:16 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:31:16 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:31:16 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/internal-medicine/dr-raja-guru-dat
+2025-12-05 00:31:20 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:31:20 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/endocrinologist/dr-muhammad-javed
+2025-12-05 00:31:24 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:31:24 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/dr-lal-chand
+2025-12-05 00:31:27 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:31:27 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:31:27 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/ent-surgeon/dr-riaz-ahmed-shahid
+2025-12-05 00:31:29 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:31:29 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-jan-muhammad
+2025-12-05 00:31:35 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:31:35 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-rehana-sheikh
+2025-12-05 00:31:38 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:31:38 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-physician/dr-wajid-ali-sheikh
+2025-12-05 00:31:41 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:31:41 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-ahsan-mobin
+2025-12-05 00:31:43 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:31:43 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-zahid-memon
+2025-12-05 00:31:47 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:31:47 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-mr-umair
+2025-12-05 00:31:51 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:31:51 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-samra-rizwan
+2025-12-05 00:31:56 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:31:56 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/pediatric-surgeon/dr-farzeen-sharufuddin
+2025-12-05 00:32:00 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:32:00 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-inam-haider
+2025-12-05 00:32:02 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:32:02 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/ent-specialist/dr-abdul-waheed
+2025-12-05 00:32:06 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:32:06 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/prof-dr-khalida-soomro
+2025-12-05 00:32:09 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:32:09 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/nephrologist/dr-wajeeha-elahi
+2025-12-05 00:32:13 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:32:13 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:32:13 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-harnam-hotchandani
+2025-12-05 00:32:16 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Hashmanis Hospital - M A Jinnah Road
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Feroze Ahmed Mahar -> https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Prof. Dr. Nasreen Siddiqui -> https://www.marham.pk/doctors/karachi/plastic-surgeon/prof-dr-nasreen-siddiqui
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Azeem Rajput -> https://www.marham.pk/doctors/karachi/endocrinologist/dr-azeem-rajput
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Azhar Mashood -> https://www.marham.pk/doctors/karachi/speech-therapist/dr-azhar-mashood
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. M Abbas Memon -> https://www.marham.pk/doctors/karachi/pediatrician/dr-m-abbas-memon
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Haji Saleem -> https://www.marham.pk/doctors/karachi/pediatrician/dr-haji-saleem
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Tanweer Ahmed -> https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-tanweer-ahmed
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Prof. Dr. S M Abbas -> https://www.marham.pk/doctors/karachi/general-surgeon/prof-dr-s-m-abbas
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Zaid Dossani -> https://www.marham.pk/doctors/karachi/general-surgeon/dr-zaid-dossani
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Muhammad Afzal -> https://www.marham.pk/doctors/karachi/general-surgeon/dr-muhammad-afzal
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Rana Clinic -> https://www.marham.pk/hospitals/karachi/rana-clinic/jacob-lines
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: City Health Care Center -> https://www.marham.pk/hospitals/karachi/city-health-care-center/parsi-colony
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Rehman Clinic -> https://www.marham.pk/hospitals/karachi/rehman-clinic/marwari-lines-saddar
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Hamdard University Hospital -> https://www.marham.pk/hospitals/karachi/hamdard-university-hospital/saddar
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Zainab Panjwani Memorial Hospital -> https://www.marham.pk/hospitals/karachi/zainab-panjwani-memorial-hospital/parsi-colony
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Taj Medical Complex Hospital Room 14, Karachi -> https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Estheti Dental Clinic -> https://www.marham.pk/hospitals/karachi/estheti-dental-clinic/karachi
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Raza Dental Clinic -> https://www.marham.pk/hospitals/karachi/raza-dental-clinic-karachi/nishter-park
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: SPECIALIST CARE CLINIC Karachi -> https://www.marham.pk/hospitals/karachi/specialist-care-clinic-karachi/karachi
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Skin Specialists Aesthetics Clinic and Fertility Center -> https://www.marham.pk/hospitals/karachi/skin-specialists-aesthetics-clinic-and-fertility-center/saddar
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Taj Medical Complex -> https://www.marham.pk/hospitals/karachi/taj-medical-complex/saddar
+2025-12-05 00:32:16 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Al Hujjat Medical and Diagnostics -> https://www.marham.pk/hospitals/karachi/al-hujjat-medical-and-diagnostics/soldier-bazaar
+2025-12-05 00:32:16 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar
+2025-12-05 00:32:16 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/plastic-surgeon/prof-dr-nasreen-siddiqui
+2025-12-05 00:32:16 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/endocrinologist/dr-azeem-rajput
+2025-12-05 00:32:16 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/speech-therapist/dr-azhar-mashood
+2025-12-05 00:32:16 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/pediatrician/dr-m-abbas-memon
+2025-12-05 00:32:16 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/pediatrician/dr-haji-saleem
+2025-12-05 00:32:16 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-tanweer-ahmed
+2025-12-05 00:32:16 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/general-surgeon/prof-dr-s-m-abbas
+2025-12-05 00:32:16 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/general-surgeon/dr-zaid-dossani
+2025-12-05 00:32:16 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/general-surgeon/dr-muhammad-afzal
+2025-12-05 00:32:16 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/rana-clinic/jacob-lines
+2025-12-05 00:32:20 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/city-health-care-center/parsi-colony
+2025-12-05 00:32:23 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/rehman-clinic/marwari-lines-saddar
+2025-12-05 00:32:26 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/hamdard-university-hospital/saddar
+2025-12-05 00:32:28 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/zainab-panjwani-memorial-hospital/parsi-colony
+2025-12-05 00:32:31 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar
+2025-12-05 00:32:33 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/estheti-dental-clinic/karachi
+2025-12-05 00:32:36 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/raza-dental-clinic-karachi/nishter-park
+2025-12-05 00:32:39 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/specialist-care-clinic-karachi/karachi
+2025-12-05 00:32:41 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/skin-specialists-aesthetics-clinic-and-fertility-center/saddar
+2025-12-05 00:32:44 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/taj-medical-complex/saddar
+2025-12-05 00:32:49 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/al-hujjat-medical-and-diagnostics/soldier-bazaar
+2025-12-05 00:32:53 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar
+2025-12-05 00:32:56 | INFO     | scrapers.marham_scraper:scrape:270 - Hospital data changed for https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar: updating
+2025-12-05 00:32:56 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar
+2025-12-05 00:32:57 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:42 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar — clicking until exhausted
+2025-12-05 00:32:57 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:47 - Load More button clicked, waiting for content to load...
+2025-12-05 00:33:03 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (5/30s)
+2025-12-05 00:33:08 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (10/30s)
+2025-12-05 00:33:13 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (15/30s)
+2025-12-05 00:33:18 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (20/30s)
+2025-12-05 00:33:23 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (25/30s)
+2025-12-05 00:33:28 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (30/30s)
+2025-12-05 00:33:30 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:97 - Load More click #1: 4 total cards collected
+2025-12-05 00:33:45 | WARNING  | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:99 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-05 00:33:45 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/speech-therapist/ms-naveera-fatima
+2025-12-05 00:33:50 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:33:50 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-sidra-saleem
+2025-12-05 00:33:55 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:33:55 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Qureshi Ent Medical Centre
+2025-12-05 00:33:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Ms Naveera Fatima -> https://www.marham.pk/doctors/karachi/speech-therapist/ms-naveera-fatima
+2025-12-05 00:33:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Sidra Saleem -> https://www.marham.pk/doctors/karachi/pediatrician/dr-sidra-saleem
+2025-12-05 00:33:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: QEMC(Qureshi ENT and Medical center) -> https://www.marham.pk/hospitals/karachi/qemc-qureshi-ent-and-medical-center/gulistan-e-johar
+2025-12-05 00:33:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Quba Dental Care & Cosmetic Dentistry -> https://www.marham.pk/hospitals/karachi/quba-dental-care-cosmetic-dentistry/gulistan-e-johar
+2025-12-05 00:33:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Yasir Dental Care -> https://www.marham.pk/hospitals/karachi/yasir-dental-care/gulistan-e-johar
+2025-12-05 00:33:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Haroon Physiotherapy Clinic and Medical Services -> https://www.marham.pk/hospitals/karachi/haroon-physiotherapy-clinic-and-medical-services/gulistan-e-johar
+2025-12-05 00:33:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Modern Hospital -> https://www.marham.pk/hospitals/karachi/modern-hospital/gulshan-e-iqbal
+2025-12-05 00:33:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: The Modern Hospital -> https://www.marham.pk/hospitals/karachi/the-modern-hospital/main-university-road
+2025-12-05 00:33:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Cheezal Dental & Medical Hospital -> https://www.marham.pk/hospitals/karachi/cheezal-dental-medical-hospital/gulistan-e-johar
+2025-12-05 00:33:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr Hina Sohail Skin and Laser Clinic -> https://www.marham.pk/hospitals/karachi/dr-hina-sohail-skin-and-laser-clinic/gulistan-e-johar
+2025-12-05 00:33:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Al Umeed Rehabiliation Association For Cerebal Palsy Hospital -> https://www.marham.pk/hospitals/karachi/al-umeed-rehabiliation-association-for-cerebal-palsy-hospital/gulistan-e-jauher
+2025-12-05 00:33:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Help Recovering Life Diabetes Care Clinic -> https://www.marham.pk/hospitals/karachi/help-recovering-life-diabetes-care-clinic/gulshan-e-iqbal
+2025-12-05 00:33:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Khalid Bhatti Eye and Consulting Clinic -> https://www.marham.pk/hospitals/karachi/dr-khalid-bhatti-eye-and-consulting-clinic/block-7-gulistan-e-johar
+2025-12-05 00:33:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Ibn-E-Sina Hospital -> https://www.marham.pk/hospitals/karachi/ibn-e-sina-hospital/gulshan-e-iqbal
+2025-12-05 00:33:55 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/speech-therapist/ms-naveera-fatima
+2025-12-05 00:33:55 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/pediatrician/dr-sidra-saleem
+2025-12-05 00:33:55 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/qemc-qureshi-ent-and-medical-center/gulistan-e-johar
+2025-12-05 00:33:59 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/quba-dental-care-cosmetic-dentistry/gulistan-e-johar
+2025-12-05 00:34:03 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/yasir-dental-care/gulistan-e-johar
+2025-12-05 00:34:06 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/haroon-physiotherapy-clinic-and-medical-services/gulistan-e-johar
+2025-12-05 00:34:10 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/modern-hospital/gulshan-e-iqbal
+2025-12-05 00:34:13 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/the-modern-hospital/main-university-road
+2025-12-05 00:34:17 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/cheezal-dental-medical-hospital/gulistan-e-johar
+2025-12-05 00:34:19 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/dr-hina-sohail-skin-and-laser-clinic/gulistan-e-johar
+2025-12-05 00:34:22 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/al-umeed-rehabiliation-association-for-cerebal-palsy-hospital/gulistan-e-jauher
+2025-12-05 00:34:25 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/help-recovering-life-diabetes-care-clinic/gulshan-e-iqbal
+2025-12-05 00:34:27 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/dr-khalid-bhatti-eye-and-consulting-clinic/block-7-gulistan-e-johar
+2025-12-05 00:34:31 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/ibn-e-sina-hospital/gulshan-e-iqbal
+2025-12-05 00:34:36 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal
+2025-12-05 00:34:39 | INFO     | scrapers.marham_scraper:scrape:270 - Hospital data changed for https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal: updating
+2025-12-05 00:34:39 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal
+2025-12-05 00:34:40 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:42 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal — clicking until exhausted
+2025-12-05 00:34:40 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:47 - Load More button clicked, waiting for content to load...
+2025-12-05 00:34:46 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (5/30s)
+2025-12-05 00:34:51 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (10/30s)
+2025-12-05 00:34:56 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (15/30s)
+2025-12-05 00:35:01 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (20/30s)
+2025-12-05 00:35:06 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (25/30s)
+2025-12-05 00:35:11 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (30/30s)
+2025-12-05 00:35:13 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:97 - Load More click #1: 21 total cards collected
+2025-12-05 00:35:13 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:47 - Load More button clicked, waiting for content to load...
+2025-12-05 00:35:19 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (5/30s)
+2025-12-05 00:35:24 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (10/30s)
+2025-12-05 00:35:29 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (15/30s)
+2025-12-05 00:35:34 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (20/30s)
+2025-12-05 00:35:39 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (25/30s)
+2025-12-05 00:35:44 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (30/30s)
+2025-12-05 00:35:46 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:97 - Load More click #2: 31 total cards collected
+2025-12-05 00:35:46 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:47 - Load More button clicked, waiting for content to load...
+2025-12-05 00:35:51 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (5/30s)
+2025-12-05 00:35:56 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (10/30s)
+2025-12-05 00:36:02 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (15/30s)
+2025-12-05 00:36:07 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (20/30s)
+2025-12-05 00:36:12 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (25/30s)
+2025-12-05 00:36:17 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (30/30s)
+2025-12-05 00:36:18 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:97 - Load More click #3: 36 total cards collected
+2025-12-05 00:36:33 | WARNING  | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:99 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-05 00:36:33 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-iqbal-nabi-soomro
+2025-12-05 00:36:38 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:36:38 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-sana-adeel
+2025-12-05 00:36:41 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:36:41 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Zubaida Medical Centre
+2025-12-05 00:36:41 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:36:41 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/ent-specialist/dr-najeeb-abdul-razzak
+2025-12-05 00:36:44 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:36:44 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-nilofur-alvi
+2025-12-05 00:36:49 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:36:49 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-sidra-tariq
+2025-12-05 00:36:52 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:36:52 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:36:52 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/ent-specialist/dr-taj-muhammad-shiekh
+2025-12-05 00:36:57 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:36:57 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-misbah-bashir
+2025-12-05 00:37:01 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:37:01 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:37:01 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/speech-therapist/dr-shaista-naz
+2025-12-05 00:37:06 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:37:06 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-almas-qazi
+2025-12-05 00:37:11 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:37:11 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:37:11 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-madiha-farrukh
+2025-12-05 00:37:16 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:37:16 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:37:16 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-ahmed-ali
+2025-12-05 00:37:19 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:37:19 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:37:19 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-capt-muhammad-yaseen-usman
+2025-12-05 00:37:23 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:37:23 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-uzair-ahmed-siddiqui
+2025-12-05 00:37:26 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:37:26 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:37:26 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/dr-saleem-ahmed-rajput
+2025-12-05 00:37:30 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:37:30 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-ayesha-mustafa
+2025-12-05 00:37:35 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:37:35 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:37:35 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/diabetologist/dr-syed-ameer-uddin-dewan
+2025-12-05 00:37:38 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:37:38 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-physician/dr-nida-khan
+2025-12-05 00:37:41 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:37:41 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:37:41 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/dr-shireen-arif
+2025-12-05 00:37:44 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:37:44 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/psychologist/tayyaba-ghousia
+2025-12-05 00:37:48 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:37:48 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-amber-naz
+2025-12-05 00:37:52 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:37:52 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-marina-sheikh-pt
+2025-12-05 00:37:57 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:37:57 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-hafsa-sohail
+2025-12-05 00:38:00 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:38:00 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-naveed-sarfaraz-arab
+2025-12-05 00:38:04 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:38:04 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-physician/dr-muzaffar-ali
+2025-12-05 00:38:08 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:38:08 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-mehak-bano
+2025-12-05 00:38:11 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:38:11 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-abdullah-yahya
+2025-12-05 00:38:14 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:38:14 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:38:14 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/sonologist/dr-sabiha-shujaat
+2025-12-05 00:38:19 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:38:19 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-abdus-sami
+2025-12-05 00:38:22 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:38:22 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/dr-sumaira-nasim
+2025-12-05 00:38:25 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:38:25 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/diabetologist/dr-m-amjad
+2025-12-05 00:38:28 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:38:28 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-nida-mughal
+2025-12-05 00:38:33 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:38:33 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/prof-dr-mr-abdul-rasheed
+2025-12-05 00:38:39 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/nutritionist/dr-syed-faisal-masood
+2025-12-05 00:38:44 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:38:44 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:38:44 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/sexologist/dr-yousuf-hasnain
+2025-12-05 00:38:49 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:38:49 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Karachi Medical Complex Consultants Clinic
+2025-12-05 00:38:49 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-mohammad-afzal-ahmad
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Iqbal Nabi Soomro -> https://www.marham.pk/doctors/karachi/dermatologist/dr-iqbal-nabi-soomro
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Najeeb Abdul Razzak -> https://www.marham.pk/doctors/karachi/ent-specialist/dr-najeeb-abdul-razzak
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Nilofur Alvi -> https://www.marham.pk/doctors/karachi/gynecologist/dr-nilofur-alvi
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Sidra Tariq -> https://www.marham.pk/doctors/karachi/dermatologist/dr-sidra-tariq
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Taj Muhammad Shiekh -> https://www.marham.pk/doctors/karachi/ent-specialist/dr-taj-muhammad-shiekh
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Misbah Bashir -> https://www.marham.pk/doctors/karachi/dermatologist/dr-misbah-bashir
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Shaista Naz -> https://www.marham.pk/doctors/karachi/speech-therapist/dr-shaista-naz
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Almas Qazi -> https://www.marham.pk/doctors/karachi/general-surgeon/dr-almas-qazi
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Madiha Farrukh -> https://www.marham.pk/doctors/karachi/family-medicine/dr-madiha-farrukh
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Ahmed Ali -> https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-ahmed-ali
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: KARACHI MEDICAL COMPLEX Consultant Clinic -> https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultant-clinic/gulshan-e-iqbal
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dental Professionals Hospital -> https://www.marham.pk/hospitals/karachi/dental-professionals-hospital/gulshan-e-iqbal
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Shahzad Eye Hospital -> https://www.marham.pk/hospitals/karachi/shahzad-eye-hospital/gulshan-e-iqbal
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Midciti hospital . -> https://www.marham.pk/hospitals/karachi/midciti-hospital/national-stadium
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Midciti Hospital -> https://www.marham.pk/hospitals/karachi/midciti-hospital-karachi/national-stadium
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Midciti Hospital -> https://www.marham.pk/hospitals/karachi/midciti-hospital/gulshan-e-iqbal
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Aesthetix Dental and Medical center Gulshan branch. Dr Ashar Afaq & Dr Rafay Ahmad Jameel -> https://www.marham.pk/hospitals/karachi/aesthetix-dental-and-medical-center-gulshan-branch-dr-ashar-afaq-dr-rafay-ahmad-jameel/gulshan-e-iqbal
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Natural Life Clinic -> https://www.marham.pk/hospitals/karachi/natural-life-clinic/gulshan-e-iqbal
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr Shahnaz Clinic -> https://www.marham.pk/hospitals/karachi/dr-shahnaz-clinic/gulshan-e-iqbal
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Nibd Hospital -> https://www.marham.pk/hospitals/karachi/nibd-hospital/gulshan-e-iqbal
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Smile Dental Care -> https://www.marham.pk/hospitals/karachi/smile-dental-care/gulshan-e-iqbal
+2025-12-05 00:38:51 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Al-Mustafa Medical Centre Gulshan e Iqbal -> https://www.marham.pk/hospitals/karachi/al-mustafa-medical-centre-gulshan-e-iqbal/gulshan-e-iqbal
+2025-12-05 00:38:51 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/dermatologist/dr-iqbal-nabi-soomro
+2025-12-05 00:38:51 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/ent-specialist/dr-najeeb-abdul-razzak
+2025-12-05 00:38:51 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/gynecologist/dr-nilofur-alvi
+2025-12-05 00:38:51 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/dermatologist/dr-sidra-tariq
+2025-12-05 00:38:51 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/ent-specialist/dr-taj-muhammad-shiekh
+2025-12-05 00:38:51 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/dermatologist/dr-misbah-bashir
+2025-12-05 00:38:51 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/speech-therapist/dr-shaista-naz
+2025-12-05 00:38:51 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/general-surgeon/dr-almas-qazi
+2025-12-05 00:38:51 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/family-medicine/dr-madiha-farrukh
+2025-12-05 00:38:51 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-ahmed-ali
+2025-12-05 00:38:51 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultant-clinic/gulshan-e-iqbal
+2025-12-05 00:38:55 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/dental-professionals-hospital/gulshan-e-iqbal
+2025-12-05 00:38:59 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/shahzad-eye-hospital/gulshan-e-iqbal
+2025-12-05 00:39:01 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/midciti-hospital/national-stadium
+2025-12-05 00:39:05 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/midciti-hospital-karachi/national-stadium
+2025-12-05 00:39:08 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/midciti-hospital/gulshan-e-iqbal
+2025-12-05 00:39:14 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/aesthetix-dental-and-medical-center-gulshan-branch-dr-ashar-afaq-dr-rafay-ahmad-jameel/gulshan-e-iqbal
+2025-12-05 00:39:17 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/natural-life-clinic/gulshan-e-iqbal
+2025-12-05 00:39:20 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/dr-shahnaz-clinic/gulshan-e-iqbal
+2025-12-05 00:39:23 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/nibd-hospital/gulshan-e-iqbal
+2025-12-05 00:39:26 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/smile-dental-care/gulshan-e-iqbal
+2025-12-05 00:39:30 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/al-mustafa-medical-centre-gulshan-e-iqbal/gulshan-e-iqbal
+2025-12-05 00:39:34 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar
+2025-12-05 00:39:36 | INFO     | scrapers.marham_scraper:scrape:270 - Hospital data changed for https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar: updating
+2025-12-05 00:39:36 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar
+2025-12-05 00:39:36 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:42 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar — clicking until exhausted
+2025-12-05 00:39:37 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:47 - Load More button clicked, waiting for content to load...
+2025-12-05 00:39:42 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (5/30s)
+2025-12-05 00:39:47 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (10/30s)
+2025-12-05 00:39:52 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (15/30s)
+2025-12-05 00:39:57 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (20/30s)
+2025-12-05 00:40:02 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (25/30s)
+2025-12-05 00:40:07 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (30/30s)
+2025-12-05 00:40:09 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:97 - Load More click #1: 8 total cards collected
+2025-12-05 00:40:24 | WARNING  | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:99 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-05 00:40:24 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/neuro-psychiatrist/dr-inder-kumar-chughwani
+2025-12-05 00:40:28 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Taj Medical Complex Hospital Room 14, Karachi
+2025-12-05 00:40:28 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/internal-medicine/dr-muhammad-wasim-lodhi
+2025-12-05 00:40:32 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Taj Medical Complex Hospital Room 14, Karachi
+2025-12-05 00:40:32 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-zulfiqar-ali-khuwaja
+2025-12-05 00:40:36 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:40:36 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Taj Medical Complex Hospital Room 14, Karachi
+2025-12-05 00:40:36 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-tanweer-ahmed
+2025-12-05 00:40:36 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/internal-medicine/dr-nanwani-naresh
+2025-12-05 00:40:40 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Taj Medical Complex Hospital Room 14, Karachi
+2025-12-05 00:40:40 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/asst-prof-dr-ali-raza
+2025-12-05 00:40:42 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Taj Medical Complex Hospital Room 14, Karachi
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Muhammad Wasim Lodhi -> https://www.marham.pk/doctors/karachi/internal-medicine/dr-muhammad-wasim-lodhi
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Asst. Prof. Dr. Ali Raza -> https://www.marham.pk/doctors/karachi/orthopedic-surgeon/asst-prof-dr-ali-raza
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Inder Kumar Chughwani -> https://www.marham.pk/doctors/karachi/neuro-psychiatrist/dr-inder-kumar-chughwani
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Zulfiqar Ali Khuwaja -> https://www.marham.pk/doctors/karachi/dermatologist/dr-zulfiqar-ali-khuwaja
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Tanweer Ahmed -> https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-tanweer-ahmed
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Nanwani Naresh -> https://www.marham.pk/doctors/karachi/internal-medicine/dr-nanwani-naresh
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Inder Kumar Chughwani -> https://www.marham.pk/doctors/karachi/neuro-psychiatrist/dr-inder-kumar-chughwani
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Muhammad Wasim Lodhi -> https://www.marham.pk/doctors/karachi/internal-medicine/dr-muhammad-wasim-lodhi
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Zulfiqar Ali Khuwaja -> https://www.marham.pk/doctors/karachi/dermatologist/dr-zulfiqar-ali-khuwaja
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Nanwani Naresh -> https://www.marham.pk/doctors/karachi/internal-medicine/dr-nanwani-naresh
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Asst. Prof. Dr. Ali Raza -> https://www.marham.pk/doctors/karachi/orthopedic-surgeon/asst-prof-dr-ali-raza
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Hamdard University Hospital -> https://www.marham.pk/hospitals/karachi/hamdard-university-hospital/saddar
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Skin Specialists Aesthetics Clinic and Fertility Center -> https://www.marham.pk/hospitals/karachi/skin-specialists-aesthetics-clinic-and-fertility-center/saddar
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: SPECIALIST CARE CLINIC Karachi -> https://www.marham.pk/hospitals/karachi/specialist-care-clinic-karachi/karachi
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Taj Medical Complex -> https://www.marham.pk/hospitals/karachi/taj-medical-complex/saddar
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Rehman Clinic -> https://www.marham.pk/hospitals/karachi/rehman-clinic/marwari-lines-saddar
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: NCCI Hospital -> https://www.marham.pk/hospitals/karachi/ncci-hospital/saddar
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Neurospinal and Cancer Care Institute (NCCI) -> https://www.marham.pk/hospitals/karachi/neurospinal-and-cancer-care-institute-ncci/pakistan
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: NMI (Neurospinal & Cancer Care Institute) -> https://www.marham.pk/hospitals/karachi/nmi-neurospinal-cancer-care-institute-hospital/saddar
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Neurospinal Cancer Institute Hospital -> https://www.marham.pk/hospitals/karachi/neurospinal-cancer-institute-hospital/saddar
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Neurospinal & Cancer Care Institute Hospital -> https://www.marham.pk/hospitals/karachi/neurospinal-cancer-care-institute-hospital/saddar
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Neurospinal & Medical Institute (Nmi) Hospital -> https://www.marham.pk/hospitals/karachi/neurospinal-medical-institute-nmi-hospital/saddar
+2025-12-05 00:40:42 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Omi Hospital - Saddar -> https://www.marham.pk/hospitals/karachi/omi-hospital-saddar/depot-lines-saddar
+2025-12-05 00:40:42 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/internal-medicine/dr-muhammad-wasim-lodhi
+2025-12-05 00:40:42 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/asst-prof-dr-ali-raza
+2025-12-05 00:40:42 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/neuro-psychiatrist/dr-inder-kumar-chughwani
+2025-12-05 00:40:42 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/dermatologist/dr-zulfiqar-ali-khuwaja
+2025-12-05 00:40:42 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-tanweer-ahmed
+2025-12-05 00:40:42 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/internal-medicine/dr-nanwani-naresh
+2025-12-05 00:40:42 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/neuro-psychiatrist/dr-inder-kumar-chughwani
+2025-12-05 00:40:42 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/internal-medicine/dr-muhammad-wasim-lodhi
+2025-12-05 00:40:42 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/dermatologist/dr-zulfiqar-ali-khuwaja
+2025-12-05 00:40:42 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/internal-medicine/dr-nanwani-naresh
+2025-12-05 00:40:42 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/asst-prof-dr-ali-raza
+2025-12-05 00:40:42 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/hospitals/karachi/hamdard-university-hospital/saddar
+2025-12-05 00:40:42 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/hospitals/karachi/skin-specialists-aesthetics-clinic-and-fertility-center/saddar
+2025-12-05 00:40:42 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/hospitals/karachi/specialist-care-clinic-karachi/karachi
+2025-12-05 00:40:42 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/hospitals/karachi/taj-medical-complex/saddar
+2025-12-05 00:40:42 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/hospitals/karachi/rehman-clinic/marwari-lines-saddar
+2025-12-05 00:40:42 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/ncci-hospital/saddar
+2025-12-05 00:40:46 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/neurospinal-and-cancer-care-institute-ncci/pakistan
+2025-12-05 00:40:49 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/nmi-neurospinal-cancer-care-institute-hospital/saddar
+2025-12-05 00:40:52 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/neurospinal-cancer-institute-hospital/saddar
+2025-12-05 00:40:55 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/neurospinal-cancer-care-institute-hospital/saddar
+2025-12-05 00:40:59 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/neurospinal-medical-institute-nmi-hospital/saddar
+2025-12-05 00:41:01 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/omi-hospital-saddar/depot-lines-saddar
+2025-12-05 00:41:06 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton
+2025-12-05 00:41:10 | INFO     | scrapers.marham_scraper:scrape:270 - Hospital data changed for https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton: updating
+2025-12-05 00:41:10 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton
+2025-12-05 00:41:11 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:42 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton — clicking until exhausted
+2025-12-05 00:41:11 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:47 - Load More button clicked, waiting for content to load...
+2025-12-05 00:41:17 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (5/30s)
+2025-12-05 00:41:22 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (10/30s)
+2025-12-05 00:41:27 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (15/30s)
+2025-12-05 00:41:32 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (20/30s)
+2025-12-05 00:41:37 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (25/30s)
+2025-12-05 00:41:42 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (30/30s)
+2025-12-05 00:41:44 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:97 - Load More click #1: 21 total cards collected
+2025-12-05 00:41:44 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:47 - Load More button clicked, waiting for content to load...
+2025-12-05 00:41:49 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (5/30s)
+2025-12-05 00:41:54 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (10/30s)
+2025-12-05 00:41:59 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (15/30s)
+2025-12-05 00:42:04 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (20/30s)
+2025-12-05 00:42:09 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (25/30s)
+2025-12-05 00:42:14 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (30/30s)
+2025-12-05 00:42:16 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:97 - Load More click #2: 27 total cards collected
+2025-12-05 00:42:31 | WARNING  | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:99 - Clicking Load More failed on https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton: Page.click: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator("#loadMore")
+    - locator resolved to <button id="loadMore" class="col-6 col-md-3 text-center button-light-round loadMore">Load More</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    29 × waiting for element to be visible, enabled and stable
+       - element is not visible
+     - retrying click action
+       - waiting 500ms
+
+2025-12-05 00:42:31 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-sonia-poshni-sheikh
+2025-12-05 00:42:36 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:42:36 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/internal-medicine/dr-naureen-kazim
+2025-12-05 00:42:40 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Metropolis Health Clinics
+2025-12-05 00:42:40 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/interventional-radiologist/dr-muhammad-shoaib-nasir-ali-khan
+2025-12-05 00:42:45 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:42:45 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Metropolis Health Clinics
+2025-12-05 00:42:45 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-zainab-chandio
+2025-12-05 00:42:48 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Video Consultation
+2025-12-05 00:42:48 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Metropolis Health Clinics
+2025-12-05 00:42:48 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-physician/dr-nida-shoaib
+2025-12-05 00:42:51 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Metropolis Health Clinics
+2025-12-05 00:42:51 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-amema-hassan
+2025-12-05 00:42:55 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Metropolis Health Clinics
+2025-12-05 00:42:55 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/dr-muhammad-mudassir-thahim
+2025-12-05 00:42:58 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Metropolis Health Clinics
+2025-12-05 00:42:58 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/internal-medicine/prof-dr-saera-suhail-kidwai
+2025-12-05 00:43:03 | WARNING  | scrapers.marham.handlers.hospital_practice_handler:upsert_hospital_practice:118 - Failed to update hospital doctors for Metropolis Health Clinics
+2025-12-05 00:43:03 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-ahmed-bin-khalid-khan
+2025-12-05 00:43:06 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-zeeshan-ali-arbab
+2025-12-05 00:43:09 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/psychiatrist/dr-dost-muhammad
+2025-12-05 00:43:11 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/ms-sadia-shafaq
+2025-12-05 00:43:15 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/urologist/dr-murtaza-azad
+2025-12-05 00:43:17 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-sonia-poshni
+2025-12-05 00:43:20 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-naureen-kazim
+2025-12-05 00:43:23 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/radiologist/dr-m-shoaib-nasir
+2025-12-05 00:43:27 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-physician/dr-sarosh-kamal
+2025-12-05 00:43:30 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-huma-imran-ahmed
+2025-12-05 00:43:34 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/internal-medicine/prof-s-nosheen-zehra
+2025-12-05 00:43:36 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/ent-specialist/dr-noor-a-shaikh
+2025-12-05 00:43:39 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/restorative-dentist/dr-s-masood-ul-hasan
+2025-12-05 00:43:43 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/pulmonologist/dr-syed-azfer-husain
+2025-12-05 00:43:44 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-saba-tabassum
+2025-12-05 00:43:48 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/dr-naveed-ahmed-shaikh
+2025-12-05 00:43:51 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-fouzia-rasool-memon
+2025-12-05 00:43:53 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-asma-ansari
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Sonia Poshni Sheikh -> https://www.marham.pk/doctors/karachi/gynecologist/dr-sonia-poshni-sheikh
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Naureen Kazim -> https://www.marham.pk/doctors/karachi/internal-medicine/dr-naureen-kazim
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Muhammad Shoaib Nasir Ali Khan -> https://www.marham.pk/doctors/karachi/interventional-radiologist/dr-muhammad-shoaib-nasir-ali-khan
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Nida Shoaib -> https://www.marham.pk/doctors/karachi/general-physician/dr-nida-shoaib
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Muhammad Mudassir Thahim -> https://www.marham.pk/doctors/karachi/cardiologist/dr-muhammad-mudassir-thahim
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Amema Hassan -> https://www.marham.pk/doctors/karachi/general-surgeon/dr-amema-hassan
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Saba Tabassum -> https://www.marham.pk/doctors/karachi/dentist/dr-saba-tabassum
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Naveed Ahmed Shaikh -> https://www.marham.pk/doctors/karachi/cardiologist/dr-naveed-ahmed-shaikh
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Sarosh Kamal -> https://www.marham.pk/doctors/karachi/general-physician/dr-sarosh-kamal
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Fouzia Rasool Memon -> https://www.marham.pk/doctors/karachi/gynecologist/dr-fouzia-rasool-memon
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Prof. Dr. Saera Suhail Kidwai -> https://www.marham.pk/doctors/karachi/internal-medicine/prof-dr-saera-suhail-kidwai
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Sonia Poshni Sheikh -> https://www.marham.pk/doctors/karachi/gynecologist/dr-sonia-poshni-sheikh
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Naureen Kazim -> https://www.marham.pk/doctors/karachi/internal-medicine/dr-naureen-kazim
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Noor A. Shaikh -> https://www.marham.pk/doctors/karachi/ent-specialist/dr-noor-a-shaikh
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Muhammad Shoaib Nasir Ali Khan -> https://www.marham.pk/doctors/karachi/interventional-radiologist/dr-muhammad-shoaib-nasir-ali-khan
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Dost Muhammad -> https://www.marham.pk/doctors/karachi/psychiatrist/dr-dost-muhammad
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Naveed Ahmed Shaikh -> https://www.marham.pk/doctors/karachi/cardiologist/dr-naveed-ahmed-shaikh
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Sarosh Kamal -> https://www.marham.pk/doctors/karachi/general-physician/dr-sarosh-kamal
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Fouzia Rasool Memon -> https://www.marham.pk/doctors/karachi/gynecologist/dr-fouzia-rasool-memon
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Zeeshan Ali Arbab -> https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-zeeshan-ali-arbab
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Syed Azfer Husain -> https://www.marham.pk/doctors/karachi/pulmonologist/dr-syed-azfer-husain
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Sonia Poshni -> https://www.marham.pk/doctors/karachi/gynecologist/dr-sonia-poshni
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Sonia Poshni Sheikh -> https://www.marham.pk/doctors/karachi/gynecologist/dr-sonia-poshni-sheikh
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Noor A. Shaikh -> https://www.marham.pk/doctors/karachi/ent-specialist/dr-noor-a-shaikh
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Prof. Dr. Saera Suhail Kidwai -> https://www.marham.pk/doctors/karachi/internal-medicine/prof-dr-saera-suhail-kidwai
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Prof. S. Nosheen Zehra -> https://www.marham.pk/doctors/karachi/internal-medicine/prof-s-nosheen-zehra
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Naureen Kazim -> https://www.marham.pk/doctors/karachi/internal-medicine/dr-naureen-kazim
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Fouzia Rasool Memon -> https://www.marham.pk/doctors/karachi/gynecologist/dr-fouzia-rasool-memon
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Sarosh Kamal -> https://www.marham.pk/doctors/karachi/general-physician/dr-sarosh-kamal
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr. Naureen Kazim -> https://www.marham.pk/doctors/karachi/family-medicine/dr-naureen-kazim
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: South Central Health Care -> https://www.marham.pk/hospitals/karachi/south-central-health-care/clifton
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Dr Hasan Clinic -> https://www.marham.pk/hospitals/karachi/dr-hasan-clinic/clifton
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Hashmanis Hospital -> https://www.marham.pk/hospitals/karachi/hashmanis-hospital/clifton
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Neuropsychology and Psychiatry Laboratory and Family Clinic -> https://www.marham.pk/hospitals/karachi/neuropsychology-and-psychiatry-laboratory-and-family-clinic/clifton
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: South City Hospital -> https://www.marham.pk/hospitals/karachi/south-city-hospital/clifton
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Park Lane Hospital -> https://www.marham.pk/hospitals/karachi/park-lane-hospital/clifton
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Aga Khan Clifton Medical Services Hospital -> https://www.marham.pk/hospitals/karachi/aga-khan-clifton-medical-services-hospital/clifton
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Psycho Social Centre -> https://www.marham.pk/hospitals/karachi/psycho-social-centre/clifton
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Aq & Associates Dental Clinic -> https://www.marham.pk/hospitals/karachi/aq-associates-dental-clinic/clifton
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Mideast Medical Centre -> https://www.marham.pk/hospitals/karachi/mideast-medical-centre/clifton
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: Family Medicine and Health center -> https://www.marham.pk/hospitals/karachi/family-medicine-and-health-center/clifton
+2025-12-05 00:43:56 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:101 - Found doctor in About list: The Doctors Plaza Hospital -> https://www.marham.pk/hospitals/karachi/the-doctors-plaza-hospital/clifton
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/gynecologist/dr-sonia-poshni-sheikh
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/internal-medicine/dr-naureen-kazim
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/interventional-radiologist/dr-muhammad-shoaib-nasir-ali-khan
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/general-physician/dr-nida-shoaib
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/cardiologist/dr-muhammad-mudassir-thahim
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/general-surgeon/dr-amema-hassan
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/dentist/dr-saba-tabassum
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/cardiologist/dr-naveed-ahmed-shaikh
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/general-physician/dr-sarosh-kamal
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/gynecologist/dr-fouzia-rasool-memon
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/internal-medicine/prof-dr-saera-suhail-kidwai
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/gynecologist/dr-sonia-poshni-sheikh
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/internal-medicine/dr-naureen-kazim
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/ent-specialist/dr-noor-a-shaikh
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/interventional-radiologist/dr-muhammad-shoaib-nasir-ali-khan
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/psychiatrist/dr-dost-muhammad
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/cardiologist/dr-naveed-ahmed-shaikh
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/general-physician/dr-sarosh-kamal
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/gynecologist/dr-fouzia-rasool-memon
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-zeeshan-ali-arbab
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/pulmonologist/dr-syed-azfer-husain
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/gynecologist/dr-sonia-poshni
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/gynecologist/dr-sonia-poshni-sheikh
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/ent-specialist/dr-noor-a-shaikh
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/internal-medicine/prof-dr-saera-suhail-kidwai
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/internal-medicine/prof-s-nosheen-zehra
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/internal-medicine/dr-naureen-kazim
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/gynecologist/dr-fouzia-rasool-memon
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/general-physician/dr-sarosh-kamal
+2025-12-05 00:43:56 | INFO     | scrapers.marham_scraper:_process_doctor:79 - Skipping duplicate doctor in this run: https://www.marham.pk/doctors/karachi/family-medicine/dr-naureen-kazim
+2025-12-05 00:43:56 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/south-central-health-care/clifton
+2025-12-05 00:43:59 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/dr-hasan-clinic/clifton
+2025-12-05 00:44:02 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/hashmanis-hospital/clifton
+2025-12-05 00:44:06 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/neuropsychology-and-psychiatry-laboratory-and-family-clinic/clifton
+2025-12-05 00:44:09 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/south-city-hospital/clifton
+2025-12-05 00:44:13 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/park-lane-hospital/clifton
+2025-12-05 00:44:18 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/aga-khan-clifton-medical-services-hospital/clifton
+2025-12-05 00:44:21 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/psycho-social-centre/clifton
+2025-12-05 00:44:25 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/aq-associates-dental-clinic/clifton
+2025-12-05 00:44:27 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/mideast-medical-centre/clifton
+2025-12-05 00:44:30 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/family-medicine-and-health-center/clifton
+2025-12-05 00:44:33 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/the-doctors-plaza-hospital/clifton
+2025-12-05 00:44:38 | INFO     | scrapers.marham_scraper:scrape:330 - Marham scraping finished: {'total': 226, 'inserted': 150, 'skipped': 76, 'hospitals': 5, 'updated': 5, 'doctors': 150}
+2025-12-05 00:44:38 | INFO     | __main__:run_for_site:55 - Stats for marham: total=226, inserted=150, skipped=76
+2025-12-05 00:44:38 | INFO     | __main__:main:81 - === Scraping finished ===
+Total scraped: 226
+Total inserted: 150
+Total skipped: 76

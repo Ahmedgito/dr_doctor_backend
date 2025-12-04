@@ -85,13 +85,29 @@ class DoctorParser:
         doctors_from_list = []
         
         # Look for doctor list links in the About section
+        # Filter to only get doctor profile links, not hospital links
         doctor_list_links = soup.select("div.row.justify-content-center ul li a")
         for link in doctor_list_links:
             doctor_name = clean_text(link.get_text())
             doctor_href = link.get("href")
             
             if doctor_name and doctor_href:
+                # Filter out hospital URLs - only include doctor profile URLs
+                # Doctor URLs typically contain "/doctors/" in the path
+                # Hospital URLs contain "/hospitals/" in the path
+                if "/hospitals/" in doctor_href:
+                    from scrapers.logger import logger
+                    logger.debug("Skipping hospital URL in doctor list: {} -> {}", doctor_name, doctor_href)
+                    continue
+                
                 profile_url = f"{BASE_URL}{doctor_href}" if doctor_href.startswith("/") else doctor_href
+                
+                # Additional validation: ensure it's a doctor URL
+                if "/doctors/" not in profile_url:
+                    from scrapers.logger import logger
+                    logger.debug("Skipping non-doctor URL in doctor list: {} -> {}", doctor_name, profile_url)
+                    continue
+                
                 doctors_from_list.append({
                     "name": doctor_name,
                     "profile_url": profile_url,
