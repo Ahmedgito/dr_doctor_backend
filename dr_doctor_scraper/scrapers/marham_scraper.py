@@ -185,7 +185,11 @@ class MarhamScraper(BaseScraper):
         logger.info("Starting Marham hospital-first scraping from {}", self.hospitals_listing_url)
 
         hospital_urls: List[str] = []
-        stats = {"total": 0, "inserted": 0, "skipped": 0, "hospitals": 0}
+        stats = {"total": 0, "inserted": 0, "skipped": 0, "hospitals": 0, "updated": 0}
+
+        # Track URLs seen in this run to skip duplicates within the same scrape session
+        seen_hospital_urls: set = set()
+        seen_doctor_urls: set = set()
 
 
         # ---------------- Phase 1: Collect minimal hospital entries (name + url)
@@ -235,6 +239,7 @@ class MarhamScraper(BaseScraper):
 
                 if h.get("url"):
                     hospital_urls.append(h.get("url"))
+                    seen_hospital_urls.add(h.get("url"))
 
                 if limit and len(hospital_urls) >= limit:
                     break
@@ -257,28 +262,75 @@ class MarhamScraper(BaseScraper):
                 hosp_html = self.get_html()
                 enriched = self._parse_full_hospital(hosp_html, hosp_url)
 
-                updated = False
-                try:
-                    if hasattr(self.mongo_client, "update_hospital"):
-                        updated = self.mongo_client.update_hospital(hosp_url, enriched)
+                # Check if hospital data has changed before updating
+                existing_hospital = self.mongo_client.hospitals.find_one({"url": hosp_url})
+                if existing_hospital:
+                    # Compare relevant fields (ignore _id and scraped_at for comparison)
+                    existing_data = {k: v for k, v in existing_hospital.items() if k not in ("_id", "scraped_at")}
+                    enriched_data = {k: v for k, v in enriched.items() if k not in ("_id", "scraped_at")}
+
+                    if existing_data == enriched_data:
+                        logger.info("Hospital data unchanged for {}: skipping update", hosp_url)
                     else:
-                        # fallback: insert as a new doc if update not available
-                        self.mongo_client.insert_hospital(HospitalModel(**enriched).dict())
-                        updated = True
-                except Exception:
-                    logger.warning("Failed to update/insert enriched hospital for {}", hosp_url)
+                        logger.info("Hospital data changed for {}: updating", hosp_url)
+                        try:
+                            if hasattr(self.mongo_client, "update_hospital"):
+                                self.mongo_client.update_hospital(hosp_url, enriched)
+                                stats["updated"] += 1
+                        except Exception:
+                            logger.warning("Failed to update hospital {}", hosp_url)
+                else:
+                    # New hospital, insert it
+                    logger.info("New hospital found: {}", hosp_url)
+                    try:
+                        if hasattr(self.mongo_client, "update_hospital"):
+                            self.mongo_client.update_hospital(hosp_url, enriched)
+                            stats["hospitals"] += 1
+                    except Exception:
+                        logger.warning("Failed to insert hospital {}", hosp_url)
 
                 # Collect doctor cards and save doctors
                 cards = self._collect_doctor_cards_from_hospital(hosp_url)
                 for card in cards:
                     stats["total"] += 1
+
                     doctor = self._parse_doctor_card(card, hosp_url)
                     if not doctor:
                         stats["skipped"] += 1
                         continue
 
-                    if self.mongo_client.doctor_exists(doctor.profile_url):
+                    # Skip if we've already seen this doctor URL in this run
+                    if doctor.profile_url in seen_doctor_urls:
+                        logger.info("Skipping duplicate doctor in this run: {}", doctor.profile_url)
                         stats["skipped"] += 1
+                        continue
+
+                    seen_doctor_urls.add(doctor.profile_url)
+
+                    # Check if doctor already exists in DB
+                    if self.mongo_client.doctor_exists(doctor.profile_url):
+                        # Doctor exists; check if data changed
+                        existing_doctor = self.mongo_client.doctors.find_one({"profile_url": doctor.profile_url})
+                        if existing_doctor:
+                            existing_data = {k: v for k, v in existing_doctor.items() if k not in ("_id", "scraped_at")}
+                            new_data = {k: v for k, v in doctor.dict().items() if k not in ("_id", "scraped_at")}
+
+                            if existing_data == new_data:
+                                logger.debug("Doctor data unchanged for {}: skipping", doctor.profile_url)
+                                stats["skipped"] += 1
+                            else:
+                                logger.info("Doctor data changed for {}: updating", doctor.profile_url)
+                                try:
+                                    self.mongo_client.doctors.update_one(
+                                        {"profile_url": doctor.profile_url},
+                                        {"$set": doctor.dict()}
+                                    )
+                                    stats["updated"] += 1
+                                except Exception as exc:
+                                    logger.exception("Failed to update doctor {}: {}", doctor.profile_url, exc)
+                                    stats["skipped"] += 1
+                        else:
+                            stats["skipped"] += 1
                         continue
 
                     try:
