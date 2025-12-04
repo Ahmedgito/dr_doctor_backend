@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from typing import List
 from bs4 import BeautifulSoup
 
@@ -111,25 +112,10 @@ class HospitalParser:
             if spec_text and spec_text not in specialties:
                 specialties.append(spec_text)
 
-        # Extract "About" description from the hospital page
-        about_text = None
-        about_div = soup.select_one("div.row.justify-content-center")
-        if about_div:
-            # Extract all text content from paragraphs and lists in the about section
-            paragraphs = about_div.select("p")
-            about_parts = []
-            for p in paragraphs:
-                p_text = clean_text(p.get_text())
-                if p_text:
-                    about_parts.append(p_text)
-            
-            if about_parts:
-                # Join first few paragraphs to create a summary (limit to ~500 chars for brevity)
-                about_text = " ".join(about_parts[:3])  # Take first 3 paragraphs
-                if len(about_text) > 500:
-                    about_text = about_text[:500] + "..."
-
-        return {
+        # Parse comprehensive About section
+        about_data = HospitalParser._parse_about_section(soup)
+        
+        result = {
             "name": name,
             "address": address,
             "city": city,
@@ -138,6 +124,171 @@ class HospitalParser:
             "url": url,
             "timing": timing,
             "specialties": specialties,
-            "about": about_text,
         }
+        
+        # Merge about section data
+        result.update(about_data)
+        
+        return result
+
+    @staticmethod
+    def _parse_about_section(soup: BeautifulSoup) -> dict:
+        """Parse the comprehensive About section from hospital page.
+        
+        Extracts: about text, founded year, achievements, departments, procedures,
+        facilities, support services, fees, contact number.
+        """
+        result = {}
+        
+        try:
+            # Find the About section
+            about_section = soup.select_one("div.row.justify-content-center, div.col-12.col-md-8")
+            
+            if not about_section:
+                # Fallback: look for h2 containing "About"
+                for div in soup.select("div"):
+                    h2 = div.select_one("h2")
+                    if h2 and "About" in h2.get_text():
+                        about_section = div
+                        break
+            
+            if about_section:
+                full_text = about_section.get_text()
+                
+                # Extract full about text (all paragraphs)
+                paragraphs = about_section.select("p")
+                about_parts = []
+                for p in paragraphs:
+                    p_text = clean_text(p.get_text())
+                    if p_text:
+                        about_parts.append(p_text)
+                
+                if about_parts:
+                    result["about"] = " ".join(about_parts)
+                
+                # Extract founded year
+                import re
+                founded_match = re.search(r"founded\s+in\s+(\d{4})", full_text, re.IGNORECASE)
+                if founded_match:
+                    try:
+                        result["founded_year"] = int(founded_match.group(1))
+                    except (ValueError, AttributeError):
+                        pass
+                
+                # Extract achievements/proud moments
+                achievements = []
+                # Look for section with "Proud Moments" or "achievements"
+                for h2 in about_section.select("h2"):
+                    h2_text = clean_text(h2.get_text())
+                    if "Proud Moments" in h2_text or "achievements" in h2_text.lower():
+                        # Get the ul list after this h2
+                        next_ul = h2.find_next_sibling("ul") or h2.find_next("ul")
+                        if next_ul:
+                            for li in next_ul.select("li"):
+                                achievement_text = clean_text(li.get_text())
+                                if achievement_text:
+                                    achievements.append(achievement_text)
+                        break
+                
+                if achievements:
+                    result["achievements"] = achievements
+                
+                # Extract clinical departments
+                departments = []
+                for h2 in about_section.select("h2"):
+                    h2_text = clean_text(h2.get_text())
+                    if "Clinical Departments" in h2_text:
+                        next_ul = h2.find_next_sibling("ul") or h2.find_next("ul")
+                        if next_ul:
+                            for li in next_ul.select("li"):
+                                dept_text = clean_text(li.get_text())
+                                if dept_text and dept_text not in departments:
+                                    departments.append(dept_text)
+                        break
+                
+                if departments:
+                    result["clinical_departments"] = departments
+                
+                # Extract specialized procedures (organized by category)
+                procedures = {}
+                current_category = None
+                
+                for h3 in about_section.select("h3"):
+                    h3_text = clean_text(h3.get_text())
+                    # Check if it's a procedure category (contains numbers like "1-", "2-")
+                    if re.match(r"^\d+[-–]", h3_text):
+                        # Extract category name (remove number prefix)
+                        category = re.sub(r"^\d+[-–]\s*", "", h3_text).strip()
+                        current_category = category
+                        procedures[category] = []
+                        
+                        # Get procedures from next ul
+                        next_ul = h3.find_next_sibling("ul") or h3.find_next("ul")
+                        if next_ul:
+                            for li in next_ul.select("li"):
+                                proc_text = clean_text(li.get_text())
+                                if proc_text:
+                                    procedures[category].append(proc_text)
+                
+                if procedures:
+                    result["specialized_procedures"] = procedures
+                
+                # Extract facilities and services
+                facilities = []
+                for h2 in about_section.select("h2"):
+                    h2_text = clean_text(h2.get_text())
+                    if "Facilities and Services" in h2_text or "Facilities" in h2_text:
+                        # Get all ul lists after this h2
+                        next_elements = h2.find_next_siblings()
+                        for elem in next_elements:
+                            if elem.name == "ul":
+                                for li in elem.select("li"):
+                                    facility_text = clean_text(li.get_text())
+                                    if facility_text:
+                                        facilities.append(facility_text)
+                            elif elem.name == "h2":  # Stop at next section
+                                break
+                        break
+                
+                if facilities:
+                    result["facilities"] = facilities
+                
+                # Extract clinical support services
+                support_services = []
+                for h2 in about_section.select("h2"):
+                    h2_text = clean_text(h2.get_text())
+                    if "Clinical support services" in h2_text or "support services" in h2_text.lower():
+                        next_ul = h2.find_next_sibling("ul") or h2.find_next("ul")
+                        if next_ul:
+                            for li in next_ul.select("li"):
+                                service_text = clean_text(li.get_text())
+                                if service_text:
+                                    support_services.append(service_text)
+                        break
+                
+                if support_services:
+                    result["clinical_support_services"] = support_services
+                
+                # Extract fees range
+                fees_match = re.search(r"fee[s]?\s+(?:at|ranges?|between)\s+([^.]*)", full_text, re.IGNORECASE)
+                if fees_match:
+                    fees_text = clean_text(fees_match.group(1))
+                    if fees_text:
+                        result["fees_range"] = fees_text
+                
+                # Extract contact number
+                contact_match = re.search(r"contact\s+(?:number|at)?[:\s]+([\d-]+)", full_text, re.IGNORECASE)
+                if contact_match:
+                    result["contact_number"] = contact_match.group(1).strip()
+                else:
+                    # Try alternative pattern: "helpline at 0311-1222398"
+                    helpline_match = re.search(r"helpline\s+(?:at|:)?\s*([\d-]+)", full_text, re.IGNORECASE)
+                    if helpline_match:
+                        result["contact_number"] = helpline_match.group(1).strip()
+                
+        except Exception as e:
+            from scrapers.logger import logger
+            logger.debug("Error parsing about section: {}", e)
+        
+        return result
 

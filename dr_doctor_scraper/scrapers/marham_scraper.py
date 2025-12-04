@@ -111,6 +111,24 @@ class MarhamScraper(BaseScraper):
                     doctor.experience_years = details.get("experience_years")
                 if details.get("work_history"):
                     doctor.work_history = details.get("work_history")
+                if details.get("services"):
+                    doctor.services = details.get("services")
+                if details.get("diseases"):
+                    doctor.diseases = details.get("diseases")
+                if details.get("symptoms"):
+                    doctor.symptoms = details.get("symptoms")
+                if details.get("professional_statement"):
+                    doctor.professional_statement = details.get("professional_statement")
+                if details.get("patients_treated"):
+                    doctor.patients_treated = details.get("patients_treated")
+                if details.get("reviews_count"):
+                    doctor.reviews_count = details.get("reviews_count")
+                if details.get("patient_satisfaction_score"):
+                    doctor.patient_satisfaction_score = details.get("patient_satisfaction_score")
+                if details.get("phone"):
+                    doctor.phone = details.get("phone")
+                if details.get("consultation_types"):
+                    doctor.consultation_types = details.get("consultation_types")
                 
                 # Process practices: upsert hospital records and attach to doctor.hospitals
                 for practice in details.get("practices", []):

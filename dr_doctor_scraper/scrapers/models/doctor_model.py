@@ -23,7 +23,15 @@ class DoctorModel(BaseModel):
     experience_years: Optional[int] = None
     work_history: Optional[List[dict]] = None
     services: Optional[List[str]] = None
+    diseases: Optional[List[str]] = None
+    symptoms: Optional[List[str]] = None
     experience: Optional[str]
+    professional_statement: Optional[str] = None
+    patients_treated: Optional[int] = None
+    reviews_count: Optional[int] = None
+    patient_satisfaction_score: Optional[float] = None
+    phone: Optional[str] = None
+    consultation_types: Optional[List[str]] = None
     profile_url: str
     platform: str
     scraped_at: datetime = Field(default_factory=datetime.utcnow)
