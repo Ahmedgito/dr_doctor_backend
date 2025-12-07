@@ -92,13 +92,16 @@ class DoctorParser:
             
             if doctor_name and doctor_href:
                 profile_url = f"{BASE_URL}{doctor_href}" if doctor_href.startswith("/") else doctor_href
-                doctors_from_list.append({
-                    "name": doctor_name,
-                    "profile_url": profile_url,
-                    "hospital_url": hospital_url,
-                })
-                from scrapers.logger import logger
-                logger.info("Found doctor in About list: {} -> {}", doctor_name, profile_url)
+                
+                # Filter out hospital URLs - only include doctor profile URLs
+                if "/hospitals/" not in profile_url and "/doctors/" in profile_url:
+                    doctors_from_list.append({
+                        "name": doctor_name,
+                        "profile_url": profile_url,
+                        "hospital_url": hospital_url,
+                    })
+                    from scrapers.logger import logger
+                    logger.info("Found doctor in About list: {} -> {}", doctor_name, profile_url)
         
         return doctors_from_list
 

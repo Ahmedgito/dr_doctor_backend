@@ -2264,3 +2264,31 @@ Total skipped: 76
 2025-12-08 02:27:19 | INFO     | __main__:export_and_clear_db:48 - Exported 150 doctors to data/exports/doctors_backup_20251208_022719.json
 2025-12-08 02:27:19 | INFO     | __main__:export_and_clear_db:57 - Exported 49 hospitals to data/exports/hospitals_backup_20251208_022719.json
 2025-12-08 02:27:19 | INFO     | __main__:export_and_clear_db:65 - Database not cleared. Use --clear flag to clear after export.
+2025-12-08 02:30:04 | INFO     | __main__:export_and_clear_db:48 - Exported 150 doctors to data/exports/doctors_backup_20251208_023004.json
+2025-12-08 02:30:04 | INFO     | __main__:export_and_clear_db:57 - Exported 49 hospitals to data/exports/hospitals_backup_20251208_023004.json
+2025-12-08 02:30:04 | INFO     | __main__:export_and_clear_db:63 - Cleared all data from database
+2025-12-08 02:31:13 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='marham', headless=True, limit=5)
+2025-12-08 02:31:13 | INFO     | __main__:run_for_site:49 - Running Marham scraper
+2025-12-08 02:31:27 | INFO     | scrapers.base_scraper:__enter__:44 - Playwright browser started (headless=True)
+2025-12-08 02:31:27 | INFO     | scrapers.marham_scraper:scrape:207 - Starting Marham hospital-first scraping from https://www.marham.pk/hospitals/karachi?page=
+2025-12-08 02:31:27 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi?page=1
+2025-12-08 02:31:34 | INFO     | scrapers.marham_scraper:scrape:274 - Collected 5 hospital URLs to process
+2025-12-08 02:31:34 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines
+2025-12-08 02:31:37 | WARNING  | scrapers.marham_scraper:scrape:391 - Failed processing hospital https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines: name 'parse_hospital_url' is not defined
+2025-12-08 02:31:38 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar
+2025-12-08 02:31:41 | WARNING  | scrapers.marham_scraper:scrape:391 - Failed processing hospital https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar: name 'parse_hospital_url' is not defined
+2025-12-08 02:31:42 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal
+2025-12-08 02:31:46 | WARNING  | scrapers.marham_scraper:scrape:391 - Failed processing hospital https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal: name 'parse_hospital_url' is not defined
+2025-12-08 02:31:47 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar
+2025-12-08 02:31:50 | WARNING  | scrapers.marham_scraper:scrape:391 - Failed processing hospital https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar: name 'parse_hospital_url' is not defined
+2025-12-08 02:31:51 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton
+2025-12-08 02:31:54 | WARNING  | scrapers.marham_scraper:scrape:391 - Failed processing hospital https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton: name 'parse_hospital_url' is not defined
+2025-12-08 02:31:55 | INFO     | scrapers.marham_scraper:scrape:396 - Phase 1 complete: 5 hospitals processed, 0 doctor URLs collected
+2025-12-08 02:31:55 | INFO     | scrapers.marham_scraper:scrape:399 - Starting Phase 2: Processing 0 doctors
+2025-12-08 02:31:55 | INFO     | scrapers.marham_scraper:scrape:414 - Found 0 unique doctors across all hospitals
+2025-12-08 02:31:55 | INFO     | scrapers.marham_scraper:scrape:560 - Marham scraping finished: {'total': 0, 'inserted': 0, 'skipped': 0, 'hospitals': 5, 'updated': 0, 'doctors': 0}
+2025-12-08 02:31:56 | INFO     | __main__:run_for_site:55 - Stats for marham: total=0, inserted=0, skipped=0
+2025-12-08 02:31:56 | INFO     | __main__:main:81 - === Scraping finished ===
+Total scraped: 0
+Total inserted: 0
+Total skipped: 0

@@ -7,6 +7,7 @@ from typing import List
 from bs4 import BeautifulSoup
 
 from scrapers.utils.parser_helpers import clean_text
+from scrapers.utils.url_parser import parse_hospital_url
 
 BASE_URL = "https://www.marham.pk"
 
