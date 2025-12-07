@@ -1,470 +1,1247 @@
 [
   {
-    "_id": "6930b2389c75f684c3f6ee20",
+    "_id": "6931e11129ec732e67ba4613",
     "url": "https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines",
     "name": "Hashmanis Hospital - M A Jinnah Road, Karachi",
     "platform": "marham",
     "address": null,
     "area": null,
     "city": "Karachi",
+    "specialties": [
+      "Urologist",
+      "Pediatrician",
+      "Gynecologist",
+      "General Physician",
+      "Neuro Surgeon",
+      "Cardiologist",
+      "Endocrinologist",
+      "Ent Specialist",
+      "Ent Surgeon",
+      "Family Medicine",
+      "General Surgeon",
+      "Internal Medicine Specialist",
+      "Nephrologist",
+      "Pediatric Surgeon",
+      "Physiotherapist",
+      "Plastic Surgeon",
+      "Speech Therapist"
+    ],
     "timing": null
   },
   {
-    "_id": "6930b2389c75f684c3f6ee21",
+    "_id": "6931e11129ec732e67ba4614",
     "url": "https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar",
     "name": "Qureshi Ent Medical Centre, Karachi",
     "platform": "marham",
     "address": null,
     "area": null,
     "city": "Karachi",
+    "specialties": [
+      "Pediatrician",
+      "Speech Therapist"
+    ],
     "timing": null
   },
   {
-    "_id": "6930b2389c75f684c3f6ee22",
+    "_id": "6931e11129ec732e67ba4615",
     "url": "https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal",
     "name": "Karachi Medical Complex Consultants Clinic, Karachi",
     "platform": "marham",
     "address": null,
     "area": null,
     "city": "Karachi",
+    "specialties": [
+      "Dermatologist",
+      "Pediatrician",
+      "Gynecologist",
+      "General Physician",
+      "Neuro Surgeon",
+      "Cardiologist",
+      "Diabetologist",
+      "Ent Specialist",
+      "Family Medicine",
+      "General Surgeon",
+      "Nutritionist",
+      "Orthopedic Surgeon",
+      "Physiotherapist",
+      "Psychologist",
+      "Sexologist",
+      "Sonologist",
+      "Speech Therapist"
+    ],
     "timing": null
   },
   {
-    "_id": "6930b2389c75f684c3f6ee23",
+    "_id": "6931e11129ec732e67ba4616",
     "url": "https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar",
     "name": "Taj Medical Complex Hospital Room 14, Karachi",
     "platform": "marham",
     "address": null,
     "area": null,
     "city": "Karachi",
+    "specialties": [
+      "Dermatologist",
+      "Neuro Surgeon",
+      "Internal Medicine Specialist",
+      "Neuro Psychiatrist",
+      "Orthopedic Surgeon"
+    ],
     "timing": null
   },
   {
-    "_id": "6930b2389c75f684c3f6ee24",
+    "_id": "6931e11129ec732e67ba4617",
     "url": "https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton",
     "name": "Metropolis Health Clinics, Karachi",
     "platform": "marham",
     "address": null,
     "area": null,
     "city": "Karachi",
+    "specialties": [
+      "Dermatologist",
+      "Urologist",
+      "Gynecologist",
+      "General Physician",
+      "Psychiatrist",
+      "Cardiologist",
+      "Dentist",
+      "Ent Specialist",
+      "Family Medicine",
+      "General Surgeon",
+      "Internal Medicine Specialist",
+      "Interventional Radiologist",
+      "Orthopedic Surgeon",
+      "Physiotherapist",
+      "Pulmonologist / Lung Specialist",
+      "Radiologist",
+      "Restorative Dentist"
+    ],
     "timing": null
   },
   {
-    "_id": "6930b34d9c75f684c3f6ee25",
-    "url": "https://www.marham.pk/hospitals/karachi/lyfe-healthcare-hospital/adamjee-nagar-society-block-a",
-    "name": "Lyfe Healthcare Hospital, Karachi",
-    "platform": "marham",
+    "_id": "6931e16729ec732e67ba4618",
+    "url": "https://www.marham.pk/online-consultation/request?d_id=20685&id=61",
     "address": null,
-    "area": null,
-    "city": "Karachi",
-    "timing": null
-  },
-  {
-    "_id": "6930b34d9c75f684c3f6ee26",
-    "url": "https://www.marham.pk/hospitals/karachi/mumtaz-hospital/north-nazimabad",
-    "name": "Mumtaz Hospital, Karachi",
+    "name": "Video Consultation",
     "platform": "marham",
-    "address": null,
-    "area": null,
-    "city": "Karachi",
-    "timing": null
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar",
+        "name": "Dr. Feroze Ahmed Mahar",
+        "fee": 1500,
+        "timings": {
+          "Mon": "02:00 PM - 11:00 PM",
+          "Tue": "02:00 PM - 11:00 PM",
+          "Wed": "02:00 PM - 11:00 PM",
+          "Thu": "02:00 PM - 11:00 PM",
+          "Fri": "02:00 PM - 11:00 PM",
+          "Sat": "02:00 PM - 11:00 PM"
+        },
+        "practice_id": "2217"
+      }
+    ]
   },
   {
-    "_id": "6930b34d9c75f684c3f6ee27",
-    "url": "https://www.marham.pk/hospitals/karachi/pak-international-hospital/dha-city-karachi",
-    "name": "Pak International Hospital, Karachi",
+    "_id": "6931e16729ec732e67ba4619",
+    "url": "https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar/callcenter?h_id=5907",
+    "address": "Old Dhoraji, Karachi",
+    "name": "Tahir Medical Centre",
     "platform": "marham",
-    "address": null,
-    "area": null,
-    "city": "Karachi",
-    "timing": null
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar",
+        "name": "Dr. Feroze Ahmed Mahar",
+        "fee": 2000,
+        "timings": {
+          "Sun": "12:00 AM - 01:00 AM"
+        },
+        "practice_id": "5907"
+      }
+    ]
   },
   {
-    "_id": "6930b34d9c75f684c3f6ee28",
-    "url": "https://www.marham.pk/hospitals/karachi/taj-specialist-clinic/ma-jinnah-road",
-    "name": "Taj Specialist Clinic, Karachi",
+    "_id": "6931e16729ec732e67ba461a",
+    "url": "https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar/callcenter?h_id=9664",
+    "address": "Clifton, Karachi",
+    "name": "Australian Concept Fertility Centre",
     "platform": "marham",
-    "address": null,
-    "area": null,
-    "city": "Karachi",
-    "timing": null
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar",
+        "name": "Dr. Feroze Ahmed Mahar",
+        "fee": 3000,
+        "timings": {
+          "Mon": "03:30 PM - 05:00 PM",
+          "Wed": "03:30 PM - 05:00 PM",
+          "Fri": "03:30 PM - 05:00 PM"
+        },
+        "practice_id": "9664"
+      }
+    ]
   },
   {
-    "_id": "6930b34d9c75f684c3f6ee29",
-    "url": "https://www.marham.pk/hospitals/karachi/k-health-care-hospital/off-shahrah-e-faisal",
-    "name": "K-Health Care Hospital, Karachi",
+    "_id": "6931e16729ec732e67ba461b",
+    "url": "https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar/callcenter?h_id=116",
+    "address": "Jacob Lines, Karachi",
+    "name": "Hashmanis Hospital - M A Jinnah Road",
     "platform": "marham",
-    "address": null,
-    "area": null,
-    "city": "Karachi",
-    "timing": null
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar",
+        "name": "Dr. Feroze Ahmed Mahar",
+        "fee": 1500,
+        "timings": {
+          "Fri": "04:00 PM - 06:00 PM"
+        },
+        "practice_id": "116"
+      }
+    ]
   },
   {
-    "_id": "6930b3509c75f684c3f6ee2a",
-    "url": "https://www.marham.pk/hospitals/karachi/naheed-medical-center/gulshan-e-iqbal",
-    "name": "Naheed Medical Center, Karachi",
+    "_id": "6931e16729ec732e67ba461c",
+    "url": "https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar/callcenter?h_id=1475",
+    "address": "Saddar, Karachi",
+    "name": "Hamdard University Hospital",
     "platform": "marham",
-    "address": null,
-    "area": null,
-    "city": "Karachi",
-    "timing": null
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar",
+        "name": "Dr. Feroze Ahmed Mahar",
+        "fee": 1500,
+        "timings": {
+          "Mon": "04:00 PM - 06:00 PM",
+          "Tue": "04:00 PM - 06:00 PM",
+          "Wed": "04:00 PM - 06:00 PM",
+          "Thu": "04:00 PM - 06:00 PM",
+          "Fri": "04:00 PM - 06:00 PM",
+          "Sat": "04:00 PM - 06:00 PM"
+        },
+        "practice_id": "1475"
+      }
+    ]
   },
   {
-    "_id": "6930b3509c75f684c3f6ee2b",
-    "url": "https://www.marham.pk/hospitals/karachi/al-fatima-hospital/gulshan-e-iqbal",
-    "name": "Al Fatima Hospital, Karachi",
+    "_id": "6931e16729ec732e67ba461d",
+    "url": "https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar/callcenter?h_id=1135",
+    "address": "Gulshan e Iqbal, Karachi",
+    "name": "Modern Hospital",
     "platform": "marham",
-    "address": null,
-    "area": null,
-    "city": "Karachi",
-    "timing": null
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar",
+        "name": "Dr. Feroze Ahmed Mahar",
+        "fee": 1500,
+        "timings": {
+          "Tue": "07:00 PM - 09:00 PM",
+          "Thu": "07:00 PM - 09:00 PM",
+          "Sat": "07:00 PM - 09:00 PM"
+        },
+        "practice_id": "1135"
+      }
+    ]
   },
   {
-    "_id": "6930b3509c75f684c3f6ee2c",
-    "url": "https://www.marham.pk/hospitals/karachi/karachi-medicos-radiology-center/dha-phase-6",
-    "name": "Karachi Medicos & Radiology Center, Karachi",
+    "_id": "6931e16729ec732e67ba461e",
+    "url": null,
+    "address": "Clifton, Karachi",
+    "name": "Altamash General Hospital",
     "platform": "marham",
-    "address": null,
-    "area": null,
-    "city": "Karachi",
-    "timing": null
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar",
+        "name": "Dr. Feroze Ahmed Mahar",
+        "fee": 2000,
+        "timings": {
+          "Mon": "08:00 PM - 09:00 PM",
+          "Wed": "08:00 PM - 09:00 PM"
+        },
+        "practice_id": "2765"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-fouzia-rasool-memon",
+        "name": "Dr. Fouzia Rasool Memon",
+        "fee": 3000,
+        "timings": {},
+        "practice_id": "2765"
+      }
+    ]
   },
   {
-    "_id": "6930b3509c75f684c3f6ee2d",
-    "url": "https://www.marham.pk/hospitals/karachi/house-of-pebbles/pechs",
-    "name": "House of Pebbles, Karachi",
+    "_id": "6931e16729ec732e67ba461f",
+    "url": "https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar/callcenter?h_id=10863",
+    "address": "Clifton - Block 7, Karachi",
+    "name": "Hilal e Ahmer Hospital Clifton",
     "platform": "marham",
-    "address": null,
-    "area": null,
-    "city": "Karachi",
-    "timing": null
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar",
+        "name": "Dr. Feroze Ahmed Mahar",
+        "fee": 2000,
+        "timings": {
+          "Mon": "08:30 PM - 10:00 PM",
+          "Wed": "08:30 PM - 10:00 PM",
+          "Fri": "08:30 PM - 10:00 PM"
+        },
+        "practice_id": "10863"
+      }
+    ]
   },
   {
-    "_id": "6930b3509c75f684c3f6ee2e",
-    "url": "https://www.marham.pk/hospitals/karachi/nk-consultant-clinic/federal-b",
-    "name": "NK Consultant Clinic, Karachi",
+    "_id": "6931e16729ec732e67ba4620",
+    "url": "https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar/callcenter?h_id=591",
+    "address": "Gulistan-e-Jauhar - Block 4A, Karachi",
+    "name": "Darul Sehat Hospital",
     "platform": "marham",
-    "address": null,
-    "area": null,
-    "city": "Karachi",
-    "timing": null
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar",
+        "name": "Dr. Feroze Ahmed Mahar",
+        "fee": 1500,
+        "timings": {
+          "Tue": "09:00 PM - 10:00 PM",
+          "Thu": "09:00 PM - 10:00 PM",
+          "Sat": "09:00 PM - 10:00 PM"
+        },
+        "practice_id": "591"
+      }
+    ]
   },
   {
-    "_id": "6930b3509c75f684c3f6ee2f",
-    "url": "https://www.marham.pk/hospitals/karachi/transformation-wellness-clinic/gulshan-e-iqbal",
-    "name": "Transformation Wellness Clinic, Karachi",
+    "_id": "6931e16729ec732e67ba4621",
+    "url": "https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar/callcenter?h_id=6924",
+    "address": "mosmiat university, Karachi",
+    "name": "Zain General Hospital.",
     "platform": "marham",
-    "address": null,
-    "area": null,
-    "city": "Karachi",
-    "timing": null
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar",
+        "name": "Dr. Feroze Ahmed Mahar",
+        "fee": 1200,
+        "timings": {
+          "Tue": "10:00 PM - 11:00 PM",
+          "Thu": "10:00 PM - 11:00 PM",
+          "Sat": "10:00 PM - 11:00 PM"
+        },
+        "practice_id": "6924"
+      }
+    ]
   },
   {
-    "_id": "6930b3559c75f684c3f6ee30",
-    "url": "https://www.marham.pk/hospitals/karachi/memon-medical-institute-hospital-outreach-center/federal-b",
-    "name": "Memon Medical Institute Hospital Outreach Center, Karachi",
+    "_id": "6931e16b29ec732e67ba4623",
+    "url": "https://www.marham.pk/online-consultation/request?d_id=60979&id=65",
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/plastic-surgeon/prof-dr-nasreen-siddiqui",
+        "name": "Prof. Dr. Nasreen Siddiqui",
+        "fee": 3000,
+        "timings": {
+          "Mon": "10:00 AM - 10:00 PM",
+          "Tue": "10:00 AM - 10:00 PM",
+          "Wed": "10:00 AM - 10:00 PM",
+          "Thu": "10:00 AM - 10:00 PM",
+          "Fri": "10:00 AM - 10:00 PM",
+          "Sat": "10:00 AM - 10:00 PM",
+          "Sun": "10:00 AM - 10:00 PM"
+        },
+        "practice_id": "2217"
+      }
+    ]
+  },
+  {
+    "_id": "6931e16b29ec732e67ba4626",
+    "url": "https://www.marham.pk/doctors/karachi/plastic-surgeon/prof-dr-nasreen-siddiqui/callcenter?h_id=265",
+    "address": "Clifton, Karachi",
+    "name": "Park Lane Hospital",
     "platform": "marham",
-    "address": null,
-    "area": null,
-    "city": "Karachi",
-    "timing": null
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/plastic-surgeon/prof-dr-nasreen-siddiqui",
+        "name": "Prof. Dr. Nasreen Siddiqui",
+        "fee": 5000,
+        "timings": {
+          "Mon": "04:00 PM - 06:00 PM",
+          "Wed": "04:00 PM - 06:00 PM"
+        },
+        "practice_id": "265"
+      }
+    ]
   },
   {
-    "_id": "6930b3559c75f684c3f6ee31",
-    "url": "https://www.marham.pk/hospitals/karachi/rida-medical-center/gulshan-e-iqbal",
-    "name": "Rida Medical Center, Karachi",
+    "_id": "6931e16b29ec732e67ba4627",
+    "url": "https://www.marham.pk/doctors/karachi/plastic-surgeon/prof-dr-nasreen-siddiqui/callcenter?h_id=19191",
+    "address": "DHA Phase 8, Karachi",
+    "name": "Executive Clinic and Day Care",
     "platform": "marham",
-    "address": null,
-    "area": null,
-    "city": "Karachi",
-    "timing": null
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/plastic-surgeon/prof-dr-nasreen-siddiqui",
+        "name": "Prof. Dr. Nasreen Siddiqui",
+        "fee": 5000,
+        "timings": {
+          "Tue": "04:00 PM - 06:00 PM",
+          "Thu": "04:00 PM - 06:00 PM"
+        },
+        "practice_id": "19191"
+      }
+    ]
   },
   {
-    "_id": "6930b3559c75f684c3f6ee32",
-    "url": "https://www.marham.pk/hospitals/karachi/skintech-solutions/muhammad-ali-society",
-    "name": "Skintech Solutions, Karachi",
+    "_id": "6931e17629ec732e67ba462e",
+    "url": "https://www.marham.pk/doctors/karachi/pediatrician/dr-m-abbas-memon/callcenter?h_id=1384",
+    "address": "Dharoji, Karachi",
+    "name": "Zubaida Medical Centre",
     "platform": "marham",
-    "address": null,
-    "area": null,
-    "city": "Karachi",
-    "timing": null
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/pediatrician/dr-m-abbas-memon",
+        "name": "Dr. M Abbas Memon",
+        "fee": 500,
+        "timings": {
+          "Mon": "11:00 AM - 01:00 PM",
+          "Tue": "11:00 AM - 01:00 PM",
+          "Wed": "11:00 AM - 01:00 PM",
+          "Thu": "11:00 AM - 01:00 PM",
+          "Fri": "11:00 AM - 01:00 PM",
+          "Sat": "11:00 AM - 01:00 PM"
+        },
+        "practice_id": "1384"
+      }
+    ]
   },
   {
-    "_id": "6930b3559c75f684c3f6ee33",
-    "url": "https://www.marham.pk/hospitals/karachi/the-health-clinic-dha/dha-city-karachi",
-    "name": "The Health Clinic DHA, Karachi",
+    "_id": "6931e17929ec732e67ba4633",
+    "url": "https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-tanweer-ahmed/callcenter?h_id=5781",
+    "address": "Saddar, Karachi",
+    "name": "Islamabad Diagnostic Center",
     "platform": "marham",
-    "address": null,
-    "area": null,
-    "city": "Karachi",
-    "timing": null
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-tanweer-ahmed",
+        "name": "Dr. Tanweer Ahmed",
+        "fee": 1500,
+        "timings": {
+          "Mon": "01:30 PM - 02:30 PM",
+          "Tue": "01:30 PM - 02:30 PM",
+          "Wed": "01:30 PM - 02:30 PM",
+          "Thu": "01:30 PM - 02:30 PM",
+          "Fri": "01:30 PM - 02:30 PM",
+          "Sat": "01:30 PM - 02:30 PM"
+        },
+        "practice_id": "5781"
+      }
+    ]
   },
   {
-    "_id": "6930b3559c75f684c3f6ee34",
-    "url": "https://www.marham.pk/hospitals/karachi/aafiyah-family-health-clinics/clifton",
-    "name": "Aafiyah Family Health Clinics, Karachi",
+    "_id": "6931e17929ec732e67ba4636",
+    "url": "https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-tanweer-ahmed/callcenter?h_id=7291",
+    "address": "Sadar, Karachi",
+    "name": "Taj Medical Complex Hospital Room 14, Karachi",
     "platform": "marham",
-    "address": null,
-    "area": null,
-    "city": "Karachi",
-    "timing": null
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-tanweer-ahmed",
+        "name": "Dr. Tanweer Ahmed",
+        "fee": 1300,
+        "timings": {
+          "Mon": "07:00 PM - 08:00 PM",
+          "Tue": "07:00 PM - 08:00 PM",
+          "Wed": "07:00 PM - 08:00 PM",
+          "Thu": "07:00 PM - 08:00 PM",
+          "Fri": "07:00 PM - 08:00 PM",
+          "Sat": "07:00 PM - 08:00 PM"
+        },
+        "practice_id": "7291"
+      }
+    ]
   },
   {
-    "_id": "6930b3559c75f684c3f6ee35",
-    "url": "https://www.marham.pk/hospitals/karachi/iqra-labs-and-diagnostic-centre/north-nazimabad",
-    "name": "Iqra Labs and Diagnostic Centre, Karachi",
-    "platform": "marham"
+    "_id": "6931e18429ec732e67ba463d",
+    "url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-zaid-dossani/callcenter?h_id=9824",
+    "address": "jamshaid road, Karachi",
+    "name": "DOSSANI CLINIC",
+    "platform": "marham",
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-zaid-dossani",
+        "name": "Dr. Zaid Dossani",
+        "fee": 80080,
+        "timings": {
+          "Mon": "11:30 AM - 12:45 PM",
+          "Tue": "11:30 AM - 12:45 PM",
+          "Wed": "11:30 AM - 12:45 PM",
+          "Thu": "11:30 AM - 12:45 PM",
+          "Fri": "11:30 AM - 12:45 PM",
+          "Sat": "11:30 AM - 12:45 PM"
+        },
+        "practice_id": "9824"
+      }
+    ]
   },
   {
-    "_id": "6930b35a9c75f684c3f6ee36",
-    "url": "https://www.marham.pk/hospitals/karachi/rajput-health-care-center/dha-phase-1",
-    "name": "Rajput Health Care Center, Karachi",
-    "platform": "marham"
+    "_id": "6931e18429ec732e67ba463e",
+    "url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-zaid-dossani/callcenter?h_id=10247",
+    "address": "Sindh, Karachi",
+    "name": "Al Maisarah Dialysis & Diabetes Trust",
+    "platform": "marham",
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-zaid-dossani",
+        "name": "Dr. Zaid Dossani",
+        "fee": 80080,
+        "timings": {
+          "Tue": "03:00 PM - 04:00 PM",
+          "Thu": "03:00 PM - 04:00 PM",
+          "Sat": "03:00 PM - 04:00 PM"
+        },
+        "practice_id": "10247"
+      }
+    ]
   },
   {
-    "_id": "6930b35a9c75f684c3f6ee37",
-    "url": "https://www.marham.pk/hospitals/karachi/the-wellness-hospital/dha",
-    "name": "The Wellness Hospital, Karachi",
-    "platform": "marham"
+    "_id": "6931e18429ec732e67ba463f",
+    "url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-zaid-dossani/callcenter?h_id=384",
+    "address": "Patel Para, Karachi",
+    "name": "Fatima Bai Hospital",
+    "platform": "marham",
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-zaid-dossani",
+        "name": "Dr. Zaid Dossani",
+        "fee": 80080,
+        "timings": {
+          "Tue": "03:45 PM - 04:30 PM",
+          "Wed": "03:45 PM - 04:30 PM",
+          "Sat": "03:45 PM - 04:30 PM"
+        },
+        "practice_id": "384"
+      }
+    ]
   },
   {
-    "_id": "6930b35a9c75f684c3f6ee38",
-    "url": "https://www.marham.pk/hospitals/karachi/am-family-clinic-pharmacy/block-7-gulistan-e-johar",
-    "name": "A.M Family Clinic & Pharmacy, Karachi",
-    "platform": "marham"
+    "_id": "6931e18429ec732e67ba4642",
+    "url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-zaid-dossani/callcenter?h_id=578",
+    "address": "Sindh, Karachi",
+    "name": "Usman Memorial Hospital",
+    "platform": "marham",
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-zaid-dossani",
+        "name": "Dr. Zaid Dossani",
+        "fee": 7900,
+        "timings": {
+          "Mon": "04:50 PM - 05:30 PM",
+          "Wed": "04:50 PM - 05:30 PM",
+          "Fri": "04:50 PM - 05:30 PM",
+          "Sat": "04:50 PM - 05:30 PM"
+        },
+        "practice_id": "578"
+      }
+    ]
   },
   {
-    "_id": "6930b35a9c75f684c3f6ee39",
-    "url": "https://www.marham.pk/hospitals/karachi/advance-medical-center/dha-phase-6",
-    "name": "Advance Medical Center, Karachi",
-    "platform": "marham"
+    "_id": "6931e18f29ec732e67ba4649",
+    "url": "https://www.marham.pk/doctors/karachi/cardiologist/dr-lal-chand/callcenter?h_id=6610",
+    "address": "Saddar, Karachi",
+    "name": "Gastro liver and Multispeciality Center (GLMC)",
+    "platform": "marham",
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/cardiologist/dr-lal-chand",
+        "name": "Dr. Lal Chand",
+        "fee": 1500,
+        "timings": {
+          "Mon": "01:30 PM - 02:40 PM",
+          "Wed": "01:30 PM - 02:40 PM",
+          "Fri": "01:30 PM - 02:40 PM"
+        },
+        "practice_id": "6610"
+      }
+    ]
   },
   {
-    "_id": "6930b35a9c75f684c3f6ee3a",
-    "url": "https://www.marham.pk/hospitals/karachi/johar-medical-clinic/gulistan-e-johar",
-    "name": "Johar Medical Clinic, Karachi",
-    "platform": "marham"
+    "_id": "6931e18f29ec732e67ba464c",
+    "url": "https://www.marham.pk/doctors/karachi/cardiologist/dr-lal-chand/callcenter?h_id=6602",
+    "address": "Off Shahrah-e-Faisal, Karachi",
+    "name": "K-Health Care Hospital",
+    "platform": "marham",
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/cardiologist/dr-lal-chand",
+        "name": "Dr. Lal Chand",
+        "fee": 1000,
+        "timings": {
+          "Mon": "05:00 PM - 06:00 PM",
+          "Tue": "05:00 PM - 06:00 PM",
+          "Wed": "05:00 PM - 06:00 PM",
+          "Thu": "05:00 PM - 06:00 PM",
+          "Fri": "05:00 PM - 06:00 PM",
+          "Sat": "05:00 PM - 06:00 PM",
+          "Sun": "05:00 PM - 06:00 PM"
+        },
+        "practice_id": "6602"
+      }
+    ]
   },
   {
-    "_id": "6930b35a9c75f684c3f6ee3b",
-    "url": "https://www.marham.pk/hospitals/karachi/lifecare-consultant-clinics-hospitals/dha-phase-1",
-    "name": "Lifecare Consultant Clinics & Hospitals, Karachi",
-    "platform": "marham"
+    "_id": "6931e19d29ec732e67ba4655",
+    "url": "https://www.marham.pk/doctors/karachi/general-physician/dr-wajid-ali-sheikh/callcenter?h_id=694",
+    "address": "DHA City Karachi, Karachi",
+    "name": "Life Care Consultant Clinics",
+    "platform": "marham",
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/general-physician/dr-wajid-ali-sheikh",
+        "name": "Dr. Wajid Ali Sheikh",
+        "fee": 2000,
+        "timings": {
+          "Mon": "07:30 PM - 09:00 PM",
+          "Wed": "07:30 PM - 09:00 PM",
+          "Fri": "07:30 PM - 09:00 PM"
+        },
+        "practice_id": "694"
+      }
+    ]
   },
   {
-    "_id": "6930b35e9c75f684c3f6ee3c",
-    "url": "https://www.marham.pk/hospitals/karachi/m-farooq-clinical-pharmacy/dha-phase-ii",
-    "name": "M Farooq Clinical Pharmacy, Karachi",
-    "platform": "marham"
+    "_id": "6931e1bd29ec732e67ba466a",
+    "url": null,
+    "address": "North Karachi, Karachi",
+    "name": "Al-Rayaz Hospital",
+    "platform": "marham",
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/nephrologist/dr-wajeeha-elahi",
+        "name": "Dr. Wajeeha Elahi",
+        "fee": 2000,
+        "timings": {
+          "Mon": "08:00 PM - 09:00 PM"
+        },
+        "practice_id": "4583"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-murtaza-azad",
+        "name": "Dr. Murtaza Azad",
+        "fee": 500,
+        "timings": {
+          "Sat": "08:00 PM - 09:00 PM"
+        },
+        "practice_id": "4583"
+      }
+    ]
   },
   {
-    "_id": "6930b35e9c75f684c3f6ee3d",
-    "url": "https://www.marham.pk/hospitals/karachi/hilal-e-ahmar-house-hospital/clifton",
-    "name": "Hilal-E-Ahmar House Hospital, Karachi",
-    "platform": "marham"
+    "_id": "6931e21e29ec732e67ba466f",
+    "url": "https://www.marham.pk/doctors/karachi/speech-therapist/ms-naveera-fatima/callcenter?h_id=1774",
+    "address": "Gulistan e Jauhar, Karachi",
+    "name": "Qureshi Ent Medical Centre",
+    "platform": "marham",
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/speech-therapist/ms-naveera-fatima",
+        "name": "Ms Naveera Fatima",
+        "fee": 2000,
+        "timings": {
+          "Sat": "02:00 PM - 05:00 PM"
+        },
+        "practice_id": "1774"
+      }
+    ]
   },
   {
-    "_id": "6930b35e9c75f684c3f6ee3e",
-    "url": "https://www.marham.pk/hospitals/karachi/imam-clinic/north-nazimabad",
-    "name": "Imam Clinic, Karachi",
-    "platform": "marham"
+    "_id": "6931e2c629ec732e67ba4676",
+    "url": null,
+    "address": "Gulshan e Iqbal, Karachi",
+    "name": "Karachi Medical Complex Consultants Clinic",
+    "platform": "marham",
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-iqbal-nabi-soomro",
+        "name": "Dr. Iqbal Nabi Soomro",
+        "fee": 2000,
+        "timings": {
+          "Mon": "06:00 PM - 08:00 PM",
+          "Wed": "06:00 PM - 08:00 PM",
+          "Sat": "06:00 PM - 08:00 PM"
+        },
+        "practice_id": "2296"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/general-surgeon/dr-mohammad-afzal-ahmad",
+        "name": "Dr. Mohammad Afzal Ahmad",
+        "fee": null,
+        "timings": {
+          "Mon": "04:30 PM - 06:30 PM",
+          "Wed": "04:30 PM - 06:30 PM"
+        },
+        "practice_id": "2296"
+      }
+    ]
   },
   {
-    "_id": "6930b35e9c75f684c3f6ee3f",
-    "url": "https://www.marham.pk/hospitals/karachi/taj-medical-complex/saddar",
-    "name": "Taj Medical Complex, Karachi",
-    "platform": "marham"
+    "_id": "6931e2d429ec732e67ba4685",
+    "url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-sidra-tariq/callcenter?h_id=3373",
+    "address": "DHA Phase 6, Karachi",
+    "name": "R5 Aesthetics & Healthcare",
+    "platform": "marham",
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-sidra-tariq",
+        "name": "Dr. Sidra Tariq",
+        "fee": 3000,
+        "timings": {
+          "Tue": "03:00 PM - 06:00 PM",
+          "Thu": "03:00 PM - 06:00 PM",
+          "Sat": "03:00 PM - 06:00 PM"
+        },
+        "practice_id": "3373"
+      }
+    ]
   },
   {
-    "_id": "6930b35e9c75f684c3f6ee40",
-    "url": "https://www.marham.pk/hospitals/karachi/hillpark-general-hospital/bahadarabad",
-    "name": "Hillpark General Hospital, Karachi",
-    "platform": "marham"
+    "_id": "6931e2dd29ec732e67ba468a",
+    "url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-misbah-bashir/callcenter?h_id=20161",
+    "address": "Karachi, Karachi",
+    "name": "Haji Rang Elahi Hospital",
+    "platform": "marham",
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-misbah-bashir",
+        "name": "Dr. Misbah Bashir",
+        "fee": 1200,
+        "timings": {
+          "Tue": "10:00 AM - 12:00 PM",
+          "Thu": "10:00 AM - 12:00 PM",
+          "Fri": "10:00 AM - 12:00 PM"
+        },
+        "practice_id": "20161"
+      }
+    ]
   },
   {
-    "_id": "6930b35e9c75f684c3f6ee41",
-    "url": "https://www.marham.pk/hospitals/karachi/medicare-cardiac-general-hospital/bahadarabad",
-    "name": "Medicare Cardiac & General Hospital, Karachi",
-    "platform": "marham"
+    "_id": "6931e2dd29ec732e67ba468b",
+    "url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-misbah-bashir/callcenter?h_id=2897",
+    "address": "Gulshan-e-Iqbal, Karachi",
+    "name": "Ibn-E-Seena Hospital",
+    "platform": "marham",
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-misbah-bashir",
+        "name": "Dr. Misbah Bashir",
+        "fee": 1500,
+        "timings": {
+          "Tue": "12:00 PM - 01:00 PM",
+          "Thu": "12:00 PM - 01:00 PM",
+          "Sat": "12:00 PM - 01:00 PM"
+        },
+        "practice_id": "2897"
+      }
+    ]
   },
   {
-    "_id": "6930b3699c75f684c3f6ee42",
-    "url": "https://www.marham.pk/hospitals/karachi/gmt-diagnostic-centre/saddar",
-    "name": "GMT Diagnostic Centre, Karachi",
-    "platform": "marham"
+    "_id": "6931e2ec29ec732e67ba4698",
+    "url": "https://www.marham.pk/doctors/karachi/family-medicine/dr-madiha-farrukh/callcenter?h_id=6662",
+    "address": "Gulshan-e-Iqbal, Karachi",
+    "name": "Dawam Healthcare",
+    "platform": "marham",
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/family-medicine/dr-madiha-farrukh",
+        "name": "Dr. Madiha Farrukh",
+        "fee": 500,
+        "timings": {
+          "Mon": "05:00 PM - 09:00 PM",
+          "Tue": "05:00 PM - 09:00 PM",
+          "Wed": "05:00 PM - 09:00 PM",
+          "Thu": "05:00 PM - 09:00 PM",
+          "Fri": "05:00 PM - 09:00 PM",
+          "Sat": "05:00 PM - 09:00 PM"
+        },
+        "practice_id": "6662"
+      }
+    ]
   },
   {
-    "_id": "6930b3699c75f684c3f6ee43",
-    "url": "https://www.marham.pk/hospitals/karachi/lifeline-hospital/north-nazimabad",
-    "name": "Lifeline Hospital, Karachi",
-    "platform": "marham"
+    "_id": "6931e30529ec732e67ba46ad",
+    "url": "https://www.marham.pk/doctors/karachi/general-physician/dr-nida-khan/callcenter?h_id=8812",
+    "address": "Gulshan e Iqbal, Karachi",
+    "name": "KARACHI MEDICAL COMPLEX Consultant Clinic",
+    "platform": "marham",
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/general-physician/dr-nida-khan",
+        "name": "Dr. Nida Khan",
+        "fee": 1000,
+        "timings": {
+          "Wed": "09:00 AM - 03:00 PM",
+          "Thu": "12:00 PM - 09:00 PM",
+          "Sat": "09:00 AM - 03:00 PM",
+          "Sun": "12:00 PM - 06:00 PM"
+        },
+        "practice_id": "8812"
+      }
+    ]
   },
   {
-    "_id": "6930b3699c75f684c3f6ee44",
-    "url": "https://www.marham.pk/hospitals/karachi/mamji-hospital/fb-area",
-    "name": "Mamji Hospital, Karachi",
-    "platform": "marham"
+    "_id": "6931e32629ec732e67ba46c4",
+    "url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-abdullah-yahya/callcenter?h_id=1749",
+    "address": "Dharoji, Karachi",
+    "name": "Skin Care Centre",
+    "platform": "marham",
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-abdullah-yahya",
+        "name": "Dr. Abdullah Yahya",
+        "fee": 2000,
+        "timings": {
+          "Mon": "08:30 PM - 10:30 PM",
+          "Tue": "08:30 PM - 10:30 PM",
+          "Wed": "08:30 PM - 10:30 PM",
+          "Thu": "08:30 PM - 10:30 PM",
+          "Fri": "08:30 PM - 10:30 PM",
+          "Sat": "08:30 PM - 10:30 PM"
+        },
+        "practice_id": "1749"
+      }
+    ]
   },
   {
-    "_id": "6930b3699c75f684c3f6ee45",
-    "url": "https://www.marham.pk/hospitals/karachi/medicare-clinic-cardiac-and-general-hospital/bahadarabad",
-    "name": "Medicare Clinic Cardiac And General Hospital, Karachi",
-    "platform": "marham"
+    "_id": "6931e42c29ec732e67ba46e5",
+    "url": null,
+    "address": "Clifton, Karachi",
+    "name": "Metropolis Health Clinics",
+    "platform": "marham",
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-sonia-poshni-sheikh",
+        "name": "Dr. Sonia Poshni Sheikh",
+        "fee": 3000,
+        "timings": {
+          "Mon": "05:00 PM - 07:00 PM",
+          "Tue": "05:00 PM - 07:00 PM",
+          "Wed": "05:00 PM - 07:00 PM",
+          "Thu": "05:00 PM - 07:00 PM",
+          "Fri": "05:00 PM - 07:00 PM",
+          "Sat": "05:00 PM - 07:00 PM"
+        },
+        "practice_id": "3940"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/dentist/dr-ahmed-bin-khalid-khan",
+        "name": "Dr. Ahmed Bin Khalid Khan",
+        "fee": 1000,
+        "timings": {
+          "Mon": "06:00 PM - 09:00 PM",
+          "Tue": "06:00 PM - 09:00 PM",
+          "Wed": "06:00 PM - 09:00 PM",
+          "Thu": "06:00 PM - 09:00 PM",
+          "Fri": "06:00 PM - 09:00 PM",
+          "Sat": "06:00 PM - 09:00 PM"
+        },
+        "practice_id": "3940"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-zeeshan-ali-arbab",
+        "name": "Dr. Zeeshan Ali Arbab",
+        "fee": 2000,
+        "timings": {
+          "Tue": "06:00 PM - 08:00 PM",
+          "Thu": "06:00 PM - 08:00 PM"
+        },
+        "practice_id": "3940"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/psychiatrist/dr-dost-muhammad",
+        "name": "Dr. Dost Muhammad",
+        "fee": 1750,
+        "timings": {
+          "Thu": "05:00 PM - 09:00 PM",
+          "Sat": "05:00 PM - 09:00 PM"
+        },
+        "practice_id": "3940"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/physiotherapist/ms-sadia-shafaq",
+        "name": "Ms. Sadia Shafaq",
+        "fee": null,
+        "timings": {
+          "Fri": "02:00 PM - 03:00 PM",
+          "Sat": "02:00 PM - 03:00 PM"
+        },
+        "practice_id": "3940"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-murtaza-azad",
+        "name": "Dr. Murtaza Azad",
+        "fee": 2000,
+        "timings": {
+          "Tue": "07:00 PM - 09:00 PM",
+          "Thu": "07:00 PM - 09:00 PM"
+        },
+        "practice_id": "3940"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-sonia-poshni",
+        "name": "Dr. Sonia Poshni",
+        "fee": 3000,
+        "timings": {
+          "Fri": "06:00 PM - 08:00 PM",
+          "Sat": "06:00 PM - 08:00 PM"
+        },
+        "practice_id": "3940"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/family-medicine/dr-naureen-kazim",
+        "name": "Dr. Naureen Kazim",
+        "fee": 2000,
+        "timings": {
+          "Tue": "06:00 PM - 09:00 PM",
+          "Thu": "06:00 PM - 09:00 PM",
+          "Sat": "06:00 PM - 09:00 PM"
+        },
+        "practice_id": "3940"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/radiologist/dr-m-shoaib-nasir",
+        "name": "Dr. M. Shoaib Nasir",
+        "fee": 2500,
+        "timings": {
+          "Mon": "04:00 PM - 09:00 PM",
+          "Tue": "04:00 PM - 09:00 PM",
+          "Wed": "04:00 PM - 09:00 PM",
+          "Thu": "04:00 PM - 09:00 PM",
+          "Fri": "04:00 PM - 09:00 PM",
+          "Sat": "04:00 PM - 09:00 PM"
+        },
+        "practice_id": "3940"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/general-physician/dr-sarosh-kamal",
+        "name": "Dr. Sarosh Kamal",
+        "fee": 1500,
+        "timings": {
+          "Mon": "03:00 PM - 09:00 PM",
+          "Tue": "03:00 PM - 09:00 PM",
+          "Wed": "03:00 PM - 09:00 PM",
+          "Thu": "03:00 PM - 09:00 PM",
+          "Sat": "03:00 PM - 09:00 PM"
+        },
+        "practice_id": "3940"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-huma-imran-ahmed",
+        "name": "Dr. Huma Imran Ahmed",
+        "fee": 2000,
+        "timings": {
+          "Mon": "06:00 PM - 08:00 PM",
+          "Wed": "06:00 PM - 08:00 PM"
+        },
+        "practice_id": "3940"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/internal-medicine/prof-s-nosheen-zehra",
+        "name": "Prof. S. Nosheen Zehra",
+        "fee": 3000,
+        "timings": {
+          "Tue": "06:00 PM - 09:00 PM",
+          "Thu": "06:00 PM - 09:00 PM",
+          "Sat": "06:00 PM - 09:00 PM"
+        },
+        "practice_id": "3940"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/ent-specialist/dr-noor-a-shaikh",
+        "name": "Dr. Noor A. Shaikh",
+        "fee": 2000,
+        "timings": {},
+        "practice_id": "3940"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/restorative-dentist/dr-s-masood-ul-hasan",
+        "name": "Dr. S Masood Ul Hasan",
+        "fee": 1000,
+        "timings": {
+          "Tue": "04:00 PM - 06:00 PM",
+          "Thu": "04:00 PM - 06:00 PM",
+          "Sat": "04:00 PM - 06:00 PM"
+        },
+        "practice_id": "3940"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/pulmonologist/dr-syed-azfer-husain",
+        "name": "Dr. Syed Azfer Husain",
+        "fee": 2250,
+        "timings": {
+          "Mon": "06:00 PM - 09:00 PM",
+          "Tue": "06:00 PM - 09:00 PM",
+          "Wed": "06:00 PM - 09:00 PM",
+          "Thu": "06:00 PM - 09:00 PM",
+          "Fri": "06:00 PM - 09:00 PM",
+          "Sat": "06:00 PM - 09:00 PM"
+        },
+        "practice_id": "3940"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/dentist/dr-saba-tabassum",
+        "name": "Dr. Saba Tabassum",
+        "fee": 1000,
+        "timings": {
+          "Tue": "04:00 PM - 06:00 PM",
+          "Thu": "04:00 PM - 06:00 PM",
+          "Sat": "04:00 PM - 06:00 PM"
+        },
+        "practice_id": "3940"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/cardiologist/dr-naveed-ahmed-shaikh",
+        "name": "Dr. Naveed Ahmed Shaikh",
+        "fee": 2250,
+        "timings": {
+          "Mon": "06:00 PM - 08:00 PM",
+          "Tue": "06:00 PM - 08:00 PM",
+          "Wed": "06:00 PM - 08:00 PM",
+          "Thu": "06:00 PM - 08:00 PM",
+          "Fri": "06:00 PM - 08:00 PM"
+        },
+        "practice_id": "3940"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-fouzia-rasool-memon",
+        "name": "Dr. Fouzia Rasool Memon",
+        "fee": 2000,
+        "timings": {
+          "Wed": "06:00 PM - 08:00 PM",
+          "Fri": "06:00 PM - 08:00 PM"
+        },
+        "practice_id": "3940"
+      },
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/dermatologist/dr-asma-ansari",
+        "name": "Dr. Asma Ansari",
+        "fee": 2000,
+        "timings": {
+          "Mon": "03:00 PM - 06:00 PM",
+          "Tue": "03:00 PM - 06:00 PM",
+          "Wed": "03:00 PM - 06:00 PM",
+          "Thu": "03:00 PM - 06:00 PM",
+          "Fri": "03:00 PM - 06:00 PM",
+          "Sat": "03:00 PM - 06:00 PM"
+        },
+        "practice_id": "3940"
+      }
+    ]
   },
   {
-    "_id": "6930b3699c75f684c3f6ee46",
-    "url": "https://www.marham.pk/hospitals/karachi/atia-general-hospital/malir",
-    "name": "Atia General Hospital, Karachi",
-    "platform": "marham"
+    "_id": "6931e43829ec732e67ba46ee",
+    "url": "https://www.marham.pk/doctors/karachi/dentist/dr-zainab-chandio/callcenter?h_id=701",
+    "address": "Clifton, Karachi",
+    "name": "The Doctors Plaza Hospital",
+    "platform": "marham",
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/dentist/dr-zainab-chandio",
+        "name": "Dr. Zainab Chandio",
+        "fee": 1000,
+        "timings": {
+          "Mon": "04:00 PM - 08:30 PM",
+          "Tue": "04:00 PM - 08:30 PM",
+          "Wed": "04:00 PM - 08:30 PM",
+          "Thu": "04:00 PM - 08:30 PM",
+          "Fri": "04:00 PM - 08:30 PM",
+          "Sat": "04:00 PM - 08:30 PM"
+        },
+        "practice_id": "701"
+      }
+    ]
   },
   {
-    "_id": "6930b3699c75f684c3f6ee47",
-    "url": "https://www.marham.pk/hospitals/karachi/dr-aisha-health-vision-hospital/bahadarabad",
-    "name": "Dr Aisha Health Vision Hospital, Karachi",
-    "platform": "marham"
+    "_id": "6931e44f29ec732e67ba46f9",
+    "address": "Depot Lines, Saddar, Karachi",
+    "name": "Omi Hospital - Saddar",
+    "platform": "marham",
+    "url": null,
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/psychiatrist/dr-dost-muhammad",
+        "name": "Dr. Dost Muhammad",
+        "fee": 1000,
+        "timings": {
+          "Mon": "05:00 PM - 07:00 PM",
+          "Tue": "05:00 PM - 07:00 PM"
+        },
+        "practice_id": "49"
+      }
+    ]
   },
   {
-    "_id": "6930b36f9c75f684c3f6ee48",
-    "url": "https://www.marham.pk/hospitals/karachi/south-city-hospital/clifton",
-    "name": "South City Hospital, Karachi",
-    "platform": "marham"
+    "_id": "6931e44f29ec732e67ba46fa",
+    "name": "Pak Chinese Medical Center",
+    "address": "PECHS, Karachi",
+    "platform": "marham",
+    "url": null,
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/psychiatrist/dr-dost-muhammad",
+        "name": "Dr. Dost Muhammad",
+        "fee": 1000,
+        "timings": {
+          "Thu": "05:00 PM - 08:00 PM"
+        },
+        "practice_id": "3350"
+      }
+    ]
   },
   {
-    "_id": "6930b36f9c75f684c3f6ee49",
-    "url": "https://www.marham.pk/hospitals/karachi/anklesaria-hospital/preedy-quarters-karachi",
-    "name": "Anklesaria Hospital, Karachi",
-    "platform": "marham"
+    "_id": "6931e45529ec732e67ba46fb",
+    "address": "Gulistan-e-Johar, Karachi",
+    "name": "Alpha Health Care",
+    "platform": "marham",
+    "url": null,
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-murtaza-azad",
+        "name": "Dr. Murtaza Azad",
+        "fee": 500,
+        "timings": {},
+        "practice_id": "7362"
+      }
+    ]
   },
   {
-    "_id": "6930b36f9c75f684c3f6ee4a",
-    "url": "https://www.marham.pk/hospitals/karachi/skin-laser-cosmetology-center/saddar",
-    "name": "Skin Laser & Cosmetology Center, Karachi",
-    "platform": "marham"
+    "_id": "6931e45529ec732e67ba46fc",
+    "name": "Pak International Hospital",
+    "address": "DHA City Karachi, Karachi",
+    "platform": "marham",
+    "url": null,
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-murtaza-azad",
+        "name": "Dr. Murtaza Azad",
+        "fee": 1500,
+        "timings": {
+          "Tue": "08:00 PM - 09:00 PM",
+          "Fri": "08:00 PM - 09:00 PM"
+        },
+        "practice_id": "4788"
+      }
+    ]
   },
   {
-    "_id": "6930b36f9c75f684c3f6ee4b",
-    "url": "https://www.marham.pk/hospitals/karachi/national-medical-center/dha-city-karachi",
-    "name": "National Medical Center, Karachi",
-    "platform": "marham"
+    "_id": "6931e45529ec732e67ba46fd",
+    "address": "DHA Phase 8, Karachi",
+    "name": "Western Clinics",
+    "platform": "marham",
+    "url": null,
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/urologist/dr-murtaza-azad",
+        "name": "Dr. Murtaza Azad",
+        "fee": 3500,
+        "timings": {
+          "Tue": "09:30 PM - 10:30 PM",
+          "Thu": "09:30 PM - 10:30 PM",
+          "Fri": "09:30 PM - 10:30 PM"
+        },
+        "practice_id": "6428"
+      }
+    ]
   },
   {
-    "_id": "6930b36f9c75f684c3f6ee4c",
-    "url": "https://www.marham.pk/hospitals/karachi/health-icon-medical-diagnostic-centre/gulshan-e-iqbal",
-    "name": "Health Icon Medical & Diagnostic Centre, Karachi",
-    "platform": "marham"
+    "_id": "6931e46629ec732e67ba46fe",
+    "address": "Clifton, Karachi",
+    "name": "Dr. Ziauddin Hospital (Clifton)",
+    "platform": "marham",
+    "url": null,
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-huma-imran-ahmed",
+        "name": "Dr. Huma Imran Ahmed",
+        "fee": 2000,
+        "timings": {
+          "Wed": "10:00 AM - 12:00 PM",
+          "Thu": "10:00 AM - 12:00 PM",
+          "Fri": "10:00 AM - 12:00 PM"
+        },
+        "practice_id": "12706"
+      }
+    ]
   },
   {
-    "_id": "6930b36f9c75f684c3f6ee4d",
-    "url": "https://www.marham.pk/hospitals/karachi/darul-sehat-hospital/gulistan-e-jauhar-block-4a",
-    "name": "Darul Sehat Hospital, Karachi",
-    "platform": "marham"
+    "_id": "6931e46629ec732e67ba46ff",
+    "name": "Sindh City Hospital",
+    "address": "DHA Phase 1, Karachi",
+    "platform": "marham",
+    "url": null,
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-huma-imran-ahmed",
+        "name": "Dr. Huma Imran Ahmed",
+        "fee": 2000,
+        "timings": {
+          "Tue": "04:00 PM - 06:00 PM",
+          "Thu": "04:00 PM - 06:00 PM"
+        },
+        "practice_id": "14957"
+      }
+    ]
   },
   {
-    "_id": "6930b3749c75f684c3f6ee4e",
-    "url": "https://www.marham.pk/hospitals/karachi/al-taj-diagnostic-consultant-clinics/saddar",
-    "name": "Al Taj diagnostic & Consultant Clinics, Karachi",
-    "platform": "marham"
+    "_id": "6931e46629ec732e67ba4700",
+    "address": "DHA Phase 6, Karachi",
+    "name": "ALab & Advanced Clinic (Karachi)",
+    "platform": "marham",
+    "url": null,
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/gynecologist/dr-huma-imran-ahmed",
+        "name": "Dr. Huma Imran Ahmed",
+        "fee": 2000,
+        "timings": {
+          "Mon": "05:30 PM - 07:30 PM",
+          "Wed": "05:30 PM - 07:30 PM",
+          "Fri": "05:30 PM - 07:30 PM"
+        },
+        "practice_id": "11381"
+      }
+    ]
   },
   {
-    "_id": "6930b3749c75f684c3f6ee4f",
-    "url": "https://www.marham.pk/hospitals/karachi/hamdard-university-hospital/saddar",
-    "name": "Hamdard University Hospital, Karachi",
-    "platform": "marham"
+    "_id": "6931e46829ec732e67ba4701",
+    "address": "Sindh, Karachi",
+    "name": "Tabba Heart Institute",
+    "platform": "marham",
+    "url": null,
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/internal-medicine/prof-s-nosheen-zehra",
+        "name": "Prof. S. Nosheen Zehra",
+        "fee": 2500,
+        "timings": {
+          "Thu": "07:00 PM - 08:00 PM"
+        },
+        "practice_id": "8698"
+      }
+    ]
   },
   {
-    "_id": "6930b3749c75f684c3f6ee50",
-    "url": "https://www.marham.pk/hospitals/karachi/ssj-skin-clinic/north-nazimabad",
-    "name": "SSJ Skin Clinic, Karachi",
-    "platform": "marham"
-  },
-  {
-    "_id": "6930b3749c75f684c3f6ee51",
-    "url": "https://www.marham.pk/hospitals/karachi/doctors-plaza-the-plaza-hospital/do-talwar",
-    "name": "Doctors Plaza, The Plaza Hospital, Karachi",
-    "platform": "marham"
-  },
-  {
-    "_id": "6930b3749c75f684c3f6ee52",
-    "url": "https://www.marham.pk/hospitals/karachi/saifee-hospital/north-nazimabad",
-    "name": "Saifee Hospital, Karachi",
-    "platform": "marham"
-  },
-  {
-    "_id": "6930b3749c75f684c3f6ee53",
-    "url": "https://www.marham.pk/hospitals/karachi/neuro-care-clinic/pechs",
-    "name": "Neuro Care Clinic, Karachi",
-    "platform": "marham"
-  },
-  {
-    "_id": "6930b37b9c75f684c3f6ee54",
-    "url": "https://www.marham.pk/hospitals/karachi/zubaida-medical-centre/dharoji",
-    "name": "Zubaida Medical Centre, Karachi",
-    "platform": "marham"
-  },
-  {
-    "_id": "6930b37b9c75f684c3f6ee55",
-    "url": "https://www.marham.pk/hospitals/karachi/hira-medical-center/fb-area",
-    "name": "Hira Medical Center, Karachi",
-    "platform": "marham"
-  },
-  {
-    "_id": "6930b37b9c75f684c3f6ee56",
-    "url": "https://www.marham.pk/hospitals/karachi/omi-hospital-saddar/depot-lines-saddar",
-    "name": "Omi Hospital - Saddar, Karachi",
-    "platform": "marham"
-  },
-  {
-    "_id": "6930b37b9c75f684c3f6ee57",
-    "url": "https://www.marham.pk/hospitals/karachi/khizar-specialist-clinic-hospital/shah-faisal-town",
-    "name": "Khizar Specialist Clinic & Hospital, Karachi",
-    "platform": "marham"
-  },
-  {
-    "_id": "6930b37b9c75f684c3f6ee58",
-    "url": "https://www.marham.pk/hospitals/karachi/patel-hospital/gulshan-e-iqbal",
-    "name": "Patel Hospital, Karachi",
-    "platform": "marham"
-  },
-  {
-    "_id": "6930b37b9c75f684c3f6ee59",
-    "url": "https://www.marham.pk/hospitals/karachi/psycho-social-centre/clifton",
-    "name": "Psycho Social Centre, Karachi",
-    "platform": "marham"
-  },
-  {
-    "_id": "6930b3829c75f684c3f6ee5a",
-    "url": "https://www.marham.pk/hospitals/karachi/the-kidney-centre/cantt",
-    "name": "The Kidney Centre, Karachi",
-    "platform": "marham"
-  },
-  {
-    "_id": "6930b3829c75f684c3f6ee5b",
-    "url": "https://www.marham.pk/hospitals/karachi/we-care-clinic/dha-phase-5",
-    "name": "We Care Clinic, Karachi",
-    "platform": "marham"
-  },
-  {
-    "_id": "6930b3829c75f684c3f6ee5c",
-    "url": "https://www.marham.pk/hospitals/karachi/m-rab-medical-center/gulshan-e-iqbal",
-    "name": "M Rab Medical Center, Karachi",
-    "platform": "marham"
-  },
-  {
-    "_id": "6930b3829c75f684c3f6ee5d",
-    "url": "https://www.marham.pk/hospitals/karachi/jk-health-link/clifton",
-    "name": "JK Health Link, Karachi",
-    "platform": "marham"
-  },
-  {
-    "_id": "6930b3829c75f684c3f6ee5e",
-    "url": "https://www.marham.pk/hospitals/karachi/ziauddin-hospital/north-nazimabad",
-    "name": "Ziauddin Hospital, Karachi",
-    "platform": "marham"
-  },
-  {
-    "_id": "6930b3829c75f684c3f6ee5f",
-    "url": "https://www.marham.pk/hospitals/karachi/child-care-clinic/near-yadgar-fish",
-    "name": "Child Care Clinic, Karachi",
-    "platform": "marham"
+    "_id": "6931e46b29ec732e67ba4702",
+    "address": "Clifton, Karachi",
+    "name": "Hilal-E-Ahmar House Hospital",
+    "platform": "marham",
+    "url": null,
+    "doctors": [
+      {
+        "profile_url": "https://www.marham.pk/doctors/karachi/ent-specialist/dr-noor-a-shaikh",
+        "name": "Dr. Noor A. Shaikh",
+        "fee": 2000,
+        "timings": {
+          "Mon": "07:00 PM - 08:30 PM",
+          "Tue": "07:00 PM - 08:30 PM",
+          "Wed": "07:00 PM - 08:30 PM",
+          "Thu": "07:00 PM - 08:30 PM",
+          "Fri": "07:00 PM - 08:30 PM",
+          "Sat": "07:00 PM - 08:30 PM"
+        },
+        "practice_id": "1802"
+      }
+    ]
   }
 ]

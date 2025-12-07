@@ -12,10 +12,10 @@ class DoctorModel(BaseModel):
     fees: Optional[int]
     city: Optional[ str ]
     area: Optional[str]
-    # Legacy single-hospital field (kept for backward compatibility).
-    hospital: Optional[str]
-    # Prefer this field: list of hospital affiliations with name+url
+    # List of hospital affiliations with name+url+fee+timings
     hospitals: Optional[List[dict]] = None
+    # Private practice information (for video consultations, home visits, etc.)
+    private_practice: Optional[dict] = None  # {name: str, url: str, fee: int, timings: dict}
     address: Optional[str]
     rating: Optional[float]
     pmdc_verified: Optional[bool] = False

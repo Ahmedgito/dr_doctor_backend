@@ -2261,3 +2261,6 @@ Call log:
 Total scraped: 226
 Total inserted: 150
 Total skipped: 76
+2025-12-08 02:27:19 | INFO     | __main__:export_and_clear_db:48 - Exported 150 doctors to data/exports/doctors_backup_20251208_022719.json
+2025-12-08 02:27:19 | INFO     | __main__:export_and_clear_db:57 - Exported 49 hospitals to data/exports/hospitals_backup_20251208_022719.json
+2025-12-08 02:27:19 | INFO     | __main__:export_and_clear_db:65 - Database not cleared. Use --clear flag to clear after export.

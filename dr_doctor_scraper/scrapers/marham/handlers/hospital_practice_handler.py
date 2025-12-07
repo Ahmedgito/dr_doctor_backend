@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 from scrapers.database.mongo_client import MongoClientManager
 from scrapers.models.doctor_model import DoctorModel
 from scrapers.models.hospital_model import HospitalModel
+from scrapers.utils.url_parser import is_hospital_url, parse_hospital_url
 from scrapers.logger import logger
 
 
@@ -38,6 +39,11 @@ class HospitalPracticeHandler:
             return
 
         hosp_url = practice.get("hospital_url")
+        
+        # Only process if it's a real hospital URL
+        if not hosp_url or not is_hospital_url(hosp_url):
+            return
+
         hosp_name = practice.get("hospital_name") or ""
         area = practice.get("area")
         fee = practice.get("fee")
@@ -45,11 +51,16 @@ class HospitalPracticeHandler:
         lat = practice.get("lat")
         lng = practice.get("lng")
 
+        # Parse city, name, area from URL
+        url_parts = parse_hospital_url(hosp_url)
+        
         # Build minimal hospital doc to upsert
         hosp_doc = {
-            "name": hosp_name,
+            "name": hosp_name or url_parts.get("name") or "",
             "platform": self.PLATFORM,
             "url": hosp_url,
+            "city": url_parts.get("city"),
+            "area": area or url_parts.get("area"),
             "address": area or None,
         }
 
@@ -69,9 +80,16 @@ class HospitalPracticeHandler:
                     pass
 
             # Now merge doctor entry into hospital.doctors
-            hosp_filter = {"url": hosp_url} if hosp_url else {"name": hosp_name, "address": area}
+            # Always use URL for lookup (most reliable)
+            hosp_filter = {"url": hosp_url}
             hosp_record = self.mongo_client.hospitals.find_one(hosp_filter) or {}
             existing_doctors = hosp_record.get("doctors") or []
+            
+            # If doctors is a list of simple dicts (from Phase 1), convert to full format
+            if existing_doctors and isinstance(existing_doctors[0], dict) and "fee" not in existing_doctors[0]:
+                # Phase 1 format: just name and profile_url
+                # Convert to Phase 2 format with fee and timings
+                pass  # We'll merge below
 
             # Doctor entry to upsert into hospital.doctors
             doctor_entry = {

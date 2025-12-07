@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 
 from scrapers.models.doctor_model import DoctorModel
 from scrapers.utils.parser_helpers import clean_text
+from scrapers.utils.url_parser import is_hospital_url, is_video_consultation_url, parse_hospital_url
 
 BASE_URL = "https://www.marham.pk"
 
@@ -127,6 +128,19 @@ class ProfileEnricher:
                         # location: look for iframe with data-lat/data-lng
                         lat, lng = ProfileEnricher._extract_location(c)
 
+                        # Determine if this is a hospital or private practice (video consultation)
+                        is_private_practice = False
+                        if hospital_url:
+                            # Check if it's a video consultation or not a hospital URL
+                            if is_video_consultation_url(hospital_url) or not is_hospital_url(hospital_url):
+                                is_private_practice = True
+                        
+                        # If no hospital URL but has name, check if it's private practice
+                        if not hospital_url and hospital_name:
+                            # Video consultation or private practice indicators
+                            if any(keyword in hospital_name.lower() for keyword in ["video", "consultation", "online", "private"]):
+                                is_private_practice = True
+
                         practices.append({
                             "h_id": h_id,
                             "d_id": d_id,
@@ -137,6 +151,7 @@ class ProfileEnricher:
                             "timings": timings,
                             "lat": lat,
                             "lng": lng,
+                            "is_private_practice": is_private_practice,
                         })
                     except Exception:
                         continue

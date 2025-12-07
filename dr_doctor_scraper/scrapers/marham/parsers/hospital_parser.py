@@ -88,7 +88,7 @@ class HospitalParser:
         
         Args:
             html: HTML content of the hospital detail page
-            url: URL of the hospital page
+            url: URL of the hospital page (format: marham.pk/hospitals/(city)/(name)/(area))
             
         Returns:
             Dictionary with enriched hospital data including specialties, timing, about text
@@ -98,10 +98,13 @@ class HospitalParser:
         def _first(el):
             return el.get_text(strip=True) if el else None
 
-        name = clean_text(_first(soup.select_one(".hospital-title, h1, .hosp_name")))
+        # Extract city, name, area from URL first (most reliable)
+        url_parts = parse_hospital_url(url)
+        
+        name = clean_text(_first(soup.select_one(".hospital-title, h1, .hosp_name"))) or url_parts.get("name")
         address = clean_text(_first(soup.select_one(".address, .hospital-address, p.text-sm")))
-        city = clean_text(_first(soup.select_one(".city"))) or "Karachi"
-        area = clean_text(_first(soup.select_one(".area")))
+        city = url_parts.get("city") or clean_text(_first(soup.select_one(".city"))) or "Karachi"
+        area = url_parts.get("area") or clean_text(_first(soup.select_one(".area")))
         timing = clean_text(_first(soup.select_one(".timing, .hospital-timing")))
 
         # Extract specialties list from the hospital page
@@ -114,6 +117,9 @@ class HospitalParser:
 
         # Parse comprehensive About section
         about_data = HospitalParser._parse_about_section(soup)
+        
+        # Extract doctor list from About section
+        doctors_list = HospitalParser._extract_doctors_from_about(soup)
         
         result = {
             "name": name,
@@ -129,7 +135,50 @@ class HospitalParser:
         # Merge about section data
         result.update(about_data)
         
+        # Add doctor list (will be updated with full info in Phase 2)
+        if doctors_list:
+            result["doctors"] = doctors_list
+        
         return result
+    
+    @staticmethod
+    def _extract_doctors_from_about(soup: BeautifulSoup) -> List[dict]:
+        """Extract doctor names and URLs from the About section doctor list.
+        
+        Returns list of dicts with keys: name, profile_url
+        """
+        doctors = []
+        try:
+            about_section = soup.select_one("div.row.justify-content-center, div.col-12.col-md-8")
+            if not about_section:
+                return doctors
+            
+            # Look for "Doctor list" section
+            for h2 in about_section.select("h2"):
+                h2_text = clean_text(h2.get_text())
+                if "Doctor list" in h2_text or "doctors" in h2_text.lower():
+                    # Get the ul list after this h2
+                    next_ul = h2.find_next_sibling("ul") or h2.find_next("ul")
+                    if next_ul:
+                        for li in next_ul.select("li"):
+                            # Check for links
+                            link = li.select_one("a")
+                            if link:
+                                doctor_name = clean_text(link.get_text())
+                                doctor_href = link.get("href")
+                                if doctor_name and doctor_href:
+                                    # Only include doctor URLs, not hospital URLs
+                                    if "/doctors/" in doctor_href:
+                                        profile_url = f"{BASE_URL}{doctor_href}" if doctor_href.startswith("/") else doctor_href
+                                        doctors.append({
+                                            "name": doctor_name,
+                                            "profile_url": profile_url,
+                                        })
+                    break
+        except Exception:
+            pass
+        
+        return doctors
 
     @staticmethod
     def _parse_about_section(soup: BeautifulSoup) -> dict:
