@@ -234,6 +234,16 @@ class MarhamScraper(BaseScraper):
                 if not h.get("name"):
                     continue
 
+                # Extract location from "View Directions" button
+                if self.page and h.get("url"):
+                    try:
+                        location = self.hospital_parser.extract_location_from_card(self.page, h["url"])
+                        if location:
+                            h["location"] = location
+                            logger.debug("Extracted location for {}: {}", h.get("name"), location)
+                    except Exception as exc:  # noqa: BLE001
+                        logger.debug("Failed to extract location for {}: {}", h.get("name"), exc)
+
                 # Insert a minimal hospital record (name + url). We'll enrich it later.
                 try:
                     exists = False
@@ -245,6 +255,8 @@ class MarhamScraper(BaseScraper):
                     if not exists:
                         # minimal doc: use update_hospital (upsert) when available to avoid unique index errors
                         minimal = {"name": h.get("name"), "platform": self.PLATFORM, "url": h.get("url")}
+                        if h.get("location"):
+                            minimal["location"] = h["location"]
                         if hasattr(self.mongo_client, "update_hospital"):
                             ok = self.mongo_client.update_hospital(h.get("url"), minimal)
                             if ok:
@@ -287,6 +299,10 @@ class MarhamScraper(BaseScraper):
                 # Check if hospital data has changed before updating
                 existing_hospital = self.mongo_client.hospitals.find_one({"url": hosp_url})
                 if existing_hospital:
+                    # Preserve location from existing record if enriched data doesn't have it
+                    if existing_hospital.get("location") and not enriched.get("location"):
+                        enriched["location"] = existing_hospital["location"]
+                    
                     # Compare relevant fields (ignore _id and scraped_at for comparison)
                     existing_data = {k: v for k, v in existing_hospital.items() if k not in ("_id", "scraped_at")}
                     enriched_data = {k: v for k, v in enriched.items() if k not in ("_id", "scraped_at")}

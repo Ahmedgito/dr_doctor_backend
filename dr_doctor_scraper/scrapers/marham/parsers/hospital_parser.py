@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import re
-from typing import List
+import time
+from typing import List, Optional, Dict
 from bs4 import BeautifulSoup
+from playwright.sync_api import Page
 
 from scrapers.utils.parser_helpers import clean_text
 from scrapers.utils.url_parser import parse_hospital_url
@@ -82,6 +84,112 @@ class HospitalParser:
             hospitals.append(hospital)
 
         return hospitals
+
+    @staticmethod
+    def extract_location_from_card(page: Page, hospital_url: str) -> Optional[Dict[str, float]]:
+        """Extract location (lat/lng) by clicking "View Directions" button on a hospital card.
+        
+        Args:
+            page: Playwright Page object
+            hospital_url: URL of the hospital to find the card for
+            
+        Returns:
+            Dictionary with 'lat' and 'lng' keys, or None if extraction fails
+        """
+        try:
+            # Find the card that contains a link to this hospital URL
+            # Extract the path from the URL for matching
+            url_path = hospital_url.replace(BASE_URL, "").replace("https://www.marham.pk", "").replace("http://www.marham.pk", "")
+            if url_path.startswith("/"):
+                url_path = url_path[1:]
+            
+            # Try to find the card by matching the URL in the card's links
+            card = None
+            cards = page.query_selector_all(".row.shadow-card")
+            for c in cards:
+                # Check if this card contains a link to our hospital
+                link = c.query_selector(f'a[href*="{url_path}"], a[href*="{hospital_url}"]')
+                if link:
+                    card = c
+                    break
+            
+            if not card:
+                return None
+            
+            # Find "View Directions" button within this card
+            # Common selectors: button containing "View Directions" or "Directions"
+            directions_button = card.query_selector('button:has-text("View Directions"), button:has-text("Directions"), a:has-text("View Directions"), a:has-text("Directions")')
+            
+            if not directions_button:
+                # Try alternative selectors
+                directions_button = card.query_selector('[class*="direction"], [class*="location"], [data-action*="direction"]')
+            
+            if not directions_button:
+                return None
+            
+            # Click the button and wait for content to load
+            directions_button.click()
+            # Wait a bit for any dynamic content to load
+            time.sleep(1.5)
+            # Try to wait for map or location-related elements to appear
+            try:
+                page.wait_for_selector('iframe[src*="maps"], iframe[src*="google"], [data-lat], a[href*="maps.google"]', timeout=2000)
+            except Exception:
+                pass  # Continue even if selector doesn't appear
+            
+            # Try to extract coordinates from various possible locations
+            # 1. Check if there's a map iframe with coordinates in src
+            iframe = page.query_selector('iframe[src*="maps"], iframe[src*="google"], iframe[src*="location"]')
+            if iframe:
+                iframe_src = iframe.get_attribute("src") or ""
+                # Extract coordinates from Google Maps URL: ?q=lat,lng or /@lat,lng
+                coords_match = re.search(r'[?&]q=([\d.-]+),([\d.-]+)|/@([\d.-]+),([\d.-]+)', iframe_src)
+                if coords_match:
+                    lat = float(coords_match.group(1) or coords_match.group(3))
+                    lng = float(coords_match.group(2) or coords_match.group(4))
+                    return {"lat": lat, "lng": lng}
+            
+            # 2. Check for data attributes on the button or nearby elements
+            location_data = directions_button.get_attribute("data-lat") or directions_button.get_attribute("data-latitude")
+            if location_data:
+                lng_data = directions_button.get_attribute("data-lng") or directions_button.get_attribute("data-longitude")
+                if lng_data:
+                    try:
+                        return {"lat": float(location_data), "lng": float(lng_data)}
+                    except (ValueError, TypeError):
+                        pass
+            
+            # 3. Check for coordinates in the revealed content
+            # Look for text patterns like "24.8607, 67.0011" or coordinates in links
+            revealed_content = card.inner_text()
+            coords_pattern = r'(-?\d+\.\d+),\s*(-?\d+\.\d+)'
+            coords_match = re.search(coords_pattern, revealed_content)
+            if coords_match:
+                try:
+                    lat = float(coords_match.group(1))
+                    lng = float(coords_match.group(2))
+                    # Validate reasonable coordinates for Pakistan (rough bounds)
+                    if 23.0 <= lat <= 37.0 and 60.0 <= lng <= 78.0:
+                        return {"lat": lat, "lng": lng}
+                except (ValueError, TypeError):
+                    pass
+            
+            # 4. Check for Google Maps link in the revealed content
+            map_link = card.query_selector('a[href*="maps.google"], a[href*="google.com/maps"]')
+            if map_link:
+                href = map_link.get_attribute("href") or ""
+                coords_match = re.search(r'[?&]q=([\d.-]+),([\d.-]+)|/@([\d.-]+),([\d.-]+)', href)
+                if coords_match:
+                    lat = float(coords_match.group(1) or coords_match.group(3))
+                    lng = float(coords_match.group(2) or coords_match.group(4))
+                    return {"lat": lat, "lng": lng}
+            
+            return None
+            
+        except Exception as exc:  # noqa: BLE001
+            from scrapers.logger import logger
+            logger.debug("Failed to extract location from card for {}: {}", hospital_url, exc)
+            return None
 
     @staticmethod
     def parse_full_hospital(html: str, url: str) -> dict:
