@@ -83,10 +83,15 @@ class ProfileEnricher:
 
     @staticmethod
     def _parse_practices(soup: BeautifulSoup) -> List[dict]:
-        """Parse practice entries from the profile page."""
+        """Parse practice entries from the profile page.
+        
+        Distinguishes between:
+        - Video Consultations (private practice): class 'oc_practice_detail_card_dr_profile_tapped', contains "Video Consultation"
+        - Hospitals: class 'pc_practice_detail_card_dr_profile_tapped', has hospital name and Google Maps location
+        """
         practices = []
         try:
-            # Find section by header text
+            # Find section by header text "Practice Address and Timings"
             sections = soup.select("section")
             target = None
             for sec in sections:
@@ -105,19 +110,43 @@ class ProfileEnricher:
                     try:
                         h_id = c.get("h_id")
                         d_id = c.get("d_id")
-                        # hospital link (callcenter) if present
-                        a = c.select_one("a.pc_practice_detail_card_dr_profile_tapped, a.oc_practice_detail_card_dr_profile_tapped")
-                        hospital_url = None
-                        if a and a.has_attr("href"):
-                            hospital_url = a.get("href")
-                            if hospital_url and hospital_url.startswith("/"):
-                                hospital_url = f"{BASE_URL}{hospital_url}"
-
+                        
+                        # Check if this is a video consultation (private practice)
+                        oc_link = c.select_one("a.oc_practice_detail_card_dr_profile_tapped")
+                        pc_link = c.select_one("a.pc_practice_detail_card_dr_profile_tapped")
+                        
                         hospital_name_tag = c.select_one("h3")
                         hospital_name = clean_text(hospital_name_tag.get_text()) if hospital_name_tag else None
-
-                        # area
-                        area = ProfileEnricher._extract_area(c)
+                        
+                        # Determine if this is video consultation
+                        is_private_practice = False
+                        if oc_link or (hospital_name and "Video Consultation" in hospital_name):
+                            is_private_practice = True
+                        
+                        # Get the appropriate link
+                        practice_link = oc_link if oc_link else pc_link
+                        practice_url = None
+                        if practice_link and practice_link.has_attr("href"):
+                            practice_url = practice_link.get("href")
+                            if practice_url and practice_url.startswith("/"):
+                                practice_url = f"{BASE_URL}{practice_url}"
+                        
+                        # For hospitals, extract hospital URL from the link
+                        # Hospital links look like: /doctors/karachi/urologist/dr-feroze-ahmed-mahar/callcenter?h_id=5907
+                        # We need to construct the actual hospital URL from h_id or extract it
+                        hospital_url = None
+                        if not is_private_practice and practice_url:
+                            # Try to extract hospital URL from the practice link
+                            # If it contains 'callcenter?h_id=', we can construct hospital URL
+                            if "callcenter" in practice_url or "h_id" in practice_url:
+                                # For now, use the practice_url as hospital_url
+                                # The actual hospital URL might need to be looked up separately
+                                hospital_url = practice_url
+                        
+                        # area (only for hospitals, not video consultations)
+                        area = None
+                        if not is_private_practice:
+                            area = ProfileEnricher._extract_area(c)
 
                         # fee
                         fee = ProfileEnricher._extract_fee(c)
@@ -125,27 +154,17 @@ class ProfileEnricher:
                         # timings: table rows under this card
                         timings = ProfileEnricher._extract_timings(c)
 
-                        # location: look for iframe with data-lat/data-lng
-                        lat, lng = ProfileEnricher._extract_location(c)
-
-                        # Determine if this is a hospital or private practice (video consultation)
-                        is_private_practice = False
-                        if hospital_url:
-                            # Check if it's a video consultation or not a hospital URL
-                            if is_video_consultation_url(hospital_url) or not is_hospital_url(hospital_url):
-                                is_private_practice = True
-                        
-                        # If no hospital URL but has name, check if it's private practice
-                        if not hospital_url and hospital_name:
-                            # Video consultation or private practice indicators
-                            if any(keyword in hospital_name.lower() for keyword in ["video", "consultation", "online", "private"]):
-                                is_private_practice = True
+                        # location: extract from Google Maps iframe (only for hospitals)
+                        lat, lng = None, None
+                        if not is_private_practice:
+                            lat, lng = ProfileEnricher._extract_location(c)
 
                         practices.append({
                             "h_id": h_id,
                             "d_id": d_id,
                             "hospital_name": hospital_name,
                             "hospital_url": hospital_url,
+                            "practice_url": practice_url,  # The booking/appointment URL
                             "area": area,
                             "fee": fee,
                             "timings": timings,
@@ -153,10 +172,13 @@ class ProfileEnricher:
                             "lng": lng,
                             "is_private_practice": is_private_practice,
                         })
-                    except Exception:
+                    except Exception as exc:  # noqa: BLE001
+                        from scrapers.logger import logger
+                        logger.debug("Error parsing practice card: {}", exc)
                         continue
-        except Exception:
-            pass
+        except Exception as exc:  # noqa: BLE001
+            from scrapers.logger import logger
+            logger.debug("Error parsing practices section: {}", exc)
 
         return practices
 
@@ -207,21 +229,48 @@ class ProfileEnricher:
 
     @staticmethod
     def _extract_location(card: BeautifulSoup) -> tuple[Optional[float], Optional[float]]:
-        """Extract lat/lng from practice card."""
+        """Extract lat/lng from practice card's Google Maps iframe.
+        
+        Checks both:
+        1. data-lat/data-lng attributes
+        2. src attribute with Google Maps URL (q=lat,lng format)
+        """
         lat = None
         lng = None
-        iframe = card.select_one("iframe[data-lat], iframe[data-src]")
+        
+        # Look for Google Maps iframe
+        iframe = card.select_one("iframe.google-map, iframe[src*='maps.google.com'], iframe[data-src*='maps.google.com']")
+        
         if iframe:
-            lat_attr = iframe.get("data-lat") or iframe.get("data-lat")
-            lng_attr = iframe.get("data-lng") or iframe.get("data-lng")
-            try:
-                if lat_attr:
+            # First try data attributes
+            lat_attr = iframe.get("data-lat")
+            lng_attr = iframe.get("data-lng")
+            
+            if lat_attr and lng_attr:
+                try:
                     lat = float(lat_attr)
-                if lng_attr:
                     lng = float(lng_attr)
-            except Exception:
-                lat = None
-                lng = None
+                    return lat, lng
+                except (ValueError, TypeError):
+                    pass
+            
+            # If data attributes don't work, extract from src or data-src URL
+            # Google Maps URL format: ...?q=24.882573516287152,67.0821573527601&...
+            src = iframe.get("src") or iframe.get("data-src") or ""
+            
+            if src:
+                # Pattern: q=lat,lng or /@lat,lng
+                coords_match = re.search(r'[?&]q=([\d.-]+),([\d.-]+)|/@([\d.-]+),([\d.-]+)', src)
+                if coords_match:
+                    try:
+                        lat = float(coords_match.group(1) or coords_match.group(3))
+                        lng = float(coords_match.group(2) or coords_match.group(4))
+                        # Validate reasonable coordinates for Pakistan
+                        if 23.0 <= lat <= 37.0 and 60.0 <= lng <= 78.0:
+                            return lat, lng
+                    except (ValueError, TypeError):
+                        pass
+        
         return lat, lng
 
     @staticmethod

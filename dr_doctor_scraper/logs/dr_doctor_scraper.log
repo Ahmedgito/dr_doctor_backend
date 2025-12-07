@@ -2292,3 +2292,570 @@ Total skipped: 76
 Total scraped: 0
 Total inserted: 0
 Total skipped: 0
+2025-12-08 02:41:18 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='marham', headless=True, limit=5)
+2025-12-08 02:41:18 | INFO     | __main__:run_for_site:49 - Running Marham scraper
+2025-12-08 02:41:18 | INFO     | scrapers.base_scraper:__enter__:44 - Playwright browser started (headless=True)
+2025-12-08 02:41:18 | INFO     | scrapers.marham_scraper:scrape:207 - Starting Marham hospital-first scraping from https://www.marham.pk/hospitals/karachi?page=
+2025-12-08 02:41:18 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi?page=1
+2025-12-08 02:41:32 | INFO     | scrapers.marham_scraper:scrape:286 - Collected 5 hospital URLs to process
+2025-12-08 02:41:32 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines
+2025-12-08 02:41:34 | INFO     | scrapers.marham_scraper:scrape:313 - Hospital data changed for https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines: updating
+2025-12-08 02:41:34 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines
+2025-12-08 02:41:35 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:42 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines — clicking until exhausted
+2025-12-08 02:41:35 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:47 - Load More button clicked, waiting for content to load...
+2025-12-08 02:41:40 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (5/30s)
+2025-12-08 02:41:45 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (10/30s)
+2025-12-08 02:41:51 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (15/30s)
+2025-12-08 02:41:56 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:74 - Still waiting for content to load... (20/30s)
+2025-12-08 02:44:05 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='marham', headless=False, limit=1)
+2025-12-08 02:44:05 | INFO     | __main__:run_for_site:49 - Running Marham scraper
+2025-12-08 02:44:07 | INFO     | scrapers.base_scraper:__enter__:44 - Playwright browser started (headless=False)
+2025-12-08 02:44:07 | INFO     | scrapers.marham_scraper:scrape:207 - Starting Marham hospital-first scraping from https://www.marham.pk/hospitals/karachi?page=
+2025-12-08 02:44:07 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi?page=1
+2025-12-08 02:44:14 | INFO     | scrapers.marham_scraper:scrape:286 - Collected 1 hospital URLs to process
+2025-12-08 02:44:14 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines
+2025-12-08 02:44:15 | INFO     | scrapers.marham_scraper:scrape:313 - Hospital data changed for https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines: updating
+2025-12-08 02:44:15 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines
+2025-12-08 02:44:16 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:42 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines — clicking until exhausted
+2025-12-08 02:44:16 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:44 - Initial cards found: 11
+2025-12-08 02:44:16 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:64 - ============================================================
+2025-12-08 02:44:16 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:65 - Clicking Load More button (click #1)...
+2025-12-08 02:44:16 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:69 - Cards before click: 11
+2025-12-08 02:44:17 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:73 - Button clicked! Waiting for content to load...
+2025-12-08 02:44:17 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:84 - Monitoring loading state...
+2025-12-08 02:44:17 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:111 - ✓ Loading indicator detected! Waiting for it to disappear...
+2025-12-08 02:44:19 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (2.0/30s)
+2025-12-08 02:44:21 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (4.0/30s)
+2025-12-08 02:44:24 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (6.0/30s)
+2025-12-08 02:44:26 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (8.0/30s)
+2025-12-08 02:44:28 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (10.0/30s)
+2025-12-08 02:44:30 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (12.0/30s)
+2025-12-08 02:44:32 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (14.0/30s)
+2025-12-08 02:44:35 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (16.0/30s)
+2025-12-08 02:44:37 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (18.0/30s)
+2025-12-08 02:44:39 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (20.0/30s)
+2025-12-08 02:44:41 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (22.0/30s)
+2025-12-08 02:44:43 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (24.0/30s)
+2025-12-08 02:44:45 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (26.0/30s)
+2025-12-08 02:44:48 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (28.0/30s)
+2025-12-08 02:44:50 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (30.0/30s)
+2025-12-08 02:44:50 | WARNING  | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:127 - ⚠ Timeout waiting for loading to complete after 30 seconds
+2025-12-08 02:44:50 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:130 - Waiting for DOM to settle...
+2025-12-08 02:44:51 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:135 - Waiting for network to be idle...
+2025-12-08 02:44:51 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:137 - ✓ Network idle
+2025-12-08 02:44:52 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:150 - Cards after click: 21
+2025-12-08 02:44:52 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:154 - ✓ SUCCESS: 10 new cards loaded! (Total: 21)
+2025-12-08 02:44:52 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:164 - ============================================================
+2025-12-08 02:44:52 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:64 - ============================================================
+2025-12-08 02:44:52 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:65 - Clicking Load More button (click #2)...
+2025-12-08 02:44:52 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:69 - Cards before click: 21
+2025-12-08 02:44:52 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:73 - Button clicked! Waiting for content to load...
+2025-12-08 02:44:52 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:84 - Monitoring loading state...
+2025-12-08 02:44:52 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:111 - ✓ Loading indicator detected! Waiting for it to disappear...
+2025-12-08 02:44:54 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (2.0/30s)
+2025-12-08 02:44:57 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (4.0/30s)
+2025-12-08 02:44:59 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (6.0/30s)
+2025-12-08 02:45:01 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (8.0/30s)
+2025-12-08 02:45:03 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (10.0/30s)
+2025-12-08 02:45:05 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (12.0/30s)
+2025-12-08 02:45:08 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (14.0/30s)
+2025-12-08 02:45:10 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (16.0/30s)
+2025-12-08 02:45:12 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (18.0/30s)
+2025-12-08 02:45:14 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (20.0/30s)
+2025-12-08 02:45:16 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (22.0/30s)
+2025-12-08 02:45:18 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (24.0/30s)
+2025-12-08 02:45:21 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (26.0/30s)
+2025-12-08 02:45:23 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (28.0/30s)
+2025-12-08 02:45:25 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 -   Still waiting... (30.0/30s)
+2025-12-08 02:45:25 | WARNING  | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:127 - ⚠ Timeout waiting for loading to complete after 30 seconds
+2025-12-08 02:45:25 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:130 - Waiting for DOM to settle...
+2025-12-08 02:45:26 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:135 - Waiting for network to be idle...
+2025-12-08 02:45:26 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:137 - ✓ Network idle
+2025-12-08 02:45:27 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:150 - Cards after click: 28
+2025-12-08 02:45:27 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:154 - ✓ SUCCESS: 7 new cards loaded! (Total: 28)
+2025-12-08 02:45:27 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:164 - ============================================================
+2025-12-08 02:45:27 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:60 - Load More button is not clickable (visible=False, enabled=True)
+2025-12-08 02:45:27 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:173 - Load More process complete: 2 clicks, 28 total cards loaded (17 new)
+2025-12-08 02:45:27 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:104 - Found doctor in About list: Dr. Feroze Ahmed Mahar -> https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar
+2025-12-08 02:45:27 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:104 - Found doctor in About list: Prof. Dr. Nasreen Siddiqui -> https://www.marham.pk/doctors/karachi/plastic-surgeon/prof-dr-nasreen-siddiqui
+2025-12-08 02:45:27 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:104 - Found doctor in About list: Dr. Azhar Mashood -> https://www.marham.pk/doctors/karachi/speech-therapist/dr-azhar-mashood
+2025-12-08 02:45:27 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:104 - Found doctor in About list: Dr. Haji Saleem -> https://www.marham.pk/doctors/karachi/pediatrician/dr-haji-saleem
+2025-12-08 02:45:27 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:104 - Found doctor in About list: Dr. Azeem Rajput -> https://www.marham.pk/doctors/karachi/endocrinologist/dr-azeem-rajput
+2025-12-08 02:45:27 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:104 - Found doctor in About list: Dr. Tanweer Ahmed -> https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-tanweer-ahmed
+2025-12-08 02:45:27 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:104 - Found doctor in About list: Prof. Dr. S M Abbas -> https://www.marham.pk/doctors/karachi/general-surgeon/prof-dr-s-m-abbas
+2025-12-08 02:45:27 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:104 - Found doctor in About list: Dr. Zaid Dossani -> https://www.marham.pk/doctors/karachi/general-surgeon/dr-zaid-dossani
+2025-12-08 02:45:27 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:104 - Found doctor in About list: Dr. Muhammad Afzal -> https://www.marham.pk/doctors/karachi/general-surgeon/dr-muhammad-afzal
+2025-12-08 02:45:27 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:104 - Found doctor in About list: Dr. Raja Guru Dat -> https://www.marham.pk/doctors/karachi/internal-medicine/dr-raja-guru-dat
+2025-12-08 02:45:27 | INFO     | scrapers.marham_scraper:scrape:402 - Updated hospital https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines with 27 doctors (total)
+2025-12-08 02:45:28 | INFO     | scrapers.marham_scraper:scrape:412 - Phase 1 complete: 1 hospitals processed, 27 doctor URLs collected
+2025-12-08 02:45:28 | INFO     | scrapers.marham_scraper:scrape:415 - Starting Phase 2: Processing 27 doctors
+2025-12-08 02:45:28 | INFO     | scrapers.marham_scraper:scrape:430 - Found 27 unique doctors across all hospitals
+2025-12-08 02:45:28 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar
+2025-12-08 02:45:32 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Feroze Ahme...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:45:33 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/plastic-surgeon/prof-dr-nasreen-siddiqui
+2025-12-08 02:45:37 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/plastic-surgeon/prof-dr-nasreen-siddiqui: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Prof. Dr. Nasre...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:45:37 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/speech-therapist/dr-azhar-mashood
+2025-12-08 02:45:42 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/speech-therapist/dr-azhar-mashood: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Azhar Masho...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:45:42 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-haji-saleem
+2025-12-08 02:45:46 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/pediatrician/dr-haji-saleem: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Haji Saleem...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:45:46 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/endocrinologist/dr-azeem-rajput
+2025-12-08 02:45:50 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/endocrinologist/dr-azeem-rajput: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Azeem Rajpu...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:45:51 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-tanweer-ahmed
+2025-12-08 02:45:55 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-tanweer-ahmed: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Tanweer Ahm...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:45:55 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/prof-dr-s-m-abbas
+2025-12-08 02:46:00 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/general-surgeon/prof-dr-s-m-abbas: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Prof. Dr. S M A...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:46:01 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-muhammad-afzal
+2025-12-08 02:46:05 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/general-surgeon/dr-muhammad-afzal: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Muhammad Af...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:46:05 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-zaid-dossani
+2025-12-08 02:46:09 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/general-surgeon/dr-zaid-dossani: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Zaid Dossan...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:46:10 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/internal-medicine/dr-raja-guru-dat
+2025-12-08 02:46:13 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/internal-medicine/dr-raja-guru-dat: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Raja Guru D...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:46:14 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/endocrinologist/dr-muhammad-javed
+2025-12-08 02:46:18 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/endocrinologist/dr-muhammad-javed: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Muhammad Ja...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:46:19 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/dr-lal-chand
+2025-12-08 02:46:23 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/cardiologist/dr-lal-chand: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Lal Chand',...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:46:23 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/ent-surgeon/dr-riaz-ahmed-shahid
+2025-12-08 02:46:28 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/ent-surgeon/dr-riaz-ahmed-shahid: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Riaz Ahmed ...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:46:28 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-m-abbas-memon
+2025-12-08 02:46:32 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/pediatrician/dr-m-abbas-memon: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. M Abbas Mem...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:46:33 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-jan-muhammad
+2025-12-08 02:46:37 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/general-surgeon/dr-jan-muhammad: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Jan Muhamma...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:46:37 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-rehana-sheikh
+2025-12-08 02:46:40 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/gynecologist/dr-rehana-sheikh: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Rehana Shei...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:46:41 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-physician/dr-wajid-ali-sheikh
+2025-12-08 02:46:45 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/general-physician/dr-wajid-ali-sheikh: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Wajid Ali S...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:46:45 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-ahsan-mobin
+2025-12-08 02:46:49 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/family-medicine/dr-ahsan-mobin: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Ahsan Mobin...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:46:50 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-zahid-memon
+2025-12-08 02:46:54 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/general-surgeon/dr-zahid-memon: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Zahid Memon...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:46:55 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-mr-umair
+2025-12-08 02:46:58 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/physiotherapist/dr-mr-umair: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Mr Umair', ...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:46:59 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-samra-rizwan
+2025-12-08 02:47:03 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/gynecologist/dr-samra-rizwan: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Samra Rizwa...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:47:04 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/pediatric-surgeon/dr-farzeen-sharufuddin
+2025-12-08 02:47:08 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/pediatric-surgeon/dr-farzeen-sharufuddin: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Farzeen Sha...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:47:08 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-inam-haider
+2025-12-08 02:47:12 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/family-medicine/dr-inam-haider: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Inam Haider...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:47:13 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/ent-specialist/dr-abdul-waheed
+2025-12-08 02:47:17 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/ent-specialist/dr-abdul-waheed: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Abdul Wahee...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:47:17 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/prof-dr-khalida-soomro
+2025-12-08 02:47:21 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/cardiologist/prof-dr-khalida-soomro: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Prof. Dr. Khali...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:47:22 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/nephrologist/dr-wajeeha-elahi
+2025-12-08 02:47:26 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/nephrologist/dr-wajeeha-elahi: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Wajeeha Ela...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:47:26 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-harnam-hotchandani
+2025-12-08 02:47:29 | WARNING  | scrapers.marham_scraper:scrape:570 - Failed processing doctor https://www.marham.pk/doctors/karachi/pediatrician/dr-harnam-hotchandani: 1 validation error for DoctorModel
+experience
+  Field required [type=missing, input_value={'name': 'Dr. Harnam Hotc...', 'platform': 'marham'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-08 02:47:30 | INFO     | scrapers.marham_scraper:scrape:576 - Marham scraping finished: {'total': 27, 'inserted': 0, 'skipped': 27, 'hospitals': 1, 'updated': 1, 'doctors': 0}
+2025-12-08 02:47:30 | INFO     | __main__:run_for_site:55 - Stats for marham: total=27, inserted=0, skipped=27
+2025-12-08 02:47:30 | INFO     | __main__:main:81 - === Scraping finished ===
+Total scraped: 27
+Total inserted: 0
+Total skipped: 27
+2025-12-08 02:52:18 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='marham', headless=True, limit=5)
+2025-12-08 02:52:18 | INFO     | __main__:run_for_site:49 - Running Marham scraper
+2025-12-08 02:52:18 | INFO     | scrapers.base_scraper:__enter__:44 - Playwright browser started (headless=True)
+2025-12-08 02:52:18 | INFO     | scrapers.marham_scraper:scrape:207 - Starting Marham hospital-first scraping from https://www.marham.pk/hospitals/karachi?page=
+2025-12-08 02:52:18 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi?page=1
+2025-12-08 02:52:32 | INFO     | scrapers.marham_scraper:scrape:286 - Collected 5 hospital URLs to process
+2025-12-08 02:52:32 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines
+2025-12-08 02:52:33 | INFO     | scrapers.marham_scraper:scrape:313 - Hospital data changed for https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines: updating
+2025-12-08 02:52:33 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines
+2025-12-08 02:52:34 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:42 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines — clicking until exhausted
+2025-12-08 02:52:34 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:44 - Initial cards found: 11
+2025-12-08 02:52:34 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:64 - ============================================================
+2025-12-08 02:52:34 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:65 - Clicking Load More button (click #1)...
+2025-12-08 02:52:34 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:69 - Cards before click: 11
+2025-12-08 02:52:34 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:73 - Button clicked! Waiting for content to load...
+2025-12-08 02:52:35 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:85 - Monitoring loading state (max wait: 5s)...
+2025-12-08 02:52:35 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:94 - ✓ New cards detected! (21) cards now (was 11). Content loaded after 0.0 seconds
+2025-12-08 02:52:35 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:148 - Waiting for DOM to settle...
+2025-12-08 02:52:36 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:153 - Waiting for network to be idle...
+2025-12-08 02:52:36 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:155 - ✓ Network idle
+2025-12-08 02:52:37 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:168 - Cards after click: 21
+2025-12-08 02:52:37 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:172 - ✓ SUCCESS: 10 new cards loaded! (Total: 21)
+2025-12-08 02:52:37 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:182 - ============================================================
+2025-12-08 02:52:37 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:64 - ============================================================
+2025-12-08 02:52:37 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:65 - Clicking Load More button (click #2)...
+2025-12-08 02:52:37 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:69 - Cards before click: 21
+2025-12-08 02:52:37 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:73 - Button clicked! Waiting for content to load...
+2025-12-08 02:52:37 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:85 - Monitoring loading state (max wait: 5s)...
+2025-12-08 02:52:37 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:94 - ✓ New cards detected! (28) cards now (was 21). Content loaded after 0.0 seconds
+2025-12-08 02:52:37 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:148 - Waiting for DOM to settle...
+2025-12-08 02:52:38 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:153 - Waiting for network to be idle...
+2025-12-08 02:52:38 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:155 - ✓ Network idle
+2025-12-08 02:52:39 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:168 - Cards after click: 28
+2025-12-08 02:52:39 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:172 - ✓ SUCCESS: 7 new cards loaded! (Total: 28)
+2025-12-08 02:52:39 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:182 - ============================================================
+2025-12-08 02:52:39 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:60 - Load More button is not clickable (visible=False, enabled=True)
+2025-12-08 02:52:39 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:191 - Load More process complete: 2 clicks, 28 total cards loaded (17 new)
+2025-12-08 02:52:39 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Feroze Ahmed Mahar -> https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar
+2025-12-08 02:52:39 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Prof. Dr. Nasreen Siddiqui -> https://www.marham.pk/doctors/karachi/plastic-surgeon/prof-dr-nasreen-siddiqui
+2025-12-08 02:52:39 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Azhar Mashood -> https://www.marham.pk/doctors/karachi/speech-therapist/dr-azhar-mashood
+2025-12-08 02:52:39 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Haji Saleem -> https://www.marham.pk/doctors/karachi/pediatrician/dr-haji-saleem
+2025-12-08 02:52:39 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Azeem Rajput -> https://www.marham.pk/doctors/karachi/endocrinologist/dr-azeem-rajput
+2025-12-08 02:52:39 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Tanweer Ahmed -> https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-tanweer-ahmed
+2025-12-08 02:52:39 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Prof. Dr. S M Abbas -> https://www.marham.pk/doctors/karachi/general-surgeon/prof-dr-s-m-abbas
+2025-12-08 02:52:39 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Zaid Dossani -> https://www.marham.pk/doctors/karachi/general-surgeon/dr-zaid-dossani
+2025-12-08 02:52:39 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Muhammad Afzal -> https://www.marham.pk/doctors/karachi/general-surgeon/dr-muhammad-afzal
+2025-12-08 02:52:39 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Raja Guru Dat -> https://www.marham.pk/doctors/karachi/internal-medicine/dr-raja-guru-dat
+2025-12-08 02:52:39 | INFO     | scrapers.marham_scraper:scrape:402 - Updated hospital https://www.marham.pk/hospitals/karachi/hashmanis-hospital-m-a-jinnah-road/jacob-lines with 27 doctors (total)
+2025-12-08 02:52:40 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar
+2025-12-08 02:52:41 | INFO     | scrapers.marham_scraper:scrape:313 - Hospital data changed for https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar: updating
+2025-12-08 02:52:41 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar
+2025-12-08 02:52:42 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:42 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar — clicking until exhausted
+2025-12-08 02:52:42 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:44 - Initial cards found: 3
+2025-12-08 02:52:42 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:64 - ============================================================
+2025-12-08 02:52:42 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:65 - Clicking Load More button (click #1)...
+2025-12-08 02:52:42 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:69 - Cards before click: 3
+2025-12-08 02:52:42 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:73 - Button clicked! Waiting for content to load...
+2025-12-08 02:52:43 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:85 - Monitoring loading state (max wait: 5s)...
+2025-12-08 02:52:43 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:94 - ✓ New cards detected! (4) cards now (was 3). Content loaded after 0.0 seconds
+2025-12-08 02:52:43 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:148 - Waiting for DOM to settle...
+2025-12-08 02:52:44 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:153 - Waiting for network to be idle...
+2025-12-08 02:52:44 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:155 - ✓ Network idle
+2025-12-08 02:52:44 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:168 - Cards after click: 4
+2025-12-08 02:52:44 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:172 - ✓ SUCCESS: 1 new cards loaded! (Total: 4)
+2025-12-08 02:52:44 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:182 - ============================================================
+2025-12-08 02:52:44 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:60 - Load More button is not clickable (visible=False, enabled=True)
+2025-12-08 02:52:44 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:191 - Load More process complete: 1 clicks, 4 total cards loaded (1 new)
+2025-12-08 02:52:44 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Ms Naveera Fatima -> https://www.marham.pk/doctors/karachi/speech-therapist/ms-naveera-fatima
+2025-12-08 02:52:44 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Sidra Saleem -> https://www.marham.pk/doctors/karachi/pediatrician/dr-sidra-saleem
+2025-12-08 02:52:44 | INFO     | scrapers.marham_scraper:scrape:402 - Updated hospital https://www.marham.pk/hospitals/karachi/qureshi-ent-medical-centre/gulistan-e-jauhar with 2 doctors (total)
+2025-12-08 02:52:45 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal
+2025-12-08 02:52:47 | INFO     | scrapers.marham_scraper:scrape:313 - Hospital data changed for https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal: updating
+2025-12-08 02:52:47 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal
+2025-12-08 02:52:48 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:42 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal — clicking until exhausted
+2025-12-08 02:52:48 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:44 - Initial cards found: 11
+2025-12-08 02:52:48 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:64 - ============================================================
+2025-12-08 02:52:48 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:65 - Clicking Load More button (click #1)...
+2025-12-08 02:52:48 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:69 - Cards before click: 11
+2025-12-08 02:52:48 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:73 - Button clicked! Waiting for content to load...
+2025-12-08 02:52:48 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:85 - Monitoring loading state (max wait: 5s)...
+2025-12-08 02:52:49 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:124 - ✓ Loading indicator detected! Waiting for it to disappear...
+2025-12-08 02:52:49 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:94 - ✓ New cards detected! (21) cards now (was 11). Content loaded after 0.5 seconds
+2025-12-08 02:52:49 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:148 - Waiting for DOM to settle...
+2025-12-08 02:52:50 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:153 - Waiting for network to be idle...
+2025-12-08 02:52:50 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:155 - ✓ Network idle
+2025-12-08 02:52:51 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:168 - Cards after click: 21
+2025-12-08 02:52:51 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:172 - ✓ SUCCESS: 10 new cards loaded! (Total: 21)
+2025-12-08 02:52:51 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:182 - ============================================================
+2025-12-08 02:52:51 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:64 - ============================================================
+2025-12-08 02:52:51 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:65 - Clicking Load More button (click #2)...
+2025-12-08 02:52:51 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:69 - Cards before click: 21
+2025-12-08 02:52:51 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:73 - Button clicked! Waiting for content to load...
+2025-12-08 02:52:51 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:85 - Monitoring loading state (max wait: 5s)...
+2025-12-08 02:52:51 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:94 - ✓ New cards detected! (31) cards now (was 21). Content loaded after 0.0 seconds
+2025-12-08 02:52:51 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:148 - Waiting for DOM to settle...
+2025-12-08 02:52:52 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:153 - Waiting for network to be idle...
+2025-12-08 02:52:52 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:155 - ✓ Network idle
+2025-12-08 02:52:53 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:168 - Cards after click: 31
+2025-12-08 02:52:53 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:172 - ✓ SUCCESS: 10 new cards loaded! (Total: 31)
+2025-12-08 02:52:53 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:182 - ============================================================
+2025-12-08 02:52:53 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:64 - ============================================================
+2025-12-08 02:52:53 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:65 - Clicking Load More button (click #3)...
+2025-12-08 02:52:53 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:69 - Cards before click: 31
+2025-12-08 02:52:53 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:73 - Button clicked! Waiting for content to load...
+2025-12-08 02:52:53 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:85 - Monitoring loading state (max wait: 5s)...
+2025-12-08 02:52:54 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:94 - ✓ New cards detected! (36) cards now (was 31). Content loaded after 0.0 seconds
+2025-12-08 02:52:54 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:148 - Waiting for DOM to settle...
+2025-12-08 02:52:55 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:153 - Waiting for network to be idle...
+2025-12-08 02:52:55 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:155 - ✓ Network idle
+2025-12-08 02:52:55 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:168 - Cards after click: 36
+2025-12-08 02:52:55 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:172 - ✓ SUCCESS: 5 new cards loaded! (Total: 36)
+2025-12-08 02:52:55 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:182 - ============================================================
+2025-12-08 02:52:55 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:60 - Load More button is not clickable (visible=False, enabled=True)
+2025-12-08 02:52:55 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:191 - Load More process complete: 3 clicks, 36 total cards loaded (25 new)
+2025-12-08 02:52:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Iqbal Nabi Soomro -> https://www.marham.pk/doctors/karachi/dermatologist/dr-iqbal-nabi-soomro
+2025-12-08 02:52:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Najeeb Abdul Razzak -> https://www.marham.pk/doctors/karachi/ent-specialist/dr-najeeb-abdul-razzak
+2025-12-08 02:52:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Nilofur Alvi -> https://www.marham.pk/doctors/karachi/gynecologist/dr-nilofur-alvi
+2025-12-08 02:52:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Misbah Bashir -> https://www.marham.pk/doctors/karachi/dermatologist/dr-misbah-bashir
+2025-12-08 02:52:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Shaista Naz -> https://www.marham.pk/doctors/karachi/speech-therapist/dr-shaista-naz
+2025-12-08 02:52:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Almas Qazi -> https://www.marham.pk/doctors/karachi/general-surgeon/dr-almas-qazi
+2025-12-08 02:52:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Ahmed Ali -> https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-ahmed-ali
+2025-12-08 02:52:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Madiha Farrukh -> https://www.marham.pk/doctors/karachi/family-medicine/dr-madiha-farrukh
+2025-12-08 02:52:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Abdullah Yahya -> https://www.marham.pk/doctors/karachi/dermatologist/dr-abdullah-yahya
+2025-12-08 02:52:55 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Capt. Muhammad Yaseen Usman -> https://www.marham.pk/doctors/karachi/family-medicine/dr-capt-muhammad-yaseen-usman
+2025-12-08 02:52:55 | INFO     | scrapers.marham_scraper:scrape:402 - Updated hospital https://www.marham.pk/hospitals/karachi/karachi-medical-complex-consultants-clinic/gulshan-e-iqbal with 35 doctors (total)
+2025-12-08 02:52:56 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar
+2025-12-08 02:52:57 | INFO     | scrapers.marham_scraper:scrape:313 - Hospital data changed for https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar: updating
+2025-12-08 02:52:57 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar
+2025-12-08 02:52:58 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:42 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar — clicking until exhausted
+2025-12-08 02:52:58 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:44 - Initial cards found: 7
+2025-12-08 02:52:58 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:64 - ============================================================
+2025-12-08 02:52:58 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:65 - Clicking Load More button (click #1)...
+2025-12-08 02:52:58 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:69 - Cards before click: 7
+2025-12-08 02:52:59 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:73 - Button clicked! Waiting for content to load...
+2025-12-08 02:52:59 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:85 - Monitoring loading state (max wait: 5s)...
+2025-12-08 02:52:59 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:94 - ✓ New cards detected! (8) cards now (was 7). Content loaded after 0.0 seconds
+2025-12-08 02:52:59 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:148 - Waiting for DOM to settle...
+2025-12-08 02:53:00 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:153 - Waiting for network to be idle...
+2025-12-08 02:53:00 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:155 - ✓ Network idle
+2025-12-08 02:53:01 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:168 - Cards after click: 8
+2025-12-08 02:53:01 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:172 - ✓ SUCCESS: 1 new cards loaded! (Total: 8)
+2025-12-08 02:53:01 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:182 - ============================================================
+2025-12-08 02:53:01 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:60 - Load More button is not clickable (visible=False, enabled=True)
+2025-12-08 02:53:01 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:191 - Load More process complete: 1 clicks, 8 total cards loaded (1 new)
+2025-12-08 02:53:01 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Muhammad Wasim Lodhi -> https://www.marham.pk/doctors/karachi/internal-medicine/dr-muhammad-wasim-lodhi
+2025-12-08 02:53:01 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Asst. Prof. Dr. Ali Raza -> https://www.marham.pk/doctors/karachi/orthopedic-surgeon/asst-prof-dr-ali-raza
+2025-12-08 02:53:01 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Inder Kumar Chughwani -> https://www.marham.pk/doctors/karachi/neuro-psychiatrist/dr-inder-kumar-chughwani
+2025-12-08 02:53:01 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Zulfiqar Ali Khuwaja -> https://www.marham.pk/doctors/karachi/dermatologist/dr-zulfiqar-ali-khuwaja
+2025-12-08 02:53:01 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Tanweer Ahmed -> https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-tanweer-ahmed
+2025-12-08 02:53:01 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Nanwani Naresh -> https://www.marham.pk/doctors/karachi/internal-medicine/dr-nanwani-naresh
+2025-12-08 02:53:01 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Muhammad Wasim Lodhi -> https://www.marham.pk/doctors/karachi/internal-medicine/dr-muhammad-wasim-lodhi
+2025-12-08 02:53:01 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Inder Kumar Chughwani -> https://www.marham.pk/doctors/karachi/neuro-psychiatrist/dr-inder-kumar-chughwani
+2025-12-08 02:53:01 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Zulfiqar Ali Khuwaja -> https://www.marham.pk/doctors/karachi/dermatologist/dr-zulfiqar-ali-khuwaja
+2025-12-08 02:53:01 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Nanwani Naresh -> https://www.marham.pk/doctors/karachi/internal-medicine/dr-nanwani-naresh
+2025-12-08 02:53:01 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Asst. Prof. Dr. Ali Raza -> https://www.marham.pk/doctors/karachi/orthopedic-surgeon/asst-prof-dr-ali-raza
+2025-12-08 02:53:01 | INFO     | scrapers.marham_scraper:scrape:402 - Updated hospital https://www.marham.pk/hospitals/karachi/taj-medical-complex-hospital-room-14-karachi/sadar with 6 doctors (total)
+2025-12-08 02:53:02 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton
+2025-12-08 02:53:03 | INFO     | scrapers.marham_scraper:scrape:313 - Hospital data changed for https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton: updating
+2025-12-08 02:53:03 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton
+2025-12-08 02:53:04 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:42 - 'Load More' detected on https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton — clicking until exhausted
+2025-12-08 02:53:04 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:44 - Initial cards found: 11
+2025-12-08 02:53:04 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:64 - ============================================================
+2025-12-08 02:53:04 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:65 - Clicking Load More button (click #1)...
+2025-12-08 02:53:04 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:69 - Cards before click: 11
+2025-12-08 02:53:04 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:73 - Button clicked! Waiting for content to load...
+2025-12-08 02:53:05 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:85 - Monitoring loading state (max wait: 5s)...
+2025-12-08 02:53:05 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:94 - ✓ New cards detected! (21) cards now (was 11). Content loaded after 0.0 seconds
+2025-12-08 02:53:05 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:148 - Waiting for DOM to settle...
+2025-12-08 02:53:06 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:153 - Waiting for network to be idle...
+2025-12-08 02:53:06 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:155 - ✓ Network idle
+2025-12-08 02:53:06 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:168 - Cards after click: 21
+2025-12-08 02:53:06 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:172 - ✓ SUCCESS: 10 new cards loaded! (Total: 21)
+2025-12-08 02:53:06 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:182 - ============================================================
+2025-12-08 02:53:06 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:64 - ============================================================
+2025-12-08 02:53:06 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:65 - Clicking Load More button (click #2)...
+2025-12-08 02:53:06 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:69 - Cards before click: 21
+2025-12-08 02:53:06 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:73 - Button clicked! Waiting for content to load...
+2025-12-08 02:53:07 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:85 - Monitoring loading state (max wait: 5s)...
+2025-12-08 02:53:07 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:94 - ✓ New cards detected! (27) cards now (was 21). Content loaded after 0.0 seconds
+2025-12-08 02:53:07 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:148 - Waiting for DOM to settle...
+2025-12-08 02:53:08 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:153 - Waiting for network to be idle...
+2025-12-08 02:53:08 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:155 - ✓ Network idle
+2025-12-08 02:53:08 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:168 - Cards after click: 27
+2025-12-08 02:53:08 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:172 - ✓ SUCCESS: 6 new cards loaded! (Total: 27)
+2025-12-08 02:53:08 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:182 - ============================================================
+2025-12-08 02:53:08 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:60 - Load More button is not clickable (visible=False, enabled=True)
+2025-12-08 02:53:08 | INFO     | scrapers.marham.collectors.doctor_collector:collect_doctor_cards_from_hospital:191 - Load More process complete: 2 clicks, 27 total cards loaded (16 new)
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Sonia Poshni Sheikh -> https://www.marham.pk/doctors/karachi/gynecologist/dr-sonia-poshni-sheikh
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Naureen Kazim -> https://www.marham.pk/doctors/karachi/internal-medicine/dr-naureen-kazim
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Muhammad Shoaib Nasir Ali Khan -> https://www.marham.pk/doctors/karachi/interventional-radiologist/dr-muhammad-shoaib-nasir-ali-khan
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Nida Shoaib -> https://www.marham.pk/doctors/karachi/general-physician/dr-nida-shoaib
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Muhammad Mudassir Thahim -> https://www.marham.pk/doctors/karachi/cardiologist/dr-muhammad-mudassir-thahim
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Amema Hassan -> https://www.marham.pk/doctors/karachi/general-surgeon/dr-amema-hassan
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Saba Tabassum -> https://www.marham.pk/doctors/karachi/dentist/dr-saba-tabassum
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Naveed Ahmed Shaikh -> https://www.marham.pk/doctors/karachi/cardiologist/dr-naveed-ahmed-shaikh
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Sarosh Kamal -> https://www.marham.pk/doctors/karachi/general-physician/dr-sarosh-kamal
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Fouzia Rasool Memon -> https://www.marham.pk/doctors/karachi/gynecologist/dr-fouzia-rasool-memon
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Prof. Dr. Saera Suhail Kidwai -> https://www.marham.pk/doctors/karachi/internal-medicine/prof-dr-saera-suhail-kidwai
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Sonia Poshni Sheikh -> https://www.marham.pk/doctors/karachi/gynecologist/dr-sonia-poshni-sheikh
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Naureen Kazim -> https://www.marham.pk/doctors/karachi/internal-medicine/dr-naureen-kazim
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Noor A. Shaikh -> https://www.marham.pk/doctors/karachi/ent-specialist/dr-noor-a-shaikh
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Muhammad Shoaib Nasir Ali Khan -> https://www.marham.pk/doctors/karachi/interventional-radiologist/dr-muhammad-shoaib-nasir-ali-khan
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Dost Muhammad -> https://www.marham.pk/doctors/karachi/psychiatrist/dr-dost-muhammad
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Naveed Ahmed Shaikh -> https://www.marham.pk/doctors/karachi/cardiologist/dr-naveed-ahmed-shaikh
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Sarosh Kamal -> https://www.marham.pk/doctors/karachi/general-physician/dr-sarosh-kamal
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Fouzia Rasool Memon -> https://www.marham.pk/doctors/karachi/gynecologist/dr-fouzia-rasool-memon
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Zeeshan Ali Arbab -> https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-zeeshan-ali-arbab
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Syed Azfer Husain -> https://www.marham.pk/doctors/karachi/pulmonologist/dr-syed-azfer-husain
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Sonia Poshni -> https://www.marham.pk/doctors/karachi/gynecologist/dr-sonia-poshni
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Sonia Poshni Sheikh -> https://www.marham.pk/doctors/karachi/gynecologist/dr-sonia-poshni-sheikh
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Noor A. Shaikh -> https://www.marham.pk/doctors/karachi/ent-specialist/dr-noor-a-shaikh
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Prof. Dr. Saera Suhail Kidwai -> https://www.marham.pk/doctors/karachi/internal-medicine/prof-dr-saera-suhail-kidwai
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Prof. S. Nosheen Zehra -> https://www.marham.pk/doctors/karachi/internal-medicine/prof-s-nosheen-zehra
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Naureen Kazim -> https://www.marham.pk/doctors/karachi/internal-medicine/dr-naureen-kazim
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Fouzia Rasool Memon -> https://www.marham.pk/doctors/karachi/gynecologist/dr-fouzia-rasool-memon
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Sarosh Kamal -> https://www.marham.pk/doctors/karachi/general-physician/dr-sarosh-kamal
+2025-12-08 02:53:08 | INFO     | scrapers.marham.parsers.doctor_parser:extract_doctors_from_list:103 - Found doctor in About list: Dr. Naureen Kazim -> https://www.marham.pk/doctors/karachi/family-medicine/dr-naureen-kazim
+2025-12-08 02:53:08 | INFO     | scrapers.marham_scraper:scrape:402 - Updated hospital https://www.marham.pk/hospitals/karachi/metropolis-health-clinics/clifton with 26 doctors (total)
+2025-12-08 02:53:09 | INFO     | scrapers.marham_scraper:scrape:412 - Phase 1 complete: 5 hospitals processed, 96 doctor URLs collected
+2025-12-08 02:53:09 | INFO     | scrapers.marham_scraper:scrape:415 - Starting Phase 2: Processing 96 doctors
+2025-12-08 02:53:09 | INFO     | scrapers.marham_scraper:scrape:430 - Found 95 unique doctors across all hospitals
+2025-12-08 02:53:09 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/urologist/dr-feroze-ahmed-mahar
+2025-12-08 02:53:12 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/plastic-surgeon/prof-dr-nasreen-siddiqui
+2025-12-08 02:53:15 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/speech-therapist/dr-azhar-mashood
+2025-12-08 02:53:17 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-haji-saleem
+2025-12-08 02:53:20 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/endocrinologist/dr-azeem-rajput
+2025-12-08 02:53:23 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-tanweer-ahmed
+2025-12-08 02:53:25 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/prof-dr-s-m-abbas
+2025-12-08 02:53:28 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-muhammad-afzal
+2025-12-08 02:53:30 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-zaid-dossani
+2025-12-08 02:53:33 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/internal-medicine/dr-raja-guru-dat
+2025-12-08 02:53:35 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/endocrinologist/dr-muhammad-javed
+2025-12-08 02:53:38 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/dr-lal-chand
+2025-12-08 02:53:41 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/ent-surgeon/dr-riaz-ahmed-shahid
+2025-12-08 02:53:43 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-m-abbas-memon
+2025-12-08 02:53:45 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-jan-muhammad
+2025-12-08 02:53:48 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-rehana-sheikh
+2025-12-08 02:53:50 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-physician/dr-wajid-ali-sheikh
+2025-12-08 02:53:53 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-ahsan-mobin
+2025-12-08 02:53:55 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-zahid-memon
+2025-12-08 02:53:58 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-mr-umair
+2025-12-08 02:54:00 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-samra-rizwan
+2025-12-08 02:54:03 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/pediatric-surgeon/dr-farzeen-sharufuddin
+2025-12-08 02:54:06 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-inam-haider
+2025-12-08 02:54:08 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/ent-specialist/dr-abdul-waheed
+2025-12-08 02:54:11 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/prof-dr-khalida-soomro
+2025-12-08 02:54:13 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/nephrologist/dr-wajeeha-elahi
+2025-12-08 02:54:16 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-harnam-hotchandani
+2025-12-08 02:54:18 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/speech-therapist/ms-naveera-fatima
+2025-12-08 02:54:24 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-sidra-saleem
+2025-12-08 02:54:28 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-iqbal-nabi-soomro
+2025-12-08 02:54:32 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-sana-adeel
+2025-12-08 02:54:37 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/ent-specialist/dr-najeeb-abdul-razzak
+2025-12-08 02:54:42 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-nilofur-alvi
+2025-12-08 02:54:45 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-misbah-bashir
+2025-12-08 02:54:50 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/speech-therapist/dr-shaista-naz
+2025-12-08 02:54:55 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-almas-qazi
+2025-12-08 02:54:58 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-madiha-farrukh
+2025-12-08 02:55:02 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-ahmed-ali
+2025-12-08 02:55:07 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-abdullah-yahya
+2025-12-08 02:55:12 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-capt-muhammad-yaseen-usman
+2025-12-08 02:55:17 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-sidra-tariq
+2025-12-08 02:55:21 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-uzair-ahmed-siddiqui
+2025-12-08 02:55:26 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/ent-specialist/dr-taj-muhammad-shiekh
+2025-12-08 02:55:31 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/dr-saleem-ahmed-rajput
+2025-12-08 02:55:35 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-ayesha-mustafa
+2025-12-08 02:55:40 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/diabetologist/dr-syed-ameer-uddin-dewan
+2025-12-08 02:55:45 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-physician/dr-nida-khan
+2025-12-08 02:55:50 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/dr-shireen-arif
+2025-12-08 02:55:55 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/psychologist/tayyaba-ghousia
+2025-12-08 02:56:00 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-amber-naz
+2025-12-08 02:56:04 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-marina-sheikh-pt
+2025-12-08 02:56:09 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-hafsa-sohail
+2025-12-08 02:56:14 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-naveed-sarfaraz-arab
+2025-12-08 02:56:17 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-physician/dr-muzaffar-ali
+2025-12-08 02:56:21 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-mehak-bano
+2025-12-08 02:56:26 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/sonologist/dr-sabiha-shujaat
+2025-12-08 02:56:31 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-abdus-sami
+2025-12-08 02:56:36 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/dr-sumaira-nasim
+2025-12-08 02:56:41 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/diabetologist/dr-m-amjad
+2025-12-08 02:56:45 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-nida-mughal
+2025-12-08 02:56:49 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/prof-dr-mr-abdul-rasheed
+2025-12-08 02:56:54 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/nutritionist/dr-syed-faisal-masood
+2025-12-08 02:56:59 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/sexologist/dr-yousuf-hasnain
+2025-12-08 02:57:03 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-mohammad-afzal-ahmad
+2025-12-08 02:57:07 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/internal-medicine/dr-muhammad-wasim-lodhi
+2025-12-08 02:57:11 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/neuro-psychiatrist/dr-inder-kumar-chughwani
+2025-12-08 02:57:16 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-zulfiqar-ali-khuwaja
+2025-12-08 02:57:20 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/internal-medicine/dr-nanwani-naresh
+2025-12-08 02:57:24 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/asst-prof-dr-ali-raza
+2025-12-08 02:57:27 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-sonia-poshni-sheikh
+2025-12-08 02:57:31 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/internal-medicine/dr-naureen-kazim
+2025-12-08 02:57:35 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/interventional-radiologist/dr-muhammad-shoaib-nasir-ali-khan
+2025-12-08 02:57:40 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-zainab-chandio
+2025-12-08 02:57:44 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-physician/dr-nida-shoaib
+2025-12-08 02:57:49 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-amema-hassan
+2025-12-08 02:57:53 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/dr-muhammad-mudassir-thahim
+2025-12-08 02:57:57 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/internal-medicine/prof-dr-saera-suhail-kidwai
+2025-12-08 02:58:02 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-ahmed-bin-khalid-khan
+2025-12-08 02:58:06 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-zeeshan-ali-arbab
+2025-12-08 02:58:10 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/psychiatrist/dr-dost-muhammad
+2025-12-08 02:58:14 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/ms-sadia-shafaq
+2025-12-08 02:58:17 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/urologist/dr-murtaza-azad
+2025-12-08 02:58:21 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-sonia-poshni
+2025-12-08 02:58:25 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-naureen-kazim
+2025-12-08 02:58:29 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/radiologist/dr-m-shoaib-nasir
+2025-12-08 02:58:32 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/general-physician/dr-sarosh-kamal
+2025-12-08 02:58:36 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-huma-imran-ahmed
+2025-12-08 02:58:39 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/internal-medicine/prof-s-nosheen-zehra
+2025-12-08 02:58:43 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/ent-specialist/dr-noor-a-shaikh
+2025-12-08 02:58:47 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/restorative-dentist/dr-s-masood-ul-hasan
+2025-12-08 02:58:51 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/pulmonologist/dr-syed-azfer-husain
+2025-12-08 02:58:54 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-saba-tabassum
+2025-12-08 02:58:58 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/dr-naveed-ahmed-shaikh
+2025-12-08 02:59:02 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-fouzia-rasool-memon
+2025-12-08 02:59:05 | INFO     | scrapers.base_scraper:load_page:96 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-asma-ansari
+2025-12-08 02:59:09 | INFO     | scrapers.marham_scraper:scrape:577 - Marham scraping finished: {'total': 95, 'inserted': 95, 'skipped': 0, 'hospitals': 5, 'updated': 5, 'doctors': 95}
+2025-12-08 02:59:09 | INFO     | __main__:run_for_site:55 - Stats for marham: total=95, inserted=95, skipped=0
+2025-12-08 02:59:09 | INFO     | __main__:main:81 - === Scraping finished ===
+Total scraped: 95
+Total inserted: 95
+Total skipped: 0
+2025-12-08 03:10:40 | INFO     | __main__:export_and_clear_db:49 - Exported 95 doctors to data/exports/doctors_backup_20251208_031040.json
+2025-12-08 03:10:40 | INFO     | __main__:export_and_clear_db:58 - Exported 5 hospitals to data/exports/hospitals_backup_20251208_031040.json
+2025-12-08 03:10:40 | INFO     | __main__:export_and_clear_db:64 - Cleared all data from database
+2025-12-08 03:10:46 | INFO     | __main__:main:67 - Starting scraper with args: Namespace(site='marham', headless=True, limit=5)
+2025-12-08 03:10:46 | INFO     | __main__:run_for_site:49 - Running Marham scraper
+2025-12-08 03:10:47 | INFO     | scrapers.base_scraper:__enter__:44 - Playwright browser started (headless=True)

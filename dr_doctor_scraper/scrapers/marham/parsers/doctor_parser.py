@@ -54,7 +54,6 @@ class DoctorParser:
                 fees=None,
                 city="Karachi",
                 area=None,
-                hospital=None,
                 hospitals=None,
                 address=None,
                 rating=None,

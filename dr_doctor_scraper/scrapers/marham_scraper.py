@@ -458,6 +458,7 @@ class MarhamScraper(BaseScraper):
                         hospitals=[],
                         address=None,
                         rating=None,
+                        experience=None,
                         profile_url=profile_url,
                         platform=self.PLATFORM,
                     )
@@ -498,35 +499,60 @@ class MarhamScraper(BaseScraper):
                 
                 for practice in details.get("practices", []):
                     try:
-                        practice_url = practice.get("hospital_url")
                         is_private = practice.get("is_private_practice", False)
+                        practice_url = practice.get("practice_url")  # Booking/appointment URL
+                        hospital_url = practice.get("hospital_url")  # Hospital URL (if it's a hospital)
                         
-                        if is_private or not is_hospital_url(practice_url):
+                        if is_private:
                             # Private practice (video consultation, etc.)
+                            # Use practice_url (the booking URL) for private practice
                             if not doctor.private_practice:
                                 doctor.private_practice = {
                                     "name": practice.get("hospital_name") or f"{doctor.name}'s Private Practice",
-                                    "url": practice_url,
+                                    "url": practice_url,  # Use the booking/consultation URL
                                     "fee": practice.get("fee"),
                                     "timings": practice.get("timings"),
                                 }
                         else:
                             # Real hospital - add to doctor.hospitals
-                            hosp_entry = {
-                                "name": practice.get("hospital_name"),
-                                "url": practice_url,
-                                "fee": practice.get("fee"),
-                                "timings": practice.get("timings"),
-                                "practice_id": practice.get("h_id"),
-                            }
-                            # Avoid duplicates by url
-                            existing_urls = {h.get("url") for h in doctor.hospitals if isinstance(h, dict) and h.get("url")}
-                            if practice_url and practice_url not in existing_urls:
-                                doctor.hospitals.append(hosp_entry)
+                            # For hospitals, we need to construct or find the actual hospital URL
+                            # The practice_url might be a callcenter link, but we need the hospital page URL
+                            # For now, use hospital_url if available, otherwise try to construct from practice_url
+                            hosp_url = hospital_url
+                            if not hosp_url and practice_url:
+                                # Try to extract hospital info from practice_url
+                                # If practice_url contains hospital info, we can use it
+                                # Otherwise, we'll need to look it up
+                                if is_hospital_url(practice_url):
+                                    hosp_url = practice_url
+                            
+                            if hosp_url:
+                                hosp_entry = {
+                                    "name": practice.get("hospital_name"),
+                                    "url": hosp_url,
+                                    "fee": practice.get("fee"),
+                                    "timings": practice.get("timings"),
+                                    "practice_id": practice.get("h_id"),
+                                    "area": practice.get("area"),
+                                }
+                                # Add location if available
+                                if practice.get("lat") and practice.get("lng"):
+                                    hosp_entry["location"] = {
+                                        "lat": practice.get("lat"),
+                                        "lng": practice.get("lng"),
+                                    }
+                                
+                                # Avoid duplicates by url
+                                existing_urls = {h.get("url") for h in doctor.hospitals if isinstance(h, dict) and h.get("url")}
+                                if hosp_url not in existing_urls:
+                                    doctor.hospitals.append(hosp_entry)
 
-                            # Update hospital.doctors with this doctor's info
-                            self.practice_handler.upsert_hospital_practice(practice, doctor)
-                    except Exception:
+                                # Update hospital.doctors with this doctor's info and save hospital with location
+                                # Make sure practice dict has hospital_url set for the handler
+                                practice["hospital_url"] = hosp_url
+                                self.practice_handler.upsert_hospital_practice(practice, doctor)
+                    except Exception as exc:  # noqa: BLE001
+                        logger.debug("Error processing practice: {}", exc)
                         continue
 
                 # Also add hospitals from Phase 1 (where we found this doctor)
