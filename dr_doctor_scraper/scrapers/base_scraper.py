@@ -23,11 +23,13 @@ class BaseScraper(AbstractContextManager):
         timeout_ms: int = 15000,
         max_retries: int = 3,
         wait_between_retries: float = 2.0,
+        disable_js: bool = False,
     ) -> None:
         self.headless = headless
         self.timeout_ms = timeout_ms
         self.max_retries = max_retries
         self.wait_between_retries = wait_between_retries
+        self.disable_js = disable_js
 
         self._playwright = None
         self.browser = None
@@ -38,10 +40,23 @@ class BaseScraper(AbstractContextManager):
     def __enter__(self) -> "BaseScraper":
         logger.debug("Starting Playwright...")
         self._playwright = sync_playwright().start()
+        
+        # Create context with JavaScript disabled if requested (faster scraping)
+        context_options = {}
+        if self.disable_js:
+            context_options['java_script_enabled'] = False
+            logger.info("JavaScript disabled for faster scraping")
+        
         self.browser = self._playwright.chromium.launch(headless=self.headless)
-        self.page = self.browser.new_page()
+        
+        if context_options:
+            context = self.browser.new_context(**context_options)
+            self.page = context.new_page()
+        else:
+            self.page = self.browser.new_page()
+        
         self.page.set_default_timeout(self.timeout_ms)
-        logger.info("Playwright browser started (headless={})", self.headless)
+        logger.info("Playwright browser started (headless={}, js_disabled={})", self.headless, self.disable_js)
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb) -> None:
@@ -97,7 +112,9 @@ class BaseScraper(AbstractContextManager):
 
         def _go() -> None:
             assert self.page is not None
-            self.page.goto(url, wait_until="networkidle")
+            # Use "domcontentloaded" if JS is disabled (faster), otherwise "networkidle"
+            wait_until = "domcontentloaded" if self.disable_js else "networkidle"
+            self.page.goto(url, wait_until=wait_until)
 
         self._retry(_go, f"load_page: {url}")
 

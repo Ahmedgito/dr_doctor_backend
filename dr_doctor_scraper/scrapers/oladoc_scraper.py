@@ -27,8 +27,9 @@ class OladocScraper(BaseScraper):
         headless: bool = True,
         timeout_ms: int = 15000,
         max_retries: int = 3,
+        disable_js: bool = False,
     ) -> None:
-        super().__init__(headless=headless, timeout_ms=timeout_ms, max_retries=max_retries)
+        super().__init__(headless=headless, timeout_ms=timeout_ms, max_retries=max_retries, disable_js=disable_js)
         self.mongo_client = mongo_client
         self.listing_url = listing_url
 

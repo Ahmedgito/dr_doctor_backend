@@ -35,19 +35,29 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="Limit number of profiles per site (for testing)",
     )
+    parser.add_argument(
+        "--disable-js",
+        action="store_true",
+        help="Disable JavaScript for faster scraping (use if site works without JS)",
+    )
+    parser.add_argument(
+        "--test-db",
+        action="store_true",
+        help="Use test database (dr_doctor_test) instead of production",
+    )
     return parser.parse_args()
 
 
-def run_for_site(site: str, mongo: MongoClientManager, headless: bool, limit: int | None) -> Dict[str, int]:
+def run_for_site(site: str, mongo: MongoClientManager, headless: bool, limit: int | None, disable_js: bool = False) -> Dict[str, int]:
     stats = {"total": 0, "inserted": 0, "skipped": 0}
 
     if site == "oladoc":
         logger.info("Running Oladoc scraper")
-        with OladocScraper(mongo_client=mongo, headless=headless) as scraper:
+        with OladocScraper(mongo_client=mongo, headless=headless, disable_js=disable_js) as scraper:
             stats = scraper.scrape(limit=limit)
     elif site == "marham":
         logger.info("Running Marham scraper")
-        with MarhamScraper(mongo_client=mongo, headless=headless) as scraper:
+        with MarhamScraper(mongo_client=mongo, headless=headless, disable_js=disable_js) as scraper:
             stats = scraper.scrape(limit=limit)
     else:
         raise ValueError(f"Unsupported site: {site}")
@@ -66,7 +76,8 @@ def main() -> None:
     args = parse_args()
     logger.info("Starting scraper with args: {}", args)
 
-    mongo = MongoClientManager()
+    # Use test database if requested
+    mongo = MongoClientManager(test_db=args.test_db)
 
     try:
         grand_total = {"total": 0, "inserted": 0, "skipped": 0}
@@ -74,7 +85,7 @@ def main() -> None:
         sites = ["oladoc", "marham"] if args.site == "all" else [args.site]
 
         for site in sites:
-            stats = run_for_site(site, mongo, args.headless, args.limit)
+            stats = run_for_site(site, mongo, args.headless, args.limit, args.disable_js)
             for key in grand_total:
                 grand_total[key] += stats.get(key, 0)
 

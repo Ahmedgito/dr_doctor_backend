@@ -6,13 +6,15 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class MongoClientManager:
-    def __init__(self) -> None:
+    def __init__(self, test_db: bool = False) -> None:
         mongo_uri = os.getenv("MONGO_URI")
         if not mongo_uri:
             raise ValueError("MONGO_URI missing in .env")
         
         self.client = MongoClient(mongo_uri)
-        self.db = self.client["dr_doctor"]
+        # Use test database if requested
+        db_name = "dr_doctor_test" if test_db else "dr_doctor"
+        self.db = self.client[db_name]
 
         self.doctors = self.db["doctors"]
         self.hospitals = self.db["hospitals"]
