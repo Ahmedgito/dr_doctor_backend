@@ -45,10 +45,16 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Use test database (dr_doctor_test) instead of production",
     )
+    parser.add_argument(
+        "--threads",
+        type=int,
+        default=1,
+        help="Number of worker threads for parallel processing (default: 1, use 4-8 for faster scraping)",
+    )
     return parser.parse_args()
 
 
-def run_for_site(site: str, mongo: MongoClientManager, headless: bool, limit: int | None, disable_js: bool = False) -> Dict[str, int]:
+def run_for_site(site: str, mongo: MongoClientManager, headless: bool, limit: int | None, disable_js: bool = False, num_threads: int = 1) -> Dict[str, int]:
     stats = {"total": 0, "inserted": 0, "skipped": 0}
 
     if site == "oladoc":
@@ -56,9 +62,19 @@ def run_for_site(site: str, mongo: MongoClientManager, headless: bool, limit: in
         with OladocScraper(mongo_client=mongo, headless=headless, disable_js=disable_js) as scraper:
             stats = scraper.scrape(limit=limit)
     elif site == "marham":
-        logger.info("Running Marham scraper")
-        with MarhamScraper(mongo_client=mongo, headless=headless, disable_js=disable_js) as scraper:
+        if num_threads > 1:
+            logger.info(f"Running Marham scraper with {num_threads} threads (multi-threaded mode)")
+            from scrapers.marham.multi_threaded_scraper import MultiThreadedMarhamScraper
+            scraper = MultiThreadedMarhamScraper(
+                mongo_client=mongo,
+                num_threads=num_threads,
+                headless=headless,
+            )
             stats = scraper.scrape(limit=limit)
+        else:
+            logger.info("Running Marham scraper (single-threaded mode)")
+            with MarhamScraper(mongo_client=mongo, headless=headless, disable_js=disable_js) as scraper:
+                stats = scraper.scrape(limit=limit)
     else:
         raise ValueError(f"Unsupported site: {site}")
 
@@ -85,7 +101,7 @@ def main() -> None:
         sites = ["oladoc", "marham"] if args.site == "all" else [args.site]
 
         for site in sites:
-            stats = run_for_site(site, mongo, args.headless, args.limit, args.disable_js)
+            stats = run_for_site(site, mongo, args.headless, args.limit, args.disable_js, args.threads)
             for key in grand_total:
                 grand_total[key] += stats.get(key, 0)
 

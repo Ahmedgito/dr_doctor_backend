@@ -18,7 +18,10 @@ The testing environment provides:
 # Test with limit (uses test DB)
 python run_scraper.py --site marham --limit 100 --test-db
 
-# Test without JavaScript (faster)
+# Test with multi-threading (much faster)
+python run_scraper.py --site marham --limit 100 --test-db --threads 4
+
+# Test without JavaScript (faster, but buttons may not work)
 python run_scraper.py --site marham --limit 100 --test-db --disable-js
 ```
 
@@ -60,9 +63,32 @@ python run_scraper.py --site marham --limit 1000
 python run_scraper.py --site marham --limit 1000 --test-db
 ```
 
+### Multi-Threading (`--threads`)
+
+**Recommended for faster scraping!** Use multiple threads to process pages/hospitals/doctors in parallel:
+- 4-8x faster than single-threaded
+- Each thread has its own browser instance
+- Work is distributed evenly across threads
+
+**Example:**
+```powershell
+# Single-threaded (default)
+python run_scraper.py --site marham --limit 100 --test-db
+
+# Multi-threaded with 4 threads (4x faster)
+python run_scraper.py --site marham --limit 100 --test-db --threads 4
+
+# Multi-threaded with 8 threads (6-8x faster)
+python run_scraper.py --site marham --limit 1000 --test-db --threads 8
+```
+
+**Note**: See `MULTITHREADING.md` for detailed guide on multi-threading.
+
 ### Disable JavaScript (`--disable-js`)
 
-If the website works without JavaScript, disabling it can significantly speed up scraping:
+**Note**: This doesn't work well with Marham because "Load More" buttons require JavaScript. Use `--threads` instead for faster scraping.
+
+If the website works without JavaScript, disabling it can speed up scraping:
 - Faster page loads (no JS execution)
 - Lower resource usage
 - Use `wait_until="domcontentloaded"` instead of `"networkidle"`
@@ -72,13 +98,13 @@ If the website works without JavaScript, disabling it can significantly speed up
 # Normal scraping (with JS)
 python run_scraper.py --site marham --limit 100 --test-db
 
-# Fast scraping (no JS)
+# Fast scraping (no JS) - may not work for sites with JS-dependent buttons
 python run_scraper.py --site marham --limit 100 --test-db --disable-js
 ```
 
 **Note**: Test first to ensure the site works without JavaScript. Some sites require JS for:
 - Dynamic content loading
-- "Load More" buttons
+- "Load More" buttons (like Marham)
 - Form submissions
 
 ## Data Validation
@@ -205,14 +231,20 @@ python scripts/analyze_logs.py --limit 1000
 ### Issue: Scraping is too slow
 
 **Solutions:**
-1. **Disable JavaScript** (if site supports it):
+1. **Use multi-threading** (recommended):
+   ```powershell
+   python run_scraper.py --site marham --limit 100 --test-db --threads 4
+   ```
+   This can be 4-8x faster!
+
+2. **Disable JavaScript** (if site supports it, but not recommended for Marham):
    ```powershell
    python run_scraper.py --site marham --limit 100 --test-db --disable-js
    ```
 
-2. **Reduce wait times**: Edit `base_scraper.py` timeout settings
+3. **Reduce wait times**: Edit `base_scraper.py` timeout settings
 
-3. **Use headless mode**: Already default, but ensure `--headless` is set
+4. **Use headless mode**: Already default, but ensure `--headless` is set
 
 ### Issue: Data validation shows missing fields
 
@@ -241,8 +273,8 @@ Get-Content logs\dr_doctor_scraper.log | Select-String -Pattern "ERROR|WARNING"
 ## Example Test Workflow
 
 ```powershell
-# 1. Small test run
-python run_scraper.py --site marham --limit 10 --test-db --disable-js
+# 1. Small test run with multi-threading
+python run_scraper.py --site marham --limit 10 --test-db --threads 4
 
 # 2. Validate results
 python scripts/validate_data.py --test-db
@@ -250,11 +282,14 @@ python scripts/validate_data.py --test-db
 # 3. Analyze performance
 python scripts/analyze_logs.py --limit 10
 
-# 4. If good, run larger test
-python run_scraper.py --site marham --limit 100 --test-db --disable-js
+# 4. If good, run larger test with more threads
+python run_scraper.py --site marham --limit 100 --test-db --threads 4
 
 # 5. Compare with production data
 python scripts/validate_data.py  # Production
 python scripts/validate_data.py --test-db  # Test
+
+# 6. Full test run with optimal thread count
+python run_scraper.py --site marham --limit 1000 --test-db --threads 6
 ```
 
