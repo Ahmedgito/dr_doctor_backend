@@ -9,15 +9,15 @@ from pydantic import BaseModel, Field, validator
 class DoctorModel(BaseModel):
     name: str
     specialty: List[str]
-    fees: Optional[int]
-    city: Optional[ str ]
-    area: Optional[str]
+    fees: Optional[int] = None
+    city: Optional[str] = None
+    area: Optional[str] = None
     # List of hospital affiliations with name+url+fee+timings
     hospitals: Optional[List[dict]] = None
     # Private practice information (for video consultations, home visits, etc.)
     private_practice: Optional[dict] = None  # {name: str, url: str, fee: int, timings: dict}
-    address: Optional[str]
-    rating: Optional[float]
+    address: Optional[str] = None
+    rating: Optional[float] = None
     pmdc_verified: Optional[bool] = False
     qualifications: Optional[List[dict]] = None
     experience_years: Optional[int] = None
@@ -34,6 +34,8 @@ class DoctorModel(BaseModel):
     consultation_types: Optional[List[str]] = None
     profile_url: str
     platform: str
+    # Scraping status: "pending" (just URL collected), "processed" (full profile processed)
+    scrape_status: Optional[str] = "pending"
     scraped_at: datetime = Field(default_factory=datetime.utcnow)
 
     @validator("name", "city", pre=True)

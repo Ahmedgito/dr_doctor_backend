@@ -24,4 +24,6 @@ class HospitalModel(BaseModel):
     clinical_support_services: Optional[List[str]] = None
     fees_range: Optional[str] = None  # e.g., "2000-3500 PKR"
     contact_number: Optional[str] = None
+    # Scraping status: "pending" (just URL collected), "enriched" (full data collected), "doctors_collected" (doctors URLs collected)
+    scrape_status: Optional[str] = "pending"
     scraped_at: datetime = Field(default_factory=datetime.utcnow)

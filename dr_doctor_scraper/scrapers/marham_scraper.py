@@ -199,25 +199,40 @@ class MarhamScraper(BaseScraper):
                 logger.warning("Failed to insert doctor {}: {}", doctor.profile_url, exc)
 
     def scrape(self, limit: Optional[int] = None) -> Dict[str, int]:
-        """Scrape hospitals first, then doctors inside each hospital.
-
-        `limit` limits number of hospitals to process (useful for testing).
+        """Resumable scraping workflow with three steps:
+        
+        Step 1: Collect hospitals from listing pages → save to DB with status="pending"
+        Step 2: Read hospitals from DB → enrich data → collect doctor URLs → save to DB → update status="doctors_collected"
+        Step 3: Read doctors from DB → process profiles → update status="processed"
+        
+        `limit` limits number of hospitals to process in Step 2 (useful for testing).
         Returns stats dict similar to other scrapers.
         """
-        logger.info("Starting Marham hospital-first scraping from {}", self.hospitals_listing_url)
-
-        hospital_urls: List[str] = []
+        logger.info("Starting resumable Marham scraping workflow")
         stats = {"total": 0, "inserted": 0, "skipped": 0, "hospitals": 0, "updated": 0, "doctors": 0}
 
-        # Track URLs seen in this run to skip duplicates within the same scrape session
-        seen_hospital_urls: set = set()
-        seen_doctor_urls: set = set()
+        # Step 1: Collect hospitals from listing pages
+        self._step1_collect_hospitals_from_listings(limit, stats)
+        
+        # Step 2: Enrich hospitals and collect doctor URLs
+        self._step2_enrich_hospitals_and_collect_doctors(limit, stats)
+        
+        # Step 3: Process all collected doctors
+        self._step3_process_doctors(stats)
+        
+        return stats
 
-        # ---------------- Phase 1: Collect minimal hospital entries (name + url)
+    def _step1_collect_hospitals_from_listings(self, limit: Optional[int], stats: Dict[str, int]) -> None:
+        """Step 1: Collect hospitals from listing pages and save to DB with status='pending'."""
+        logger.info("Step 1: Collecting hospitals from listing pages")
+        
         page = 1
+        collected_count = 0
+        
         while True:
             url = f"{self.hospitals_listing_url}{page}"
             logger.debug("Loading hospitals page: {}", url)
+            
             try:
                 self.load_page(url)
                 self.wait_for("body")
@@ -228,14 +243,22 @@ class MarhamScraper(BaseScraper):
 
             hospitals = self.hospital_parser.parse_hospital_cards(html)
             if not hospitals:
+                logger.info("No more hospitals found on page {}, stopping", page)
                 break
 
             for h in hospitals:
-                if not h.get("name"):
+                if not h.get("name") or not h.get("url"):
+                    continue
+
+                # Check if hospital already exists in DB
+                existing = self.mongo_client.hospitals.find_one({"url": h.get("url")})
+                if existing:
+                    logger.debug("Hospital already in DB: {}", h.get("url"))
+                    collected_count += 1
                     continue
 
                 # Extract location from "View Directions" button
-                if self.page and h.get("url"):
+                if self.page:
                     try:
                         location = self.hospital_parser.extract_location_from_card(self.page, h["url"])
                         if location:
@@ -244,90 +267,76 @@ class MarhamScraper(BaseScraper):
                     except Exception as exc:  # noqa: BLE001
                         logger.debug("Failed to extract location for {}: {}", h.get("name"), exc)
 
-                # Insert a minimal hospital record (name + url). We'll enrich it later.
+                # Save minimal hospital record to DB with status="pending"
                 try:
-                    exists = False
-                    if hasattr(self.mongo_client, "hospital_exists"):
-                        exists = self.mongo_client.hospital_exists(h.get("name"), h.get("address"))
-                    else:
-                        exists = self.mongo_client.hospitals.find_one({"name": h.get("name"), "address": h.get("address")}) is not None
+                    minimal = {
+                        "name": h.get("name"),
+                        "platform": self.PLATFORM,
+                        "url": h.get("url"),
+                        "address": h.get("address"),
+                        "city": h.get("city"),
+                        "area": h.get("area"),
+                        "scrape_status": "pending"
+                    }
+                    if h.get("location"):
+                        minimal["location"] = h["location"]
+                    
+                    if self.mongo_client.update_hospital(h.get("url"), minimal):
+                        stats["hospitals"] += 1
+                        collected_count += 1
+                        logger.info("Saved hospital to DB: {} ({})", h.get("name"), h.get("url"))
+                except Exception as exc:  # noqa: BLE001
+                    logger.warning("Failed to save hospital {}: {}", h.get("name"), exc)
 
-                    if not exists:
-                        # minimal doc: use update_hospital (upsert) when available to avoid unique index errors
-                        minimal = {"name": h.get("name"), "platform": self.PLATFORM, "url": h.get("url")}
-                        if h.get("location"):
-                            minimal["location"] = h["location"]
-                        if hasattr(self.mongo_client, "update_hospital"):
-                            ok = self.mongo_client.update_hospital(h.get("url"), minimal)
-                            if ok:
-                                stats["hospitals"] += 1
-                        else:
-                            try:
-                                self.mongo_client.insert_hospital(HospitalModel(**minimal).dict())
-                                stats["hospitals"] += 1
-                            except Exception as exc:
-                                logger.debug("Insert minimal hospital exception: {}", exc)
-                except Exception:  # noqa: BLE001
-                    logger.warning("Could not insert minimal hospital: {}", h.get("name"))
-
-                if h.get("url"):
-                    hospital_urls.append(h.get("url"))
-                    seen_hospital_urls.add(h.get("url"))
-
-                if limit and len(hospital_urls) >= limit:
+                if limit and collected_count >= limit:
                     break
 
-            if limit and len(hospital_urls) >= limit:
+            if limit and collected_count >= limit:
                 break
 
             page += 1
             time.sleep(0.5)
 
-        logger.info("Collected {} hospital URLs to process", len(hospital_urls))
+        logger.info("Step 1 complete: {} hospitals collected and saved to DB", collected_count)
 
-        # ---------------- Phase 1: Enrich hospitals and collect doctor names/URLs (don't process doctors yet)
-        all_doctor_urls: List[dict] = []  # Store {profile_url, name, hospital_url}
+    def _step2_enrich_hospitals_and_collect_doctors(self, limit: Optional[int], stats: Dict[str, int]) -> None:
+        """Step 2: Read hospitals from DB, enrich them, collect doctor URLs, and save to DB."""
+        logger.info("Step 2: Enriching hospitals and collecting doctor URLs")
         
-        for hosp_url in hospital_urls:
+        # Get hospitals that need enrichment/doctor collection
+        hospitals_cursor = self.mongo_client.get_hospitals_needing_doctor_collection(limit=limit)
+        hospitals_to_process = list(hospitals_cursor)
+        
+        logger.info("Found {} hospitals needing enrichment/doctor collection", len(hospitals_to_process))
+        
+        for hospital_doc in hospitals_to_process:
+            hosp_url = hospital_doc.get("url")
+            if not hosp_url:
+                continue
             try:
+                logger.info("Processing hospital: {} ({})", hospital_doc.get("name"), hosp_url)
+                
                 # Load hospital page and enrich hospital doc
                 self.load_page(hosp_url)
                 self.wait_for("body")
                 hosp_html = self.get_html()
                 enriched = self.hospital_parser.parse_full_hospital(hosp_html, hosp_url)
 
-                # Check if hospital data has changed before updating
-                existing_hospital = self.mongo_client.hospitals.find_one({"url": hosp_url})
-                if existing_hospital:
-                    # Preserve location from existing record if enriched data doesn't have it
-                    if existing_hospital.get("location") and not enriched.get("location"):
-                        enriched["location"] = existing_hospital["location"]
-                    
-                    # Compare relevant fields (ignore _id and scraped_at for comparison)
-                    existing_data = {k: v for k, v in existing_hospital.items() if k not in ("_id", "scraped_at")}
-                    enriched_data = {k: v for k, v in enriched.items() if k not in ("_id", "scraped_at")}
+                # Preserve location from existing record if enriched data doesn't have it
+                if hospital_doc.get("location") and not enriched.get("location"):
+                    enriched["location"] = hospital_doc["location"]
 
-                    if existing_data == enriched_data:
-                        logger.info("Hospital data unchanged for {}: skipping update", hosp_url)
-                    else:
-                        logger.info("Hospital data changed for {}: updating", hosp_url)
-                        try:
-                            if hasattr(self.mongo_client, "update_hospital"):
-                                self.mongo_client.update_hospital(hosp_url, enriched)
-                                stats["updated"] += 1
-                        except Exception:
-                            logger.warning("Failed to update hospital {}", hosp_url)
-                else:
-                    # New hospital, insert it
-                    logger.info("New hospital found: {}", hosp_url)
-                    try:
-                        if hasattr(self.mongo_client, "update_hospital"):
-                            self.mongo_client.update_hospital(hosp_url, enriched)
-                            stats["hospitals"] += 1
-                    except Exception:
-                        logger.warning("Failed to insert hospital {}", hosp_url)
+                # Update hospital with enriched data
+                enriched["scrape_status"] = "enriched"  # Will be updated to "doctors_collected" after collecting doctors
+                try:
+                    if self.mongo_client.update_hospital(hosp_url, enriched):
+                        stats["updated"] += 1
+                        logger.info("Enriched hospital: {}", hosp_url)
+                except Exception as exc:  # noqa: BLE001
+                    logger.warning("Failed to update hospital {}: {}", hosp_url, exc)
+                    continue
 
-                # Collect doctor names and URLs from hospital page (Phase 1: just collect, don't process)
+                # Collect doctor names and URLs from hospital page
                 cards = self.doctor_collector.collect_doctor_cards_from_hospital(self, hosp_url)
                 hospital_doctors_list = []
                 seen_doctor_urls_in_hosp = set()
@@ -341,12 +350,9 @@ class MarhamScraper(BaseScraper):
                             "profile_url": doctor.profile_url,
                         })
                         seen_doctor_urls_in_hosp.add(doctor.profile_url)
-                        # Store for Phase 2 processing
-                        all_doctor_urls.append({
-                            "profile_url": doctor.profile_url,
-                            "name": doctor.name,
-                            "hospital_url": hosp_url,
-                        })
+                        
+                        # Save minimal doctor record to DB for later processing
+                        self.mongo_client.upsert_minimal_doctor(doctor.profile_url, doctor.name, hosp_url)
 
                 # Also extract doctors from the About section doctor list
                 doctors_from_list = self.doctor_parser.extract_doctors_from_list(hosp_html, hosp_url)
@@ -358,12 +364,9 @@ class MarhamScraper(BaseScraper):
                             "profile_url": profile_url,
                         })
                         seen_doctor_urls_in_hosp.add(profile_url)
-                        # Store for Phase 2 processing
-                        all_doctor_urls.append({
-                            "profile_url": profile_url,
-                            "name": doctor_info["name"],
-                            "hospital_url": hosp_url,
-                        })
+                        
+                        # Save minimal doctor record to DB
+                        self.mongo_client.upsert_minimal_doctor(profile_url, doctor_info["name"], hosp_url)
                 
                 # Also get doctors from enriched data (from About section parser)
                 if enriched.get("doctors"):
@@ -372,36 +375,34 @@ class MarhamScraper(BaseScraper):
                         if profile_url and profile_url not in seen_doctor_urls_in_hosp:
                             hospital_doctors_list.append(doc_info)
                             seen_doctor_urls_in_hosp.add(profile_url)
-                            all_doctor_urls.append({
-                                "profile_url": profile_url,
-                                "name": doc_info.get("name", ""),
-                                "hospital_url": hosp_url,
-                            })
+                            
+                            # Save minimal doctor record to DB
+                            self.mongo_client.upsert_minimal_doctor(profile_url, doc_info.get("name", ""), hosp_url)
                 
-                # Update hospital with doctor list (merge with existing if any)
-                if hospital_doctors_list:
-                    try:
-                        # Merge with existing doctors list
-                        existing_hosp = self.mongo_client.hospitals.find_one({"url": hosp_url})
-                        existing_doctors = existing_hosp.get("doctors", []) if existing_hosp else []
-                        
-                        # Create a map of existing doctors by profile_url
-                        existing_map = {d.get("profile_url"): d for d in existing_doctors if isinstance(d, dict) and d.get("profile_url")}
-                        
-                        # Merge new doctors
-                        for new_doc in hospital_doctors_list:
-                            profile_url = new_doc.get("profile_url")
-                            if profile_url and profile_url not in existing_map:
-                                existing_doctors.append(new_doc)
-                        
-                        self.mongo_client.hospitals.update_one(
-                            {"url": hosp_url},
-                            {"$set": {"doctors": existing_doctors}},
-                            upsert=True
-                        )
-                        logger.info("Updated hospital {} with {} doctors (total)", hosp_url, len(existing_doctors))
-                    except Exception as exc:
-                        logger.warning("Failed to update hospital doctors list for {}: {}", hosp_url, exc)
+                # Update hospital with doctor list and mark as "doctors_collected"
+                try:
+                    # Merge with existing doctors list
+                    existing_hosp = self.mongo_client.hospitals.find_one({"url": hosp_url})
+                    existing_doctors = existing_hosp.get("doctors", []) if existing_hosp else []
+                    
+                    # Create a map of existing doctors by profile_url
+                    existing_map = {d.get("profile_url"): d for d in existing_doctors if isinstance(d, dict) and d.get("profile_url")}
+                    
+                    # Merge new doctors
+                    for new_doc in hospital_doctors_list:
+                        profile_url = new_doc.get("profile_url")
+                        if profile_url and profile_url not in existing_map:
+                            existing_doctors.append(new_doc)
+                    
+                    # Update hospital with doctors list and status
+                    self.mongo_client.hospitals.update_one(
+                        {"url": hosp_url},
+                        {"$set": {"doctors": existing_doctors, "scrape_status": "doctors_collected"}},
+                        upsert=True
+                    )
+                    logger.info("Updated hospital {} with {} doctors, status set to 'doctors_collected'", hosp_url, len(existing_doctors))
+                except Exception as exc:  # noqa: BLE001
+                    logger.warning("Failed to update hospital doctors list for {}: {}", hosp_url, exc)
 
             except Exception as exc:  # noqa: BLE001
                 logger.warning("Failed processing hospital {}: {}", hosp_url, exc)
@@ -409,59 +410,40 @@ class MarhamScraper(BaseScraper):
             # polite pause between hospitals
             time.sleep(1)
 
-        logger.info("Phase 1 complete: {} hospitals processed, {} doctor URLs collected", len(hospital_urls), len(all_doctor_urls))
+        logger.info("Step 2 complete: Hospitals enriched and doctor URLs collected")
 
-        # ---------------- Phase 2: Process all doctors and update hospitals DB
-        logger.info("Starting Phase 2: Processing {} doctors", len(all_doctor_urls))
+    def _step3_process_doctors(self, stats: Dict[str, int]) -> None:
+        """Step 3: Read doctors from DB and process their profiles."""
+        logger.info("Step 3: Processing doctors from DB")
         
-        # Deduplicate doctor URLs (same doctor may be at multiple hospitals)
-        unique_doctor_urls = {}
-        for doc_info in all_doctor_urls:
-            profile_url = doc_info["profile_url"]
-            if profile_url not in unique_doctor_urls:
-                unique_doctor_urls[profile_url] = {
-                    "profile_url": profile_url,
-                    "name": doc_info["name"],
-                    "hospital_urls": []
-                }
-            if doc_info["hospital_url"] not in unique_doctor_urls[profile_url]["hospital_urls"]:
-                unique_doctor_urls[profile_url]["hospital_urls"].append(doc_info["hospital_url"])
+        # Get doctors that need processing
+        doctors_cursor = self.mongo_client.get_doctors_needing_processing()
+        doctors_to_process = list(doctors_cursor)
+        
+        logger.info("Found {} doctors needing processing", len(doctors_to_process))
 
-        logger.info("Found {} unique doctors across all hospitals", len(unique_doctor_urls))
-
-        for doc_info in unique_doctor_urls.values():
+        for doctor_doc in doctors_to_process:
             try:
-                profile_url = doc_info["profile_url"]
+                profile_url = doctor_doc.get("profile_url")
+                if not profile_url:
+                    continue
+                    
                 stats["total"] += 1
+                logger.info("Processing doctor: {} ({})", doctor_doc.get("name"), profile_url)
 
-                # Check if doctor already exists
-                existing_doctor = self.mongo_client.doctors.find_one({"profile_url": profile_url})
-                
                 # Load doctor profile page
                 self.load_page(profile_url)
                 self.wait_for("body")
                 doc_html = self.get_html()
                 details = self.profile_enricher.parse_doctor_profile(doc_html)
 
-                # Create or update doctor model
-                if existing_doctor:
-                    # Update existing doctor
-                    doctor = DoctorModel(**existing_doctor)
-                else:
-                    # Create new doctor
-                    doctor = DoctorModel(
-                        name=doc_info["name"],
-                        specialty=details.get("specialties", []),
-                        fees=None,
-                        city=None,
-                        area=None,
-                        hospitals=[],
-                        address=None,
-                        rating=None,
-                        experience=None,
-                        profile_url=profile_url,
-                        platform=self.PLATFORM,
-                    )
+                # Create or update doctor model from existing doc
+                # Filter out MongoDB-specific fields and ensure all required fields are present
+                doctor_data = {k: v for k, v in doctor_doc.items() if k != "_id"}
+                # Ensure specialty is a list (it might be missing or empty)
+                if "specialty" not in doctor_data or not doctor_data["specialty"]:
+                    doctor_data["specialty"] = []
+                doctor = DoctorModel(**doctor_data)
 
                 # Update doctor with enriched data
                 if details.get("specialties"):
@@ -555,50 +537,44 @@ class MarhamScraper(BaseScraper):
                         logger.debug("Error processing practice: {}", exc)
                         continue
 
-                # Also add hospitals from Phase 1 (where we found this doctor)
-                for hosp_url in doc_info["hospital_urls"]:
-                    if is_hospital_url(hosp_url):
+                # Also add hospitals from hospitals collection where this doctor is listed
+                # Find hospitals that have this doctor in their doctors list
+                hospitals_with_doctor = self.mongo_client.hospitals.find({
+                    "doctors.profile_url": profile_url
+                })
+                
+                for hosp_doc in hospitals_with_doctor:
+                    hosp_url = hosp_doc.get("url")
+                    if hosp_url and is_hospital_url(hosp_url):
                         existing_urls = {h.get("url") for h in doctor.hospitals if isinstance(h, dict) and h.get("url")}
                         if hosp_url not in existing_urls:
-                            # Get hospital name from DB
-                            hosp_doc = self.mongo_client.hospitals.find_one({"url": hosp_url})
-                            hosp_name = hosp_doc.get("name") if hosp_doc else None
                             doctor.hospitals.append({
-                                "name": hosp_name or "",
+                                "name": hosp_doc.get("name", ""),
                                 "url": hosp_url,
                             })
 
-                # Save doctor
-                if existing_doctor:
-                    merged = self.data_merger.merge_doctor_records(existing_doctor, doctor)
-                    if merged:
-                        try:
-                            self.mongo_client.doctors.update_one(
-                                {"profile_url": profile_url},
-                                {"$set": merged}
-                            )
-                            stats["updated"] += 1
-                        except Exception as exc:
-                            logger.warning("Failed to update doctor {}: {}", profile_url, exc)
-                            stats["skipped"] += 1
-                    else:
-                        stats["skipped"] += 1
-                else:
-                    try:
-                        self.mongo_client.insert_doctor(doctor.dict())
-                        stats["inserted"] += 1
-                        stats["doctors"] += 1
-                    except Exception as exc:
-                        logger.warning("Failed to insert doctor {}: {}", profile_url, exc)
-                        stats["skipped"] += 1
+                # Save doctor with updated status
+                doctor_dict = doctor.dict()
+                doctor_dict["scrape_status"] = "processed"
+                
+                try:
+                    self.mongo_client.doctors.update_one(
+                        {"profile_url": profile_url},
+                        {"$set": doctor_dict}
+                    )
+                    stats["updated"] += 1
+                    stats["doctors"] += 1
+                    logger.info("Processed and saved doctor: {}", profile_url)
+                except Exception as exc:  # noqa: BLE001
+                    logger.warning("Failed to update doctor {}: {}", profile_url, exc)
+                    stats["skipped"] += 1
 
-            except Exception as exc:
-                logger.warning("Failed processing doctor {}: {}", doc_info.get("profile_url"), exc)
+            except Exception as exc:  # noqa: BLE001
+                logger.warning("Failed processing doctor {}: {}", doctor_doc.get("profile_url"), exc)
                 stats["skipped"] += 1
 
             # polite pause between doctors
             time.sleep(0.5)
 
-        logger.info("Marham scraping finished: {}", stats)
-        return stats
+        logger.info("Step 3 complete: {} doctors processed", len(doctors_to_process))
 
