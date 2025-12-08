@@ -51,10 +51,17 @@ def parse_args() -> argparse.Namespace:
         default=1,
         help="Number of worker threads for parallel processing (default: 1, use 4-8 for faster scraping)",
     )
+    parser.add_argument(
+        "--step",
+        type=int,
+        choices=[1, 2, 3],
+        default=None,
+        help="Run only a specific step (1=collect hospitals, 2=enrich hospitals, 3=process doctors). Default: run all steps",
+    )
     return parser.parse_args()
 
 
-def run_for_site(site: str, mongo: MongoClientManager, headless: bool, limit: int | None, disable_js: bool = False, num_threads: int = 1) -> Dict[str, int]:
+def run_for_site(site: str, mongo: MongoClientManager, headless: bool, limit: int | None, disable_js: bool = False, num_threads: int = 1, step: int | None = None) -> Dict[str, int]:
     stats = {"total": 0, "inserted": 0, "skipped": 0}
 
     if site == "oladoc":
@@ -70,7 +77,7 @@ def run_for_site(site: str, mongo: MongoClientManager, headless: bool, limit: in
                 num_threads=num_threads,
                 headless=headless,
             )
-            stats = scraper.scrape(limit=limit)
+            stats = scraper.scrape(limit=limit, step=step)
         else:
             logger.info("Running Marham scraper (single-threaded mode)")
             with MarhamScraper(mongo_client=mongo, headless=headless, disable_js=disable_js) as scraper:
@@ -101,7 +108,7 @@ def main() -> None:
         sites = ["oladoc", "marham"] if args.site == "all" else [args.site]
 
         for site in sites:
-            stats = run_for_site(site, mongo, args.headless, args.limit, args.disable_js, args.threads)
+            stats = run_for_site(site, mongo, args.headless, args.limit, args.disable_js, args.threads, args.step)
             for key in grand_total:
                 grand_total[key] += stats.get(key, 0)
 

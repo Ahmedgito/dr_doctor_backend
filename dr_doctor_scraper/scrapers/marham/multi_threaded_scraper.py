@@ -106,6 +106,10 @@ class MultiThreadedMarhamScraper:
                         # Parse hospitals from this page
                         hospitals = scraper.hospital_parser.parse_hospital_cards(html)
                         
+                        # If no hospitals found, this might be the end
+                        if not hospitals:
+                            logger.debug(f"[Thread {thread_id}] No hospitals found on page {page_num}")
+                        
                         # Save hospitals to database
                         for hospital in hospitals:
                             thread_limit = (limit // num_threads) + 1 if limit else None
@@ -334,23 +338,34 @@ class MultiThreadedMarhamScraper:
                         
                         # Update doctor in database
                         doctor.scrape_status = "processed"
-                        if self.mongo_client.doctor_exists(doctor.profile_url):
-                            existing = self.mongo_client.doctors.find_one({"profile_url": doctor.profile_url})
-                            merged = scraper.data_merger.merge_doctor_records(existing, doctor)
+                        
+                        # Use the existing doctor_doc we already fetched (line 257)
+                        # If it exists, merge and update; otherwise insert
+                        if doctor_doc:
+                            # Doctor exists - merge and update
+                            merged = scraper.data_merger.merge_doctor_records(doctor_doc, doctor)
                             if merged:
                                 self.mongo_client.doctors.update_one(
                                     {"profile_url": doctor.profile_url},
                                     {"$set": merged}
                                 )
                                 worker_stats["updated"] += 1
+                                worker_stats["doctors"] += 1
                             else:
+                                # No changes needed
                                 worker_stats["skipped"] += 1
+                                worker_stats["doctors"] += 1
                         else:
-                            self.mongo_client.insert_doctor(doctor.dict())
-                            worker_stats["inserted"] += 1
+                            # Doctor doesn't exist - insert it
+                            # (This shouldn't happen since we skip if not found, but handle it anyway)
+                            if self.mongo_client.insert_doctor(doctor.dict()):
+                                worker_stats["inserted"] += 1
+                                worker_stats["doctors"] += 1
+                            else:
+                                worker_stats["errors"] += 1
                         
+                        # Update status regardless of whether we updated or skipped
                         self.mongo_client.update_doctor_status(doctor.profile_url, "processed")
-                        worker_stats["doctors"] += 1
                         
                     except Exception as exc:
                         logger.error(f"[Thread {thread_id}] Error processing doctor {doctor_url}: {exc}")
@@ -364,6 +379,23 @@ class MultiThreadedMarhamScraper:
             worker_stats["errors"] += 1
         
         return worker_stats
+    
+    def _get_processed_pages(self) -> set:
+        """Get set of page numbers that have already been processed.
+        
+        We track this by checking which hospitals have a 'source_page' field,
+        or by checking the hospitals collection for any hospitals.
+        """
+        try:
+            # Get all hospitals and extract page numbers from their URLs or metadata
+            # For now, we'll use a simple approach: check if hospitals exist
+            # A better approach would be to store page numbers in a separate collection
+            hospitals = list(self.mongo_client.hospitals.find({}, {"url": 1}))
+            # Since we don't track pages directly, return empty set for now
+            # This will be improved in a future version
+            return set()
+        except Exception:
+            return set()
     
     def _distribute_work(self, items: List, num_workers: int) -> List[List]:
         """Distribute items evenly across workers.
@@ -389,74 +421,119 @@ class MultiThreadedMarhamScraper:
         
         return chunks[:num_workers]
     
-    def scrape(self, limit: Optional[int] = None, max_pages: int = 100) -> Dict[str, int]:
+    def scrape(self, limit: Optional[int] = None, max_pages: int = 500, step: Optional[int] = None) -> Dict[str, int]:
         """Run multi-threaded scraping workflow.
         
         Args:
             limit: Maximum number of hospitals to process (None = no limit)
-            max_pages: Maximum number of listing pages to check (default: 100)
+            max_pages: Maximum number of listing pages to check (default: 500)
+            step: Run only a specific step (1, 2, or 3). None = run all steps
             
         Returns:
             Aggregated statistics dictionary
         """
         logger.info(f"Starting multi-threaded scraping with {self.num_threads} threads")
         
+        if step is not None:
+            logger.info(f"Running only Step {step}")
+        
         # Step 1: Collect hospitals from listing pages (parallel)
-        logger.info("Step 1: Collecting hospitals from listing pages...")
-        page_numbers = list(range(1, max_pages + 1))
-        page_chunks = self._distribute_work(page_numbers, self.num_threads)
-        
-        with ThreadPoolExecutor(max_workers=self.num_threads) as executor:
-            futures = [executor.submit(self._step1_worker, chunk, limit, self.num_threads) for chunk in page_chunks if chunk]
-            for future in as_completed(futures):
-                try:
-                    stats = future.result()
-                    self._update_stats(stats)
-                except Exception as exc:
-                    logger.error(f"Step 1 worker failed: {exc}")
-                    self._update_stats({"errors": 1})
-        
-        logger.info(f"Step 1 complete: {self.stats['hospitals']} hospitals collected")
+        if step is None or step == 1:
+            logger.info("Step 1: Collecting hospitals from listing pages...")
+            
+            # Process pages in batches until no more hospitals found
+            page_num = 1
+            consecutive_empty = 0
+            max_consecutive_empty = 5  # Stop after 5 consecutive empty pages
+            batch_size = self.num_threads * 10  # Process 10 pages per thread at a time
+            
+            while consecutive_empty < max_consecutive_empty and page_num <= max_pages:
+                # Collect a batch of pages
+                page_numbers = []
+                for _ in range(batch_size):
+                    if page_num > max_pages:
+                        break
+                    page_numbers.append(page_num)
+                    page_num += 1
+                
+                if not page_numbers:
+                    break
+                
+                logger.info(f"Processing pages {page_numbers[0]} to {page_numbers[-1]}...")
+                page_chunks = self._distribute_work(page_numbers, self.num_threads)
+                
+                batch_hospitals = 0
+                with ThreadPoolExecutor(max_workers=self.num_threads) as executor:
+                    futures = [executor.submit(self._step1_worker, chunk, limit, self.num_threads) for chunk in page_chunks if chunk]
+                    for future in as_completed(futures):
+                        try:
+                            stats = future.result()
+                            batch_hospitals += stats.get("hospitals", 0)
+                            self._update_stats(stats)
+                        except Exception as exc:
+                            logger.error(f"Step 1 worker failed: {exc}")
+                            self._update_stats({"errors": 1})
+                
+                # Check if this batch had any hospitals
+                if batch_hospitals == 0:
+                    consecutive_empty += 1
+                    logger.info(f"No hospitals found in batch, consecutive empty batches: {consecutive_empty}/{max_consecutive_empty}")
+                else:
+                    consecutive_empty = 0
+                    logger.info(f"Found {batch_hospitals} hospitals in this batch")
+                
+                # Check if we've reached the limit
+                if limit and self.stats["hospitals"] >= limit:
+                    logger.info(f"Reached limit of {limit} hospitals")
+                    break
+            
+            logger.info(f"Step 1 complete: {self.stats['hospitals']} hospitals collected")
         
         # Step 2: Enrich hospitals and collect doctors (parallel)
-        logger.info("Step 2: Enriching hospitals and collecting doctors...")
-        hospitals = self.mongo_client.get_hospitals_needing_enrichment(limit=limit)
-        hospital_urls = [h["url"] for h in hospitals if h.get("url")]
-        
-        if hospital_urls:
-            url_chunks = self._distribute_work(hospital_urls, self.num_threads)
+        if step is None or step == 2:
+            logger.info("Step 2: Enriching hospitals and collecting doctors...")
+            hospitals = list(self.mongo_client.get_hospitals_needing_enrichment(limit=limit))
+            hospital_urls = [h["url"] for h in hospitals if h.get("url")]
             
-            with ThreadPoolExecutor(max_workers=self.num_threads) as executor:
-                futures = [executor.submit(self._step2_worker, chunk) for chunk in url_chunks if chunk]
-                for future in as_completed(futures):
-                    try:
-                        stats = future.result()
-                        self._update_stats(stats)
-                    except Exception as exc:
-                        logger.error(f"Step 2 worker failed: {exc}")
-                        self._update_stats({"errors": 1})
-        
-        logger.info(f"Step 2 complete: {self.stats['hospitals']} hospitals enriched, {self.stats['doctors']} doctors collected")
+            logger.info(f"Found {len(hospital_urls)} hospitals needing enrichment")
+            
+            if hospital_urls:
+                url_chunks = self._distribute_work(hospital_urls, self.num_threads)
+                
+                with ThreadPoolExecutor(max_workers=self.num_threads) as executor:
+                    futures = [executor.submit(self._step2_worker, chunk) for chunk in url_chunks if chunk]
+                    for future in as_completed(futures):
+                        try:
+                            stats = future.result()
+                            self._update_stats(stats)
+                        except Exception as exc:
+                            logger.error(f"Step 2 worker failed: {exc}")
+                            self._update_stats({"errors": 1})
+            
+            logger.info(f"Step 2 complete: {self.stats['hospitals']} hospitals enriched, {self.stats['doctors']} doctors collected")
         
         # Step 3: Process doctors (parallel)
-        logger.info("Step 3: Processing doctor profiles...")
-        doctors = self.mongo_client.get_doctors_needing_processing(limit=None)
-        doctor_urls = [d["profile_url"] for d in doctors if d.get("profile_url")]
-        
-        if doctor_urls:
-            url_chunks = self._distribute_work(doctor_urls, self.num_threads)
+        if step is None or step == 3:
+            logger.info("Step 3: Processing doctor profiles...")
+            doctors = list(self.mongo_client.get_doctors_needing_processing(limit=None))
+            doctor_urls = [d["profile_url"] for d in doctors if d.get("profile_url")]
             
-            with ThreadPoolExecutor(max_workers=self.num_threads) as executor:
-                futures = [executor.submit(self._step3_worker, chunk) for chunk in url_chunks if chunk]
-                for future in as_completed(futures):
-                    try:
-                        stats = future.result()
-                        self._update_stats(stats)
-                    except Exception as exc:
-                        logger.error(f"Step 3 worker failed: {exc}")
-                        self._update_stats({"errors": 1})
-        
-        logger.info(f"Step 3 complete: {self.stats['doctors']} doctors processed")
+            logger.info(f"Found {len(doctor_urls)} doctors needing processing")
+            
+            if doctor_urls:
+                url_chunks = self._distribute_work(doctor_urls, self.num_threads)
+                
+                with ThreadPoolExecutor(max_workers=self.num_threads) as executor:
+                    futures = [executor.submit(self._step3_worker, chunk) for chunk in url_chunks if chunk]
+                    for future in as_completed(futures):
+                        try:
+                            stats = future.result()
+                            self._update_stats(stats)
+                        except Exception as exc:
+                            logger.error(f"Step 3 worker failed: {exc}")
+                            self._update_stats({"errors": 1})
+            
+            logger.info(f"Step 3 complete: {self.stats['doctors']} doctors processed")
         
         # Calculate totals
         self.stats["total"] = self.stats["hospitals"] + self.stats["doctors"]
