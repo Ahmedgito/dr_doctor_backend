@@ -22,14 +22,14 @@ python run_scraper.py --site marham --threads 4 --limit 10 --test-db
 
 ## 📚 Documentation
 
-**📖 [Complete Documentation Index](DOCUMENTATION.md)** - Master index of all documentation
+**📖 [Documentation Index](DOCUMENTATION.md)** - Complete guide to all documentation
 
-### Main Documentation
+### Essential Docs
 - **[API Reference](API_REFERENCE.md)** - Complete function and class documentation
 - **[Commands Guide](COMMANDS.md)** - All commands, workflows, and usage examples
-- **[Changelog](CHANGELOG.md)** - Past changes, improvements, and bug fixes
+- **[Changelog](CHANGELOG.md)** - Complete history of all changes and improvements
 
-### Guides
+### Feature Guides
 - **[Testing Guide](TESTING.md)** - Testing environment and best practices
 - **[Multi-threading Guide](MULTITHREADING.md)** - Parallel processing guide
 - **[Step Guide](STEP_GUIDE.md)** - Step-by-step workflow execution

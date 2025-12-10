@@ -2,7 +2,23 @@
 
 All notable changes to the Dr.Doctor Scraper project.
 
-## [Unreleased]
+## [2025-12-09] - Major Refactoring & Consolidation
+
+### Documentation Consolidation
+- Consolidated all redundant markdown files into this CHANGELOG
+- Removed duplicate summary and implementation files
+- Created unified documentation structure
+
+### Code Cleanup
+- Removed old/unused scraper files
+- Enhanced docstrings across all modules
+- Improved code organization and modularity
+
+---
+
+## [2025-12-08] - Multi-threading & Step Execution
+
+### Added
 
 ### Added
 - Multi-threading support for parallel scraping
