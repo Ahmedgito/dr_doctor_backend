@@ -345,14 +345,18 @@ class MultiThreadedMarhamScraper:
                             # Doctor exists - merge and update
                             merged = scraper.data_merger.merge_doctor_records(doctor_doc, doctor)
                             if merged:
-                                self.mongo_client.doctors.update_one(
+                                result = self.mongo_client.doctors.update_one(
                                     {"profile_url": doctor.profile_url},
                                     {"$set": merged}
                                 )
-                                worker_stats["updated"] += 1
+                                if result.modified_count > 0:
+                                    worker_stats["updated"] += 1
+                                else:
+                                    # Update didn't change anything (shouldn't happen, but handle it)
+                                    worker_stats["skipped"] += 1
                                 worker_stats["doctors"] += 1
                             else:
-                                # No changes needed
+                                # No changes needed - merge returned None
                                 worker_stats["skipped"] += 1
                                 worker_stats["doctors"] += 1
                         else:
@@ -533,7 +537,13 @@ class MultiThreadedMarhamScraper:
                             logger.error(f"Step 3 worker failed: {exc}")
                             self._update_stats({"errors": 1})
             
-            logger.info(f"Step 3 complete: {self.stats['doctors']} doctors processed")
+            # Step 3 doctors count should be sum of updated + skipped + inserted
+            # Note: errors are not counted in doctors processed
+            step3_doctors = self.stats["updated"] + self.stats["skipped"] + self.stats["inserted"]
+            logger.info(f"Step 3 complete: {step3_doctors} doctors processed (updated: {self.stats['updated']}, skipped: {self.stats['skipped']}, inserted: {self.stats['inserted']}, errors: {self.stats.get('errors', 0)})")
+            
+            # Update doctors counter to reflect actual processed count
+            self.stats["doctors"] = step3_doctors
         
         # Calculate totals
         self.stats["total"] = self.stats["hospitals"] + self.stats["doctors"]
