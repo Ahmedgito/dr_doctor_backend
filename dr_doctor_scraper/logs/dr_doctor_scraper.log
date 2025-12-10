@@ -6775,3 +6775,977 @@ Call log:
 Total scraped: 2753
 Total inserted: 0
 Total skipped: 0
+2025-12-10 16:36:32 | INFO     | __main__:main:100 - Starting scraper with args: Namespace(site='marham', headless=True, limit=None, disable_js=True, test_db=False, threads=4, step=3)
+2025-12-10 16:36:32 | INFO     | __main__:run_for_site:73 - Running Marham scraper with 4 threads (multi-threaded mode)
+2025-12-10 16:36:32 | INFO     | scrapers.marham.multi_threaded_scraper:scrape:439 - Starting multi-threaded scraping with 4 threads
+2025-12-10 16:36:32 | INFO     | scrapers.marham.multi_threaded_scraper:scrape:442 - Running only Step 3
+2025-12-10 16:36:32 | INFO     | scrapers.marham.multi_threaded_scraper:scrape:521 - Step 3: Processing doctor profiles...
+2025-12-10 16:36:32 | INFO     | scrapers.marham.multi_threaded_scraper:scrape:525 - Found 266 doctors needing processing
+2025-12-10 16:36:33 | INFO     | scrapers.base_scraper:__enter__:59 - Playwright browser started (headless=True, js_disabled=False)
+2025-12-10 16:36:33 | INFO     | scrapers.marham.multi_threaded_scraper:_step3_worker:256 - [Thread 6724] Starting Step 3 worker for 66 doctors
+2025-12-10 16:36:33 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-osama-badar
+2025-12-10 16:36:33 | INFO     | scrapers.base_scraper:__enter__:59 - Playwright browser started (headless=True, js_disabled=False)
+2025-12-10 16:36:33 | INFO     | scrapers.marham.multi_threaded_scraper:_step3_worker:256 - [Thread 22680] Starting Step 3 worker for 66 doctors
+2025-12-10 16:36:33 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/maxillofacial-surgeon/dr-nizam-ul-arfeen
+2025-12-10 16:36:33 | INFO     | scrapers.base_scraper:__enter__:59 - Playwright browser started (headless=True, js_disabled=False)
+2025-12-10 16:36:33 | INFO     | scrapers.marham.multi_threaded_scraper:_step3_worker:256 - [Thread 10052] Starting Step 3 worker for 66 doctors
+2025-12-10 16:36:33 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-nadir-khan-baloch
+2025-12-10 16:36:33 | INFO     | scrapers.base_scraper:__enter__:59 - Playwright browser started (headless=True, js_disabled=False)
+2025-12-10 16:36:33 | INFO     | scrapers.marham.multi_threaded_scraper:_step3_worker:256 - [Thread 13956] Starting Step 3 worker for 66 doctors
+2025-12-10 16:36:33 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/ent-surgeon/prof-dr-shakil-aqil
+2025-12-10 16:36:38 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-ajeet-asnani
+2025-12-10 16:36:39 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-tania-rizvi
+2025-12-10 16:36:39 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-yasir-mustafa-khan
+2025-12-10 16:36:39 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/asst-prof-dr-raman-kumar
+2025-12-10 16:36:41 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/endocrinologist/dr-ali-asghar
+2025-12-10 16:36:42 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/online-consultation/psychiatrist/islamabad/asst-prof-dr-nomita-imtiaz-42889
+2025-12-10 16:36:42 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/nephrologist/asst-prof-dr-fahad-nasim
+2025-12-10 16:36:42 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/sonologist/dr-sarwar-hamid
+2025-12-10 16:36:44 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-mehmooda-hamid-rana
+2025-12-10 16:36:44 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-wajiha-omair
+2025-12-10 16:36:44 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/plastic-surgeon/dr-basalat-hussain
+2025-12-10 16:36:44 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-physician/dr-muhammad-ahmad
+2025-12-10 16:36:45 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-nausheen-haroon-ahmed
+2025-12-10 16:36:46 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-m-shoaib-noor
+2025-12-10 16:36:47 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-practitioner/dr-syed-zohaib-raza
+2025-12-10 16:36:48 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/urologist/asst-prof-dr-fakhir-yousuf
+2025-12-10 16:36:49 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/breast-surgeon/dr-sabiha-rizwan
+2025-12-10 16:36:49 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-mohsin-khan
+2025-12-10 16:36:50 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-muhammad-murtaza-ali-siddiqui
+2025-12-10 16:36:51 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-hafsa-naz
+2025-12-10 16:36:52 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/asst-prof-dr-faisal-ahmed
+2025-12-10 16:36:53 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/sonologist/dr-mahmood-ur-rehman-azmi
+2025-12-10 16:37:05 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-muhammad-murtaza-ali-siddiqui' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-surgeon/dr-muhammad-murtaza-ali-siddiqui", waiting until "networkidle"
+
+2025-12-10 16:37:06 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/pediatrician/dr-hafsa-naz' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/pediatrician/dr-hafsa-naz", waiting until "networkidle"
+
+2025-12-10 16:37:07 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/cardiologist/asst-prof-dr-faisal-ahmed' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/cardiologist/asst-prof-dr-faisal-ahmed", waiting until "networkidle"
+
+2025-12-10 16:37:08 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/sonologist/dr-mahmood-ur-rehman-azmi' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/sonologist/dr-mahmood-ur-rehman-azmi", waiting until "networkidle"
+
+2025-12-10 16:37:09 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/nutritionist/ms-mehnaz
+2025-12-10 16:37:10 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-physician/dr-sumaira-jabeen
+2025-12-10 16:37:13 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-osama-yaseen
+2025-12-10 16:37:13 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-ambreen-shakeel
+2025-12-10 16:37:17 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-ibrar-hussain
+2025-12-10 16:37:18 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-tahira-jabeen
+2025-12-10 16:37:20 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-madiha-masood-khan
+2025-12-10 16:37:23 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-mala
+2025-12-10 16:37:25 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/sonologist/dr-mahmood-ur-rehman-azmi' (attempt 2/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/sonologist/dr-mahmood-ur-rehman-azmi", waiting until "networkidle"
+
+2025-12-10 16:37:25 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-physician/dr-sumaira-jabeen' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-physician/dr-sumaira-jabeen", waiting until "networkidle"
+
+2025-12-10 16:37:31 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-abu-tablib
+2025-12-10 16:37:33 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-saima-mehmood
+2025-12-10 16:37:35 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-madiha-masood-khan' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-surgeon/dr-madiha-masood-khan", waiting until "networkidle"
+
+2025-12-10 16:37:36 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-wardah-fatima
+2025-12-10 16:37:38 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/gynecologist/dr-mala' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/gynecologist/dr-mala", waiting until "networkidle"
+
+2025-12-10 16:37:40 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/urologist/dr-zubda-malik
+2025-12-10 16:37:42 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-physician/dr-sumaira-jabeen' (attempt 2/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-physician/dr-sumaira-jabeen", waiting until "networkidle"
+
+2025-12-10 16:37:44 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gastroenterologist/dr-syed-iftikhar
+2025-12-10 16:37:48 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-muhammad-muneer
+2025-12-10 16:37:48 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gastroenterologist/dr-hanisha-khemani
+2025-12-10 16:37:52 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-madiha-masood-khan' (attempt 2/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-surgeon/dr-madiha-masood-khan", waiting until "networkidle"
+
+2025-12-10 16:37:55 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/urologist/dr-zubda-malik' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/urologist/dr-zubda-malik", waiting until "networkidle"
+
+2025-12-10 16:37:58 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/maxillofacial-surgeon/dr-rahul-butani
+2025-12-10 16:37:59 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/audiologist/ms-sadia-siddiq
+2025-12-10 16:38:01 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-afsheen-javaid
+2025-12-10 16:38:02 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-zahid-habib
+2025-12-10 16:38:03 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-muhammad-muneer' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-surgeon/dr-muhammad-muneer", waiting until "networkidle"
+
+2025-12-10 16:38:03 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/gastroenterologist/dr-hanisha-khemani' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/gastroenterologist/dr-hanisha-khemani", waiting until "networkidle"
+
+2025-12-10 16:38:04 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-nadeem-khurshedi
+2025-12-10 16:38:08 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-anjum-ara
+2025-12-10 16:38:12 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/eye-surgeon/dr-waheed-ahmed-shaikh
+2025-12-10 16:38:14 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/ent-surgeon/dr-tanveer-sheikh
+2025-12-10 16:38:16 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-afsheen-javaid' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-surgeon/dr-afsheen-javaid", waiting until "networkidle"
+
+2025-12-10 16:38:18 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-razia-baloch
+2025-12-10 16:38:19 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-nadeem-khurshedi' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-surgeon/dr-nadeem-khurshedi", waiting until "networkidle"
+
+2025-12-10 16:38:20 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/gastroenterologist/dr-hanisha-khemani' (attempt 2/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/gastroenterologist/dr-hanisha-khemani", waiting until "networkidle"
+
+2025-12-10 16:38:22 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/online-consultation/pediatrician/karachi/dr-sadaf-islam-28433
+2025-12-10 16:38:23 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-faisal-ghani
+2025-12-10 16:38:28 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gastroenterologist/dr-sabir-soomro
+2025-12-10 16:38:35 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-asma-lalan
+2025-12-10 16:38:36 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-nadeem-khurshedi' (attempt 2/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-surgeon/dr-nadeem-khurshedi", waiting until "networkidle"
+
+2025-12-10 16:38:37 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/online-consultation/pediatrician/karachi/dr-sadaf-islam-28433' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/online-consultation/pediatrician/karachi/dr-sadaf-islam-28433", waiting until "networkidle"
+
+2025-12-10 16:38:38 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-faisal-ghani' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-surgeon/dr-faisal-ghani", waiting until "networkidle"
+
+2025-12-10 16:38:42 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-physician/dr-sannia-iqbal
+2025-12-10 16:38:43 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/assoc-prof-dr-rufina-soomro
+2025-12-10 16:38:44 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-fatima-wajid-pt
+2025-12-10 16:38:45 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-mujtaba-shah
+2025-12-10 16:38:45 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-shahnaz-hussaini
+2025-12-10 16:38:47 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-sibtain
+2025-12-10 16:38:48 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-feroza-masroor
+2025-12-10 16:38:51 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-faiqa
+2025-12-10 16:38:55 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/nephrologist/dr-farah-anum
+2025-12-10 16:38:58 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/dr-abdul-salam
+2025-12-10 16:38:59 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-fatima-wajid-pt' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/physiotherapist/dr-fatima-wajid-pt", waiting until "networkidle"
+
+2025-12-10 16:39:00 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/gynecologist/dr-shahnaz-hussaini' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/gynecologist/dr-shahnaz-hussaini", waiting until "networkidle"
+
+2025-12-10 16:39:02 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/ent-specialist/dr-mehfooz
+2025-12-10 16:39:03 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/gynecologist/dr-feroza-masroor' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/gynecologist/dr-feroza-masroor", waiting until "networkidle"
+
+2025-12-10 16:39:04 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/nephrologist/dr-farzana-adnan
+2025-12-10 16:39:05 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/diabetologist/dr-iftikhar-ul-hameed
+2025-12-10 16:39:06 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/online-consultation/family-medicine/rahim-yar-khan/dr-uzma-bibi-67486
+2025-12-10 16:39:19 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/nephrologist/dr-farzana-adnan' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/nephrologist/dr-farzana-adnan", waiting until "networkidle"
+
+2025-12-10 16:39:20 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/gynecologist/dr-feroza-masroor' (attempt 2/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/gynecologist/dr-feroza-masroor", waiting until "networkidle"
+
+2025-12-10 16:39:20 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/diabetologist/dr-iftikhar-ul-hameed' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/diabetologist/dr-iftikhar-ul-hameed", waiting until "networkidle"
+
+2025-12-10 16:39:21 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/online-consultation/family-medicine/rahim-yar-khan/dr-uzma-bibi-67486' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/online-consultation/family-medicine/rahim-yar-khan/dr-uzma-bibi-67486", waiting until "networkidle"
+
+2025-12-10 16:39:23 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/neuro-physician/dr-s-ahmed-asif
+2025-12-10 16:39:24 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-sarosh-haque
+2025-12-10 16:39:25 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-mala-jitendra
+2025-12-10 16:39:25 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/online-consultation/clinical-psychologist/karachi/yousaf-khan-65949
+2025-12-10 16:39:26 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/neuro-physician/dr-hazim-brohi
+2025-12-10 16:39:27 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-mukesh-kumar
+2025-12-10 16:39:27 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-yasmeen-sheikh
+2025-12-10 16:39:28 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-sumaira-zareen
+2025-12-10 16:39:30 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-lachman-das
+2025-12-10 16:39:31 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-mariam-ali
+2025-12-10 16:39:41 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/neuro-physician/dr-hazim-brohi' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/neuro-physician/dr-hazim-brohi", waiting until "networkidle"
+
+2025-12-10 16:39:43 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/gynecologist/dr-sumaira-zareen' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/gynecologist/dr-sumaira-zareen", waiting until "networkidle"
+
+2025-12-10 16:39:45 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-manzar-hussain
+2025-12-10 16:39:45 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/pediatrician/dr-lachman-das' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/pediatrician/dr-lachman-das", waiting until "networkidle"
+
+2025-12-10 16:39:46 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-mariam-ali' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/physiotherapist/dr-mariam-ali", waiting until "networkidle"
+
+2025-12-10 16:39:47 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/pulmonologist/dr-syed-ali-arsalan
+2025-12-10 16:39:48 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/ent-specialist/dr-tariq-qazi
+2025-12-10 16:39:49 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/neuro-surgeon/assoc-prof-dr-muhammad-aamir-saghir
+2025-12-10 16:39:52 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/online-consultation/general-surgeon/karachi/dr-madiha-masood-khan-22083
+2025-12-10 16:40:03 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/ent-specialist/dr-tariq-qazi' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/ent-specialist/dr-tariq-qazi", waiting until "networkidle"
+
+2025-12-10 16:40:03 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-mariam-ali' (attempt 2/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/physiotherapist/dr-mariam-ali", waiting until "networkidle"
+
+2025-12-10 16:40:04 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/neuro-surgeon/assoc-prof-dr-muhammad-aamir-saghir' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/neuro-surgeon/assoc-prof-dr-muhammad-aamir-saghir", waiting until "networkidle"
+
+2025-12-10 16:40:06 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-aimen-zia
+2025-12-10 16:40:07 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/online-consultation/general-surgeon/karachi/dr-madiha-masood-khan-22083' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/online-consultation/general-surgeon/karachi/dr-madiha-masood-khan-22083", waiting until "networkidle"
+
+2025-12-10 16:40:09 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/psychiatrist/dr-sadia-hamid
+2025-12-10 16:40:09 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-practitioner/dr-akshay
+2025-12-10 16:40:10 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/online-consultation/pulmonologist/karachi/dr-zahoor-hussain-29856
+2025-12-10 16:40:13 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/aesthetic-medicine-specialist/ms-mahnoor-waseem
+2025-12-10 16:40:24 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/psychiatrist/dr-sadia-hamid' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/psychiatrist/dr-sadia-hamid", waiting until "networkidle"
+
+2025-12-10 16:40:24 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-practitioner/dr-akshay' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-practitioner/dr-akshay", waiting until "networkidle"
+
+2025-12-10 16:40:25 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/online-consultation/pulmonologist/karachi/dr-zahoor-hussain-29856' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/online-consultation/pulmonologist/karachi/dr-zahoor-hussain-29856", waiting until "networkidle"
+
+2025-12-10 16:40:28 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/aesthetic-medicine-specialist/ms-mahnoor-waseem' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/aesthetic-medicine-specialist/ms-mahnoor-waseem", waiting until "networkidle"
+
+2025-12-10 16:40:29 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/anesthetist/dr-aqil-qayoom-khanzada
+2025-12-10 16:40:32 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/dr-muhammad-asad-baqai
+2025-12-10 16:40:33 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/medical-specialist/dr-renoka
+2025-12-10 16:40:33 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/anesthetist/asst-prof-dr-arif-iftikhar-mallhi
+2025-12-10 16:40:35 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-zubair-ahmed-soomro
+2025-12-10 16:40:36 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/online-consultation/diabetologist/karachi/dr-qazi-mujahid-ali-13003
+2025-12-10 16:40:37 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/clinical-dietician/ms-munazza-haq
+2025-12-10 16:40:39 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-soobia-rehman
+2025-12-10 16:40:41 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/online-consultation/pediatrician/karachi/dr-sobia-tabbusum-26510
+2025-12-10 16:40:42 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/anesthetist/asst-prof-dr-sarosh-rifaqat
+2025-12-10 16:40:43 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/urologist/dr-abdul-ghaffar
+2025-12-10 16:40:54 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-soobia-rehman' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-surgeon/dr-soobia-rehman", waiting until "networkidle"
+
+2025-12-10 16:40:56 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/online-consultation/pediatrician/karachi/dr-sobia-tabbusum-26510' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/online-consultation/pediatrician/karachi/dr-sobia-tabbusum-26510", waiting until "networkidle"
+
+2025-12-10 16:40:57 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/anesthetist/asst-prof-dr-sarosh-rifaqat' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/anesthetist/asst-prof-dr-sarosh-rifaqat", waiting until "networkidle"
+
+2025-12-10 16:40:58 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/urologist/dr-abdul-ghaffar' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/urologist/dr-abdul-ghaffar", waiting until "networkidle"
+
+2025-12-10 16:40:58 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-practitioner/dr-imtiaz-ahmed-butt
+2025-12-10 16:41:01 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-uzma-faisal
+2025-12-10 16:41:02 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/cosmetic-surgeon/dr-shafat-ullah
+2025-12-10 16:41:02 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-gulfam
+2025-12-10 16:41:02 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/asst-prof-dr-pervez-ali
+2025-12-10 16:41:03 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-sehrish-habib
+2025-12-10 16:41:03 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/online-consultation/plastic-surgeon/karachi/dr-basalat-hussain-7650
+2025-12-10 16:41:04 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/endocrinologist/dr-rabia-abubakar
+2025-12-10 16:41:17 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/asst-prof-dr-pervez-ali' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/orthopedic-surgeon/asst-prof-dr-pervez-ali", waiting until "networkidle"
+
+2025-12-10 16:41:18 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/family-medicine/dr-sehrish-habib' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/family-medicine/dr-sehrish-habib", waiting until "networkidle"
+
+2025-12-10 16:41:18 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/online-consultation/plastic-surgeon/karachi/dr-basalat-hussain-7650' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/online-consultation/plastic-surgeon/karachi/dr-basalat-hussain-7650", waiting until "networkidle"
+
+2025-12-10 16:41:19 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/endocrinologist/dr-rabia-abubakar' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/endocrinologist/dr-rabia-abubakar", waiting until "networkidle"
+
+2025-12-10 16:41:21 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-arsalan-zubair
+2025-12-10 16:41:22 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/neuro-physician/dr-syed-ahmed-asif
+2025-12-10 16:41:24 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-practitioner/dr-muhmmad-abdullah-shah
+2025-12-10 16:41:25 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-shair-ali-usmani
+2025-12-10 16:41:25 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/prof-dr-zahid-iqbal
+2025-12-10 16:41:27 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-vicky-kumar-md
+2025-12-10 16:41:28 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-ameema-javed
+2025-12-10 16:41:28 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/dr-hassan-khan
+2025-12-10 16:41:37 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/neuro-physician/dr-syed-ahmed-asif' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/neuro-physician/dr-syed-ahmed-asif", waiting until "networkidle"
+
+2025-12-10 16:41:41 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/hematologist/prof-dr-syed-muhammad-irfan
+2025-12-10 16:41:42 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/family-medicine/dr-vicky-kumar-md' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/family-medicine/dr-vicky-kumar-md", waiting until "networkidle"
+
+2025-12-10 16:41:43 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/dentist/dr-ameema-javed' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/dentist/dr-ameema-javed", waiting until "networkidle"
+
+2025-12-10 16:41:44 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/cardiologist/dr-hassan-khan' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/cardiologist/dr-hassan-khan", waiting until "networkidle"
+
+2025-12-10 16:41:44 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/nephrologist/prof-dr-kunwar-naveed-mukhtar
+2025-12-10 16:41:46 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/clinical-psychologist/mr-wajahat-ghani
+2025-12-10 16:41:49 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-sabeen-masood
+2025-12-10 16:41:49 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/online-consultation/maxillofacial-surgeon/karachi/dr-nizam-ul-arfeen-60874
+2025-12-10 16:41:52 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/online-consultation/family-medicine/karachi/dr-zubair-ahmed-soomro-64609
+2025-12-10 16:41:52 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/eye-surgeon/dr-hamna-danyal-barry
+2025-12-10 16:41:55 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/interventional-radiologist/dr-nauman-ali-quamari
+2025-12-10 16:41:56 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/online-consultation/pediatrician/karachi/dr-ghulam-ali-31233
+2025-12-10 16:42:01 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/clinical-psychologist/mr-wajahat-ghani' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/clinical-psychologist/mr-wajahat-ghani", waiting until "networkidle"
+
+2025-12-10 16:42:01 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/cardiologist/dr-hassan-khan' (attempt 2/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/cardiologist/dr-hassan-khan", waiting until "networkidle"
+
+2025-12-10 16:42:05 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/medical-specialist/assoc-prof-dr-zia-ullah-khan
+2025-12-10 16:42:06 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/clinical-psychologist/sumyya-rasheed
+2025-12-10 16:42:10 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/interventional-radiologist/dr-nauman-ali-quamari' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/interventional-radiologist/dr-nauman-ali-quamari", waiting until "networkidle"
+
+2025-12-10 16:42:11 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/online-consultation/pediatrician/karachi/dr-ghulam-ali-31233' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/online-consultation/pediatrician/karachi/dr-ghulam-ali-31233", waiting until "networkidle"
+
+2025-12-10 16:42:16 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-muhammad-ahsan-saleem
+2025-12-10 16:42:16 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-physician/dr-imtiaz-manzoor
+2025-12-10 16:42:18 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-practitioner/dr-rimza-waqar
+2025-12-10 16:42:20 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/medical-specialist/assoc-prof-dr-zia-ullah-khan' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/medical-specialist/assoc-prof-dr-zia-ullah-khan", waiting until "networkidle"
+
+2025-12-10 16:42:21 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/clinical-psychologist/sumyya-rasheed' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/clinical-psychologist/sumyya-rasheed", waiting until "networkidle"
+
+2025-12-10 16:42:25 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/clinical-psychologist/ahmer-zuberi
+2025-12-10 16:42:26 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/ent-specialist/dr-rizwan-ahmed
+2025-12-10 16:42:29 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-iqbal-hussain-pathan
+2025-12-10 16:42:30 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/online-consultation/pediatrician/karachi/dr-madiha-islam-44136
+2025-12-10 16:42:31 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-physician/dr-imtiaz-manzoor' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-physician/dr-imtiaz-manzoor", waiting until "networkidle"
+
+2025-12-10 16:42:33 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-practitioner/dr-rimza-waqar' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-practitioner/dr-rimza-waqar", waiting until "networkidle"
+
+2025-12-10 16:42:33 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/online-consultation/dermatologist/karachi/dr-rakhii-kumari-33323
+2025-12-10 16:42:35 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/online-consultation/dermatologist/karachi/dr-sadia-hameed-36631
+2025-12-10 16:42:39 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/psychiatrist/dr-saba-ismail
+2025-12-10 16:42:41 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-shamim-fatima
+2025-12-10 16:42:44 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-iqbal-hussain-pathan' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-surgeon/dr-iqbal-hussain-pathan", waiting until "networkidle"
+
+2025-12-10 16:42:48 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/cardiac-surgeon/dr-tariq-azam-siddiqi
+2025-12-10 16:42:48 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/online-consultation/dermatologist/karachi/dr-rakhii-kumari-33323' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/online-consultation/dermatologist/karachi/dr-rakhii-kumari-33323", waiting until "networkidle"
+
+2025-12-10 16:42:50 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-practitioner/dr-rimza-waqar' (attempt 2/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-practitioner/dr-rimza-waqar", waiting until "networkidle"
+
+2025-12-10 16:42:51 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/cardiac-surgeon/asst-prof-dr-mohammad-qaiser-aziz-khan
+2025-12-10 16:42:53 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/internal-medicine/assoc-prof-dr-samar-abbas-jaffri
+2025-12-10 16:42:53 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-practitioner/dr-maheen-razzaque
+2025-12-10 16:42:55 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-asma-jamal
+2025-12-10 16:42:56 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/gynecologist/dr-shamim-fatima' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/gynecologist/dr-shamim-fatima", waiting until "networkidle"
+
+2025-12-10 16:43:03 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-aimen-muneeb
+2025-12-10 16:43:06 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/pediatric-nephrologist/dr-lubna-aman
+2025-12-10 16:43:08 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-nida-mughal
+2025-12-10 16:43:08 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-practitioner/dr-maheen-razzaque' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-practitioner/dr-maheen-razzaque", waiting until "networkidle"
+
+2025-12-10 16:43:08 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/internal-medicine/assoc-prof-dr-samar-abbas-jaffri' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/internal-medicine/assoc-prof-dr-samar-abbas-jaffri", waiting until "networkidle"
+
+2025-12-10 16:43:10 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/dermatologist/dr-asma-jamal' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/dermatologist/dr-asma-jamal", waiting until "networkidle"
+
+2025-12-10 16:43:12 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/prof-dr-kaniz-zehra-naqvi
+2025-12-10 16:43:12 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/prof-dr-mr-abdul-rasheed
+2025-12-10 16:43:13 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/diabetologist/dr-asad
+2025-12-10 16:43:27 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/gynecologist/prof-dr-kaniz-zehra-naqvi' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/gynecologist/prof-dr-kaniz-zehra-naqvi", waiting until "networkidle"
+
+2025-12-10 16:43:27 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/dermatologist/dr-asma-jamal' (attempt 2/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/dermatologist/dr-asma-jamal", waiting until "networkidle"
+
+2025-12-10 16:43:27 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/cardiologist/prof-dr-mr-abdul-rasheed' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/cardiologist/prof-dr-mr-abdul-rasheed", waiting until "networkidle"
+
+2025-12-10 16:43:28 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/diabetologist/dr-asad' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/diabetologist/dr-asad", waiting until "networkidle"
+
+2025-12-10 16:43:30 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/asst-prof-dr-abeer-sarfaraz
+2025-12-10 16:43:32 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-practitioner/dr-muhammad-junaid
+2025-12-10 16:43:34 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/internal-medicine/assoc-prof-dr-miray-hassan
+2025-12-10 16:43:35 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-fatima-iqbal
+2025-12-10 16:43:35 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/pulmonologist/dr-zahoor-hussain
+2025-12-10 16:43:36 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/infectious-diseases/asst-prof-dr-muhammad-owais-khan
+2025-12-10 16:43:37 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/cosmetic-surgeon/dr-rafiq-tareen
+2025-12-10 16:43:38 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-physician/dr-shazia-shams
+2025-12-10 16:43:38 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali
+2025-12-10 16:43:42 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-shohab-hyder-shaikh
+2025-12-10 16:43:51 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/infectious-diseases/asst-prof-dr-muhammad-owais-khan' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/infectious-diseases/asst-prof-dr-muhammad-owais-khan", waiting until "networkidle"
+
+2025-12-10 16:43:52 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/cosmetic-surgeon/dr-rafiq-tareen' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/cosmetic-surgeon/dr-rafiq-tareen", waiting until "networkidle"
+
+2025-12-10 16:43:53 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali", waiting until "networkidle"
+
+2025-12-10 16:43:56 | ERROR    | scrapers.base_scraper:_retry:92 - Error during action 'load_page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali' (attempt 2/3): Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali", waiting until "networkidle"
+
+Traceback (most recent call last):
+
+  File "C:\Users\hstur\AppData\Local\Programs\Python\Python310\lib\threading.py", line 966, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000019B59F730A0>
+    └ <Thread(ThreadPoolExecutor-0_2, started 13956)>
+
+  File "C:\Users\hstur\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1009, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000019B59F72DD0>
+    └ <Thread(ThreadPoolExecutor-0_2, started 13956)>
+
+  File "C:\Users\hstur\AppData\Local\Programs\Python\Python310\lib\threading.py", line 946, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(ThreadPoolExecutor-0_2, started 13956)>
+    │    │        │    └ (<weakref at 0x0000019B5D619F80; to 'ThreadPoolExecutor' at 0x0000019B5D476500>, <_queue.SimpleQueue object at 0x0000019B5D46...
+    │    │        └ <Thread(ThreadPoolExecutor-0_2, started 13956)>
+    │    └ <function _worker at 0x0000019B5D501CF0>
+    └ <Thread(ThreadPoolExecutor-0_2, started 13956)>
+
+  File "C:\Users\hstur\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 77, in _worker
+    work_item.run()
+    │         └ <function _WorkItem.run at 0x0000019B5D501E10>
+    └ <concurrent.futures.thread._WorkItem object at 0x0000019B5D5CBB80>
+
+  File "C:\Users\hstur\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+             │    │   │    │       │    └ {}
+             │    │   │    │       └ <concurrent.futures.thread._WorkItem object at 0x0000019B5D5CBB80>
+             │    │   │    └ (['https://www.marham.pk/doctors/karachi/ent-surgeon/prof-dr-shakil-aqil', 'https://www.marham.pk/doctors/karachi/pediatricia...
+             │    │   └ <concurrent.futures.thread._WorkItem object at 0x0000019B5D5CBB80>
+             │    └ <bound method MultiThreadedMarhamScraper._step3_worker of <scrapers.marham.multi_threaded_scraper.MultiThreadedMarhamScraper ...
+             └ <concurrent.futures.thread._WorkItem object at 0x0000019B5D5CBB80>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\scrapers\marham\multi_threaded_scraper.py", line 274, in _step3_worker
+    scraper.load_page(doctor_url)
+    │       │         └ 'https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali'
+    │       └ <function BaseScraper.load_page at 0x0000019B5C55FA30>
+    └ <scrapers.marham_scraper.MarhamScraper object at 0x0000019B5D5CBE20>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\scrapers\base_scraper.py", line 119, in load_page
+    self._retry(_go, f"load_page: {url}")
+    │    │      └ <function BaseScraper.load_page.<locals>._go at 0x0000019B61011240>
+    │    └ <function BaseScraper._retry at 0x0000019B5C55F9A0>
+    └ <scrapers.marham_scraper.MarhamScraper object at 0x0000019B5D5CBE20>
+
+> File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\scrapers\base_scraper.py", line 81, in _retry
+    func()
+    └ <function BaseScraper.load_page.<locals>._go at 0x0000019B61011240>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\scrapers\base_scraper.py", line 117, in _go
+    self.page.goto(url, wait_until=wait_until)
+    │    │    │    │               └ 'networkidle'
+    │    │    │    └ 'https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali'
+    │    │    └ <function Page.goto at 0x0000019B5C541090>
+    │    └ <Page url='https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali'>
+    └ <scrapers.marham_scraper.MarhamScraper object at 0x0000019B5D5CBE20>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+    │    └ <function SyncBase._sync at 0x0000019B5C517250>
+    └ <Page url='https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali'>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           │    └ <method 'result' of '_asyncio.Task' objects>
+           └ <Task finished name='Task-558' coro=<Page.goto() done, defined at D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_s...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\playwright\_impl\_page.py", line 555, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+                 │    │           │      └ <function locals_to_params at 0x0000019B5C41CD30>
+                 │    │           └ <function Frame.goto at 0x0000019B5C48F1C0>
+                 │    └ <Frame name= url='https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali'>
+                 └ <Page url='https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali'>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+          │    │        └ <function Channel.send at 0x0000019B5C41D990>
+          │    └ <playwright._impl._connection.Channel object at 0x0000019B5D9061D0>
+          └ <Frame name= url='https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali'>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+                 │    │           └ <function Connection.wrap_api_call at 0x0000019B5C41F640>
+                 │    └ <playwright._impl._connection.Connection object at 0x0000019B5D628D60>
+                 └ <playwright._impl._connection.Channel object at 0x0000019B5D9061D0>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+          └ <function rewrite_error at 0x0000019B5C334F70>
+
+playwright._impl._errors.Error: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali", waiting until "networkidle"
+
+2025-12-10 16:43:56 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/internal-medicine/asst-prof-dr-sidra-rauf
+2025-12-10 16:43:57 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/nutritionist/ms-rameesha-sheikh
+2025-12-10 16:43:57 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-shohab-hyder-shaikh' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/orthopedic-surgeon/dr-shohab-hyder-shaikh", waiting until "networkidle"
+
+2025-12-10 16:43:58 | ERROR    | scrapers.base_scraper:_retry:92 - Error during action 'load_page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali' (attempt 3/3): Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali", waiting until "networkidle"
+
+Traceback (most recent call last):
+
+  File "C:\Users\hstur\AppData\Local\Programs\Python\Python310\lib\threading.py", line 966, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000019B59F730A0>
+    └ <Thread(ThreadPoolExecutor-0_2, started 13956)>
+
+  File "C:\Users\hstur\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1009, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000019B59F72DD0>
+    └ <Thread(ThreadPoolExecutor-0_2, started 13956)>
+
+  File "C:\Users\hstur\AppData\Local\Programs\Python\Python310\lib\threading.py", line 946, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(ThreadPoolExecutor-0_2, started 13956)>
+    │    │        │    └ (<weakref at 0x0000019B5D619F80; to 'ThreadPoolExecutor' at 0x0000019B5D476500>, <_queue.SimpleQueue object at 0x0000019B5D46...
+    │    │        └ <Thread(ThreadPoolExecutor-0_2, started 13956)>
+    │    └ <function _worker at 0x0000019B5D501CF0>
+    └ <Thread(ThreadPoolExecutor-0_2, started 13956)>
+
+  File "C:\Users\hstur\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 77, in _worker
+    work_item.run()
+    │         └ <function _WorkItem.run at 0x0000019B5D501E10>
+    └ <concurrent.futures.thread._WorkItem object at 0x0000019B5D5CBB80>
+
+  File "C:\Users\hstur\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+             │    │   │    │       │    └ {}
+             │    │   │    │       └ <concurrent.futures.thread._WorkItem object at 0x0000019B5D5CBB80>
+             │    │   │    └ (['https://www.marham.pk/doctors/karachi/ent-surgeon/prof-dr-shakil-aqil', 'https://www.marham.pk/doctors/karachi/pediatricia...
+             │    │   └ <concurrent.futures.thread._WorkItem object at 0x0000019B5D5CBB80>
+             │    └ <bound method MultiThreadedMarhamScraper._step3_worker of <scrapers.marham.multi_threaded_scraper.MultiThreadedMarhamScraper ...
+             └ <concurrent.futures.thread._WorkItem object at 0x0000019B5D5CBB80>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\scrapers\marham\multi_threaded_scraper.py", line 274, in _step3_worker
+    scraper.load_page(doctor_url)
+    │       │         └ 'https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali'
+    │       └ <function BaseScraper.load_page at 0x0000019B5C55FA30>
+    └ <scrapers.marham_scraper.MarhamScraper object at 0x0000019B5D5CBE20>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\scrapers\base_scraper.py", line 119, in load_page
+    self._retry(_go, f"load_page: {url}")
+    │    │      └ <function BaseScraper.load_page.<locals>._go at 0x0000019B61011240>
+    │    └ <function BaseScraper._retry at 0x0000019B5C55F9A0>
+    └ <scrapers.marham_scraper.MarhamScraper object at 0x0000019B5D5CBE20>
+
+> File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\scrapers\base_scraper.py", line 81, in _retry
+    func()
+    └ <function BaseScraper.load_page.<locals>._go at 0x0000019B61011240>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\scrapers\base_scraper.py", line 117, in _go
+    self.page.goto(url, wait_until=wait_until)
+    │    │    │    │               └ 'networkidle'
+    │    │    │    └ 'https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali'
+    │    │    └ <function Page.goto at 0x0000019B5C541090>
+    │    └ <Page url='chrome-error://chromewebdata/'>
+    └ <scrapers.marham_scraper.MarhamScraper object at 0x0000019B5D5CBE20>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+    │    └ <function SyncBase._sync at 0x0000019B5C517250>
+    └ <Page url='chrome-error://chromewebdata/'>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           │    └ <method 'result' of '_asyncio.Task' objects>
+           └ <Task finished name='Task-565' coro=<Page.goto() done, defined at D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_s...
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\playwright\_impl\_page.py", line 555, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+                 │    │           │      └ <function locals_to_params at 0x0000019B5C41CD30>
+                 │    │           └ <function Frame.goto at 0x0000019B5C48F1C0>
+                 │    └ <Frame name= url='chrome-error://chromewebdata/'>
+                 └ <Page url='chrome-error://chromewebdata/'>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+          │    │        └ <function Channel.send at 0x0000019B5C41D990>
+          │    └ <playwright._impl._connection.Channel object at 0x0000019B5D9061D0>
+          └ <Frame name= url='chrome-error://chromewebdata/'>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+                 │    │           └ <function Connection.wrap_api_call at 0x0000019B5C41F640>
+                 │    └ <playwright._impl._connection.Connection object at 0x0000019B5D628D60>
+                 └ <playwright._impl._connection.Channel object at 0x0000019B5D9061D0>
+
+  File "D:\projacts\dr_doctor_backend\dr_doctor_backend\dr_doctor_scraper\.venv\lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+          └ <function rewrite_error at 0x0000019B5C334F70>
+
+playwright._impl._errors.Error: Page.goto: net::ERR_TOO_MANY_REDIRECTS at https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali", waiting until "networkidle"
+
+2025-12-10 16:43:58 | ERROR    | scrapers.marham.multi_threaded_scraper:_step3_worker:375 - [Thread 13956] Error processing doctor https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali: Action 'load_page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/assoc-prof-dr-syed-danish-ali' failed after 3 attempts
+2025-12-10 16:43:58 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/online-consultation/dentist/karachi/dr-khadija-parveen-63213
+2025-12-10 16:43:58 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/asst-prof-dr-imran-khan-sandeelo
+2025-12-10 16:44:00 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/nephrologist/dr-ruqaya-qureshi
+2025-12-10 16:44:01 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-faryal
+2025-12-10 16:44:13 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/online-consultation/dentist/karachi/dr-khadija-parveen-63213' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/online-consultation/dentist/karachi/dr-khadija-parveen-63213", waiting until "networkidle"
+
+2025-12-10 16:44:13 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/cardiologist/asst-prof-dr-imran-khan-sandeelo' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/cardiologist/asst-prof-dr-imran-khan-sandeelo", waiting until "networkidle"
+
+2025-12-10 16:44:15 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/nephrologist/dr-ruqaya-qureshi' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/nephrologist/dr-ruqaya-qureshi", waiting until "networkidle"
+
+2025-12-10 16:44:16 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-faryal' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/physiotherapist/dr-faryal", waiting until "networkidle"
+
+2025-12-10 16:44:19 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gastroenterologist/assoc-prof-dr-sajjad-jamil
+2025-12-10 16:44:20 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-tasneem-sadiq
+2025-12-10 16:44:20 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/optometrist/dr-muhammad-hamza-khan
+2025-12-10 16:44:21 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-rakhsinda-jabeen
+2025-12-10 16:44:22 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/online-consultation/pediatrician/karachi/dr-muhammad-moin-ashraf-25171
+2025-12-10 16:44:22 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gastroenterologist/dr-mukesh-kumar
+2025-12-10 16:44:23 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-physician/dr-nadia-syed
+2025-12-10 16:44:35 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/optometrist/dr-muhammad-hamza-khan' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/optometrist/dr-muhammad-hamza-khan", waiting until "networkidle"
+
+2025-12-10 16:44:37 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/online-consultation/pediatrician/karachi/dr-muhammad-moin-ashraf-25171' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/online-consultation/pediatrician/karachi/dr-muhammad-moin-ashraf-25171", waiting until "networkidle"
+
+2025-12-10 16:44:37 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/gastroenterologist/dr-mukesh-kumar' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/gastroenterologist/dr-mukesh-kumar", waiting until "networkidle"
+
+2025-12-10 16:44:38 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-physician/dr-nadia-syed' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-physician/dr-nadia-syed", waiting until "networkidle"
+
+2025-12-10 16:44:39 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gastroenterologist/asst-prof-dr-rajesh-kumar-wadhwa
+2025-12-10 16:44:41 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/asst-prof-dr-kaleem-ullah-shaikh
+2025-12-10 16:44:42 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/bariatric-surgeon/dr-mumtaz-maher
+2025-12-10 16:44:42 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/internal-medicine/dr-muhammad-wajahatullah
+2025-12-10 16:44:43 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/prof-dr-shagufta-tahir
+2025-12-10 16:44:43 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-mehreen-khaleel
+2025-12-10 16:44:44 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/cardiologist/asst-prof-dr-najia-aslam-soomro
+2025-12-10 16:44:45 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/psychologist/sehrish-ansari
+2025-12-10 16:44:47 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/clinical-psychologist/yousaf-khan
+2025-12-10 16:44:48 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/occupational-therapist/ms-mariyam-arshad
+2025-12-10 16:44:59 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/cardiologist/asst-prof-dr-najia-aslam-soomro' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/cardiologist/asst-prof-dr-najia-aslam-soomro", waiting until "networkidle"
+
+2025-12-10 16:45:00 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/psychologist/sehrish-ansari' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/psychologist/sehrish-ansari", waiting until "networkidle"
+
+2025-12-10 16:45:02 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/clinical-psychologist/yousaf-khan' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/clinical-psychologist/yousaf-khan", waiting until "networkidle"
+
+2025-12-10 16:45:03 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/occupational-therapist/ms-mariyam-arshad' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/occupational-therapist/ms-mariyam-arshad", waiting until "networkidle"
+
+2025-12-10 16:45:04 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-physician/dr-ghullam-muhammad
+2025-12-10 16:45:05 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-ayisha-kanwal
+2025-12-10 16:45:07 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-omer-bin-khalid-jamil
+2025-12-10 16:45:07 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/eye-specialist/prof-dr-m-saeed-iqbal
+2025-12-10 16:45:09 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-dilshad-qureshi
+2025-12-10 16:45:11 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/online-consultation/dentist/karachi/dr-muhammad-abubakar-iqbal-35219
+2025-12-10 16:45:20 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/occupational-therapist/ms-mariyam-arshad' (attempt 2/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/occupational-therapist/ms-mariyam-arshad", waiting until "networkidle"
+
+2025-12-10 16:45:22 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-omer-bin-khalid-jamil' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-surgeon/dr-omer-bin-khalid-jamil", waiting until "networkidle"
+
+2025-12-10 16:45:22 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/eye-specialist/prof-dr-m-saeed-iqbal' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/eye-specialist/prof-dr-m-saeed-iqbal", waiting until "networkidle"
+
+2025-12-10 16:45:25 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/psychologist/tabassum
+2025-12-10 16:45:26 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/online-consultation/dentist/karachi/dr-muhammad-abubakar-iqbal-35219' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/online-consultation/dentist/karachi/dr-muhammad-abubakar-iqbal-35219", waiting until "networkidle"
+
+2025-12-10 16:45:26 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/prof-dr-muhammad-nadeem-khurshaidi
+2025-12-10 16:45:26 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-khalil-teneow
+2025-12-10 16:45:27 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-nabiha-sami-pt
+2025-12-10 16:45:29 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gastroenterologist/asst-prof-dr-shah-nawaz
+2025-12-10 16:45:29 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/pulmonologist/dr-mehreen-umair
+2025-12-10 16:45:42 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-nabiha-sami-pt' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/physiotherapist/dr-nabiha-sami-pt", waiting until "networkidle"
+
+2025-12-10 16:45:43 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/online-consultation/dentist/karachi/dr-muhammad-abubakar-iqbal-35219' (attempt 2/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/online-consultation/dentist/karachi/dr-muhammad-abubakar-iqbal-35219", waiting until "networkidle"
+
+2025-12-10 16:45:44 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/pulmonologist/dr-mehreen-umair' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/pulmonologist/dr-mehreen-umair", waiting until "networkidle"
+
+2025-12-10 16:45:44 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/gastroenterologist/asst-prof-dr-shah-nawaz' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/gastroenterologist/asst-prof-dr-shah-nawaz", waiting until "networkidle"
+
+2025-12-10 16:45:48 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-muhammad-moin-ashraf
+2025-12-10 16:45:49 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-masooma-zahid
+2025-12-10 16:45:49 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-anila-malik
+2025-12-10 16:45:50 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-ambreen-mehboob
+2025-12-10 16:45:51 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-areeba-tariq
+2025-12-10 16:45:51 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/online-consultation/dentist/karachi/dr-shiza-hussain-23662
+2025-12-10 16:45:51 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/maxillofacial-surgeon/dr-muhammad-farhan
+2025-12-10 16:46:05 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/dentist/dr-ambreen-mehboob' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/dentist/dr-ambreen-mehboob", waiting until "networkidle"
+
+2025-12-10 16:46:06 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-areeba-tariq' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-areeba-tariq", waiting until "networkidle"
+
+2025-12-10 16:46:06 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/online-consultation/dentist/karachi/dr-shiza-hussain-23662' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/online-consultation/dentist/karachi/dr-shiza-hussain-23662", waiting until "networkidle"
+
+2025-12-10 16:46:06 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/maxillofacial-surgeon/dr-muhammad-farhan' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/maxillofacial-surgeon/dr-muhammad-farhan", waiting until "networkidle"
+
+2025-12-10 16:46:10 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/maxillofacial-surgeon/dr-muhammad-ashfaq-younus
+2025-12-10 16:46:10 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-kashif-kibria
+2025-12-10 16:46:11 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-hamda-aftab
+2025-12-10 16:46:11 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-aisha-sami-khan
+2025-12-10 16:46:12 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-salman-yousuf-sharif
+2025-12-10 16:46:15 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/eye-surgeon/dr-waseem-uddin
+2025-12-10 16:46:15 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-sajid-khan
+2025-12-10 16:46:26 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/dermatologist/dr-aisha-sami-khan' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/dermatologist/dr-aisha-sami-khan", waiting until "networkidle"
+
+2025-12-10 16:46:27 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-salman-yousuf-sharif' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-salman-yousuf-sharif", waiting until "networkidle"
+
+2025-12-10 16:46:30 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/eye-surgeon/dr-waseem-uddin' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/eye-surgeon/dr-waseem-uddin", waiting until "networkidle"
+
+2025-12-10 16:46:30 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-fozia-qureshi
+2025-12-10 16:46:30 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/dermatologist/dr-sajid-khan' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/dermatologist/dr-sajid-khan", waiting until "networkidle"
+
+2025-12-10 16:46:32 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/optometrist/dr-uzma-naz
+2025-12-10 16:46:32 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-hamza-iqbal
+2025-12-10 16:46:35 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-farheen-amir-abbasi
+2025-12-10 16:46:36 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/pediatric-gastroenterologist/dr-muhammad-salman-khoso
+2025-12-10 16:46:36 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/maxillofacial-surgeon/dr-aisha-majid
+2025-12-10 16:46:40 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-sadaf-asim
+2025-12-10 16:46:43 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/pediatric-neuro-physician/asst-prof-dr-shazia-kulsoom
+2025-12-10 16:46:46 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-m-s-rajpal
+2025-12-10 16:46:48 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-akber-rizwan
+2025-12-10 16:46:50 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/gynecologist/dr-farheen-amir-abbasi' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/gynecologist/dr-farheen-amir-abbasi", waiting until "networkidle"
+
+2025-12-10 16:46:51 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/pediatrician/dr-dur-e-samin-akram
+2025-12-10 16:46:51 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/maxillofacial-surgeon/dr-aisha-majid' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/maxillofacial-surgeon/dr-aisha-majid", waiting until "networkidle"
+
+2025-12-10 16:46:54 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-aisha-mubashir
+2025-12-10 16:46:55 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/maxillofacial-surgeon/assoc-prof-dr-sheikh-haroon-shah
+2025-12-10 16:46:56 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-syed-adeel-ahmed
+2025-12-10 16:47:01 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/dentist/dr-m-s-rajpal' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/dentist/dr-m-s-rajpal", waiting until "networkidle"
+
+2025-12-10 16:47:07 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-manoj-rajpal
+2025-12-10 16:47:09 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/family-medicine/dr-aisha-mubashir' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/family-medicine/dr-aisha-mubashir", waiting until "networkidle"
+
+2025-12-10 16:47:10 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/maxillofacial-surgeon/assoc-prof-dr-sheikh-haroon-shah' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/maxillofacial-surgeon/assoc-prof-dr-sheikh-haroon-shah", waiting until "networkidle"
+
+2025-12-10 16:47:10 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-poonam-rani
+2025-12-10 16:47:11 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/dentist/dr-syed-adeel-ahmed' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/dentist/dr-syed-adeel-ahmed", waiting until "networkidle"
+
+2025-12-10 16:47:14 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/maxillofacial-surgeon/dr-sana-khan
+2025-12-10 16:47:14 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/dr-saima-yasir
+2025-12-10 16:47:15 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/maxillofacial-surgeon/asst-prof-dr-daud-sultan-mandikhail
+2025-12-10 16:47:15 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-practitioner/dr-mukesh-kumar
+2025-12-10 16:47:17 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/homeopath/dr-mehwish-akhter
+2025-12-10 16:47:29 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/maxillofacial-surgeon/dr-sana-khan' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/maxillofacial-surgeon/dr-sana-khan", waiting until "networkidle"
+
+2025-12-10 16:47:30 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/maxillofacial-surgeon/asst-prof-dr-daud-sultan-mandikhail' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/maxillofacial-surgeon/asst-prof-dr-daud-sultan-mandikhail", waiting until "networkidle"
+
+2025-12-10 16:47:30 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-practitioner/dr-mukesh-kumar' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-practitioner/dr-mukesh-kumar", waiting until "networkidle"
+
+2025-12-10 16:47:32 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/homeopath/dr-mehwish-akhter' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/homeopath/dr-mehwish-akhter", waiting until "networkidle"
+
+2025-12-10 16:47:33 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-ayesha-hina
+2025-12-10 16:47:35 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/vascular-surgeon/dr-imran-javed
+2025-12-10 16:47:35 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-ali-abbas-rokadia
+2025-12-10 16:47:36 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/asst-prof-dr-muhammad-asif-peracha
+2025-12-10 16:47:38 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-asif-iqbal
+2025-12-10 16:47:39 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-practitioner/dr-kashif-ayoob
+2025-12-10 16:47:40 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-shakir-ibrahim
+2025-12-10 16:47:43 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dentist/dr-m-i-ibrahim
+2025-12-10 16:47:45 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/psychiatrist/dr-shaheryar-ali
+2025-12-10 16:47:50 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/dentist/dr-ali-abbas-rokadia' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/dentist/dr-ali-abbas-rokadia", waiting until "networkidle"
+
+2025-12-10 16:47:51 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/asst-prof-dr-muhammad-asif-peracha' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/orthopedic-surgeon/asst-prof-dr-muhammad-asif-peracha", waiting until "networkidle"
+
+2025-12-10 16:47:54 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/homeopath/dr-muhammad-hassan
+2025-12-10 16:47:54 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-practitioner/dr-kashif-ayoob' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-practitioner/dr-kashif-ayoob", waiting until "networkidle"
+
+2025-12-10 16:47:56 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/diabetologist/asst-prof-dr-ali-asghar
+2025-12-10 16:48:00 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/psychiatrist/dr-shaheryar-ali' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/psychiatrist/dr-shaheryar-ali", waiting until "networkidle"
+
+2025-12-10 16:48:05 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-zafar-ahmed
+2025-12-10 16:48:09 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/homeopath/dr-muhammad-hassan' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/homeopath/dr-muhammad-hassan", waiting until "networkidle"
+
+2025-12-10 16:48:10 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/neuro-surgeon/dr-aleem-ud-din-shaikh
+2025-12-10 16:48:11 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/diabetologist/asst-prof-dr-ali-asghar' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/diabetologist/asst-prof-dr-ali-asghar", waiting until "networkidle"
+
+2025-12-10 16:48:11 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/general-practitioner/dr-kashif-ayoob' (attempt 2/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/general-practitioner/dr-kashif-ayoob", waiting until "networkidle"
+
+2025-12-10 16:48:13 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/oncologist/dr-munir-safwala
+2025-12-10 16:48:14 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-practitioner/dr-aiman-razzaq
+2025-12-10 16:48:16 | INFO     | scrapers.marham.multi_threaded_scraper:_step3_worker:379 - [Thread 22680] Step 3 worker completed: 66 doctors
+2025-12-10 16:48:16 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/ent-surgeon/dr-ahmad-nawaz
+2025-12-10 16:48:17 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/psychologist/aun-ali
+2025-12-10 16:48:17 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/online-consultation/psychiatrist/karachi/dr-marium-khan-42400
+2025-12-10 16:48:19 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/psychologist/ms-amna-qamar
+2025-12-10 16:48:31 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/ent-surgeon/dr-ahmad-nawaz' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/ent-surgeon/dr-ahmad-nawaz", waiting until "networkidle"
+
+2025-12-10 16:48:32 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/online-consultation/psychiatrist/karachi/dr-marium-khan-42400' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/online-consultation/psychiatrist/karachi/dr-marium-khan-42400", waiting until "networkidle"
+
+2025-12-10 16:48:34 | WARNING  | scrapers.base_scraper:_retry:84 - Timeout during action 'load_page: https://www.marham.pk/doctors/karachi/psychologist/ms-amna-qamar' (attempt 1/3): Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.marham.pk/doctors/karachi/psychologist/ms-amna-qamar", waiting until "networkidle"
+
+2025-12-10 16:48:35 | INFO     | scrapers.marham.multi_threaded_scraper:_step3_worker:379 - [Thread 10052] Step 3 worker completed: 66 doctors
+2025-12-10 16:48:38 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/prof-dr-habib-sharaf
+2025-12-10 16:48:38 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/homeopath/dr-rizwana-parveen
+2025-12-10 16:48:41 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/family-medicine/dr-muhammad-nawaz-wassan
+2025-12-10 16:48:42 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-physician/dr-razia-rehan
+2025-12-10 16:48:45 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/dermatologist/dr-fahim-ahmed-khan
+2025-12-10 16:48:47 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/homeopath/dr-anila-mobin
+2025-12-10 16:48:49 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/internal-medicine/prof-dr-muhammad-aurangzeb
+2025-12-10 16:48:50 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/asst-prof-dr-saifullah-khan-durrani-pt
+2025-12-10 16:48:54 | INFO     | scrapers.marham.multi_threaded_scraper:_step3_worker:379 - [Thread 13956] Step 3 worker completed: 65 doctors
+2025-12-10 16:48:55 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/gynecologist/assoc-prof-dr-zubaida-masood
+2025-12-10 16:48:58 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/eye-specialist/dr-ashar-uddin-ahmed
+2025-12-10 16:49:00 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-physician/dr-kanwal-mobarak
+2025-12-10 16:49:04 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-irshad-waheed
+2025-12-10 16:49:09 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/general-surgeon/dr-hamayun-zafar
+2025-12-10 16:49:12 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-abrar-soomro
+2025-12-10 16:49:15 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/physiotherapist/dr-ismail-rajput
+2025-12-10 16:49:19 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/orthopedic-surgeon/prof-dr-i-a-jokhio
+2025-12-10 16:49:22 | INFO     | scrapers.base_scraper:load_page:111 - Loading page: https://www.marham.pk/doctors/karachi/sonologist/dr-shahnaz-khalid
+2025-12-10 16:49:24 | INFO     | scrapers.marham.multi_threaded_scraper:_step3_worker:379 - [Thread 6724] Step 3 worker completed: 66 doctors
+2025-12-10 16:49:24 | INFO     | scrapers.marham.multi_threaded_scraper:scrape:543 - Step 3 complete: 263 doctors processed (updated: 119, skipped: 144, inserted: 0, errors: 1)
+2025-12-10 16:49:24 | INFO     | scrapers.marham.multi_threaded_scraper:scrape:551 - Multi-threaded scraping complete: total=263, hospitals=0, doctors=263, inserted=0, updated=119, skipped=144, errors=1
+2025-12-10 16:49:24 | INFO     | __main__:run_for_site:88 - Stats for marham: total=263, inserted=0, skipped=144
+2025-12-10 16:49:24 | INFO     | __main__:main:115 - === Scraping finished ===
+Total scraped: 263
+Total inserted: 0
+Total skipped: 144
