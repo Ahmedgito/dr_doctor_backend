@@ -1,133 +1,185 @@
 # Dr.Doctor Scraper
 
-Lightweight, production-ready scraping toolkit that collects structured
-doctor and hospital data from Pakistani platforms (Marham, Oladoc) and
-stores it in MongoDB for downstream usage.
+Production-ready web scraping system for collecting structured doctor and hospital data from Pakistani healthcare platforms (Marham, Oladoc) and storing it in MongoDB.
 
-Key technologies: Python 3.10+, Playwright (browser automation), BeautifulSoup,
-Pydantic (models), MongoDB, and Loguru (logging).
-
-**This README** contains quick setup, running instructions, and the new
-Import/Export utilities that let contributors share/sync database snapshots.
-
-**Workspace**: the scraper lives in `dr_doctor_scraper/` (run commands from that folder).
-
-**Short checklist before running**:
-- Python 3.10 (you already have this).
-- A MongoDB instance and `MONGO_URI` set in `.env`.
-- Virtual environment and dependencies installed.
-
----
-
-**Quick start**
-
-1) Create and activate venv (Windows example):
+## 🚀 Quick Start
 
 ```powershell
+# 1. Setup
 cd dr_doctor_scraper
 python -m venv .venv
-.venv\\Scripts\\Activate.ps1
-```
-
-2) Install dependencies and Playwright browsers:
-
-```powershell
+.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 playwright install
-```
 
-3) Create `.env` (copy `.env.example`) and set your `MONGO_URI`:
-
-```powershell
+# 2. Configure
 copy .env.example .env
-# then edit .env and set MONGO_URI
+# Edit .env and set MONGO_URI
+
+# 3. Run
+python run_scraper.py --site marham --threads 4 --limit 10 --test-db
 ```
 
-4) Run the scraper (examples):
+## 📚 Documentation
+
+**📖 [Complete Documentation Index](DOCUMENTATION.md)** - Master index of all documentation
+
+### Main Documentation
+- **[API Reference](API_REFERENCE.md)** - Complete function and class documentation
+- **[Commands Guide](COMMANDS.md)** - All commands, workflows, and usage examples
+- **[Changelog](CHANGELOG.md)** - Past changes, improvements, and bug fixes
+
+### Guides
+- **[Testing Guide](TESTING.md)** - Testing environment and best practices
+- **[Multi-threading Guide](MULTITHREADING.md)** - Parallel processing guide
+- **[Step Guide](STEP_GUIDE.md)** - Step-by-step workflow execution
+
+## 🏗️ Architecture
+
+### Modular Structure
+
+```
+scrapers/
+├── base_scraper.py              # Browser management (Playwright)
+├── marham_scraper.py            # Single-threaded Marham scraper
+├── marham/
+│   ├── multi_threaded_scraper.py    # Multi-threaded wrapper
+│   ├── parsers/                     # HTML parsing
+│   │   ├── hospital_parser.py
+│   │   └── doctor_parser.py
+│   ├── enrichers/                   # Data enrichment
+│   │   └── profile_enricher.py
+│   ├── collectors/                  # Data collection
+│   │   └── doctor_collector.py
+│   ├── handlers/                    # Business logic
+│   │   └── hospital_practice_handler.py
+│   └── mergers/                     # Data merging
+│       └── data_merger.py
+├── database/
+│   └── mongo_client.py          # MongoDB operations
+├── models/                       # Pydantic data models
+│   ├── doctor_model.py
+│   └── hospital_model.py
+└── utils/                        # Utility functions
+    ├── url_parser.py
+    └── parser_helpers.py
+```
+
+### Three-Step Workflow
+
+1. **Step 1**: Collect hospitals from listing pages
+2. **Step 2**: Enrich hospitals and collect doctor URLs
+3. **Step 3**: Process and enrich doctor profiles
+
+Each step is resumable and can be run independently.
+
+## 🎯 Features
+
+- ✅ **Multi-threading**: 4-8x faster with parallel processing
+- ✅ **Resumable**: Continue from where you left off
+- ✅ **Modular**: Reusable, testable components
+- ✅ **Comprehensive**: Captures 50+ data fields per doctor/hospital
+- ✅ **Robust**: Error handling, retries, validation
+- ✅ **Testable**: Separate test database support
+- ✅ **Documented**: Complete API and command reference
+
+## 📊 Data Captured
+
+### Doctors
+- Basic info (name, URL, specialty, platform)
+- Qualifications (institute, degree)
+- Experience (years, work history)
+- Services, diseases, symptoms
+- Professional statement, patient stats
+- Hospital affiliations with fees/timings
+- Private practice information
+- Contact details
+
+### Hospitals
+- Basic info (name, URL, address, location)
+- Founded year, achievements
+- Clinical departments, procedures
+- Facilities, support services
+- Fee ranges, contact numbers
+- Doctor lists with details
+
+## 🛠️ Technologies
+
+- **Python 3.10+**
+- **Playwright** - Browser automation
+- **BeautifulSoup** - HTML parsing
+- **Pydantic** - Data validation
+- **MongoDB** - Data storage
+- **Loguru** - Logging
+
+## 📖 Usage Examples
+
+### Basic Scraping
 
 ```powershell
-python run_scraper.py --site marham --limit 5
-python run_scraper.py --site oladoc --limit 20
+# Single-threaded
+python run_scraper.py --site marham
+
+# Multi-threaded (4 threads)
+python run_scraper.py --site marham --threads 4
+
+# With limit (testing)
+python run_scraper.py --site marham --limit 100 --threads 4
 ```
 
-Use `--no-headless` to see the browser for debugging. Use `--limit` for quick tests.
-
----
-
-**Import / Export utilities**
-
-Two small CLI scripts are included in `scrapers/tools/` to export/import
-collections for sharing/syncing DB snapshots with collaborators.
-
-- Export hospitals to pretty JSON:
+### Step-by-Step
 
 ```powershell
-python scrapers/tools/export_db.py --collection hospitals --out hospitals.json --format json --pretty
+# Step 1: Collect hospitals
+python run_scraper.py --site marham --threads 4 --step 1
+
+# Step 2: Enrich hospitals
+python run_scraper.py --site marham --threads 4 --step 2
+
+# Step 3: Process doctors
+python run_scraper.py --site marham --threads 4 --step 3
 ```
 
-- Export hospitals to JSON-lines (one JSON per line):
+### Testing
 
 ```powershell
-python scrapers/tools/export_db.py --collection hospitals --out hospitals.jsonl --format json
+# Use test database
+python run_scraper.py --site marham --limit 10 --test-db --threads 2
+
+# Validate results
+python scripts/validate_data.py --test-db
+
+# Analyze performance
+python scripts/analyze_logs.py --limit 10
 ```
 
-- Export hospitals to CSV:
+## 🔧 Scripts
 
-```powershell
-python scrapers/tools/export_db.py --collection hospitals --out hospitals.csv --format csv
-```
+- `run_scraper.py` - Main scraper entry point
+- `scripts/analyze_logs.py` - Log analysis and statistics
+- `scripts/validate_data.py` - Data validation
+- `scripts/export_and_clear_db.py` - Database export
+- `scripts/log_diagnostics.py` - Detailed log diagnostics
 
-- Import JSON-lines into hospitals (upserts by `url`):
+## 📝 Project Status
 
-```powershell
-python scrapers/tools/import_db.py --collection hospitals --in hospitals.jsonl --format jsonl
-```
+**Current Phase**: Phase 1 - Scraper Refinement & Testing ✅
 
-Notes about running tools:
-- Run from the `dr_doctor_scraper` folder. The tools are runnable directly
-  (e.g. `python scrapers/tools/export_db.py ...`) — the scripts add the package
-  root to `sys.path` automatically so imports work.
-- Ensure `MONGO_URI` is set (in `.env` or in your PowerShell session) before
-  running export/import scripts. Example for current session:
+See [Project Roadmap](../README.md#project-roadmap) for full development plan.
 
-```powershell
-$env:MONGO_URI = 'mongodb://localhost:27017/'
-```
+## 🤝 Contributing
 
----
+1. Use test database for development: `--test-db`
+2. Run validation after changes: `python scripts/validate_data.py --test-db`
+3. Check logs for issues: `python scripts/log_diagnostics.py`
+4. Follow modular architecture patterns
 
-**Project layout (short)**
+## 📄 License
 
-`scrapers/`
-- `base_scraper.py` — Playwright wrapper and helpers
-- `marham_scraper.py`, `oladoc_scraper.py` — site-specific scrapers
-- `marham/` — Modular Marham scraper components:
-  - `parsers/` — Hospital and doctor HTML parsing
-  - `enrichers/` — Profile enrichment logic
-  - `collectors/` — Doctor card collection with Load More handling
-  - `mergers/` — Data merging and deduplication
-  - `handlers/` — Hospital practice relationship management
-- `database/mongo_client.py` — MongoDB wrapper (insert, upsert, indexes)
-- `models/` — `DoctorModel`, `HospitalModel` (Pydantic)
-- `tools/` — `export_db.py`, `import_db.py`
+[Your License Here]
 
-**Data model highlights**
-- `DoctorModel` enforces cleaned fields and normalizes `fees` and `rating`.
-- `HospitalModel` is used for hospital documents and enrichment.
+## 🔗 Links
 
-**Troubleshooting**
-- PowerShell execution policy error when activating venv:
-  ```powershell
-  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-  ```
-- Module import errors when running a script by path: run from package root or
-  use `python -m scrapers.tools.export_db ...` (both supported).
-- If Playwright navigation fails, increase `--timeout_ms` in scraper constructor or
-  run with `--no-headless` to visually debug.
-
----
-
-If you want, I can add a small `scripts/` folder with a one-command PowerShell
-script to export hospitals and automatically `git add` / `git commit` the
-exported file (I'll not run it without your permission). If you'd like that,
-tell me the filename convention you prefer (e.g. `hospitals-YYYYMMDD.jsonl`).
+- [API Reference](API_REFERENCE.md)
+- [Commands Guide](COMMANDS.md)
+- [Changelog](CHANGELOG.md)

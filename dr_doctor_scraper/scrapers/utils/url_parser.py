@@ -43,21 +43,42 @@ def parse_hospital_url(url: str) -> Dict[str, Optional[str]]:
 
 
 def is_hospital_url(url: str) -> bool:
-    """Check if URL is a hospital URL."""
+    """Check if URL is a hospital URL.
+    
+    Args:
+        url: URL string to check
+        
+    Returns:
+        True if URL contains '/hospitals/' path segment
+    """
     if not url:
         return False
     return "/hospitals/" in url
 
 
 def is_doctor_url(url: str) -> bool:
-    """Check if URL is a doctor profile URL."""
+    """Check if URL is a doctor profile URL.
+    
+    Args:
+        url: URL string to check
+        
+    Returns:
+        True if URL contains '/doctors/' path segment
+    """
     if not url:
         return False
     return "/doctors/" in url
 
 
 def is_video_consultation_url(url: str) -> bool:
-    """Check if URL is for video consultation (private practice)."""
+    """Check if URL is for video consultation (private practice).
+    
+    Args:
+        url: URL string to check
+        
+    Returns:
+        True if URL contains 'video' or 'consultation' keywords
+    """
     if not url:
         return False
     # Video consultation URLs might have specific patterns
