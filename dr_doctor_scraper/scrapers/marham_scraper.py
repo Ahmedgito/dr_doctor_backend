@@ -181,25 +181,49 @@ class MarhamScraper(BaseScraper):
         except Exception:
             logger.debug("Could not load or parse doctor profile: {}", doctor.profile_url)
 
-        # Upsert doctor with merge
-        if self.mongo_client.doctor_exists(doctor.profile_url):
-            existing_doctor = self.mongo_client.doctors.find_one({"profile_url": doctor.profile_url})
+        # Upsert doctor with merge (prevents data leaks - preserves existing data)
+        existing_doctor = self.mongo_client.doctors.find_one({"profile_url": doctor.profile_url})
+        
+        if existing_doctor:
+            # Merge existing data with new data (preserves existing fields, prevents data leaks)
             merged = self.data_merger.merge_doctor_records(existing_doctor, doctor)
             if merged:
                 try:
-                    self.mongo_client.doctors.update_one({"profile_url": doctor.profile_url}, {"$set": merged})
+                    # Update with merged data and set status to "processed"
+                    # Use $set to only update specified fields (prevents data leaks)
+                    self.mongo_client.doctors.update_one(
+                        {"profile_url": doctor.profile_url},
+                        {"$set": {**merged, "scrape_status": "processed"}}
+                    )
+                    # Also update status separately to ensure it's set
+                    self.mongo_client.update_doctor_status(doctor.profile_url, "processed")
                     stats["updated"] += 1
+                    stats["doctors"] += 1
+                    logger.debug("Updated doctor: {} (status: processed)", doctor.profile_url)
                 except Exception as exc:  # noqa: BLE001
                     logger.warning("Failed to update doctor {}: {}", doctor.profile_url, exc)
+                    stats["errors"] = stats.get("errors", 0) + 1
             else:
+                # No changes needed, but ensure status is updated
+                self.mongo_client.update_doctor_status(doctor.profile_url, "processed")
                 stats["skipped"] += 1
+                stats["doctors"] += 1
+                logger.debug("Skipped doctor (no changes): {} (status: processed)", doctor.profile_url)
         else:
+            # New doctor - insert with status "processed"
             try:
-                self.mongo_client.insert_doctor(doctor.dict())
+                doctor_dict = doctor.dict()
+                doctor_dict["scrape_status"] = "processed"
+                # Use insert_doctor which now uses upsert to prevent duplicates
+                self.mongo_client.insert_doctor(doctor_dict)
+                # Ensure status is set
+                self.mongo_client.update_doctor_status(doctor.profile_url, "processed")
                 stats["inserted"] += 1
                 stats["doctors"] += 1
+                logger.debug("Inserted new doctor: {} (status: processed)", doctor.profile_url)
             except Exception as exc:  # noqa: BLE001
                 logger.warning("Failed to insert doctor {}: {}", doctor.profile_url, exc)
+                stats["errors"] = stats.get("errors", 0) + 1
 
     def scrape(self, limit: Optional[int] = None, step: Optional[int] = None) -> Dict[str, int]:
         """Resumable scraping workflow with four steps:
@@ -288,20 +312,26 @@ class MarhamScraper(BaseScraper):
             logger.info("Processing hospitals for city: {} ({})", city_name, city_url)
             
             # Extract city slug from URL for pagination
-            # URL format: https://www.marham.pk/hospitals/{city}
+            # URL format: https://www.marham.pk/hospitals/{city} or https://www.marham.pk/hospitals/{city}?page=x
+            # We need to strip any existing query parameters to build clean pagination URLs
             if "/hospitals/" in city_url:
-                city_slug = city_url.split("/hospitals/")[-1].split("?")[0]
+                # Extract the city slug, removing any query parameters
+                city_slug = city_url.split("/hospitals/")[-1].split("?")[0].strip()
+                if not city_slug:
+                    logger.warning("Empty city slug extracted from URL: {}", city_url)
+                    continue
             else:
-                logger.warning("Invalid city URL format: {}", city_url)
+                logger.warning("Invalid city URL format (missing /hospitals/): {}", city_url)
                 continue
             
             page = 1
             city_collected = 0
             
             while True:
-                # Build URL for this city and page
+                # Build clean URL for this city and page
+                # Format: https://www.marham.pk/hospitals/{city_slug}?page={page}
                 url = f"{BASE_URL}/hospitals/{city_slug}?page={page}"
-                logger.debug("Loading hospitals page: {}", url)
+                logger.debug("Loading hospitals page {} for city {}: {}", page, city_name, url)
                 
                 try:
                     self.load_page(url)
@@ -320,10 +350,12 @@ class MarhamScraper(BaseScraper):
                     if not h.get("name") or not h.get("url"):
                         continue
 
-                    # Check if hospital already exists in DB
-                    existing = self.mongo_client.hospitals.find_one({"url": h.get("url")})
+                    hospital_url = h.get("url")
+                    
+                    # Check if hospital already exists in DB by URL (unique identifier)
+                    existing = self.mongo_client.hospitals.find_one({"url": hospital_url})
                     if existing:
-                        logger.debug("Hospital already in DB: {}", h.get("url"))
+                        logger.debug("Hospital already in DB (skipping duplicate): {} ({})", h.get("name"), hospital_url)
                         city_collected += 1
                         continue
 

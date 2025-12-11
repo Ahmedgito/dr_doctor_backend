@@ -2,6 +2,7 @@ import os
 from typing import Optional, Dict
 from pymongo import MongoClient, ASCENDING
 from dotenv import load_dotenv
+from scrapers.logger import logger
 
 load_dotenv()
 
@@ -21,7 +22,10 @@ class MongoClientManager:
         self.cities = self.db["cities"]
 
         self.doctors.create_index([("profile_url", ASCENDING)], unique=True)
-        self.hospitals.create_index([("name", ASCENDING), ("address", ASCENDING)], unique=True)
+        # Use URL as unique identifier for hospitals (more reliable than name+address)
+        self.hospitals.create_index([("url", ASCENDING)], unique=True)
+        # Keep name+address as a non-unique index for queries
+        self.hospitals.create_index([("name", ASCENDING), ("address", ASCENDING)])
         self.cities.create_index([("url", ASCENDING)], unique=True)
 
     # ------------ Doctors -----------------
@@ -29,35 +33,64 @@ class MongoClientManager:
         return self.doctors.find_one({"profile_url": url}) is not None
 
     def insert_doctor(self, doc: Dict) -> Optional[str]:
+        """Insert doctor using upsert to prevent duplicates.
+        
+        Uses profile_url as unique identifier. If doctor exists, updates it.
+        Returns inserted/updated document ID or None on failure.
+        """
         try:
-            result = self.doctors.insert_one(doc)
-            return str(result.inserted_id)
-        except Exception:
+            profile_url = doc.get("profile_url")
+            if not profile_url:
+                logger.warning("Cannot insert doctor without profile_url")
+                return None
+            
+            # Use upsert to prevent duplicates
+            result = self.doctors.update_one(
+                {"profile_url": profile_url},
+                {"$set": doc},
+                upsert=True
+            )
+            if result.upserted_id:
+                return str(result.upserted_id)
+            # If updated, get the existing document ID
+            existing = self.doctors.find_one({"profile_url": profile_url})
+            return str(existing["_id"]) if existing else None
+        except Exception as exc:
+            logger.warning("Failed to insert/update doctor {}: {}", doc.get("profile_url"), exc)
             return None
 
     def upsert_minimal_doctor(self, profile_url: str, name: str, hospital_url: Optional[str] = None) -> bool:
         """Insert or update a minimal doctor record (just name + profile_url).
         
-        Used during Phase 1 to save doctor URLs for later processing.
+        Used during Step 2 to save doctor URLs for later processing.
         If doctor already exists with full data, this won't overwrite it.
+        Only sets minimal fields if doctor doesn't exist.
         """
         try:
             existing = self.doctors.find_one({"profile_url": profile_url})
             if existing:
-                # Doctor already exists, don't overwrite
+                # Doctor already exists - don't overwrite existing data
+                # Only update scrape_status if it's missing or still "pending"
+                if existing.get("scrape_status") not in ["processed", "enriched"]:
+                    self.doctors.update_one(
+                        {"profile_url": profile_url},
+                        {"$set": {"scrape_status": "pending"}}
+                    )
                 return True
             
-            # Insert minimal record
+            # Insert minimal record only if doctor doesn't exist
             minimal_doc = {
                 "profile_url": profile_url,
                 "name": name,
-                "platform": "marham",  # Will be updated during Phase 2
-                "specialty": [],  # Will be populated during Phase 2
+                "platform": "marham",
+                "specialty": [],  # Will be populated during Step 3
                 "scrape_status": "pending"  # Track that this needs processing
             }
             self.doctors.insert_one(minimal_doc)
             return True
-        except Exception:
+        except Exception as exc:
+            # Handle duplicate key errors (shouldn't happen with proper check)
+            logger.warning("Failed to upsert minimal doctor {}: {}", profile_url, exc)
             return False
 
     # ------------ Hospitals -----------------
@@ -80,25 +113,29 @@ class MongoClientManager:
             pass
 
     def update_hospital(self, url: Optional[str], doc: Dict) -> bool:
-        """Update hospital document by `url` if present, otherwise try name+address.
+        """Update hospital document by `url` (primary method).
 
         Performs an upsert so minimal entries inserted earlier will be enriched.
+        URL is the unique identifier to prevent duplicates.
         Returns True on success, False otherwise.
         """
         try:
-            if url:
-                result = self.hospitals.update_one({"url": url}, {"$set": doc}, upsert=True)
-                return bool(result.raw_result.get("ok", 0))
-
-            # Fallback: try match by name + address
-            name = doc.get("name")
-            address = doc.get("address")
-            if name and address:
-                result = self.hospitals.update_one({"name": name, "address": address}, {"$set": doc}, upsert=True)
-                return bool(result.raw_result.get("ok", 0))
-
-            return False
-        except Exception:
+            # URL is required for proper deduplication
+            hospital_url = url or doc.get("url")
+            if not hospital_url:
+                logger.warning("Cannot update hospital without URL: {}", doc.get("name"))
+                return False
+            
+            # Use URL as the unique identifier (prevents duplicates)
+            result = self.hospitals.update_one(
+                {"url": hospital_url}, 
+                {"$set": doc}, 
+                upsert=True
+            )
+            return bool(result.raw_result.get("ok", 0))
+        except Exception as exc:
+            # Handle duplicate key errors gracefully
+            logger.warning("Failed to update hospital {}: {}", doc.get("name"), exc)
             return False
 
     def get_hospitals_needing_enrichment(self, limit: Optional[int] = None):
