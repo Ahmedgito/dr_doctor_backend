@@ -66,13 +66,15 @@ class MultiThreadedMarhamScraper:
                 if key in self.stats:
                     self.stats[key] += value
     
-    def _step1_worker(self, cities: List[dict], limit: Optional[int], num_threads: int) -> Dict[str, int]:
-        """Worker thread for Step 1: Collect hospitals from listing pages for assigned cities.
+    def _step1_worker(self, city_queue: Queue, limit: Optional[int]) -> Dict[str, int]:
+        """Worker thread for Step 1: Collect hospitals from listing pages.
+        
+        Uses a queue-based approach where threads pull cities dynamically.
+        This ensures threads stay busy even when cities have varying page counts.
         
         Args:
-            cities: List of city documents to process
-            limit: Maximum number of hospitals to collect (None = no limit)
-            num_threads: Total number of threads (for limit distribution)
+            city_queue: Thread-safe queue containing city documents to process
+            limit: Global limit on hospitals to collect (None = no limit)
             
         Returns:
             Statistics dictionary
@@ -88,21 +90,31 @@ class MultiThreadedMarhamScraper:
                 timeout_ms=self.timeout_ms,
                 max_retries=self.max_retries,
             ) as scraper:
-                logger.info(f"[Thread {thread_id}] Starting Step 1 worker for {len(cities)} cities")
+                logger.info(f"[Thread {thread_id}] Starting Step 1 worker (queue-based)")
                 
-                thread_limit = (limit // num_threads) + 1 if limit else None
                 total_collected = 0
+                cities_processed = 0
                 
-                for city_doc in cities:
-                    # Check thread limit
-                    if thread_limit and total_collected >= thread_limit:
-                        logger.info(f"[Thread {thread_id}] Reached thread limit of {thread_limit} hospitals")
+                # Keep pulling cities from queue until it's empty
+                while True:
+                    try:
+                        # Get next city from queue (timeout after 1 second to check if queue is empty)
+                        city_doc = city_queue.get(timeout=1)
+                    except:
+                        # Queue is empty, we're done
+                        break
+                    
+                    # Check global limit
+                    if limit and total_collected >= limit:
+                        # Put city back in queue for other threads
+                        city_queue.put(city_doc)
                         break
                     
                     city_name = city_doc.get("name", "Unknown")
                     city_url = city_doc.get("url")
                     
                     if not city_url:
+                        city_queue.task_done()
                         continue
                     
                     logger.info(f"[Thread {thread_id}] Processing city: {city_name} ({city_url})")
@@ -112,9 +124,11 @@ class MultiThreadedMarhamScraper:
                         city_slug = city_url.split("/hospitals/")[-1].split("?")[0].strip()
                         if not city_slug:
                             logger.warning(f"[Thread {thread_id}] Empty city slug for: {city_url}")
+                            city_queue.task_done()
                             continue
                     else:
                         logger.warning(f"[Thread {thread_id}] Invalid city URL: {city_url}")
+                        city_queue.task_done()
                         continue
                     
                     page = 1
@@ -122,8 +136,8 @@ class MultiThreadedMarhamScraper:
                     
                     # Process all pages for this city
                     while True:
-                        # Check thread limit
-                        if thread_limit and total_collected >= thread_limit:
+                        # Check global limit
+                        if limit and total_collected >= limit:
                             break
                         
                         # Build URL for this city and page
@@ -159,6 +173,9 @@ class MultiThreadedMarhamScraper:
                         
                         # Process hospitals from this page
                         for h in hospitals:
+                            if limit and total_collected >= limit:
+                                break
+                            
                             if not h.get("name") or not h.get("url"):
                                 continue
                             
@@ -204,6 +221,9 @@ class MultiThreadedMarhamScraper:
                                 logger.warning(f"[Thread {thread_id}] Failed to save hospital: {exc}")
                                 worker_stats["errors"] += 1
                         
+                        if limit and total_collected >= limit:
+                            break
+                        
                         page += 1
                         time.sleep(0.5)  # Polite pause between pages
                     
@@ -211,8 +231,11 @@ class MultiThreadedMarhamScraper:
                     if city_collected > 0:
                         self.mongo_client.update_city_status(city_url, "scraped")
                         logger.info(f"[Thread {thread_id}] City {city_name} completed: {city_collected} hospitals")
+                    
+                    cities_processed += 1
+                    city_queue.task_done()
                 
-                logger.info(f"[Thread {thread_id}] Step 1 worker completed: {worker_stats['hospitals']} hospitals")
+                logger.info(f"[Thread {thread_id}] Step 1 worker completed: {worker_stats['hospitals']} hospitals from {cities_processed} cities")
                 
         except Exception as exc:
             logger.error(f"[Thread {thread_id}] Step 1 worker failed: {exc}")
@@ -220,11 +243,13 @@ class MultiThreadedMarhamScraper:
         
         return worker_stats
     
-    def _step1_retry_pages_worker(self, pages: List[dict]) -> Dict[str, int]:
+    def _step1_retry_pages_worker(self, page_queue: Queue) -> Dict[str, int]:
         """Worker thread for retrying failed pages.
         
+        Uses a queue-based approach where threads pull pages dynamically.
+        
         Args:
-            pages: List of page documents to retry
+            page_queue: Thread-safe queue containing page documents to retry
             
         Returns:
             Statistics dictionary
@@ -239,14 +264,25 @@ class MultiThreadedMarhamScraper:
                 timeout_ms=self.timeout_ms,
                 max_retries=self.max_retries,
             ) as scraper:
-                logger.info(f"[Thread {thread_id}] Starting retry worker for {len(pages)} pages")
+                logger.info(f"[Thread {thread_id}] Starting retry worker (queue-based)")
                 
-                for page_doc in pages:
+                pages_processed = 0
+                
+                # Keep pulling pages from queue until it's empty
+                while True:
+                    try:
+                        # Get next page from queue (timeout after 1 second to check if queue is empty)
+                        page_doc = page_queue.get(timeout=1)
+                    except:
+                        # Queue is empty, we're done
+                        break
                     url = page_doc.get("url")
                     city_name = page_doc.get("city_name", "Unknown")
                     page_number = page_doc.get("page_number", 0)
                     
                     if not url:
+                        page_queue.task_done()
+                        pages_processed += 1
                         continue
                     
                     logger.info(f"[Thread {thread_id}] Retrying page {page_number} for city {city_name}: {url}")
@@ -263,6 +299,8 @@ class MultiThreadedMarhamScraper:
                         if not hospitals:
                             logger.debug(f"[Thread {thread_id}] No hospitals found on retried page: {url}")
                             self.mongo_client.mark_page_success(url)
+                            page_queue.task_done()
+                            pages_processed += 1
                             continue
                         
                         # Process hospitals
@@ -320,9 +358,11 @@ class MultiThreadedMarhamScraper:
                         self.mongo_client.mark_page_failed(url, str(exc))
                         worker_stats["errors"] += 1
                     
+                    pages_processed += 1
+                    page_queue.task_done()
                     time.sleep(0.5)  # Polite pause
                 
-                logger.info(f"[Thread {thread_id}] Retry worker completed: {worker_stats['hospitals']} hospitals")
+                logger.info(f"[Thread {thread_id}] Retry worker completed: {worker_stats['hospitals']} hospitals from {pages_processed} pages")
                 
         except Exception as exc:
             logger.error(f"[Thread {thread_id}] Retry worker failed: {exc}")
@@ -330,11 +370,14 @@ class MultiThreadedMarhamScraper:
         
         return worker_stats
     
-    def _step2_worker(self, hospital_urls: List[str]) -> Dict[str, int]:
+    def _step2_worker(self, hospital_queue: Queue) -> Dict[str, int]:
         """Worker thread for Step 2: Enrich hospitals and collect doctors.
         
+        Uses a queue-based approach where threads pull hospitals dynamically.
+        This ensures threads stay busy even when hospitals have varying processing times.
+        
         Args:
-            hospital_urls: List of hospital URLs to process
+            hospital_queue: Thread-safe queue containing hospital URLs to process
             
         Returns:
             Statistics dictionary
@@ -349,9 +392,19 @@ class MultiThreadedMarhamScraper:
                 timeout_ms=self.timeout_ms,
                 max_retries=self.max_retries,
             ) as scraper:
-                logger.info(f"[Thread {thread_id}] Starting Step 2 worker for {len(hospital_urls)} hospitals")
+                logger.info(f"[Thread {thread_id}] Starting Step 2 worker (queue-based)")
                 
-                for hospital_url in hospital_urls:
+                hospitals_processed = 0
+                
+                # Keep pulling hospitals from queue until it's empty
+                while True:
+                    try:
+                        # Get next hospital from queue (timeout after 1 second to check if queue is empty)
+                        hospital_url = hospital_queue.get(timeout=1)
+                    except:
+                        # Queue is empty, we're done
+                        break
+                    
                     try:
                         # Load and enrich hospital
                         scraper.load_page(hospital_url)
@@ -404,9 +457,11 @@ class MultiThreadedMarhamScraper:
                     except Exception as exc:
                         logger.error(f"[Thread {thread_id}] Error processing hospital {hospital_url}: {exc}")
                         worker_stats["errors"] += 1
-                        continue
+                    finally:
+                        hospitals_processed += 1
+                        hospital_queue.task_done()
                 
-                logger.info(f"[Thread {thread_id}] Step 2 worker completed: {worker_stats['hospitals']} hospitals, {worker_stats['doctors']} doctors")
+                logger.info(f"[Thread {thread_id}] Step 2 worker completed: {worker_stats['hospitals']} hospitals, {worker_stats['doctors']} doctors from {hospitals_processed} hospitals")
                 
         except Exception as exc:
             logger.error(f"[Thread {thread_id}] Step 2 worker failed: {exc}")
@@ -414,11 +469,14 @@ class MultiThreadedMarhamScraper:
         
         return worker_stats
     
-    def _step3_worker(self, doctor_urls: List[str]) -> Dict[str, int]:
+    def _step3_worker(self, doctor_queue: Queue) -> Dict[str, int]:
         """Worker thread for Step 3: Process doctor profiles.
         
+        Uses a queue-based approach where threads pull doctors dynamically.
+        This ensures threads stay busy even when doctors have varying processing times.
+        
         Args:
-            doctor_urls: List of doctor profile URLs to process
+            doctor_queue: Thread-safe queue containing doctor profile URLs to process
             
         Returns:
             Statistics dictionary
@@ -433,14 +491,26 @@ class MultiThreadedMarhamScraper:
                 timeout_ms=self.timeout_ms,
                 max_retries=self.max_retries,
             ) as scraper:
-                logger.info(f"[Thread {thread_id}] Starting Step 3 worker for {len(doctor_urls)} doctors")
+                logger.info(f"[Thread {thread_id}] Starting Step 3 worker (queue-based)")
                 
-                for doctor_url in doctor_urls:
+                doctors_processed = 0
+                
+                # Keep pulling doctors from queue until it's empty
+                while True:
+                    try:
+                        # Get next doctor from queue (timeout after 1 second to check if queue is empty)
+                        doctor_url = doctor_queue.get(timeout=1)
+                    except:
+                        # Queue is empty, we're done
+                        break
+                    
                     try:
                         # Get minimal doctor record from database
                         doctor_doc = self.mongo_client.doctors.find_one({"profile_url": doctor_url})
                         if not doctor_doc:
                             logger.warning(f"[Thread {thread_id}] Doctor not found in DB: {doctor_url}")
+                            doctors_processed += 1
+                            doctor_queue.task_done()
                             continue
                         
                         # Filter out MongoDB _id field
@@ -644,17 +714,21 @@ class MultiThreadedMarhamScraper:
         if step is None or step == 1:
             logger.info("Step 1: Collecting hospitals from listing pages (per city)...")
             
-            # First, process failed/pending pages
+            # First, process failed/pending pages using queue-based approach
             failed_pages = self.mongo_client.get_pages_needing_retry()
             if failed_pages:
-                logger.info(f"Found {len(failed_pages)} pages that need retry")
-                # Distribute failed pages across threads
-                page_chunks = self._distribute_work(failed_pages, self.num_threads)
+                logger.info(f"Found {len(failed_pages)} pages that need retry (using dynamic queue)")
                 
+                # Create queue and add all pages
+                page_queue = Queue()
+                for page in failed_pages:
+                    page_queue.put(page)
+                
+                # Process pages in parallel using queue (threads pull pages dynamically)
                 with ThreadPoolExecutor(max_workers=self.num_threads) as executor:
                     futures = [
-                        executor.submit(self._step1_retry_pages_worker, chunk) 
-                        for chunk in page_chunks if chunk
+                        executor.submit(self._step1_retry_pages_worker, page_queue) 
+                        for _ in range(self.num_threads)
                     ]
                     for future in as_completed(futures):
                         try:
@@ -663,6 +737,9 @@ class MultiThreadedMarhamScraper:
                         except Exception as exc:
                             logger.error(f"Step 1 retry pages worker failed: {exc}")
                             self._update_stats({"errors": 1})
+                
+                # Wait for all tasks to complete
+                page_queue.join()
             
             # Then, get all cities that need scraping
             cities_cursor = self.mongo_client.get_cities_needing_scraping()
@@ -671,21 +748,20 @@ class MultiThreadedMarhamScraper:
             if not cities:
                 logger.warning("No cities found in database. Run Step 0 first to collect cities.")
             else:
-                logger.info(f"Found {len(cities)} cities to process")
+                logger.info(f"Found {len(cities)} cities to process (using dynamic queue distribution)")
                 
-                # Distribute cities across threads
-                city_chunks = self._distribute_work(cities, self.num_threads)
+                # Create queue and add all cities
+                city_queue = Queue()
+                for city in cities:
+                    city_queue.put(city)
                 
-                logger.info(f"Distributing {len(cities)} cities across {self.num_threads} threads")
-                for i, chunk in enumerate(city_chunks):
-                    if chunk:
-                        logger.info(f"  Thread {i+1}: {len(chunk)} cities")
-                
-                # Process cities in parallel
+                # Process cities in parallel using queue (threads pull cities dynamically)
+                # This ensures threads stay busy - when one finishes a small city, it immediately
+                # picks up the next city, preventing idle time
                 with ThreadPoolExecutor(max_workers=self.num_threads) as executor:
                     futures = [
-                        executor.submit(self._step1_worker, chunk, limit, self.num_threads) 
-                        for chunk in city_chunks if chunk
+                        executor.submit(self._step1_worker, city_queue, limit) 
+                        for _ in range(self.num_threads)
                     ]
                     for future in as_completed(futures):
                         try:
@@ -695,21 +771,31 @@ class MultiThreadedMarhamScraper:
                             logger.error(f"Step 1 worker failed: {exc}")
                             self._update_stats({"errors": 1})
                 
+                # Wait for all tasks to complete
+                city_queue.join()
+                
                 logger.info(f"Step 1 complete: {self.stats['hospitals']} hospitals collected across all cities")
         
-        # Step 2: Enrich hospitals and collect doctors (parallel)
+        # Step 2: Enrich hospitals and collect doctors (parallel, queue-based)
         if step is None or step == 2:
             logger.info("Step 2: Enriching hospitals and collecting doctors...")
             hospitals = list(self.mongo_client.get_hospitals_needing_enrichment(limit=limit))
             hospital_urls = [h["url"] for h in hospitals if h.get("url")]
             
-            logger.info(f"Found {len(hospital_urls)} hospitals needing enrichment")
+            logger.info(f"Found {len(hospital_urls)} hospitals needing enrichment (using dynamic queue distribution)")
             
             if hospital_urls:
-                url_chunks = self._distribute_work(hospital_urls, self.num_threads)
+                # Create queue and add all hospital URLs
+                hospital_queue = Queue()
+                for url in hospital_urls:
+                    hospital_queue.put(url)
                 
+                # Process hospitals in parallel using queue (threads pull hospitals dynamically)
                 with ThreadPoolExecutor(max_workers=self.num_threads) as executor:
-                    futures = [executor.submit(self._step2_worker, chunk) for chunk in url_chunks if chunk]
+                    futures = [
+                        executor.submit(self._step2_worker, hospital_queue) 
+                        for _ in range(self.num_threads)
+                    ]
                     for future in as_completed(futures):
                         try:
                             stats = future.result()
@@ -717,6 +803,9 @@ class MultiThreadedMarhamScraper:
                         except Exception as exc:
                             logger.error(f"Step 2 worker failed: {exc}")
                             self._update_stats({"errors": 1})
+                
+                # Wait for all tasks to complete
+                hospital_queue.join()
             
             logger.info(f"Step 2 complete: {self.stats['hospitals']} hospitals enriched, {self.stats['doctors']} doctors collected")
         
@@ -726,13 +815,20 @@ class MultiThreadedMarhamScraper:
             doctors = list(self.mongo_client.get_doctors_needing_processing(limit=None))
             doctor_urls = [d["profile_url"] for d in doctors if d.get("profile_url")]
             
-            logger.info(f"Found {len(doctor_urls)} doctors needing processing")
+            logger.info(f"Found {len(doctor_urls)} doctors needing processing (using dynamic queue distribution)")
             
             if doctor_urls:
-                url_chunks = self._distribute_work(doctor_urls, self.num_threads)
+                # Create queue and add all doctor URLs
+                doctor_queue = Queue()
+                for url in doctor_urls:
+                    doctor_queue.put(url)
                 
+                # Process doctors in parallel using queue (threads pull doctors dynamically)
                 with ThreadPoolExecutor(max_workers=self.num_threads) as executor:
-                    futures = [executor.submit(self._step3_worker, chunk) for chunk in url_chunks if chunk]
+                    futures = [
+                        executor.submit(self._step3_worker, doctor_queue) 
+                        for _ in range(self.num_threads)
+                    ]
                     for future in as_completed(futures):
                         try:
                             stats = future.result()
@@ -740,6 +836,9 @@ class MultiThreadedMarhamScraper:
                         except Exception as exc:
                             logger.error(f"Step 3 worker failed: {exc}")
                             self._update_stats({"errors": 1})
+                
+                # Wait for all tasks to complete
+                doctor_queue.join()
             
             # Step 3 doctors count should be sum of updated + skipped + inserted
             # Note: errors are not counted in doctors processed
