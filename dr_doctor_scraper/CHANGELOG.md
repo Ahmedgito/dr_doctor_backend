@@ -2,6 +2,37 @@
 
 All notable changes to the Dr.Doctor Scraper project.
 
+## [2025-12-09] - City Collection & Step 0
+
+### Added
+- **Step 0: City Collection** - New entry point for collecting all cities
+  - Collects cities from https://www.marham.pk/hospitals
+  - Extracts cities from "Top Cities" and "Other Cities" sections
+  - Uses simple HTTP requests (no browser needed)
+  - Saves to new `cities` MongoDB collection
+  - Each city has: name, URL, scrape_status (pending/scraped)
+- **CityModel** - Pydantic model for city data
+- **CityCollector** - HTTP-based city collection module
+- **Cities Collection** - New MongoDB collection with unique index on URL
+- Step 1 now iterates through cities and processes hospitals per city
+
+### Changed
+- Step numbering updated: Old Step 1→New Step 1, Old Step 2→New Step 2, Old Step 3→New Step 3
+- Step 1 now processes hospitals per city from the cities collection
+- Cities are marked as "scraped" after hospitals are collected
+- Updated all documentation to reflect 4-step workflow
+
+### Database Changes
+- New `cities` collection with fields:
+  - `name`: City name
+  - `url`: City URL (format: https://www.marham.pk/hospitals/{city})
+  - `platform`: "marham"
+  - `scrape_status`: "pending" or "scraped"
+  - `scraped_at`: Timestamp when city was marked as scraped
+  - `created_at`: Timestamp when city was added
+
+---
+
 ## [2025-12-09] - Major Refactoring & Consolidation
 
 ### Documentation Consolidation

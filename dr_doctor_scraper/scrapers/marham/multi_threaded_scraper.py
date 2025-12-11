@@ -431,7 +431,7 @@ class MultiThreadedMarhamScraper:
         Args:
             limit: Maximum number of hospitals to process (None = no limit)
             max_pages: Maximum number of listing pages to check (default: 500)
-            step: Run only a specific step (1, 2, or 3). None = run all steps
+            step: Run only a specific step (0, 1, 2, or 3). None = run all steps
             
         Returns:
             Aggregated statistics dictionary
@@ -440,6 +440,25 @@ class MultiThreadedMarhamScraper:
         
         if step is not None:
             logger.info(f"Running only Step {step}")
+        
+        # Step 0: Collect cities (single-threaded, simple HTTP request)
+        if step is None or step == 0:
+            logger.info("Step 0: Collecting cities from hospitals page...")
+            from scrapers.marham.collectors.city_collector import CityCollector
+            city_collector = CityCollector()
+            cities = city_collector.collect_cities()
+            
+            cities_collected = 0
+            for city_data in cities:
+                name = city_data.get("name")
+                url = city_data.get("url")
+                if name and url:
+                    if self.mongo_client.upsert_city(name, url):
+                        cities_collected += 1
+                        logger.info("Saved city: {} -> {}", name, url)
+            
+            self._update_stats({"cities": cities_collected})
+            logger.info("Step 0 completed: {} cities collected", cities_collected)
         
         # Step 1: Collect hospitals from listing pages (parallel)
         if step is None or step == 1:

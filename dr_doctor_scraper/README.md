@@ -65,11 +65,12 @@ scrapers/
     └── parser_helpers.py
 ```
 
-### Three-Step Workflow
+### Four-Step Workflow
 
-1. **Step 1**: Collect hospitals from listing pages
-2. **Step 2**: Enrich hospitals and collect doctor URLs
-3. **Step 3**: Process and enrich doctor profiles
+1. **Step 0**: Collect all cities from hospitals page (simple HTTP requests)
+2. **Step 1**: Collect hospitals from listing pages (per city)
+3. **Step 2**: Enrich hospitals and collect doctor URLs
+4. **Step 3**: Process and enrich doctor profiles
 
 Each step is resumable and can be run independently.
 
@@ -130,7 +131,10 @@ python run_scraper.py --site marham --limit 100 --threads 4
 ### Step-by-Step
 
 ```powershell
-# Step 1: Collect hospitals
+# Step 0: Collect cities (no threads needed, uses HTTP requests)
+python run_scraper.py --site marham --step 0
+
+# Step 1: Collect hospitals (per city)
 python run_scraper.py --site marham --threads 4 --step 1
 
 # Step 2: Enrich hospitals

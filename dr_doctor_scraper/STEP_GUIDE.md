@@ -9,10 +9,19 @@ The scraper now supports running individual steps independently. This is useful 
 
 ## Step Breakdown
 
+### Step 0: Collect Cities
+- Scrapes the main hospitals page (https://www.marham.pk/hospitals)
+- Extracts all cities from "Top Cities" and "Other Cities" sections
+- Saves cities to `cities` collection with `scrape_status="pending"`
+- Uses simple HTTP requests (no browser needed)
+- **Entry Point**: https://www.marham.pk/hospitals
+
 ### Step 1: Collect Hospitals from Listing Pages
-- Scrapes hospital listing pages
+- Iterates through all cities with `scrape_status="pending"`
+- Scrapes hospital listing pages for each city
 - Extracts basic hospital information (name, URL, address, location)
 - Saves hospitals to database with `scrape_status="pending"`
+- Marks cities as `scrape_status="scraped"` after processing
 
 ### Step 2: Enrich Hospitals and Collect Doctors
 - Processes hospitals with `scrape_status="pending"` or `"enriched"`
@@ -32,6 +41,12 @@ The scraper now supports running individual steps independently. This is useful 
 ```powershell
 python run_scraper.py --site marham --threads 4
 ```
+
+### Run Only Step 0 (Collect Cities)
+```powershell
+python run_scraper.py --site marham --step 0
+```
+**Note**: Step 0 doesn't need threads or browser (uses simple HTTP requests)
 
 ### Run Only Step 1 (Collect Hospitals)
 ```powershell

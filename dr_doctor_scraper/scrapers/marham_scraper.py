@@ -15,6 +15,7 @@ from scrapers.marham.parsers.hospital_parser import HospitalParser
 from scrapers.marham.parsers.doctor_parser import DoctorParser
 from scrapers.marham.enrichers.profile_enricher import ProfileEnricher
 from scrapers.marham.collectors.doctor_collector import DoctorCollector
+from scrapers.marham.collectors.city_collector import CityCollector
 from scrapers.marham.mergers.data_merger import DataMerger
 from scrapers.marham.handlers.hospital_practice_handler import HospitalPracticeHandler
 from scrapers.utils.url_parser import is_hospital_url, parse_hospital_url
@@ -64,6 +65,7 @@ class MarhamScraper(BaseScraper):
         self.doctor_parser = DoctorParser()
         self.profile_enricher = ProfileEnricher()
         self.doctor_collector = DoctorCollector()
+        self.city_collector = CityCollector()
         self.data_merger = DataMerger()
         self.practice_handler = HospitalPracticeHandler(mongo_client)
 
@@ -199,106 +201,183 @@ class MarhamScraper(BaseScraper):
             except Exception as exc:  # noqa: BLE001
                 logger.warning("Failed to insert doctor {}: {}", doctor.profile_url, exc)
 
-    def scrape(self, limit: Optional[int] = None) -> Dict[str, int]:
-        """Resumable scraping workflow with three steps:
+    def scrape(self, limit: Optional[int] = None, step: Optional[int] = None) -> Dict[str, int]:
+        """Resumable scraping workflow with four steps:
         
-        Step 1: Collect hospitals from listing pages → save to DB with status="pending"
+        Step 0: Collect all cities from hospitals page → save to cities collection with status="pending"
+        Step 1: Collect hospitals from listing pages (per city) → save to DB with status="pending"
         Step 2: Read hospitals from DB → enrich data → collect doctor URLs → save to DB → update status="doctors_collected"
         Step 3: Read doctors from DB → process profiles → update status="processed"
         
         `limit` limits number of hospitals to process in Step 2 (useful for testing).
+        `step` allows running only a specific step (0, 1, 2, or 3). None = run all steps.
         Returns stats dict similar to other scrapers.
         """
         logger.info("Starting resumable Marham scraping workflow")
-        stats = {"total": 0, "inserted": 0, "skipped": 0, "hospitals": 0, "updated": 0, "doctors": 0}
+        stats = {"total": 0, "inserted": 0, "skipped": 0, "hospitals": 0, "updated": 0, "doctors": 0, "cities": 0}
 
-        # Step 1: Collect hospitals from listing pages
-        self._step1_collect_hospitals_from_listings(limit, stats)
+        if step is None or step == 0:
+            # Step 0: Collect cities
+            self._step0_collect_cities(stats)
         
-        # Step 2: Enrich hospitals and collect doctor URLs
-        self._step2_enrich_hospitals_and_collect_doctors(limit, stats)
+        if step is None or step == 1:
+            # Step 1: Collect hospitals from listing pages
+            self._step1_collect_hospitals_from_listings(limit, stats)
         
-        # Step 3: Process all collected doctors
-        self._step3_process_doctors(stats)
+        if step is None or step == 2:
+            # Step 2: Enrich hospitals and collect doctor URLs
+            self._step2_enrich_hospitals_and_collect_doctors(limit, stats)
+        
+        if step is None or step == 3:
+            # Step 3: Process all collected doctors
+            self._step3_process_doctors(stats)
         
         return stats
 
+    def _step0_collect_cities(self, stats: Dict[str, int]) -> None:
+        """Step 0: Collect all cities from the hospitals page and save to cities collection."""
+        logger.info("Step 0: Collecting cities from hospitals page")
+        
+        cities = self.city_collector.collect_cities()
+        
+        for city_data in cities:
+            name = city_data.get("name")
+            url = city_data.get("url")
+            
+            if not name or not url:
+                continue
+            
+            # Check if city already exists
+            if self.mongo_client.city_exists(url):
+                logger.debug("City already in DB: {}", url)
+                stats["skipped"] += 1
+                continue
+            
+            # Upsert city
+            if self.mongo_client.upsert_city(name, url):
+                stats["cities"] += 1
+                logger.info("Saved city to DB: {} -> {}", name, url)
+            else:
+                logger.warning("Failed to save city: {} -> {}", name, url)
+        
+        logger.info("Step 0 completed: {} cities collected, {} skipped", stats["cities"], stats["skipped"])
+
     def _step1_collect_hospitals_from_listings(self, limit: Optional[int], stats: Dict[str, int]) -> None:
-        """Step 1: Collect hospitals from listing pages and save to DB with status='pending'."""
+        """Step 1: Collect hospitals from listing pages (per city) and save to DB with status='pending'."""
         logger.info("Step 1: Collecting hospitals from listing pages")
         
-        page = 1
-        collected_count = 0
+        # Get all cities that need scraping
+        cities_cursor = self.mongo_client.get_cities_needing_scraping()
+        cities = list(cities_cursor)
         
-        while True:
-            url = f"{self.hospitals_listing_url}{page}"
-            logger.debug("Loading hospitals page: {}", url)
+        if not cities:
+            logger.warning("No cities found in database. Run Step 0 first to collect cities.")
+            return
+        
+        logger.info("Processing hospitals for {} cities", len(cities))
+        
+        total_collected = 0
+        
+        for city_doc in cities:
+            city_name = city_doc.get("name", "Unknown")
+            city_url = city_doc.get("url")
             
-            try:
-                self.load_page(url)
-                self.wait_for("body")
-                html = self.get_html()
-            except Exception as exc:  # noqa: BLE001
-                logger.warning("Failed to load hospitals page {}: {}", url, exc)
-                break
-
-            hospitals = self.hospital_parser.parse_hospital_cards(html)
-            if not hospitals:
-                logger.info("No more hospitals found on page {}, stopping", page)
-                break
-
-            for h in hospitals:
-                if not h.get("name") or not h.get("url"):
-                    continue
-
-                # Check if hospital already exists in DB
-                existing = self.mongo_client.hospitals.find_one({"url": h.get("url")})
-                if existing:
-                    logger.debug("Hospital already in DB: {}", h.get("url"))
-                    collected_count += 1
-                    continue
-
-                # Extract location from "View Directions" button
-                if self.page:
-                    try:
-                        location = self.hospital_parser.extract_location_from_card(self.page, h["url"])
-                        if location:
-                            h["location"] = location
-                            logger.debug("Extracted location for {}: {}", h.get("name"), location)
-                    except Exception as exc:  # noqa: BLE001
-                        logger.debug("Failed to extract location for {}: {}", h.get("name"), exc)
-
-                # Save minimal hospital record to DB with status="pending"
+            if not city_url:
+                continue
+            
+            logger.info("Processing hospitals for city: {} ({})", city_name, city_url)
+            
+            # Extract city slug from URL for pagination
+            # URL format: https://www.marham.pk/hospitals/{city}
+            if "/hospitals/" in city_url:
+                city_slug = city_url.split("/hospitals/")[-1].split("?")[0]
+            else:
+                logger.warning("Invalid city URL format: {}", city_url)
+                continue
+            
+            page = 1
+            city_collected = 0
+            
+            while True:
+                # Build URL for this city and page
+                url = f"{BASE_URL}/hospitals/{city_slug}?page={page}"
+                logger.debug("Loading hospitals page: {}", url)
+                
                 try:
-                    minimal = {
-                        "name": h.get("name"),
-                        "platform": self.PLATFORM,
-                        "url": h.get("url"),
-                        "address": h.get("address"),
-                        "city": h.get("city"),
-                        "area": h.get("area"),
-                        "scrape_status": "pending"
-                    }
-                    if h.get("location"):
-                        minimal["location"] = h["location"]
-                    
-                    if self.mongo_client.update_hospital(h.get("url"), minimal):
-                        stats["hospitals"] += 1
-                        collected_count += 1
-                        logger.info("Saved hospital to DB: {} ({})", h.get("name"), h.get("url"))
+                    self.load_page(url)
+                    self.wait_for("body")
+                    html = self.get_html()
                 except Exception as exc:  # noqa: BLE001
-                    logger.warning("Failed to save hospital {}: {}", h.get("name"), exc)
-
-                if limit and collected_count >= limit:
+                    logger.warning("Failed to load hospitals page {}: {}", url, exc)
                     break
 
-            if limit and collected_count >= limit:
+                hospitals = self.hospital_parser.parse_hospital_cards(html)
+                if not hospitals:
+                    logger.info("No more hospitals found on page {} for city {}, stopping", page, city_name)
+                    break
+
+                for h in hospitals:
+                    if not h.get("name") or not h.get("url"):
+                        continue
+
+                    # Check if hospital already exists in DB
+                    existing = self.mongo_client.hospitals.find_one({"url": h.get("url")})
+                    if existing:
+                        logger.debug("Hospital already in DB: {}", h.get("url"))
+                        city_collected += 1
+                        continue
+
+                    # Extract location from "View Directions" button
+                    if self.page:
+                        try:
+                            location = self.hospital_parser.extract_location_from_card(self.page, h["url"])
+                            if location:
+                                h["location"] = location
+                                logger.debug("Extracted location for {}: {}", h.get("name"), location)
+                        except Exception as exc:  # noqa: BLE001
+                            logger.debug("Failed to extract location for {}: {}", h.get("name"), exc)
+
+                    # Save minimal hospital record to DB with status="pending"
+                    try:
+                        minimal = {
+                            "name": h.get("name"),
+                            "platform": self.PLATFORM,
+                            "url": h.get("url"),
+                            "address": h.get("address"),
+                            "city": h.get("city") or city_name,  # Use city from city collection if not in hospital data
+                            "area": h.get("area"),
+                            "scrape_status": "pending"
+                        }
+                        if h.get("location"):
+                            minimal["location"] = h["location"]
+                        
+                        if self.mongo_client.update_hospital(h.get("url"), minimal):
+                            stats["hospitals"] += 1
+                            city_collected += 1
+                            logger.info("Saved hospital to DB: {} ({})", h.get("name"), h.get("url"))
+                    except Exception as exc:  # noqa: BLE001
+                        logger.warning("Failed to save hospital {}: {}", h.get("name"), exc)
+
+                    if limit and total_collected + city_collected >= limit:
+                        break
+
+                if limit and total_collected + city_collected >= limit:
+                    break
+
+                page += 1
+                time.sleep(0.5)
+            
+            # Mark city as scraped if we collected hospitals
+            if city_collected > 0:
+                self.mongo_client.update_city_status(city_url, "scraped")
+                logger.info("Marked city {} as scraped ({} hospitals collected)", city_name, city_collected)
+            
+            total_collected += city_collected
+            
+            if limit and total_collected >= limit:
                 break
-
-            page += 1
-            time.sleep(0.5)
-
-        logger.info("Step 1 complete: {} hospitals collected and saved to DB", collected_count)
+        
+        logger.info("Step 1 completed: {} hospitals collected across all cities", total_collected)
 
     def _step2_enrich_hospitals_and_collect_doctors(self, limit: Optional[int], stats: Dict[str, int]) -> None:
         """Step 2: Read hospitals from DB, enrich them, collect doctor URLs, and save to DB."""

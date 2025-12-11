@@ -54,9 +54,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--step",
         type=int,
-        choices=[1, 2, 3],
+        choices=[0, 1, 2, 3],
         default=None,
-        help="Run only a specific step (1=collect hospitals, 2=enrich hospitals, 3=process doctors). Default: run all steps",
+        help="Run only a specific step (0=collect cities, 1=collect hospitals, 2=enrich hospitals, 3=process doctors). Default: run all steps",
     )
     return parser.parse_args()
 
@@ -81,7 +81,7 @@ def run_for_site(site: str, mongo: MongoClientManager, headless: bool, limit: in
         else:
             logger.info("Running Marham scraper (single-threaded mode)")
             with MarhamScraper(mongo_client=mongo, headless=headless, disable_js=disable_js) as scraper:
-                stats = scraper.scrape(limit=limit)
+                stats = scraper.scrape(limit=limit, step=step)
     else:
         raise ValueError(f"Unsupported site: {site}")
 

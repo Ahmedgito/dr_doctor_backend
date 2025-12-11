@@ -113,14 +113,15 @@ Initialize Marham scraper.
 
 **Returns:** None
 
-#### `scrape(limit: Optional[int] = None) -> Dict[str, int]`
+#### `scrape(limit: Optional[int] = None, step: Optional[int] = None) -> Dict[str, int]`
 
-Run the complete scraping workflow (all 3 steps).
+Run the complete scraping workflow (all 4 steps) or a specific step.
 
 **Parameters:**
 - `limit` (Optional[int]): Maximum number of hospitals to process (None = no limit)
+- `step` (Optional[int]): Run only specific step (0, 1, 2, or 3). None = run all steps
 
-**Returns:** (Dict[str, int]) Statistics dictionary with keys: total, inserted, skipped, hospitals, updated, doctors
+**Returns:** (Dict[str, int]) Statistics dictionary with keys: total, inserted, skipped, hospitals, updated, doctors, cities
 
 ---
 
@@ -276,6 +277,44 @@ Update hospital's scrape status.
 
 **Returns:** (bool) True on success
 
+#### `city_exists(url: str) -> bool`
+
+Check if city exists by URL.
+
+**Parameters:**
+- `url` (str): City URL
+
+**Returns:** (bool) True if city exists
+
+#### `upsert_city(name: str, url: str) -> bool`
+
+Insert or update a city record.
+
+**Parameters:**
+- `name` (str): City name
+- `url` (str): City URL (format: https://www.marham.pk/hospitals/{city})
+
+**Returns:** (bool) True on success
+
+#### `get_cities_needing_scraping(limit: Optional[int] = None)`
+
+Get cities that need scraping (status is 'pending' or missing).
+
+**Parameters:**
+- `limit` (Optional[int]): Maximum number to return
+
+**Returns:** MongoDB cursor
+
+#### `update_city_status(url: str, status: str) -> bool`
+
+Update city's scrape status.
+
+**Parameters:**
+- `url` (str): City URL
+- `status` (str): New status ('pending', 'scraped')
+
+**Returns:** (bool) True on success
+
 #### `close() -> None`
 
 Close MongoDB client connection.
@@ -370,6 +409,20 @@ Parse doctor profile page to extract comprehensive information.
 ---
 
 ## Collectors
+
+### `CityCollector` (`scrapers/marham/collectors/city_collector.py`)
+
+Collects all cities from the Marham hospitals listing page using HTTP requests.
+
+#### `collect_cities() -> List[Dict[str, str]]`
+
+Extract all cities from the hospitals page.
+
+**Returns:** (List[Dict[str, str]]) List of dictionaries with keys: name, url
+
+**Note:** Uses simple HTTP requests (no browser needed). Parses both "Top Cities" and "Other Cities" sections.
+
+---
 
 ### `DoctorCollector` (`scrapers/marham/collectors/doctor_collector.py`)
 

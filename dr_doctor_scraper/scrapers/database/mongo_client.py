@@ -18,9 +18,11 @@ class MongoClientManager:
 
         self.doctors = self.db["doctors"]
         self.hospitals = self.db["hospitals"]
+        self.cities = self.db["cities"]
 
         self.doctors.create_index([("profile_url", ASCENDING)], unique=True)
         self.hospitals.create_index([("name", ASCENDING), ("address", ASCENDING)], unique=True)
+        self.cities.create_index([("url", ASCENDING)], unique=True)
 
     # ------------ Doctors -----------------
     def doctor_exists(self, url: str) -> bool:
@@ -145,6 +147,70 @@ class MongoClientManager:
             self.hospitals.update_one(
                 {"url": url},
                 {"$set": {"scrape_status": status}}
+            )
+            return True
+        except Exception:
+            return False
+
+    # ------------ Cities -----------------
+    def city_exists(self, url: str) -> bool:
+        """Check if city exists by URL."""
+        return self.cities.find_one({"url": url}) is not None
+
+    def upsert_city(self, name: str, url: str) -> bool:
+        """Insert or update a city record.
+        
+        Args:
+            name: City name
+            url: City URL (format: https://www.marham.pk/hospitals/{city})
+            
+        Returns:
+            True on success, False otherwise
+        """
+        try:
+            from datetime import datetime
+            self.cities.update_one(
+                {"url": url},
+                {
+                    "$set": {
+                        "name": name,
+                        "url": url,
+                        "platform": "marham",
+                    },
+                    "$setOnInsert": {
+                        "scrape_status": "pending",
+                        "created_at": datetime.utcnow()
+                    }
+                },
+                upsert=True
+            )
+            return True
+        except Exception:
+            return False
+
+    def get_cities_needing_scraping(self, limit: Optional[int] = None):
+        """Get cities that need scraping (status is 'pending' or missing)."""
+        query = {"$or": [
+            {"scrape_status": {"$exists": False}},
+            {"scrape_status": "pending"}
+        ]}
+        cursor = self.cities.find(query).sort("_id", ASCENDING)
+        if limit:
+            cursor = cursor.limit(limit)
+        return cursor
+
+    def update_city_status(self, url: str, status: str) -> bool:
+        """Update city's scrape status."""
+        try:
+            from datetime import datetime
+            self.cities.update_one(
+                {"url": url},
+                {
+                    "$set": {
+                        "scrape_status": status,
+                        "scraped_at": datetime.utcnow() if status == "scraped" else None
+                    }
+                }
             )
             return True
         except Exception:

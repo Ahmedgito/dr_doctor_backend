@@ -32,7 +32,10 @@ python run_scraper.py --site marham --no-headless
 ### Step-by-Step Execution
 
 ```powershell
-# Step 1: Collect hospitals from listing pages
+# Step 0: Collect all cities from hospitals page
+python run_scraper.py --site marham --step 0
+
+# Step 1: Collect hospitals from listing pages (per city)
 python run_scraper.py --site marham --threads 4 --step 1
 
 # Step 2: Enrich hospitals and collect doctors
@@ -252,7 +255,7 @@ python scrapers/tools/import_db.py --collection doctors --in data/exports/doctor
 | `--disable-js` | flag | False | Disable JavaScript (faster, but may break some sites) |
 | `--test-db` | flag | False | Use test database (dr_doctor_test) |
 | `--threads` | int | 1 | Number of worker threads (1-8 recommended) |
-| `--step` | int | None | Run only specific step (1, 2, or 3) |
+| `--step` | int | None | Run only specific step (0, 1, 2, or 3) |
 
 ### `analyze_logs.py` Options
 
