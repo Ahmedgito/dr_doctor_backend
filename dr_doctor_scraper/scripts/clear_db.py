@@ -34,6 +34,7 @@ def clear_database(test_db: bool = False) -> None:
         doctors_count = db["doctors"].count_documents({})
         hospitals_count = db["hospitals"].count_documents({})
         cities_count = db["cities"].count_documents({})
+        pages_count = db["pages"].count_documents({})
         
         # Drop all indexes first (to avoid duplicate key errors)
         logger.info("Dropping existing indexes...")
@@ -41,6 +42,7 @@ def clear_database(test_db: bool = False) -> None:
             db["doctors"].drop_indexes()
             db["hospitals"].drop_indexes()
             db["cities"].drop_indexes()
+            db["pages"].drop_indexes()
             logger.info("Indexes dropped successfully")
         except Exception as exc:
             logger.warning("Error dropping indexes (may not exist): {}", exc)
@@ -50,12 +52,13 @@ def clear_database(test_db: bool = False) -> None:
         db["doctors"].delete_many({})
         db["hospitals"].delete_many({})
         db["cities"].delete_many({})
+        db["pages"].delete_many({})
         
         logger.info("✅ Database cleared successfully")
-        logger.info("   Deleted: {} doctors, {} hospitals, {} cities", doctors_count, hospitals_count, cities_count)
+        logger.info("   Deleted: {} doctors, {} hospitals, {} cities, {} pages", doctors_count, hospitals_count, cities_count, pages_count)
         
         print(f"\n✅ Database '{db_name}' cleared successfully!")
-        print(f"   Deleted: {doctors_count} doctors, {hospitals_count} hospitals, {cities_count} cities")
+        print(f"   Deleted: {doctors_count} doctors, {hospitals_count} hospitals, {cities_count} cities, {pages_count} pages")
         print(f"   Indexes dropped - will be recreated on next scraper run")
         
     finally:

@@ -66,12 +66,22 @@ def export_and_clear_db(clear: bool = False) -> None:
         
         logger.info("Exported {} cities to {}", len(cities), cities_file)
         
+        # Export pages
+        pages = list(mongo.pages.find({}))
+        pages_file = f"data/exports/pages_backup_{timestamp}.json"
+        
+        with open(pages_file, "w", encoding="utf-8") as f:
+            json.dump([normalize_doc(p) for p in pages], f, indent=2, ensure_ascii=False)
+        
+        logger.info("Exported {} pages to {}", len(pages), pages_file)
+        
         if clear:
             # Clear collections
             mongo.doctors.delete_many({})
             mongo.hospitals.delete_many({})
             mongo.cities.delete_many({})
-            logger.info("Cleared all data from database (doctors, hospitals, cities)")
+            mongo.pages.delete_many({})
+            logger.info("Cleared all data from database (doctors, hospitals, cities, pages)")
         else:
             logger.info("Database not cleared. Use --clear flag to clear after export.")
         
@@ -79,8 +89,9 @@ def export_and_clear_db(clear: bool = False) -> None:
         print(f"   Doctors: {len(doctors)} → {doctors_file}")
         print(f"   Hospitals: {len(hospitals)} → {hospitals_file}")
         print(f"   Cities: {len(cities)} → {cities_file}")
+        print(f"   Pages: {len(pages)} → {pages_file}")
         if clear:
-            print(f"   Database cleared (doctors, hospitals, cities)")
+            print(f"   Database cleared (doctors, hospitals, cities, pages)")
         
     finally:
         mongo.close()

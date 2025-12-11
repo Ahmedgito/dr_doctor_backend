@@ -296,9 +296,20 @@ class MarhamScraper(BaseScraper):
         
         if not cities:
             logger.warning("No cities found in database. Run Step 0 first to collect cities.")
-            return
+        else:
+            logger.info("Processing hospitals for {} cities", len(cities))
         
-        logger.info("Processing hospitals for {} cities", len(cities))
+        # Also get failed/pending pages to retry
+        failed_pages = self.mongo_client.get_pages_needing_retry()
+        if failed_pages:
+            logger.info("Found {} pages that need retry", len(failed_pages))
+        
+        # Process failed pages first
+        if failed_pages:
+            self._process_failed_pages(failed_pages, stats)
+        
+        # Then process cities
+        if cities:
         
         total_collected = 0
         
@@ -333,13 +344,28 @@ class MarhamScraper(BaseScraper):
                 url = f"{BASE_URL}/hospitals/{city_slug}?page={page}"
                 logger.debug("Loading hospitals page {} for city {}: {}", page, city_name, url)
                 
+                # Record page in pages collection
+                self.mongo_client.upsert_page(
+                    url=url,
+                    city_name=city_name,
+                    city_url=city_url,
+                    page_number=page
+                )
+                
                 try:
                     self.load_page(url)
                     self.wait_for("body")
                     html = self.get_html()
+                    # Mark page as success
+                    self.mongo_client.mark_page_success(url)
                 except Exception as exc:  # noqa: BLE001
                     logger.warning("Failed to load hospitals page {}: {}", url, exc)
-                    break
+                    # Mark page as failed
+                    self.mongo_client.mark_page_failed(url, str(exc))
+                    # Continue to next page instead of breaking
+                    # This allows us to retry failed pages later
+                    page += 1
+                    continue
 
                 hospitals = self.hospital_parser.parse_hospital_cards(html)
                 if not hospitals:
@@ -410,6 +436,95 @@ class MarhamScraper(BaseScraper):
                 break
         
         logger.info("Step 1 completed: {} hospitals collected across all cities", total_collected)
+
+    def _process_failed_pages(self, failed_pages: List[dict], stats: Dict[str, int]) -> None:
+        """Process pages that previously failed to load.
+        
+        Args:
+            failed_pages: List of page documents that need retry
+            stats: Statistics dictionary to update
+        """
+        logger.info("Processing {} failed/pending pages", len(failed_pages))
+        
+        for page_doc in failed_pages:
+            url = page_doc.get("url")
+            city_name = page_doc.get("city_name", "Unknown")
+            page_number = page_doc.get("page_number", 0)
+            
+            if not url:
+                continue
+            
+            logger.info("Retrying page {} for city {}: {}", page_number, city_name, url)
+            
+            # Mark as retrying
+            self.mongo_client.mark_page_retrying(url)
+            
+            try:
+                self.load_page(url)
+                self.wait_for("body")
+                html = self.get_html()
+                
+                hospitals = self.hospital_parser.parse_hospital_cards(html)
+                if not hospitals:
+                    logger.debug("No hospitals found on retried page: {}", url)
+                    # Mark as success even if no hospitals (page was loaded successfully)
+                    self.mongo_client.mark_page_success(url)
+                    continue
+                
+                # Process hospitals from this page
+                page_collected = 0
+                for h in hospitals:
+                    if not h.get("name") or not h.get("url"):
+                        continue
+                    
+                    hospital_url = h.get("url")
+                    
+                    # Check if hospital already exists
+                    existing = self.mongo_client.hospitals.find_one({"url": hospital_url})
+                    if existing:
+                        page_collected += 1
+                        continue
+                    
+                    # Extract location if possible
+                    if self.page:
+                        try:
+                            location = self.hospital_parser.extract_location_from_card(self.page, hospital_url)
+                            if location:
+                                h["location"] = location
+                        except Exception:
+                            pass
+                    
+                    # Save minimal hospital record
+                    try:
+                        minimal = {
+                            "name": h.get("name"),
+                            "platform": self.PLATFORM,
+                            "url": hospital_url,
+                            "address": h.get("address"),
+                            "city": h.get("city") or city_name,
+                            "area": h.get("area"),
+                            "scrape_status": "pending"
+                        }
+                        if h.get("location"):
+                            minimal["location"] = h["location"]
+                        
+                        if self.mongo_client.update_hospital(hospital_url, minimal):
+                            stats["hospitals"] += 1
+                            page_collected += 1
+                            logger.info("Saved hospital from retried page: {} ({})", h.get("name"), hospital_url)
+                    except Exception as exc:
+                        logger.warning("Failed to save hospital from retried page: {}", exc)
+                
+                # Mark page as success
+                self.mongo_client.mark_page_success(url)
+                logger.info("Successfully processed retried page: {} ({} hospitals)", url, page_collected)
+                
+            except Exception as exc:
+                logger.warning("Failed to retry page {}: {}", url, exc)
+                # Mark as failed again (will increment retry_count)
+                self.mongo_client.mark_page_failed(url, str(exc))
+            
+            time.sleep(0.5)  # Polite pause between pages
 
     def _step2_enrich_hospitals_and_collect_doctors(self, limit: Optional[int], stats: Dict[str, int]) -> None:
         """Step 2: Read hospitals from DB, enrich them, collect doctor URLs, and save to DB."""

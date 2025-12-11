@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import threading
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Dict, List, Optional
 from queue import Queue
@@ -65,13 +66,165 @@ class MultiThreadedMarhamScraper:
                 if key in self.stats:
                     self.stats[key] += value
     
-    def _step1_worker(self, page_numbers: List[int], limit: Optional[int], num_threads: int) -> Dict[str, int]:
-        """Worker thread for Step 1: Collect hospitals from listing pages.
+    def _step1_worker(self, cities: List[dict], limit: Optional[int], num_threads: int) -> Dict[str, int]:
+        """Worker thread for Step 1: Collect hospitals from listing pages for assigned cities.
         
         Args:
-            page_numbers: List of page numbers to process
+            cities: List of city documents to process
             limit: Maximum number of hospitals to collect (None = no limit)
             num_threads: Total number of threads (for limit distribution)
+            
+        Returns:
+            Statistics dictionary
+        """
+        worker_stats = {"hospitals": 0, "errors": 0}
+        thread_id = threading.current_thread().ident
+        BASE_URL = "https://www.marham.pk"
+        
+        try:
+            with MarhamScraper(
+                mongo_client=self.mongo_client,
+                headless=self.headless,
+                timeout_ms=self.timeout_ms,
+                max_retries=self.max_retries,
+            ) as scraper:
+                logger.info(f"[Thread {thread_id}] Starting Step 1 worker for {len(cities)} cities")
+                
+                thread_limit = (limit // num_threads) + 1 if limit else None
+                total_collected = 0
+                
+                for city_doc in cities:
+                    # Check thread limit
+                    if thread_limit and total_collected >= thread_limit:
+                        logger.info(f"[Thread {thread_id}] Reached thread limit of {thread_limit} hospitals")
+                        break
+                    
+                    city_name = city_doc.get("name", "Unknown")
+                    city_url = city_doc.get("url")
+                    
+                    if not city_url:
+                        continue
+                    
+                    logger.info(f"[Thread {thread_id}] Processing city: {city_name} ({city_url})")
+                    
+                    # Extract city slug from URL
+                    if "/hospitals/" in city_url:
+                        city_slug = city_url.split("/hospitals/")[-1].split("?")[0].strip()
+                        if not city_slug:
+                            logger.warning(f"[Thread {thread_id}] Empty city slug for: {city_url}")
+                            continue
+                    else:
+                        logger.warning(f"[Thread {thread_id}] Invalid city URL: {city_url}")
+                        continue
+                    
+                    page = 1
+                    city_collected = 0
+                    
+                    # Process all pages for this city
+                    while True:
+                        # Check thread limit
+                        if thread_limit and total_collected >= thread_limit:
+                            break
+                        
+                        # Build URL for this city and page
+                        url = f"{BASE_URL}/hospitals/{city_slug}?page={page}"
+                        logger.debug(f"[Thread {thread_id}] Loading page {page} for city {city_name}: {url}")
+                        
+                        # Record page in pages collection
+                        self.mongo_client.upsert_page(
+                            url=url,
+                            city_name=city_name,
+                            city_url=city_url,
+                            page_number=page
+                        )
+                        
+                        try:
+                            scraper.load_page(url)
+                            scraper.wait_for("body")
+                            html = scraper.get_html()
+                            # Mark page as success
+                            self.mongo_client.mark_page_success(url)
+                        except Exception as exc:
+                            logger.warning(f"[Thread {thread_id}] Failed to load page {page} for {city_name}: {exc}")
+                            # Mark page as failed (will be retried later)
+                            self.mongo_client.mark_page_failed(url, str(exc))
+                            # Continue to next page instead of breaking
+                            page += 1
+                            continue
+                        
+                        hospitals = scraper.hospital_parser.parse_hospital_cards(html)
+                        if not hospitals:
+                            logger.info(f"[Thread {thread_id}] No more hospitals found on page {page} for city {city_name}")
+                            break
+                        
+                        # Process hospitals from this page
+                        for h in hospitals:
+                            if not h.get("name") or not h.get("url"):
+                                continue
+                            
+                            hospital_url = h.get("url")
+                            
+                            # Check if hospital already exists
+                            existing = self.mongo_client.hospitals.find_one({"url": hospital_url})
+                            if existing:
+                                city_collected += 1
+                                continue
+                            
+                            # Extract location if possible
+                            if scraper.page:
+                                try:
+                                    location = scraper.hospital_parser.extract_location_from_card(
+                                        scraper.page, hospital_url
+                                    )
+                                    if location:
+                                        h["location"] = location
+                                except Exception:
+                                    pass
+                            
+                            # Save minimal hospital record
+                            try:
+                                minimal = {
+                                    "name": h.get("name"),
+                                    "platform": "marham",
+                                    "url": hospital_url,
+                                    "address": h.get("address"),
+                                    "city": h.get("city") or city_name,
+                                    "area": h.get("area"),
+                                    "scrape_status": "pending"
+                                }
+                                if h.get("location"):
+                                    minimal["location"] = h["location"]
+                                
+                                if self.mongo_client.update_hospital(hospital_url, minimal):
+                                    worker_stats["hospitals"] += 1
+                                    city_collected += 1
+                                    total_collected += 1
+                                    logger.debug(f"[Thread {thread_id}] Collected hospital: {h.get('name')}")
+                            except Exception as exc:
+                                logger.warning(f"[Thread {thread_id}] Failed to save hospital: {exc}")
+                                worker_stats["errors"] += 1
+                        
+                        page += 1
+                        time.sleep(0.5)  # Polite pause between pages
+                    
+                    # Mark city as scraped if we collected hospitals
+                    if city_collected > 0:
+                        self.mongo_client.update_city_status(city_url, "scraped")
+                        logger.info(f"[Thread {thread_id}] City {city_name} completed: {city_collected} hospitals")
+                
+                logger.info(f"[Thread {thread_id}] Step 1 worker completed: {worker_stats['hospitals']} hospitals")
+                
+        except Exception as exc:
+            logger.error(f"[Thread {thread_id}] Step 1 worker failed: {exc}")
+            worker_stats["errors"] += 1
+        
+        return worker_stats
+    
+    def _step1_retry_pages_worker(self, pages: List[dict]) -> Dict[str, int]:
+        """Worker thread for retrying failed pages.
+        
+        Args:
+            pages: List of page documents to retry
             
         Returns:
             Statistics dictionary
@@ -86,66 +239,93 @@ class MultiThreadedMarhamScraper:
                 timeout_ms=self.timeout_ms,
                 max_retries=self.max_retries,
             ) as scraper:
-                logger.info(f"[Thread {thread_id}] Starting Step 1 worker for {len(page_numbers)} pages")
+                logger.info(f"[Thread {thread_id}] Starting retry worker for {len(pages)} pages")
                 
-                for page_num in page_numbers:
+                for page_doc in pages:
+                    url = page_doc.get("url")
+                    city_name = page_doc.get("city_name", "Unknown")
+                    page_number = page_doc.get("page_number", 0)
+                    
+                    if not url:
+                        continue
+                    
+                    logger.info(f"[Thread {thread_id}] Retrying page {page_number} for city {city_name}: {url}")
+                    
+                    # Mark as retrying
+                    self.mongo_client.mark_page_retrying(url)
+                    
                     try:
-                        # Check global limit (approximate, since we're in parallel)
-                        # Each thread will stop when it reaches its share of the limit
-                        thread_limit = (limit // num_threads) + 1 if limit else None
-                        if thread_limit and worker_stats["hospitals"] >= thread_limit:
-                            logger.info(f"[Thread {thread_id}] Reached thread limit of {thread_limit} hospitals")
-                            break
-                        
-                        # Collect hospitals from this page
-                        page_url = f"https://www.marham.pk/hospitals/karachi?page={page_num}"
-                        scraper.load_page(page_url)
+                        scraper.load_page(url)
                         scraper.wait_for("body")
                         html = scraper.get_html()
                         
-                        # Parse hospitals from this page
                         hospitals = scraper.hospital_parser.parse_hospital_cards(html)
-                        
-                        # If no hospitals found, this might be the end
                         if not hospitals:
-                            logger.debug(f"[Thread {thread_id}] No hospitals found on page {page_num}")
+                            logger.debug(f"[Thread {thread_id}] No hospitals found on retried page: {url}")
+                            self.mongo_client.mark_page_success(url)
+                            continue
                         
-                        # Save hospitals to database
-                        for hospital in hospitals:
-                            thread_limit = (limit // num_threads) + 1 if limit else None
-                            if thread_limit and worker_stats["hospitals"] >= thread_limit:
-                                break
+                        # Process hospitals
+                        page_collected = 0
+                        for h in hospitals:
+                            if not h.get("name") or not h.get("url"):
+                                continue
                             
+                            hospital_url = h.get("url")
+                            
+                            # Check if hospital already exists
+                            existing = self.mongo_client.hospitals.find_one({"url": hospital_url})
+                            if existing:
+                                page_collected += 1
+                                continue
+                            
+                            # Extract location if possible
+                            if scraper.page:
+                                try:
+                                    location = scraper.hospital_parser.extract_location_from_card(
+                                        scraper.page, hospital_url
+                                    )
+                                    if location:
+                                        h["location"] = location
+                                except Exception:
+                                    pass
+                            
+                            # Save minimal hospital record
                             try:
-                                # Extract location from card if possible
-                                location = scraper.hospital_parser.extract_location_from_card(
-                                    scraper.page, hospital.get("url", "")
-                                )
-                                if location:
-                                    hospital["location"] = location
+                                minimal = {
+                                    "name": h.get("name"),
+                                    "platform": "marham",
+                                    "url": hospital_url,
+                                    "address": h.get("address"),
+                                    "city": h.get("city") or city_name,
+                                    "area": h.get("area"),
+                                    "scrape_status": "pending"
+                                }
+                                if h.get("location"):
+                                    minimal["location"] = h["location"]
                                 
-                                # Insert minimal hospital record
-                                hospital["scrape_status"] = "pending"
-                                hospital["platform"] = "marham"
-                                
-                                if self.mongo_client.insert_hospital(hospital):
+                                if self.mongo_client.update_hospital(hospital_url, minimal):
                                     worker_stats["hospitals"] += 1
-                                    logger.debug(f"[Thread {thread_id}] Collected hospital: {hospital.get('name')}")
+                                    page_collected += 1
                             except Exception as exc:
-                                logger.warning(f"[Thread {thread_id}] Failed to insert hospital: {exc}")
+                                logger.warning(f"[Thread {thread_id}] Failed to save hospital: {exc}")
                                 worker_stats["errors"] += 1
                         
-                        logger.info(f"[Thread {thread_id}] Processed page {page_num}: {len(hospitals)} hospitals")
+                        # Mark page as success
+                        self.mongo_client.mark_page_success(url)
+                        logger.info(f"[Thread {thread_id}] Successfully retried page: {url} ({page_collected} hospitals)")
                         
                     except Exception as exc:
-                        logger.error(f"[Thread {thread_id}] Error processing page {page_num}: {exc}")
+                        logger.warning(f"[Thread {thread_id}] Failed to retry page {url}: {exc}")
+                        self.mongo_client.mark_page_failed(url, str(exc))
                         worker_stats["errors"] += 1
-                        continue
+                    
+                    time.sleep(0.5)  # Polite pause
                 
-                logger.info(f"[Thread {thread_id}] Step 1 worker completed: {worker_stats['hospitals']} hospitals")
+                logger.info(f"[Thread {thread_id}] Retry worker completed: {worker_stats['hospitals']} hospitals")
                 
         except Exception as exc:
-            logger.error(f"[Thread {thread_id}] Step 1 worker failed: {exc}")
+            logger.error(f"[Thread {thread_id}] Retry worker failed: {exc}")
             worker_stats["errors"] += 1
         
         return worker_stats
@@ -460,57 +640,62 @@ class MultiThreadedMarhamScraper:
             self._update_stats({"cities": cities_collected})
             logger.info("Step 0 completed: {} cities collected", cities_collected)
         
-        # Step 1: Collect hospitals from listing pages (parallel)
+        # Step 1: Collect hospitals from listing pages (per city, parallel)
         if step is None or step == 1:
-            logger.info("Step 1: Collecting hospitals from listing pages...")
+            logger.info("Step 1: Collecting hospitals from listing pages (per city)...")
             
-            # Process pages in batches until no more hospitals found
-            page_num = 1
-            consecutive_empty = 0
-            max_consecutive_empty = 5  # Stop after 5 consecutive empty pages
-            batch_size = self.num_threads * 10  # Process 10 pages per thread at a time
-            
-            while consecutive_empty < max_consecutive_empty and page_num <= max_pages:
-                # Collect a batch of pages
-                page_numbers = []
-                for _ in range(batch_size):
-                    if page_num > max_pages:
-                        break
-                    page_numbers.append(page_num)
-                    page_num += 1
+            # First, process failed/pending pages
+            failed_pages = self.mongo_client.get_pages_needing_retry()
+            if failed_pages:
+                logger.info(f"Found {len(failed_pages)} pages that need retry")
+                # Distribute failed pages across threads
+                page_chunks = self._distribute_work(failed_pages, self.num_threads)
                 
-                if not page_numbers:
-                    break
-                
-                logger.info(f"Processing pages {page_numbers[0]} to {page_numbers[-1]}...")
-                page_chunks = self._distribute_work(page_numbers, self.num_threads)
-                
-                batch_hospitals = 0
                 with ThreadPoolExecutor(max_workers=self.num_threads) as executor:
-                    futures = [executor.submit(self._step1_worker, chunk, limit, self.num_threads) for chunk in page_chunks if chunk]
+                    futures = [
+                        executor.submit(self._step1_retry_pages_worker, chunk) 
+                        for chunk in page_chunks if chunk
+                    ]
                     for future in as_completed(futures):
                         try:
                             stats = future.result()
-                            batch_hospitals += stats.get("hospitals", 0)
+                            self._update_stats(stats)
+                        except Exception as exc:
+                            logger.error(f"Step 1 retry pages worker failed: {exc}")
+                            self._update_stats({"errors": 1})
+            
+            # Then, get all cities that need scraping
+            cities_cursor = self.mongo_client.get_cities_needing_scraping()
+            cities = list(cities_cursor)
+            
+            if not cities:
+                logger.warning("No cities found in database. Run Step 0 first to collect cities.")
+            else:
+                logger.info(f"Found {len(cities)} cities to process")
+                
+                # Distribute cities across threads
+                city_chunks = self._distribute_work(cities, self.num_threads)
+                
+                logger.info(f"Distributing {len(cities)} cities across {self.num_threads} threads")
+                for i, chunk in enumerate(city_chunks):
+                    if chunk:
+                        logger.info(f"  Thread {i+1}: {len(chunk)} cities")
+                
+                # Process cities in parallel
+                with ThreadPoolExecutor(max_workers=self.num_threads) as executor:
+                    futures = [
+                        executor.submit(self._step1_worker, chunk, limit, self.num_threads) 
+                        for chunk in city_chunks if chunk
+                    ]
+                    for future in as_completed(futures):
+                        try:
+                            stats = future.result()
                             self._update_stats(stats)
                         except Exception as exc:
                             logger.error(f"Step 1 worker failed: {exc}")
                             self._update_stats({"errors": 1})
                 
-                # Check if this batch had any hospitals
-                if batch_hospitals == 0:
-                    consecutive_empty += 1
-                    logger.info(f"No hospitals found in batch, consecutive empty batches: {consecutive_empty}/{max_consecutive_empty}")
-                else:
-                    consecutive_empty = 0
-                    logger.info(f"Found {batch_hospitals} hospitals in this batch")
-                
-                # Check if we've reached the limit
-                if limit and self.stats["hospitals"] >= limit:
-                    logger.info(f"Reached limit of {limit} hospitals")
-                    break
-            
-            logger.info(f"Step 1 complete: {self.stats['hospitals']} hospitals collected")
+                logger.info(f"Step 1 complete: {self.stats['hospitals']} hospitals collected across all cities")
         
         # Step 2: Enrich hospitals and collect doctors (parallel)
         if step is None or step == 2:

@@ -1,5 +1,5 @@
 import os
-from typing import Optional, Dict
+from typing import Optional, Dict, List
 from pymongo import MongoClient, ASCENDING
 from dotenv import load_dotenv
 from scrapers.logger import logger
@@ -20,6 +20,7 @@ class MongoClientManager:
         self.doctors = self.db["doctors"]
         self.hospitals = self.db["hospitals"]
         self.cities = self.db["cities"]
+        self.pages = self.db["pages"]
 
         # Create indexes (drop existing first if they have duplicates)
         self._ensure_indexes()
@@ -78,6 +79,26 @@ class MongoClientManager:
                     self.cities.create_index([("url", ASCENDING)], unique=True)
                 else:
                     raise
+            
+            # Pages: unique index on url
+            try:
+                self.pages.create_index([("url", ASCENDING)], unique=True)
+            except Exception as exc:
+                if "duplicate key" in str(exc).lower() or "E11000" in str(exc):
+                    logger.warning("Duplicate keys found in pages, dropping and recreating index...")
+                    try:
+                        self.pages.drop_index("url_1")
+                    except Exception:
+                        pass
+                    self.pages.create_index([("url", ASCENDING)], unique=True)
+                else:
+                    raise
+            
+            # Pages: index on status for queries
+            try:
+                self.pages.create_index([("scrape_status", ASCENDING)])
+            except Exception:
+                pass
         except Exception as exc:
             logger.error("Failed to create indexes: {}", exc)
             # Continue anyway - indexes are not critical for basic operations
@@ -120,6 +141,121 @@ class MongoClientManager:
             if len(ids) > 1:
                 self.cities.delete_many({"_id": {"$in": ids[1:]}})
                 logger.info("Removed {} duplicate cities with URL: {}", len(ids) - 1, dup["_id"])
+
+    # ------------ Pages -----------------
+    def upsert_page(self, url: str, city_name: Optional[str] = None, city_url: Optional[str] = None, page_number: Optional[int] = None) -> bool:
+        """Insert or update a page record.
+        
+        Args:
+            url: Full page URL
+            city_name: City name for reference
+            city_url: City URL for reference
+            page_number: Page number
+            
+        Returns:
+            True on success, False otherwise
+        """
+        try:
+            from datetime import datetime
+            self.pages.update_one(
+                {"url": url},
+                {
+                    "$set": {
+                        "url": url,
+                        "city_name": city_name,
+                        "city_url": city_url,
+                        "page_number": page_number,
+                        "platform": "marham",
+                    },
+                    "$setOnInsert": {
+                        "scrape_status": "pending",
+                        "retry_count": 0,
+                        "created_at": datetime.utcnow()
+                    }
+                },
+                upsert=True
+            )
+            return True
+        except Exception as exc:
+            logger.warning("Failed to upsert page {}: {}", url, exc)
+            return False
+
+    def mark_page_success(self, url: str) -> bool:
+        """Mark a page as successfully scraped."""
+        try:
+            from datetime import datetime
+            self.pages.update_one(
+                {"url": url},
+                {
+                    "$set": {
+                        "scrape_status": "success",
+                        "scraped_at": datetime.utcnow(),
+                        "last_attempt": datetime.utcnow()
+                    }
+                }
+            )
+            return True
+        except Exception:
+            return False
+
+    def mark_page_failed(self, url: str, error_message: Optional[str] = None) -> bool:
+        """Mark a page as failed and increment retry count."""
+        try:
+            from datetime import datetime
+            self.pages.update_one(
+                {"url": url},
+                {
+                    "$set": {
+                        "scrape_status": "failed",
+                        "error_message": error_message,
+                        "last_attempt": datetime.utcnow()
+                    },
+                    "$inc": {"retry_count": 1}
+                }
+            )
+            return True
+        except Exception:
+            return False
+
+    def mark_page_retrying(self, url: str) -> bool:
+        """Mark a page as being retried."""
+        try:
+            from datetime import datetime
+            self.pages.update_one(
+                {"url": url},
+                {
+                    "$set": {
+                        "scrape_status": "retrying",
+                        "last_attempt": datetime.utcnow()
+                    }
+                }
+            )
+            return True
+        except Exception:
+            return False
+
+    def get_pages_needing_retry(self, limit: Optional[int] = None, max_retries: int = 5) -> List[dict]:
+        """Get pages that need to be retried (status is 'failed' or 'pending').
+        
+        Args:
+            limit: Maximum number to return
+            max_retries: Maximum retry count (pages with more retries are excluded)
+            
+        Returns:
+            List of page documents
+        """
+        query = {
+            "$or": [
+                {"scrape_status": "pending"},
+                {"scrape_status": "failed"},
+                {"scrape_status": "retrying"}
+            ],
+            "retry_count": {"$lt": max_retries}
+        }
+        cursor = self.pages.find(query).sort("_id", ASCENDING)
+        if limit:
+            cursor = cursor.limit(limit)
+        return list(cursor)
 
     # ------------ Doctors -----------------
     def doctor_exists(self, url: str) -> bool:
