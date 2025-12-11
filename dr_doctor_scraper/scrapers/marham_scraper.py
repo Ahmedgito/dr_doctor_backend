@@ -310,130 +310,129 @@ class MarhamScraper(BaseScraper):
         
         # Then process cities
         if cities:
-        
-        total_collected = 0
-        
-        for city_doc in cities:
-            city_name = city_doc.get("name", "Unknown")
-            city_url = city_doc.get("url")
+            total_collected = 0
             
-            if not city_url:
-                continue
-            
-            logger.info("Processing hospitals for city: {} ({})", city_name, city_url)
-            
-            # Extract city slug from URL for pagination
-            # URL format: https://www.marham.pk/hospitals/{city} or https://www.marham.pk/hospitals/{city}?page=x
-            # We need to strip any existing query parameters to build clean pagination URLs
-            if "/hospitals/" in city_url:
-                # Extract the city slug, removing any query parameters
-                city_slug = city_url.split("/hospitals/")[-1].split("?")[0].strip()
-                if not city_slug:
-                    logger.warning("Empty city slug extracted from URL: {}", city_url)
-                    continue
-            else:
-                logger.warning("Invalid city URL format (missing /hospitals/): {}", city_url)
-                continue
-            
-            page = 1
-            city_collected = 0
-            
-            while True:
-                # Build clean URL for this city and page
-                # Format: https://www.marham.pk/hospitals/{city_slug}?page={page}
-                url = f"{BASE_URL}/hospitals/{city_slug}?page={page}"
-                logger.debug("Loading hospitals page {} for city {}: {}", page, city_name, url)
+            for city_doc in cities:
+                city_name = city_doc.get("name", "Unknown")
+                city_url = city_doc.get("url")
                 
-                # Record page in pages collection
-                self.mongo_client.upsert_page(
-                    url=url,
-                    city_name=city_name,
-                    city_url=city_url,
-                    page_number=page
-                )
-                
-                try:
-                    self.load_page(url)
-                    self.wait_for("body")
-                    html = self.get_html()
-                    # Mark page as success
-                    self.mongo_client.mark_page_success(url)
-                except Exception as exc:  # noqa: BLE001
-                    logger.warning("Failed to load hospitals page {}: {}", url, exc)
-                    # Mark page as failed
-                    self.mongo_client.mark_page_failed(url, str(exc))
-                    # Continue to next page instead of breaking
-                    # This allows us to retry failed pages later
-                    page += 1
+                if not city_url:
                     continue
-
-                hospitals = self.hospital_parser.parse_hospital_cards(html)
-                if not hospitals:
-                    logger.info("No more hospitals found on page {} for city {}, stopping", page, city_name)
-                    break
-
-                for h in hospitals:
-                    if not h.get("name") or not h.get("url"):
+                
+                logger.info("Processing hospitals for city: {} ({})", city_name, city_url)
+                
+                # Extract city slug from URL for pagination
+                # URL format: https://www.marham.pk/hospitals/{city} or https://www.marham.pk/hospitals/{city}?page=x
+                # We need to strip any existing query parameters to build clean pagination URLs
+                if "/hospitals/" in city_url:
+                    # Extract the city slug, removing any query parameters
+                    city_slug = city_url.split("/hospitals/")[-1].split("?")[0].strip()
+                    if not city_slug:
+                        logger.warning("Empty city slug extracted from URL: {}", city_url)
                         continue
-
-                    hospital_url = h.get("url")
+                else:
+                    logger.warning("Invalid city URL format (missing /hospitals/): {}", city_url)
+                    continue
+                
+                page = 1
+                city_collected = 0
+                
+                while True:
+                    # Build clean URL for this city and page
+                    # Format: https://www.marham.pk/hospitals/{city_slug}?page={page}
+                    url = f"{BASE_URL}/hospitals/{city_slug}?page={page}"
+                    logger.debug("Loading hospitals page {} for city {}: {}", page, city_name, url)
                     
-                    # Check if hospital already exists in DB by URL (unique identifier)
-                    existing = self.mongo_client.hospitals.find_one({"url": hospital_url})
-                    if existing:
-                        logger.debug("Hospital already in DB (skipping duplicate): {} ({})", h.get("name"), hospital_url)
-                        city_collected += 1
+                    # Record page in pages collection
+                    self.mongo_client.upsert_page(
+                        url=url,
+                        city_name=city_name,
+                        city_url=city_url,
+                        page_number=page
+                    )
+                    
+                    try:
+                        self.load_page(url)
+                        self.wait_for("body")
+                        html = self.get_html()
+                        # Mark page as success
+                        self.mongo_client.mark_page_success(url)
+                    except Exception as exc:  # noqa: BLE001
+                        logger.warning("Failed to load hospitals page {}: {}", url, exc)
+                        # Mark page as failed
+                        self.mongo_client.mark_page_failed(url, str(exc))
+                        # Continue to next page instead of breaking
+                        # This allows us to retry failed pages later
+                        page += 1
                         continue
 
-                    # Extract location from "View Directions" button
-                    if self.page:
-                        try:
-                            location = self.hospital_parser.extract_location_from_card(self.page, h["url"])
-                            if location:
-                                h["location"] = location
-                                logger.debug("Extracted location for {}: {}", h.get("name"), location)
-                        except Exception as exc:  # noqa: BLE001
-                            logger.debug("Failed to extract location for {}: {}", h.get("name"), exc)
+                    hospitals = self.hospital_parser.parse_hospital_cards(html)
+                    if not hospitals:
+                        logger.info("No more hospitals found on page {} for city {}, stopping", page, city_name)
+                        break
 
-                    # Save minimal hospital record to DB with status="pending"
-                    try:
-                        minimal = {
-                            "name": h.get("name"),
-                            "platform": self.PLATFORM,
-                            "url": h.get("url"),
-                            "address": h.get("address"),
-                            "city": h.get("city") or city_name,  # Use city from city collection if not in hospital data
-                            "area": h.get("area"),
-                            "scrape_status": "pending"
-                        }
-                        if h.get("location"):
-                            minimal["location"] = h["location"]
+                    for h in hospitals:
+                        if not h.get("name") or not h.get("url"):
+                            continue
+
+                        hospital_url = h.get("url")
                         
-                        if self.mongo_client.update_hospital(h.get("url"), minimal):
-                            stats["hospitals"] += 1
+                        # Check if hospital already exists in DB by URL (unique identifier)
+                        existing = self.mongo_client.hospitals.find_one({"url": hospital_url})
+                        if existing:
+                            logger.debug("Hospital already in DB (skipping duplicate): {} ({})", h.get("name"), hospital_url)
                             city_collected += 1
-                            logger.info("Saved hospital to DB: {} ({})", h.get("name"), h.get("url"))
-                    except Exception as exc:  # noqa: BLE001
-                        logger.warning("Failed to save hospital {}: {}", h.get("name"), exc)
+                            continue
+
+                        # Extract location from "View Directions" button
+                        if self.page:
+                            try:
+                                location = self.hospital_parser.extract_location_from_card(self.page, h["url"])
+                                if location:
+                                    h["location"] = location
+                                    logger.debug("Extracted location for {}: {}", h.get("name"), location)
+                            except Exception as exc:  # noqa: BLE001
+                                logger.debug("Failed to extract location for {}: {}", h.get("name"), exc)
+
+                        # Save minimal hospital record to DB with status="pending"
+                        try:
+                            minimal = {
+                                "name": h.get("name"),
+                                "platform": self.PLATFORM,
+                                "url": h.get("url"),
+                                "address": h.get("address"),
+                                "city": h.get("city") or city_name,  # Use city from city collection if not in hospital data
+                                "area": h.get("area"),
+                                "scrape_status": "pending"
+                            }
+                            if h.get("location"):
+                                minimal["location"] = h["location"]
+                            
+                            if self.mongo_client.update_hospital(h.get("url"), minimal):
+                                stats["hospitals"] += 1
+                                city_collected += 1
+                                logger.info("Saved hospital to DB: {} ({})", h.get("name"), h.get("url"))
+                        except Exception as exc:  # noqa: BLE001
+                            logger.warning("Failed to save hospital {}: {}", h.get("name"), exc)
+
+                        if limit and total_collected + city_collected >= limit:
+                            break
 
                     if limit and total_collected + city_collected >= limit:
                         break
 
-                if limit and total_collected + city_collected >= limit:
+                    page += 1
+                    time.sleep(0.5)
+                
+                # Mark city as scraped if we collected hospitals
+                if city_collected > 0:
+                    self.mongo_client.update_city_status(city_url, "scraped")
+                    logger.info("Marked city {} as scraped ({} hospitals collected)", city_name, city_collected)
+                
+                total_collected += city_collected
+                
+                if limit and total_collected >= limit:
                     break
-
-                page += 1
-                time.sleep(0.5)
-            
-            # Mark city as scraped if we collected hospitals
-            if city_collected > 0:
-                self.mongo_client.update_city_status(city_url, "scraped")
-                logger.info("Marked city {} as scraped ({} hospitals collected)", city_name, city_collected)
-            
-            total_collected += city_collected
-            
-            if limit and total_collected >= limit:
-                break
         
         logger.info("Step 1 completed: {} hospitals collected across all cities", total_collected)
 

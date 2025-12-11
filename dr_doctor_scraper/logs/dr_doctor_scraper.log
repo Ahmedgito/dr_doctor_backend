@@ -17629,3 +17629,9 @@ Traceback (most recent call last):
           └ <function rewrite_error at 0x0000029B622B1360>
 
 Exception: Page.goto: Connection closed while reading from the driver
+2025-12-11 17:23:59 | WARNING  | __main__:clear_database:31 - ⚠️  CLEARING DATABASE: dr_doctor
+2025-12-11 17:23:59 | INFO     | __main__:clear_database:40 - Dropping existing indexes...
+2025-12-11 17:23:59 | INFO     | __main__:clear_database:46 - Indexes dropped successfully
+2025-12-11 17:23:59 | INFO     | __main__:clear_database:51 - Clearing collections...
+2025-12-11 17:23:59 | INFO     | __main__:clear_database:57 - ✅ Database cleared successfully
+2025-12-11 17:23:59 | INFO     | __main__:clear_database:58 -    Deleted: 388 doctors, 4227 hospitals, 134 cities, 0 pages
