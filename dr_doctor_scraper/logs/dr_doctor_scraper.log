@@ -10141,3 +10141,11 @@ Traceback (most recent call last):
           └ <function rewrite_error at 0x000002A32AF09090>
 
 Exception: Page.goto: Connection closed while reading from the driver
+2025-12-11 16:20:32 | INFO     | __main__:main:100 - Starting scraper with args: Namespace(site='marham', headless=True, limit=None, disable_js=False, test_db=False, threads=1, step=0)
+2025-12-11 16:20:33 | INFO     | __main__:main:100 - Starting scraper with args: Namespace(site='marham', headless=True, limit=None, disable_js=False, test_db=False, threads=4, step=None)
+2025-12-11 16:23:27 | WARNING  | __main__:clear_database:31 - ⚠️  CLEARING DATABASE: dr_doctor
+2025-12-11 16:23:27 | INFO     | __main__:clear_database:39 - Dropping existing indexes...
+2025-12-11 16:23:27 | INFO     | __main__:clear_database:44 - Indexes dropped successfully
+2025-12-11 16:23:27 | INFO     | __main__:clear_database:49 - Clearing collections...
+2025-12-11 16:23:27 | INFO     | __main__:clear_database:54 - ✅ Database cleared successfully
+2025-12-11 16:23:27 | INFO     | __main__:clear_database:55 -    Deleted: 8392 doctors, 5343 hospitals, 134 cities

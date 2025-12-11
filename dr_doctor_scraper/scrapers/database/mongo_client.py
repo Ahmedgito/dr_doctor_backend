@@ -21,12 +21,105 @@ class MongoClientManager:
         self.hospitals = self.db["hospitals"]
         self.cities = self.db["cities"]
 
-        self.doctors.create_index([("profile_url", ASCENDING)], unique=True)
-        # Use URL as unique identifier for hospitals (more reliable than name+address)
-        self.hospitals.create_index([("url", ASCENDING)], unique=True)
-        # Keep name+address as a non-unique index for queries
-        self.hospitals.create_index([("name", ASCENDING), ("address", ASCENDING)])
-        self.cities.create_index([("url", ASCENDING)], unique=True)
+        # Create indexes (drop existing first if they have duplicates)
+        self._ensure_indexes()
+
+    def _ensure_indexes(self) -> None:
+        """Create indexes, handling duplicate key errors by dropping and recreating."""
+        try:
+            # Doctors: unique index on profile_url
+            try:
+                self.doctors.create_index([("profile_url", ASCENDING)], unique=True)
+            except Exception as exc:
+                if "duplicate key" in str(exc).lower() or "E11000" in str(exc):
+                    logger.warning("Duplicate keys found in doctors, dropping and recreating index...")
+                    try:
+                        self.doctors.drop_index("profile_url_1")
+                    except Exception:
+                        pass
+                    self.doctors.create_index([("profile_url", ASCENDING)], unique=True)
+                else:
+                    raise
+            
+            # Hospitals: unique index on url
+            try:
+                self.hospitals.create_index([("url", ASCENDING)], unique=True)
+            except Exception as exc:
+                if "duplicate key" in str(exc).lower() or "E11000" in str(exc):
+                    logger.warning("Duplicate keys found in hospitals, dropping and recreating index...")
+                    try:
+                        self.hospitals.drop_index("url_1")
+                    except Exception:
+                        pass
+                    # Remove duplicates before creating index
+                    self._remove_duplicate_hospitals()
+                    self.hospitals.create_index([("url", ASCENDING)], unique=True)
+                else:
+                    raise
+            
+            # Hospitals: non-unique index on name+address for queries
+            try:
+                self.hospitals.create_index([("name", ASCENDING), ("address", ASCENDING)])
+            except Exception:
+                pass  # Non-unique, can fail silently
+            
+            # Cities: unique index on url
+            try:
+                self.cities.create_index([("url", ASCENDING)], unique=True)
+            except Exception as exc:
+                if "duplicate key" in str(exc).lower() or "E11000" in str(exc):
+                    logger.warning("Duplicate keys found in cities, dropping and recreating index...")
+                    try:
+                        self.cities.drop_index("url_1")
+                    except Exception:
+                        pass
+                    # Remove duplicates before creating index
+                    self._remove_duplicate_cities()
+                    self.cities.create_index([("url", ASCENDING)], unique=True)
+                else:
+                    raise
+        except Exception as exc:
+            logger.error("Failed to create indexes: {}", exc)
+            # Continue anyway - indexes are not critical for basic operations
+
+    def _remove_duplicate_hospitals(self) -> None:
+        """Remove duplicate hospitals keeping the first one."""
+        from pymongo import ASCENDING
+        pipeline = [
+            {"$group": {
+                "_id": "$url",
+                "ids": {"$push": "$_id"},
+                "count": {"$sum": 1}
+            }},
+            {"$match": {"count": {"$gt": 1}}}
+        ]
+        
+        duplicates = list(self.hospitals.aggregate(pipeline))
+        for dup in duplicates:
+            ids = dup["ids"]
+            # Keep the first one, delete the rest
+            if len(ids) > 1:
+                self.hospitals.delete_many({"_id": {"$in": ids[1:]}})
+                logger.info("Removed {} duplicate hospitals with URL: {}", len(ids) - 1, dup["_id"])
+
+    def _remove_duplicate_cities(self) -> None:
+        """Remove duplicate cities keeping the first one."""
+        pipeline = [
+            {"$group": {
+                "_id": "$url",
+                "ids": {"$push": "$_id"},
+                "count": {"$sum": 1}
+            }},
+            {"$match": {"count": {"$gt": 1}}}
+        ]
+        
+        duplicates = list(self.cities.aggregate(pipeline))
+        for dup in duplicates:
+            ids = dup["ids"]
+            # Keep the first one, delete the rest
+            if len(ids) > 1:
+                self.cities.delete_many({"_id": {"$in": ids[1:]}})
+                logger.info("Removed {} duplicate cities with URL: {}", len(ids) - 1, dup["_id"])
 
     # ------------ Doctors -----------------
     def doctor_exists(self, url: str) -> bool:
