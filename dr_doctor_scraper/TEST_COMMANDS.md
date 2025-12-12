@@ -81,6 +81,18 @@ cd dr_doctor_scraper
 python scripts\check_sample_doctor.py
 ```
 
+### Set All Doctors to Pending
+```powershell
+cd dr_doctor_scraper
+# Production database
+python scripts\set_doctors_pending.py
+# Type 'yes' when prompted
+
+# Test database
+python scripts\set_doctors_pending.py --test-db
+# Type 'yes' when prompted
+```
+
 ## Notes
 
 - `--test-db` flag ensures you're using the test database (`dr_doctor_test`)
