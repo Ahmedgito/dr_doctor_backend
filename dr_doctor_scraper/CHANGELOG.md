@@ -2,6 +2,36 @@
 
 All notable changes to the Dr.Doctor Scraper project.
 
+## [2025-12-12] - Interests Field & Relationship Fixes
+
+### Added
+- **Interests Field** - Added `interests` field to DoctorModel
+  - Parses doctor interests from profile pages
+  - Extracts from `<li class="interest_dr_profile_clicked">` elements
+  - Stored as list of strings (e.g., ["Rehabilitation Specialist", "Paralytic Care"])
+- **Relationship Verification Scripts**
+  - `scripts/verify_db_relationships.py` - Verify bidirectional doctor-hospital relationships
+  - `scripts/test_relationships.py` - Test relationships with sample data (5 hospitals)
+  - `scripts/check_sample_doctor.py` - Check sample doctor records
+
+### Fixed
+- **Bidirectional Relationships** - Fixed doctor-hospital relationship saving
+  - Doctors now properly save their hospitals list
+  - Hospitals properly save their doctors list
+  - Merge logic updated to always save hospitals field (even if empty)
+  - Fixed variable naming in multi-threaded scraper to preserve original doctor_doc
+- **Data Merging** - Improved merge function to handle hospitals field correctly
+  - Always saves hospitals list when it's being set
+  - Handles None vs empty list cases properly
+  - Ensures bidirectional relationships are maintained
+
+### Changed
+- ProfileEnricher now extracts interests from doctor profiles
+- DoctorModel includes interests field in data model
+- Both single-threaded and multi-threaded scrapers save hospitals to doctors
+
+---
+
 ## [2025-12-09] - City Collection & Step 0
 
 ### Added

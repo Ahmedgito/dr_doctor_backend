@@ -506,19 +506,19 @@ class MultiThreadedMarhamScraper:
                     
                     try:
                         # Get minimal doctor record from database
-                        doctor_doc = self.mongo_client.doctors.find_one({"profile_url": doctor_url})
-                        if not doctor_doc:
+                        doctor_doc_original = self.mongo_client.doctors.find_one({"profile_url": doctor_url})
+                        if not doctor_doc_original:
                             logger.warning(f"[Thread {thread_id}] Doctor not found in DB: {doctor_url}")
                             doctors_processed += 1
                             doctor_queue.task_done()
                             continue
                         
-                        # Filter out MongoDB _id field
-                        doctor_doc = {k: v for k, v in doctor_doc.items() if k != "_id"}
+                        # Filter out MongoDB _id field for creating DoctorModel
+                        doctor_doc_for_model = {k: v for k, v in doctor_doc_original.items() if k != "_id"}
                         
                         # Create doctor model
                         from scrapers.models.doctor_model import DoctorModel
-                        doctor = DoctorModel(**doctor_doc)
+                        doctor = DoctorModel(**doctor_doc_for_model)
                         
                         # Load and enrich doctor profile
                         scraper.load_page(doctor_url)
@@ -541,6 +541,8 @@ class MultiThreadedMarhamScraper:
                             doctor.diseases = details.get("diseases")
                         if details.get("symptoms"):
                             doctor.symptoms = details.get("symptoms")
+                        if details.get("interests"):
+                            doctor.interests = details.get("interests")
                         if details.get("professional_statement"):
                             doctor.professional_statement = details.get("professional_statement")
                         if details.get("patients_treated"):
@@ -554,46 +556,60 @@ class MultiThreadedMarhamScraper:
                         if details.get("consultation_types"):
                             doctor.consultation_types = details.get("consultation_types")
                         
+                        # Initialize hospitals list if not already set
+                        if doctor.hospitals is None:
+                            doctor.hospitals = []
+                        
                         # Process practices
                         for practice in details.get("practices", []):
-                            from scrapers.utils.url_parser import is_hospital_url
-                            practice_url = practice.get("hospital_url")
                             is_private = practice.get("is_private_practice", False)
+                            practice_url = practice.get("practice_url")  # Booking URL
+                            hospital_name = practice.get("hospital_name")
                             
-                            if is_private or not is_hospital_url(practice_url):
+                            if is_private:
+                                # Private practice (Video Consultation)
                                 if not doctor.private_practice:
                                     doctor.private_practice = {
-                                        "name": practice.get("hospital_name") or f"{doctor.name}'s Private Practice",
+                                        "name": hospital_name or f"{doctor.name}'s Private Practice",
                                         "url": practice_url,
                                         "fee": practice.get("fee"),
                                         "timings": practice.get("timings"),
                                     }
                             else:
-                                if not doctor.hospitals:
-                                    doctor.hospitals = []
+                                # Real hospital - find it by name and get the actual hospital URL
+                                # The handler will find the hospital and return its URL
+                                hospital_url = scraper.practice_handler.find_hospital_by_name(hospital_name)
                                 
-                                hosp_entry = {
-                                    "name": practice.get("hospital_name"),
-                                    "url": practice_url,
-                                    "fee": practice.get("fee"),
-                                    "timings": practice.get("timings"),
-                                    "practice_id": practice.get("h_id"),
-                                }
-                                
-                                existing_urls = {h.get("url") for h in doctor.hospitals if isinstance(h, dict) and h.get("url")}
-                                if practice_url and practice_url not in existing_urls:
-                                    doctor.hospitals.append(hosp_entry)
-                                
-                                scraper.practice_handler.upsert_hospital_practice(practice, doctor)
+                                if hospital_url:
+                                    hosp_entry = {
+                                        "name": hospital_name,
+                                        "url": hospital_url,  # Actual hospital URL from collection
+                                        "fee": practice.get("fee"),
+                                        "timings": practice.get("timings"),
+                                        "practice_id": practice.get("h_id"),
+                                        "practice_url": practice_url,  # Booking URL
+                                    }
+                                    
+                                    # Check if this hospital is already in the list (by URL)
+                                    existing_urls = {h.get("url") for h in doctor.hospitals if isinstance(h, dict) and h.get("url")}
+                                    if hospital_url not in existing_urls:
+                                        doctor.hospitals.append(hosp_entry)
+                                    
+                                    # Update hospital with doctor's practice info
+                                    scraper.practice_handler.upsert_hospital_practice(practice, doctor)
+                                else:
+                                    logger.warning(f"[Thread {thread_id}] Hospital not found in collection: {hospital_name}")
                         
                         # Update doctor in database
                         doctor.scrape_status = "processed"
                         
-                        # Use the existing doctor_doc we already fetched (line 257)
+                        # Use the original doctor_doc_original for merging (merge function handles _id filtering)
                         # If it exists, merge and update; otherwise insert
-                        if doctor_doc:
+                        if doctor_doc_original:
                             # Doctor exists - merge and update
-                            merged = scraper.data_merger.merge_doctor_records(doctor_doc, doctor)
+                            # Convert doctor_doc_original to dict without _id for merging
+                            doctor_doc_for_merge = {k: v for k, v in doctor_doc_original.items() if k != "_id"}
+                            merged = scraper.data_merger.merge_doctor_records(doctor_doc_for_merge, doctor)
                             if merged:
                                 result = self.mongo_client.doctors.update_one(
                                     {"profile_url": doctor.profile_url},

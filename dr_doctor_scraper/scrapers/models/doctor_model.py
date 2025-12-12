@@ -25,6 +25,7 @@ class DoctorModel(BaseModel):
     services: Optional[List[str]] = None
     diseases: Optional[List[str]] = None
     symptoms: Optional[List[str]] = None
+    interests: Optional[List[str]] = None
     experience: Optional[str] = None
     professional_statement: Optional[str] = None
     patients_treated: Optional[int] = None

@@ -26,7 +26,7 @@ class ProfileEnricher:
         Returns:
             Dictionary with enriched data: specialties, pmdc_verified, practices, 
             qualifications, experience_years, work_history, services, diseases, symptoms,
-            professional_statement, patients_treated, reviews_count, patient_satisfaction_score,
+            interests, professional_statement, patients_treated, reviews_count, patient_satisfaction_score,
             phone, consultation_types
         """
         soup = BeautifulSoup(html, "html.parser")
@@ -75,6 +75,10 @@ class ProfileEnricher:
         symptoms = ProfileEnricher._parse_symptoms(soup)
         result["symptoms"] = symptoms
 
+        # Parse interests that the doctor has
+        interests = ProfileEnricher._parse_interests(soup)
+        result["interests"] = interests
+
         # Parse professional statement and additional info
         professional_info = ProfileEnricher._parse_professional_statement(soup)
         result.update(professional_info)
@@ -119,8 +123,12 @@ class ProfileEnricher:
                         hospital_name = clean_text(hospital_name_tag.get_text()) if hospital_name_tag else None
                         
                         # Determine if this is video consultation
+                        # Check if h3 contains "Video Consultation" - if yes, it's private practice
                         is_private_practice = False
-                        if oc_link or (hospital_name and "Video Consultation" in hospital_name):
+                        if hospital_name and "Video Consultation" in hospital_name:
+                            is_private_practice = True
+                        elif oc_link:
+                            # Also check for oc_practice_detail_card_dr_profile_tapped class
                             is_private_practice = True
                         
                         # Get the appropriate link
@@ -131,17 +139,14 @@ class ProfileEnricher:
                             if practice_url and practice_url.startswith("/"):
                                 practice_url = f"{BASE_URL}{practice_url}"
                         
-                        # For hospitals, extract hospital URL from the link
-                        # Hospital links look like: /doctors/karachi/urologist/dr-feroze-ahmed-mahar/callcenter?h_id=5907
-                        # We need to construct the actual hospital URL from h_id or extract it
+                        # For hospitals, we need to find the hospital by name in the collection
+                        # The practice_url is a booking URL, not the hospital URL
+                        # We'll match by hospital name later in the handler
                         hospital_url = None
-                        if not is_private_practice and practice_url:
-                            # Try to extract hospital URL from the practice link
-                            # If it contains 'callcenter?h_id=', we can construct hospital URL
-                            if "callcenter" in practice_url or "h_id" in practice_url:
-                                # For now, use the practice_url as hospital_url
-                                # The actual hospital URL might need to be looked up separately
-                                hospital_url = practice_url
+                        if not is_private_practice and hospital_name:
+                            # We'll find the hospital by name in the handler
+                            # For now, store the hospital name for matching
+                            pass
                         
                         # area (only for hospitals, not video consultations)
                         area = None
@@ -598,6 +603,64 @@ class ProfileEnricher:
             logger.debug("Error parsing symptoms: {}", e)
 
         return symptoms
+
+    @staticmethod
+    def _parse_interests(soup: BeautifulSoup) -> List[str]:
+        """Parse interests that the doctor has.
+        
+        Expected HTML structure:
+        <div class="col-12 col-md-12 bg-marham-light-border border-card">
+            <h2 class="pt-3">Interest</h2>
+            <ul class="grid-list">
+                <li class="interest_dr_profile_clicked">Rehabilitation Specialist</li>
+                <li class="interest_dr_profile_clicked"> Paralytic Care</li>
+                <li class="interest_dr_profile_clicked"> Frozen Shoulder</li>
+                <li class="interest_dr_profile_clicked"> Sciatica</li>
+            </ul>
+        </div>
+        
+        Returns:
+            List of interest names (e.g., ["Rehabilitation Specialist", "Paralytic Care", "Frozen Shoulder", "Sciatica"])
+        """
+        interests = []
+        try:
+            # Find the Interest section - look for div containing h2 with "Interest"
+            # Try specific selector first (more reliable)
+            interest_sections = soup.select("div.bg-marham-light-border.border-card, div.col-12.col-md-12")
+            
+            target_section = None
+            for div in interest_sections:
+                h2 = div.select_one("h2")
+                if h2:
+                    h2_text = clean_text(h2.get_text())
+                    if h2_text and "Interest" in h2_text:
+                        target_section = div
+                        break
+            
+            # Fallback: search all divs if specific selector didn't work
+            if not target_section:
+                for div in soup.select("div"):
+                    h2 = div.select_one("h2")
+                    if h2:
+                        h2_text = clean_text(h2.get_text())
+                        if h2_text and "Interest" in h2_text:
+                            target_section = div
+                            break
+
+            if target_section:
+                # Find the ul with class "grid-list"
+                interests_list = target_section.select_one("ul.grid-list")
+                if interests_list:
+                    # Extract interest names from li elements with class "interest_dr_profile_clicked"
+                    for li in interests_list.select("li.interest_dr_profile_clicked, li"):
+                        interest_name = clean_text(li.get_text())
+                        if interest_name and interest_name not in interests:
+                            interests.append(interest_name)
+        except Exception as e:
+            from scrapers.logger import logger
+            logger.debug("Error parsing interests: {}", e)
+
+        return interests
 
     @staticmethod
     def _parse_professional_statement(soup: BeautifulSoup) -> dict:

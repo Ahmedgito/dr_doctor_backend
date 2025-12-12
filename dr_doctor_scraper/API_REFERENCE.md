@@ -401,7 +401,7 @@ Parse doctor profile page to extract comprehensive information.
 
 **Returns:** (dict) Dictionary with enriched doctor data including:
 - specialties, qualifications, experience, work_history
-- services, diseases, symptoms
+- services, diseases, symptoms, interests
 - professional_statement, patients_treated, reviews_count
 - patient_satisfaction_score, phone, consultation_types
 - practices (list of hospital/private practice info)
@@ -577,7 +577,8 @@ Pydantic model for doctor data validation.
 - `services` (Optional[List[str]]): List of services
 - `diseases` (Optional[List[str]]): List of diseases treated
 - `symptoms` (Optional[List[str]]): List of symptoms treated
-- `hospitals` (Optional[List[dict]]): List of hospital affiliations
+- `interests` (Optional[List[str]]): List of doctor interests/specializations
+- `hospitals` (Optional[List[dict]]): List of hospital affiliations (bidirectional relationship)
 - `private_practice` (Optional[dict]): Private practice information
 - `professional_statement` (Optional[str]): Professional bio
 - `patients_treated` (Optional[int]): Number of patients treated

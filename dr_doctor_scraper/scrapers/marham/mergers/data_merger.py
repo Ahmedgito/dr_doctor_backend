@@ -65,7 +65,12 @@ class DataMerger:
                 merged_map[key] = dict(h)
 
         merged_hospitals = list(merged_map.values())
-        if merged_hospitals != existing_hospitals:
+        # Update hospitals if:
+        # 1. The merged list is different from existing (different content)
+        # 2. Existing is None/missing but new has hospitals (even if empty list, we want to set it)
+        # 3. Existing is None and new is empty list (initialize the field)
+        existing_hospitals_is_none = existing_data.get("hospitals") is None
+        if merged_hospitals != existing_hospitals or (existing_hospitals_is_none and new_hospitals is not None):
             updated["hospitals"] = merged_hospitals
 
         # For other fields, prefer non-empty values from new_data; otherwise keep existing
