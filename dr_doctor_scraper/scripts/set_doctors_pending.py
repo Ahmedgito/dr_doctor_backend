@@ -73,16 +73,14 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Set all doctors' scrape_status to 'pending'")
     parser.add_argument("--test-db", action="store_true", help="Update test database instead of production")
-    parser.add_argument("--yes", action="store_true", help="Skip confirmation prompt")
     args = parser.parse_args()
     
     db_name = "dr_doctor_test" if args.test_db else "dr_doctor"
     
-    if not args.yes:
-        response = input(f"Set all doctors to 'pending' in '{db_name}' database? (yes/no): ")
-        if response.lower() != "yes":
-            print("Operation cancelled")
-            sys.exit(0)
+    response = input(f"Set all doctors to 'pending' in '{db_name}' database? (yes/no): ")
+    if response.lower() != "yes":
+        print("Operation cancelled")
+        sys.exit(0)
     
     set_all_doctors_pending(test_db=args.test_db)
 

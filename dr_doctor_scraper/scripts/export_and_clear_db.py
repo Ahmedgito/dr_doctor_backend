@@ -103,5 +103,11 @@ if __name__ == "__main__":
     parser.add_argument("--clear", action="store_true", help="Clear database after export")
     args = parser.parse_args()
     
+    if args.clear:
+        response = input("⚠️  WARNING: This will DELETE ALL DATA from the database after export!\nType 'yes' to confirm: ")
+        if response.lower() != "yes":
+            print("❌ Operation cancelled")
+            sys.exit(0)
+    
     export_and_clear_db(clear=args.clear)
 
