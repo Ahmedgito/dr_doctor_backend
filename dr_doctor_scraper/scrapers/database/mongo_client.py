@@ -21,6 +21,14 @@ class MongoClientManager:
         self.hospitals = self.db["hospitals"]
         self.cities = self.db["cities"]
         self.pages = self.db["pages"]
+        
+        # Crawler collections
+        self.crawled_pages = self.db["crawled_pages"]
+        self.site_maps = self.db["site_maps"]
+        self.crawled_assets = self.db["crawled_assets"]
+        self.crawl_queue = self.db["crawl_queue"]
+        self.crawl_locks = self.db["crawl_locks"]
+        self.crawl_jobs = self.db["crawl_jobs"]
 
         # Create indexes (drop existing first if they have duplicates)
         self._ensure_indexes()
@@ -97,6 +105,42 @@ class MongoClientManager:
             # Pages: index on status for queries
             try:
                 self.pages.create_index([("scrape_status", ASCENDING)])
+            except Exception:
+                pass
+            
+            # Crawled pages: unique index on url
+            try:
+                self.crawled_pages.create_index([("url", ASCENDING)], unique=True)
+            except Exception:
+                pass
+            
+            # Crawled pages: indexes for queries
+            try:
+                self.crawled_pages.create_index([("domain", ASCENDING)])
+                self.crawled_pages.create_index([("crawl_status", ASCENDING)])
+                self.crawled_pages.create_index([("depth", ASCENDING)])
+            except Exception:
+                pass
+            
+            # Site maps: unique index on domain
+            try:
+                self.site_maps.create_index([("domain", ASCENDING)], unique=True)
+            except Exception:
+                pass
+            
+            # Crawled assets: indexes
+            try:
+                self.crawled_assets.create_index([("url", ASCENDING)])
+                self.crawled_assets.create_index([("parent_url", ASCENDING)])
+                self.crawled_assets.create_index([("domain", ASCENDING)])
+            except Exception:
+                pass
+            
+            # Crawl queue: indexes for distributed crawling
+            try:
+                self.crawl_queue.create_index([("url", ASCENDING)], unique=True)
+                self.crawl_queue.create_index([("status", ASCENDING)])
+                self.crawl_queue.create_index([("domain", ASCENDING)])
             except Exception:
                 pass
         except Exception as exc:
@@ -481,3 +525,224 @@ class MongoClientManager:
             return True
         except Exception:
             return False
+    
+    # ------------ Crawler Methods -----------------
+    def upsert_crawled_page(self, page_data: Dict) -> bool:
+        """Insert or update a crawled page.
+        
+        Args:
+            page_data: Dictionary with page data (must include 'url')
+            
+        Returns:
+            True on success, False otherwise
+        """
+        try:
+            url = page_data.get("url")
+            if not url:
+                logger.warning("Cannot upsert crawled page without URL")
+                return False
+            
+            self.crawled_pages.update_one(
+                {"url": url},
+                {"$set": page_data},
+                upsert=True
+            )
+            return True
+        except Exception as exc:
+            logger.warning("Failed to upsert crawled page {}: {}", page_data.get("url"), exc)
+            return False
+    
+    def get_crawled_pages(self, domain: str, status: Optional[str] = None, limit: Optional[int] = None) -> List[Dict]:
+        """Get crawled pages for a domain.
+        
+        Args:
+            domain: Domain name
+            status: Optional status filter ("pending", "crawled", "failed")
+            limit: Optional limit on number of results
+            
+        Returns:
+            List of crawled page documents
+        """
+        query = {"domain": domain}
+        if status:
+            query["crawl_status"] = status
+        
+        cursor = self.crawled_pages.find(query).sort("_id", ASCENDING)
+        if limit:
+            cursor = cursor.limit(limit)
+        return list(cursor)
+    
+    def get_pages_with_keywords(self, keywords: List[str], domain: Optional[str] = None) -> List[Dict]:
+        """Get pages that contain any of the specified keywords.
+        
+        Args:
+            keywords: List of keywords to search for
+            domain: Optional domain filter
+            
+        Returns:
+            List of crawled page documents
+        """
+        query = {"keywords_found": {"$in": keywords}}
+        if domain:
+            query["domain"] = domain
+        
+        return list(self.crawled_pages.find(query))
+    
+    def get_site_map(self, domain: str) -> Optional[Dict]:
+        """Get site map for a domain.
+        
+        Args:
+            domain: Domain name
+            
+        Returns:
+            Site map document or None
+        """
+        return self.site_maps.find_one({"domain": domain})
+    
+    def upsert_site_map(self, site_map_data: Dict) -> bool:
+        """Insert or update site map.
+        
+        Args:
+            site_map_data: Dictionary with site map data (must include 'domain')
+            
+        Returns:
+            True on success, False otherwise
+        """
+        try:
+            domain = site_map_data.get("domain")
+            if not domain:
+                logger.warning("Cannot upsert site map without domain")
+                return False
+            
+            from datetime import datetime
+            site_map_data["updated_at"] = datetime.utcnow()
+            
+            self.site_maps.update_one(
+                {"domain": domain},
+                {"$set": site_map_data},
+                upsert=True
+            )
+            return True
+        except Exception as exc:
+            logger.warning("Failed to upsert site map for domain {}: {}", site_map_data.get("domain"), exc)
+            return False
+    
+    def mark_page_crawled(self, url: str) -> bool:
+        """Mark a page as crawled.
+        
+        Args:
+            url: URL of the page
+            
+        Returns:
+            True on success, False otherwise
+        """
+        try:
+            from datetime import datetime
+            self.crawled_pages.update_one(
+                {"url": url},
+                {
+                    "$set": {
+                        "crawl_status": "crawled",
+                        "crawled_at": datetime.utcnow()
+                    }
+                }
+            )
+            return True
+        except Exception:
+            return False
+    
+    def mark_page_failed(self, url: str, error: str) -> bool:
+        """Mark a page as failed.
+        
+        Args:
+            url: URL of the page
+            error: Error message
+            
+        Returns:
+            True on success, False otherwise
+        """
+        try:
+            self.crawled_pages.update_one(
+                {"url": url},
+                {
+                    "$set": {
+                        "crawl_status": "failed",
+                        "error_message": error
+                    }
+                }
+            )
+            return True
+        except Exception:
+            return False
+    
+    def page_crawled(self, url: str) -> bool:
+        """Check if a page has been crawled.
+        
+        Args:
+            url: URL to check
+            
+        Returns:
+            True if page exists and is crawled
+        """
+        page = self.crawled_pages.find_one({"url": url})
+        return page is not None and page.get("crawl_status") == "crawled"
+    
+    def upsert_crawled_asset(self, asset_data: Dict) -> bool:
+        """Insert or update a crawled asset.
+        
+        Args:
+            asset_data: Dictionary with asset data (must include 'url')
+            
+        Returns:
+            True on success, False otherwise
+        """
+        try:
+            url = asset_data.get("url")
+            if not url:
+                return False
+            
+            self.crawled_assets.update_one(
+                {"url": url, "parent_url": asset_data.get("parent_url")},
+                {"$set": asset_data},
+                upsert=True
+            )
+            return True
+        except Exception as exc:
+            logger.debug("Failed to upsert asset {}: {}", asset_data.get("url"), exc)
+            return False
+    
+    def bulk_upsert_crawled_assets(self, assets: List[Dict]) -> int:
+        """Bulk upsert crawled assets.
+        
+        Args:
+            assets: List of asset dictionaries
+            
+        Returns:
+            Number of assets inserted/updated
+        """
+        if not assets:
+            return 0
+        
+        try:
+            from pymongo import UpdateOne
+            operations = []
+            
+            for asset in assets:
+                url = asset.get("url")
+                parent_url = asset.get("parent_url")
+                if url and parent_url:
+                    operations.append(
+                        UpdateOne(
+                            {"url": url, "parent_url": parent_url},
+                            {"$set": asset},
+                            upsert=True
+                        )
+                    )
+            
+            if operations:
+                result = self.crawled_assets.bulk_write(operations)
+                return result.modified_count + result.upserted_count
+            return 0
+        except Exception as exc:
+            logger.warning("Failed to bulk upsert assets: {}", exc)
+            return 0

@@ -34,6 +34,7 @@ dr_doctor_backend/
 
 1. **Navigate to the scraper directory:**
    ```powershell
+   cd dr_doctor_backend
    cd dr_doctor_scraper
    ```
 
