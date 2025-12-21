@@ -55,11 +55,24 @@ scrapers/
 │   │   └── hospital_practice_handler.py
 │   └── mergers/                     # Data merging
 │       └── data_merger.py
+├── crawler/                      # Web crawler module
+│   ├── web_crawler.py            # Main crawler
+│   ├── multi_threaded_crawler.py    # Multi-threaded crawler
+│   ├── distributed_crawler.py    # Distributed crawler
+│   ├── content_analyzer.py       # Content analysis
+│   ├── sitemap_parser.py         # Sitemap.xml parser
+│   ├── js_detector.py            # JavaScript detection
+│   ├── asset_discovery.py        # Asset discovery
+│   ├── site_map_generator.py     # Site map generation
+│   ├── crawler_config.py         # Configuration
+│   ├── utils.py                  # Utilities
+│   └── run_crawler.py            # CLI entry point
 ├── database/
 │   └── mongo_client.py          # MongoDB operations
 ├── models/                       # Pydantic data models
 │   ├── doctor_model.py
-│   └── hospital_model.py
+│   ├── hospital_model.py
+│   └── crawl_model.py           # Crawler models
 └── utils/                        # Utility functions
     ├── url_parser.py
     └── parser_helpers.py
@@ -83,6 +96,7 @@ Each step is resumable and can be run independently.
 - ✅ **Robust**: Error handling, retries, validation
 - ✅ **Testable**: Separate test database support
 - ✅ **Documented**: Complete API and command reference
+- ✅ **Web Crawler**: General-purpose crawler for site mapping and content analysis
 
 ## 📊 Data Captured
 
@@ -157,9 +171,64 @@ python scripts/validate_data.py --test-db
 python scripts/analyze_logs.py --limit 10
 ```
 
+### Web Crawler
+
+The web crawler is a general-purpose tool for discovering and analyzing website content. It can:
+- Discover all URLs on a website
+- Create hierarchical site maps
+- Analyze content types and data patterns
+- Search for keywords to identify relevant pages
+- Discover images, CSS, JS, and other assets
+- Parse sitemap.xml files
+- Detect JavaScript-rendered content
+
+```powershell
+# Single-threaded crawl
+python scrapers/crawler/run_crawler.py --url https://www.marham.pk --keywords doctor,hospital
+
+# Multi-threaded crawl (8 threads)
+python scrapers/crawler/run_crawler.py --url https://www.marham.pk --threads 8 --max-depth 5
+
+# Crawl with specific keywords and limits
+python scrapers/crawler/run_crawler.py --url https://www.aku.edu --keywords doctor,physician,department --max-pages 100
+
+# Distributed crawling (multiple instances)
+python scrapers/crawler/run_crawler.py --url https://www.oladoc.com --distributed --instance-id crawler-1
+
+# Crawl with all features disabled (faster)
+python scrapers/crawler/run_crawler.py --url https://www.marham.pk --no-sitemap --no-js-detection --no-assets
+
+# Use test database
+python scrapers/crawler/run_crawler.py --url https://www.marham.pk --test-db --threads 4
+```
+
+**Crawler Options:**
+- `--url`: Starting URL(s), comma-separated for multiple URLs
+- `--keywords`: Keywords to search for, comma-separated
+- `--max-depth`: Maximum crawl depth (default: unlimited)
+- `--max-pages`: Maximum number of pages to crawl (default: unlimited)
+- `--threads`: Number of threads for parallel crawling (default: 1)
+- `--distributed`: Enable distributed crawling mode
+- `--instance-id`: Instance ID for distributed crawling
+- `--no-sitemap`: Disable sitemap.xml parsing
+- `--no-js-detection`: Disable JavaScript rendering detection
+- `--no-assets`: Disable asset discovery
+- `--no-robots`: Don't respect robots.txt
+- `--delay`: Delay between requests in seconds (default: 0.5)
+- `--headless`: Run browser in headless mode (default: True)
+- `--no-headless`: Run browser with visible UI
+- `--test-db`: Use test database
+
+**Crawler Output:**
+- All discovered pages stored in `crawled_pages` collection
+- Site maps stored in `site_maps` collection
+- Assets stored in `crawled_assets` collection
+- Each page includes: URL, title, depth, content type, keywords found, links, assets
+
 ## 🔧 Scripts
 
 - `run_scraper.py` - Main scraper entry point
+- `scrapers/crawler/run_crawler.py` - Web crawler entry point
 - `scripts/analyze_logs.py` - Log analysis and statistics
 - `scripts/validate_data.py` - Data validation
 - `scripts/export_and_clear_db.py` - Database export
