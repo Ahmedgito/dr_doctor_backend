@@ -85,11 +85,14 @@ We are currently refining the Marham scraper to capture comprehensive doctor and
 - ✅ MongoDB integration with upsert support
 - ✅ Data export/import utilities
 - ✅ Project structure and file organization
+- ✅ Bidirectional doctor-hospital relationships
+- ✅ Comprehensive doctor data capture (interests, services, diseases, symptoms)
+- ✅ Queue-based dynamic work distribution for all steps
+- ✅ Page tracking and retry system
 
 ### In Progress 🔄
-- 🔄 Refactoring Marham scraper to capture comprehensive doctor/hospital data
-- 🔄 Data deduplication and merging logic
-- 🔄 Testing with 5 hospitals
+- 🔄 Testing and validation of bidirectional relationships
+- 🔄 Performance optimization
 
 ### Planned 📋
 - 📋 Testing with 100 hospitals

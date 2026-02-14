@@ -85,11 +85,11 @@ def export_and_clear_db(clear: bool = False) -> None:
         else:
             logger.info("Database not cleared. Use --clear flag to clear after export.")
         
-        print(f"\n✅ Export complete!")
-        print(f"   Doctors: {len(doctors)} → {doctors_file}")
-        print(f"   Hospitals: {len(hospitals)} → {hospitals_file}")
-        print(f"   Cities: {len(cities)} → {cities_file}")
-        print(f"   Pages: {len(pages)} → {pages_file}")
+        print(f"\n[OK] Export complete!")
+        print(f"   Doctors: {len(doctors)} -> {doctors_file}")
+        print(f"   Hospitals: {len(hospitals)} -> {hospitals_file}")
+        print(f"   Cities: {len(cities)} -> {cities_file}")
+        print(f"   Pages: {len(pages)} -> {pages_file}")
         if clear:
             print(f"   Database cleared (doctors, hospitals, cities, pages)")
         
@@ -102,6 +102,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Export DB to JSON and optionally clear it")
     parser.add_argument("--clear", action="store_true", help="Clear database after export")
     args = parser.parse_args()
+    
+    if args.clear:
+        response = input("⚠️  WARNING: This will DELETE ALL DATA from the database after export!\nType 'yes' to confirm: ")
+        if response.lower() != "yes":
+            print("❌ Operation cancelled")
+            sys.exit(0)
     
     export_and_clear_db(clear=args.clear)
 

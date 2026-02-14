@@ -93,6 +93,7 @@ Each step is resumable and can be run independently.
 - ✅ **Resumable**: Continue from where you left off
 - ✅ **Modular**: Reusable, testable components
 - ✅ **Comprehensive**: Captures 50+ data fields per doctor/hospital
+- ✅ **Bidirectional Relationships**: Doctors ↔ Hospitals with full details
 - ✅ **Robust**: Error handling, retries, validation
 - ✅ **Testable**: Separate test database support
 - ✅ **Documented**: Complete API and command reference
@@ -104,9 +105,9 @@ Each step is resumable and can be run independently.
 - Basic info (name, URL, specialty, platform)
 - Qualifications (institute, degree)
 - Experience (years, work history)
-- Services, diseases, symptoms
+- Services, diseases, symptoms, **interests**
 - Professional statement, patient stats
-- Hospital affiliations with fees/timings
+- **Hospital affiliations with fees/timings** (bidirectional relationship)
 - Private practice information
 - Contact details
 
@@ -116,7 +117,7 @@ Each step is resumable and can be run independently.
 - Clinical departments, procedures
 - Facilities, support services
 - Fee ranges, contact numbers
-- Doctor lists with details
+- **Doctor lists with details** (bidirectional relationship)
 
 ## 🛠️ Technologies
 
@@ -166,6 +167,12 @@ python run_scraper.py --site marham --limit 10 --test-db --threads 2
 
 # Validate results
 python scripts/validate_data.py --test-db
+
+# Verify relationships
+python scripts/verify_db_relationships.py
+
+# Test relationships with sample data
+python scripts/test_relationships.py
 
 # Analyze performance
 python scripts/analyze_logs.py --limit 10
@@ -233,6 +240,8 @@ python scrapers/crawler/run_crawler.py --url https://www.marham.pk --test-db --t
 - `scripts/validate_data.py` - Data validation
 - `scripts/export_and_clear_db.py` - Database export
 - `scripts/log_diagnostics.py` - Detailed log diagnostics
+- `scripts/verify_db_relationships.py` - Verify doctor-hospital bidirectional relationships
+- `scripts/test_relationships.py` - Test relationships with sample data
 
 ## 📝 Project Status
 

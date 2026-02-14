@@ -46,6 +46,8 @@ class MongoClientManager:
                         self.doctors.drop_index("profile_url_1")
                     except Exception:
                         pass
+                    # Remove duplicates before creating index
+                    self._remove_duplicate_doctors()
                     self.doctors.create_index([("profile_url", ASCENDING)], unique=True)
                 else:
                     raise
@@ -146,6 +148,25 @@ class MongoClientManager:
         except Exception as exc:
             logger.error("Failed to create indexes: {}", exc)
             # Continue anyway - indexes are not critical for basic operations
+
+    def _remove_duplicate_doctors(self) -> None:
+        """Remove duplicate doctors keeping the first one."""
+        pipeline = [
+            {"$group": {
+                "_id": "$profile_url",
+                "ids": {"$push": "$_id"},
+                "count": {"$sum": 1}
+            }},
+            {"$match": {"count": {"$gt": 1}}}
+        ]
+        
+        duplicates = list(self.doctors.aggregate(pipeline))
+        for dup in duplicates:
+            ids = dup["ids"]
+            # Keep the first one, delete the rest
+            if len(ids) > 1:
+                self.doctors.delete_many({"_id": {"$in": ids[1:]}})
+                logger.info("Removed {} duplicate doctors with profile_url: {}", len(ids) - 1, dup["_id"])
 
     def _remove_duplicate_hospitals(self) -> None:
         """Remove duplicate hospitals keeping the first one."""
